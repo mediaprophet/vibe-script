@@ -1,0 +1,2 @@
+# vibe-script
+vibe script
