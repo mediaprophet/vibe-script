@@ -266,11 +266,33 @@
   </main>
 
   <footer>
-    <span>LocalHost Runtime &middot; Desktop Honest Zero-Heap Engine &middot; Port 7420</span>
+    <span>Hybrid Engine &middot; Client-Side Pure WebAssembly (Primary) &middot; LocalHost Port 7420 (CLI Fallback)</span>
     <span>Host CLI: <code>cargo run -p vibe-play</code></span>
   </footer>
 
-  <script>
+  <script type="module">
+    import initWasm, {
+      language_version,
+      eval_program_src,
+      eval_cell_src,
+      diagnose_src,
+      format_src
+    } from "../docs/pkg/vibe/vibe_wasm.js";
+
+    let wasmReady = false;
+
+    async function initEngine() {
+      try {
+        await initWasm();
+        wasmReady = true;
+        statusDot.className = "status-dot green";
+        out.textContent = `✓ Client-side WebAssembly Engine (VibeScript ${language_version()}) loaded and ready.`;
+        out.className = "ok";
+      } catch (err) {
+        console.warn("WASM load failed, will use API fallback:", err);
+      }
+    }
+
     const samples = {
       lamp: `using Animation, HID;\n\neffect cell t := time.now();\ncell pose := Animation.orbit_spin(1.0);\ncell glow := oklch(0.72, 0.12, 230.0);\n\npresent lamp {\n    color: glow\n    pose: pose\n}`,
       orbit: `using Animation;\n\neffect fn run(t: f64) -> Record {\n    return Animation.orbit_spin(t);\n}\n\nfn main() {\n    return run(1.0);\n}`,
@@ -309,20 +331,58 @@
     src.addEventListener("input", updateCharCount);
     load();
 
-    async function post(path, updateEditorOnOk = false) {
+    async function runAction(action, updateEditorOnOk = false) {
       out.className = "note";
       out.textContent = "Processing...";
       statusDot.className = "status-dot";
       const start = performance.now();
+      const code = src.value.trim();
 
+      if (wasmReady) {
+        try {
+          let json;
+          if (action === "diagnose") {
+            json = diagnose_src(code);
+          } else if (action === "format") {
+            const formatted = format_src(code);
+            json = { ok: true, formatted: formatted };
+          } else {
+            json = code.startsWith("=") ? eval_cell_src(code) : eval_program_src(code);
+          }
+
+          const elapsed = (performance.now() - start).toFixed(2);
+          resTime.textContent = `${elapsed} ms (WASM)`;
+
+          if (json.ok) {
+            out.className = "ok";
+            statusDot.className = "status-dot green";
+            if (updateEditorOnOk && json.formatted) {
+              src.value = json.formatted;
+              updateCharCount();
+              out.textContent = "✓ Formatted successfully\n\n" + JSON.stringify(json, null, 2);
+            } else {
+              out.textContent = JSON.stringify(json, null, 2);
+            }
+          } else {
+            out.className = "err";
+            statusDot.className = "status-dot red";
+            out.textContent = JSON.stringify(json, null, 2);
+          }
+          return;
+        } catch (wasmErr) {
+          console.warn("WASM run error, falling back to API:", wasmErr);
+        }
+      }
+
+      // Fallback to local HTTP server API
       try {
-        const res = await fetch(path, {
+        const res = await fetch(`/api/${action}`, {
           method: "POST",
           headers: { "Content-Type": "text/plain; charset=utf-8" },
           body: src.value
         });
         const elapsed = (performance.now() - start).toFixed(1);
-        resTime.textContent = elapsed + " ms";
+        resTime.textContent = `${elapsed} ms (HTTP)`;
 
         const json = await res.json();
         if (json.ok) {
@@ -331,7 +391,7 @@
           if (updateEditorOnOk && json.formatted) {
             src.value = json.formatted;
             updateCharCount();
-            out.textContent = "✓ Formatted successfully\\n\\n" + JSON.stringify(json, null, 2);
+            out.textContent = "✓ Formatted successfully\n\n" + JSON.stringify(json, null, 2);
           } else {
             out.textContent = JSON.stringify(json, null, 2);
           }
@@ -343,13 +403,15 @@
       } catch (e) {
         statusDot.className = "status-dot red";
         out.className = "err";
-        out.textContent = "Cannot reach API (" + e + ").\\n\\nMake sure server is running:\\n  cargo run -p vibe-play\\nThen visit http://127.0.0.1:7420/";
+        out.textContent = "Execution failed: " + e;
       }
     }
 
-    document.getElementById("check").addEventListener("click", () => post("/api/diagnose"));
-    document.getElementById("eval").addEventListener("click", () => post("/api/eval"));
-    document.getElementById("format").addEventListener("click", () => post("/api/format", true));
+    document.getElementById("check").addEventListener("click", () => runAction("diagnose"));
+    document.getElementById("eval").addEventListener("click", () => runAction("eval"));
+    document.getElementById("format").addEventListener("click", () => runAction("format", true));
+
+    initEngine();
   </script>
 </body>
 </html>
