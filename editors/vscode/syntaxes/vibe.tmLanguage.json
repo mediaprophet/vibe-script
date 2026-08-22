@@ -1,0 +1,79 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "VibeScript",
+  "scopeName": "source.vibe",
+  "fileTypes": ["vibe"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#colors" },
+    { "include": "#quantities" },
+    { "include": "#keywords" },
+    { "include": "#modals" },
+    { "include": "#types" },
+    { "include": "#prefixed" },
+    { "include": "#catalog" },
+    { "include": "#numbers" },
+    { "include": "#operators" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.double-slash.vibe", "match": "//.*$" },
+        { "name": "comment.block.vibe", "begin": "/\\*", "end": "\\*/" }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.vibe",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        { "name": "constant.character.escape.vibe", "match": "\\\\." }
+      ]
+    },
+    "colors": {
+      "name": "constant.other.color.vibe",
+      "match": "#[0-9A-Fa-f]{3,8}\\b"
+    },
+    "quantities": {
+      "name": "constant.numeric.quantity.vibe",
+      "match": "\\b\\d+(?:\\.\\d+)?(?:ms|s|m|km|kg|Hz|kPa|Pa)\\b"
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.vibe",
+          "match": "\\b(if|else|for|in|while|match|return|yield|let|mut|fn|on|using|requires|import|as|prefix|locale|module|pure|effect|hot|cold|async|cell|present|bind|resolve|law|when|material|field|enum|transaction)\\b"
+        },
+        {
+          "name": "keyword.operator.word.vibe",
+          "match": "\\b(over|ease|spring|ask)\\b"
+        }
+      ]
+    },
+    "modals": {
+      "name": "keyword.other.modal.vibe",
+      "match": "\\b(obligate|permit|forbid|knows|believes|always|eventually|until)\\b"
+    },
+    "types": {
+      "name": "storage.type.vibe",
+      "match": "\\b(i32|u32|i64|u64|f32|f64|bool|string|Iri|Quin|QuinRef|Result|Receipt|List|Record|Option)\\b"
+    },
+    "prefixed": {
+      "name": "entity.name.iri.prefixed.vibe",
+      "match": "\\b[A-Za-z_][A-Za-z0-9_]*:[A-Za-z0-9_][A-Za-z0-9_.-]*\\b"
+    },
+    "catalog": {
+      "name": "entity.name.function.catalog.vibe",
+      "match": "\\b(Animation|Render|HID|GraphDatabase|DeonticLogic|EpistemicLogic|ParaconsistentLogic|SHACL)\\.[A-Za-z_][A-Za-z0-9_]*\\b"
+    },
+    "numbers": {
+      "name": "constant.numeric.vibe",
+      "match": "\\b\\d+(?:\\.\\d+)?\\b"
+    },
+    "operators": {
+      "name": "keyword.operator.vibe",
+      "match": "<->|\\|>|~|:=|=>|==|!=|<=|>=|&&|\\|\\|"
+    }
+  }
+}

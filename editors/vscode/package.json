@@ -1,0 +1,41 @@
+{
+  "name": "vibe-script",
+  "displayName": "VibeScript",
+  "description": "VibeScript 0.1 — highlighting + LSP for the JS-replacement language.",
+  "version": "0.0.1",
+  "publisher": "timothy-charles-holborn",
+  "license": "CC-BY-NC-ND-4.0",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Programming Languages"],
+  "activationEvents": ["onLanguage:vibe"],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [{
+      "id": "vibe",
+      "aliases": ["VibeScript", "vibe"],
+      "extensions": [".vibe"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "vibe",
+      "scopeName": "source.vibe",
+      "path": "./syntaxes/vibe.tmLanguage.json"
+    }],
+    "configuration": {
+      "title": "VibeScript",
+      "properties": {
+        "vibe.lsp.path": {
+          "type": "string",
+          "default": "vibe-lsp",
+          "description": "Path to the vibe-lsp executable."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "postinstall": "echo Install vscode-languageclient: npm install vscode-languageclient"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  }
+}

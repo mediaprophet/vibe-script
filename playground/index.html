@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibeScript 0.1 Playground</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --panel-bg: #070b13;
+      --border: #1f293d;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --cyan: #22d3ee;
+      --cyan-hover: #38bdf8;
+      --green: #4ade80;
+      --red: #f87171;
+      --amber: #fbbf24;
+      --btn-bg: #1e293b;
+      --btn-hover: #334155;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      padding: 12px 24px;
+      background: #0d1322;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand h1 {
+      font-size: 1.15rem;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      background: rgba(34, 211, 238, 0.15);
+      color: var(--cyan);
+      font-weight: 600;
+      border: 1px solid rgba(34, 211, 238, 0.3);
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    select, button {
+      background: var(--btn-bg);
+      color: var(--text);
+      border: 1px solid #334155;
+      padding: 7px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: all 0.15s ease-in-out;
+    }
+
+    select:hover, button:hover {
+      background: var(--btn-hover);
+      border-color: #475569;
+    }
+
+    button.primary {
+      background: #0284c7;
+      border-color: #0369a1;
+      color: #fff;
+    }
+
+    button.primary:hover {
+      background: #0369a1;
+    }
+
+    button.accent {
+      background: #059669;
+      border-color: #047857;
+      color: #fff;
+    }
+
+    button.accent:hover {
+      background: #047857;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      font-size: 0.85rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .editor-pane, .output-pane {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 0;
+      position: relative;
+    }
+
+    .pane-header {
+      padding: 8px 16px;
+      background: #0a0e1a;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .editor-pane {
+      border-right: 1px solid var(--border);
+    }
+
+    textarea, pre {
+      margin: 0;
+      padding: 16px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 13.5px;
+      line-height: 1.55;
+      border: 0;
+      flex: 1;
+      min-height: 0;
+      overflow: auto;
+      outline: none;
+    }
+
+    textarea {
+      background: var(--panel-bg);
+      color: #f1f5f9;
+      resize: none;
+      width: 100%;
+      tab-size: 4;
+    }
+
+    pre {
+      background: #0c101c;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .ok { color: var(--green); }
+    .err { color: var(--red); }
+    .note { color: var(--muted); }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      background: var(--muted);
+    }
+    .status-dot.green { background: var(--green); }
+    .status-dot.red { background: var(--red); }
+
+    footer {
+      padding: 6px 20px;
+      background: #070a12;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer code {
+      background: #1e293b;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--cyan);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>VibeScript</h1>
+      <span class="badge">vibe-0.1</span>
+    </div>
+
+    <div class="controls">
+      <label for="sample" style="font-size: 0.85rem; color: var(--muted);">Sample:</label>
+      <select id="sample"></select>
+      <button type="button" id="check">Diagnose (Check)</button>
+      <button type="button" id="eval" class="primary">Eval (Run)</button>
+      <button type="button" id="format" class="accent">Format</button>
+    </div>
+
+    <div class="nav-links">
+      <a href="/docs/showcase.html">Showcase</a>
+      <a href="/docs/spec.html">Spec</a>
+      <a href="/docs/dev-docs.html">API Scan</a>
+      <a href="/skills/SKILL.md">Agent Skill</a>
+      <a href="/docs/index.html">Docs</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="editor-pane">
+      <div class="pane-header">
+        <span>Source Code (.vibe)</span>
+        <span id="char-count" class="note">0 chars</span>
+      </div>
+      <textarea id="src" spellcheck="false"></textarea>
+    </div>
+
+    <div class="output-pane">
+      <div class="pane-header">
+        <div><span id="status-dot" class="status-dot"></span><span id="pane-title">Output</span></div>
+        <span id="response-time" class="note"></span>
+      </div>
+      <pre id="out" class="note">Select a sample or type code, then click Check, Eval, or Format.</pre>
+    </div>
+  </main>
+
+  <footer>
+    <span>LocalHost Runtime &middot; Desktop Honest Zero-Heap Engine &middot; Port 7420</span>
+    <span>Host CLI: <code>cargo run -p vibe-play</code></span>
+  </footer>
+
+  <script>
+    const samples = {
+      lamp: `using Animation, HID;\n\neffect cell t := time.now();\ncell pose := Animation.orbit_spin(1.0);\ncell glow := oklch(0.72, 0.12, 230.0);\n\npresent lamp {\n    color: glow\n    pose: pose\n}`,
+      orbit: `using Animation;\n\neffect fn run(t: f64) -> Record {\n    return Animation.orbit_spin(t);\n}\n\nfn main() {\n    return run(1.0);\n}`,
+      bind: `let mut volume = 0.2;\nlet mut slider = 0.2;\nbind slider <-> volume using Clamp[0.0, 1.0] resolve latest;\n\nfn main() {\n    return volume;\n}`,
+      tween: `fn main() {\n    return 0.0 ~ 10.0 over 400ms ease linear;\n}`,
+      clinic: `prefix snomed: <http://snomed.info/id/>;\nusing GraphDatabase;\n\npure fn term() {\n    return snomed:386661006;\n}`,
+      reactive_cells: `cell a := 10;\ncell b := a * 2 + 5;\ncell c := b + a;\n\nfn main() {\n    return c;\n}`,
+      destructure: `struct Point { x: f64, y: f64 }\n\nfn main() {\n    let p = Point { x: 3.0, y: 4.0 };\n    let Point { x, y } = p;\n    return x * x + y * y;\n}`,
+      vector_math: `using Math;\n\nfn main() {\n    let v = vec3(1.0, 2.0, 3.0);\n    return v;\n}`,
+      zh: `locale zh;\n\n函数 f() -> i64 {\n    返回 42;\n}\n\n函数 main() -> i64 {\n    返回 f();\n}`
+    };
+
+    const sel = document.getElementById("sample");
+    const src = document.getElementById("src");
+    const out = document.getElementById("out");
+    const charCount = document.getElementById("char-count");
+    const statusDot = document.getElementById("status-dot");
+    const resTime = document.getElementById("response-time");
+
+    Object.keys(samples).forEach((k) => {
+      const o = document.createElement("option");
+      o.value = k;
+      o.textContent = k;
+      sel.appendChild(o);
+    });
+
+    function updateCharCount() {
+      charCount.textContent = src.value.length + " chars";
+    }
+
+    function load() {
+      src.value = samples[sel.value];
+      updateCharCount();
+    }
+    sel.addEventListener("change", load);
+    src.addEventListener("input", updateCharCount);
+    load();
+
+    async function post(path, updateEditorOnOk = false) {
+      out.className = "note";
+      out.textContent = "Processing...";
+      statusDot.className = "status-dot";
+      const start = performance.now();
+
+      try {
+        const res = await fetch(path, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain; charset=utf-8" },
+          body: src.value
+        });
+        const elapsed = (performance.now() - start).toFixed(1);
+        resTime.textContent = elapsed + " ms";
+
+        const json = await res.json();
+        if (json.ok) {
+          out.className = "ok";
+          statusDot.className = "status-dot green";
+          if (updateEditorOnOk && json.formatted) {
+            src.value = json.formatted;
+            updateCharCount();
+            out.textContent = "✓ Formatted successfully\\n\\n" + JSON.stringify(json, null, 2);
+          } else {
+            out.textContent = JSON.stringify(json, null, 2);
+          }
+        } else {
+          out.className = "err";
+          statusDot.className = "status-dot red";
+          out.textContent = JSON.stringify(json, null, 2);
+        }
+      } catch (e) {
+        statusDot.className = "status-dot red";
+        out.className = "err";
+        out.textContent = "Cannot reach API (" + e + ").\\n\\nMake sure server is running:\\n  cargo run -p vibe-play\\nThen visit http://127.0.0.1:7420/";
+      }
+    }
+
+    document.getElementById("check").addEventListener("click", () => post("/api/diagnose"));
+    document.getElementById("eval").addEventListener("click", () => post("/api/eval"));
+    document.getElementById("format").addEventListener("click", () => post("/api/format", true));
+  </script>
+</body>
+</html>

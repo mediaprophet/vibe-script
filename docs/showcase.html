@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>VibeScript showcase</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; background: #0f172a; color: #e2e8f0; }
+    pre { background: #020617; padding: 1rem; overflow: auto; border-radius: 8px; }
+    a { color: #22d3ee; }
+  </style>
+</head>
+<body>
+  <p><a href="index.html">← tools</a></p>
+  <h1>Showcase</h1>
+  <p>Human dialect. Engine fixtures: QualiaDB <code>crates/vibe/fixtures/</code>.</p>
+  <h2>Lamp</h2>
+  <pre>using Animation, HID;
+
+effect cell t := time.now();
+cell pose := Animation.orbit_spin(1.0);
+present lamp { color: #ff8800 pose: pose }</pre>
+  <h2>Bind + tween</h2>
+  <pre>bind slider &lt;-&gt; volume using Clamp[0.0, 1.0] resolve latest;
+fn main() { return 0.0 ~ 1.0 over 400ms ease linear; }</pre>
+  <h2>Vocab</h2>
+  <pre>prefix snomed: &lt;http://snomed.info/id/&gt;;
+pure fn term() { return snomed:386661006; }</pre>
+</body>
+</html>

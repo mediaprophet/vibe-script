@@ -1,0 +1,12 @@
+[workspace]
+members = ["crates/vibe-lsp", "crates/vibe-play", "crates/vibe-docs"]
+resolver = "2"
+
+[workspace.package]
+version = "0.0.1"
+edition = "2021"
+license-file = "LICENSE"
+authors = ["Timothy Charles Holborn <timothy.holborn@gmail.com>"]
+repository = "https://github.com/mediaprophet/vibe-script"
+
+# Language engine is QualiaDB `crates/vibe`. Do not fork it here.

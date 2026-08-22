@@ -1,0 +1,18 @@
+name: ci
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Test (needs QualiaDB crates/vibe as sibling)
+        shell: pwsh
+        run: |
+          if (Test-Path "../qualia-27062026/crates/vibe") {
+            cargo test --workspace
+          } else {
+            Write-Host "Engine sibling missing; skip. Path-dep is C:\Projects\qualia-27062026\crates\vibe"
+          }
