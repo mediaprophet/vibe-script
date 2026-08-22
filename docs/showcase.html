@@ -1,29 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>VibeScript showcase</title>
-  <style>
-    body { font-family: ui-sans-serif, system-ui, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; background: #0f172a; color: #e2e8f0; }
-    pre { background: #020617; padding: 1rem; overflow: auto; border-radius: 8px; }
-    a { color: #22d3ee; }
-  </style>
-</head>
-<body>
-  <p><a href="index.html">← tools</a></p>
-  <h1>Showcase</h1>
-  <p>Human dialect. Engine fixtures: QualiaDB <code>crates/vibe/fixtures/</code>.</p>
-  <h2>Lamp</h2>
-  <pre>using Animation, HID;
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Small, focused VibeScript examples."><title>Examples · VibeScript</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="site.css"></head>
+<body><header class="site-header"><div class="header-inner"><a class="brand" href="index.html" aria-label="VibeScript home"><span class="brand-mark">V</span><span>VibeScript <small>0.1</small></span></a><nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Playground</a><a href="atlas.html">Capability atlas</a><a href="showcase.html" aria-current="page">Examples</a><a href="spec.html">Language guide</a><a href="dev-docs.html">Engine API</a><a class="github" href="https://github.com/mediaprophet/vibe-script" target="_blank" rel="noopener">GitHub ↗</a></nav></div></header>
+<main class="page"><section class="hero"><p class="eyebrow">Examples</p><h1>Small programs, <em>clear contracts.</em></h1><p class="lede">The syntax earns its space by describing what changes, what a program needs, and what the host should present. Start here, then paste a fixture into the playground.</p><div class="hero-actions"><a class="button button--primary" href="index.html#playground">Try these in the playground</a><a class="button" href="spec.html">Read the language guide</a></div></section>
+  <section class="section" aria-labelledby="motion-title"><div class="section-heading"><div><p class="eyebrow">01 / spatial</p><h2 id="motion-title">Describe movement as a value.</h2></div><p class="section-intro">Capability imports make the host contract explicit. A pure function can calculate a pose without performing effects.</p></div><div class="split"><pre class="code-block"><span class="keyword">using</span> Animation;
 
-effect cell t := time.now();
-cell pose := Animation.orbit_spin(1.0);
-present lamp { color: #ff8800 pose: pose }</pre>
-  <h2>Bind + tween</h2>
-  <pre>bind slider &lt;-&gt; volume using Clamp[0.0, 1.0] resolve latest;
-fn main() { return 0.0 ~ 1.0 over 400ms ease linear; }</pre>
-  <h2>Vocab</h2>
-  <pre>prefix snomed: &lt;http://snomed.info/id/&gt;;
-pure fn term() { return snomed:386661006; }</pre>
-</body>
-</html>
+<span class="keyword">pure fn</span> <span class="fn">orbit</span>(t: f64) {
+  <span class="keyword">return</span> Animation.orbit_spin(t);
+}
+
+<span class="keyword">effect fn</span> <span class="fn">main</span>() {
+  <span class="keyword">return</span> orbit(<span class="number">1.0</span>);
+}</pre><div class="callout"><strong>Why this shape?</strong><p><code>using Animation;</code> declares that this source relies on the animation family. The evaluator can reject unknown family methods rather than treating a typo as an untrusted dynamic call.</p></div></div></section>
+  <section class="section" aria-labelledby="reactive-title"><div class="section-heading"><div><p class="eyebrow">02 / reactive</p><h2 id="reactive-title">Let relationships do the updating.</h2></div><p class="section-intro">Cells give a readable home to derived values—the relationship is evident at the point of declaration.</p></div><div class="split"><pre class="code-block"><span class="keyword">cell</span> subtotal := <span class="number">42</span>;
+<span class="keyword">cell</span> tax := subtotal * <span class="number">0.10</span>;
+<span class="keyword">cell</span> total := subtotal + tax;
+
+<span class="keyword">fn</span> <span class="fn">main</span>() {
+  <span class="keyword">return</span> { total: total };
+}</pre><div class="callout"><strong>A useful mental model</strong><p>Cells describe a graph of values. They are not a replacement for every imperative action; use functions and effect boundaries when the program must perform work.</p></div></div></section>
+  <section class="section" aria-labelledby="time-title"><div class="section-heading"><div><p class="eyebrow">03 / time</p><h2 id="time-title">Treat interpolation as language-level intent.</h2></div><p class="section-intro">The tween expression keeps the range, duration, and easing close together instead of scattering timing code through an application.</p></div><div class="split"><pre class="code-block"><span class="keyword">fn</span> <span class="fn">main</span>() {
+  <span class="keyword">let</span> opacity = <span class="number">0.0</span> ~ <span class="number">1.0</span>
+    over <span class="number">400ms</span> ease cubic_out;
+
+  <span class="keyword">return</span> { opacity: opacity };
+}</pre><div class="callout"><strong>Host-facing by design</strong><p>Vibe provides values and semantics. A host such as a canvas or UI runtime decides how a calculated value becomes a rendered or physical change.</p></div></div></section>
+  <section class="section" aria-labelledby="vocab-title"><div class="section-heading"><div><p class="eyebrow">04 / vocabulary</p><h2 id="vocab-title">Keep domain terms canonical.</h2></div><p class="section-intro">Prefixes make long IRIs legible while preserving their identity for graph, query, and provenance-oriented systems.</p></div><div class="split"><pre class="code-block"><span class="keyword">prefix</span> snomed: &lt;http://snomed.info/id/&gt;;
+
+<span class="keyword">pure fn</span> <span class="fn">term</span>() {
+  <span class="keyword">return</span> snomed:386661006;
+}</pre><div class="callout"><strong>No rename layer</strong><p>The program names the canonical identifier. Vocabulary support is bounded around referenced terms; it does not imply embedding an entire external ontology in the engine.</p></div></div></section>
+  <section class="section" aria-labelledby="fixture-gallery">
+    <div class="section-heading"><div><p class="eyebrow">Fixture gallery</p><h2 id="fixture-gallery">The language reaches beyond the usual demo domains.</h2></div><p class="section-intro">These compact extracts mirror shipped engine fixture families: scientific computation, policy, graphics hosts, and localized authoring.</p></div>
+    <div class="card-grid">
+      <article class="info-card"><h3>Physical quantities</h3><pre class="code-block">pure fn delay() {
+  return 500ms + 20ms;
+}</pre><p>Units are values with checks—not a convention left to comments.</p></article>
+      <article class="info-card"><h3>Cosmic transforms</h3><pre class="code-block">using Cosmic;
+return Cosmic.geodetic_distance({ lat1_deg: a, lon1_deg: b, lat2_deg: c, lon2_deg: d });</pre><p>Scientific and coordinate-system work lives on the same host surface.</p></article>
+      <article class="info-card"><h3>Consent workflows</h3><pre class="code-block">requires [ capability("graph.write") ];
+graph.stage(claim);
+aura.validate(subject, Shape)?;
+graph.commit()?;</pre><p>Capability requirements and validation remain visible in the program.</p></article>
+      <article class="info-card"><h3>Render host</h3><pre class="code-block">using Render;
+Render.gpu_set_camera({ handle, yaw, pitch, zoom });</pre><p>Hosts provide capability families; source names the dependency.</p></article>
+      <article class="info-card"><h3>Modal terms</h3><pre class="code-block">using DeonticLogic;
+return obligate { "did:q42:agent_must_sign" };</pre><p>Policy expressions are terms with explicit evaluation boundaries.</p></article>
+      <article class="info-card"><h3>Localized syntax</h3><pre class="code-block">locale zh;
+函数 平方(n: i64) -> i64 { 返回 n * n; }</pre><p>Locale views map to the same underlying language structure.</p></article>
+    </div><div class="hero-actions" style="margin-top:22px"><a class="button button--primary" href="atlas.html">See the interactive capability atlas</a><a class="button" href="dev-docs.html">Search the full engine API</a></div>
+  </section>
+</main><footer class="site-footer">VibeScript 0.1 · © 2026 Timothy Charles Holborn · <a href="https://github.com/mediaprophet/vibe-script">Source and issue tracker</a></footer></body></html>
