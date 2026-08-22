@@ -120,6 +120,7 @@ fn severity_for_code(code: &vibe::DiagCode) -> u8 {
 }
 
 /// Get diagnostics for a VibeScript source string (up to eight, matching diagnose).
+#[allow(dead_code)]
 pub fn get_diagnostics(src: &str) -> Vec<Value> {
     get_diagnostics_for_target(src, TargetProfile::NativeHybrid)
 }
