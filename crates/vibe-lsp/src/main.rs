@@ -6,6 +6,7 @@
 
 mod catalog_intel;
 mod server;
+mod target_capabilities;
 
 use server::LspServer;
 use std::io;

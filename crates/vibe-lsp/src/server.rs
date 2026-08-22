@@ -1,9 +1,10 @@
 //! LSP server implementation — JSON-RPC over stdin/stdout (P1.3).
 
+use crate::catalog_intel::{completions_at, hover_at, workspace_edit_for_fix};
+use crate::target_capabilities::{diagnostics as target_diagnostics, TargetProfile};
 use serde_json::{json, Value};
 use std::collections::HashMap;
 use std::io::{self, BufRead, Write};
-use crate::catalog_intel::{completions_at, hover_at, workspace_edit_for_fix};
 use vibe::projectional::{project_program, ProjectOptions};
 use vibe::{diagnose, parse_program, Diagnostic};
 
@@ -120,21 +121,30 @@ fn severity_for_code(code: &vibe::DiagCode) -> u8 {
 
 /// Get diagnostics for a VibeScript source string (up to eight, matching diagnose).
 pub fn get_diagnostics(src: &str) -> Vec<Value> {
+    get_diagnostics_for_target(src, TargetProfile::NativeHybrid)
+}
+
+/// Combine language diagnostics with the selected execution-target contract.
+pub fn get_diagnostics_for_target(src: &str, target: TargetProfile) -> Vec<Value> {
     let report = diagnose(src);
+    let mut diagnostics = Vec::new();
     if report.valid {
-        return Vec::new();
-    }
-    if report.errors.is_empty() {
+        diagnostics.extend(target_diagnostics(src, target));
+        return diagnostics;
+    } else if report.errors.is_empty() {
         if let Some(err) = report.error {
-            return vec![diagnostic_to_lsp_with_src(&err, src)];
+            diagnostics.push(diagnostic_to_lsp_with_src(&err, src));
         }
-        return Vec::new();
+    } else {
+        diagnostics.extend(
+            report
+                .errors
+                .iter()
+                .map(|d| diagnostic_to_lsp_with_src(d, src)),
+        );
     }
-    report
-        .errors
-        .iter()
-        .map(|d| diagnostic_to_lsp_with_src(d, src))
-        .collect()
+    diagnostics.extend(target_diagnostics(src, target));
+    diagnostics
 }
 
 /// The LSP server state.
@@ -142,6 +152,7 @@ pub struct LspServer<R: BufRead, W: Write> {
     reader: R,
     writer: W,
     documents: HashMap<String, String>,
+    target: TargetProfile,
     shutdown: bool,
 }
 
@@ -151,6 +162,7 @@ impl<R: BufRead, W: Write> LspServer<R, W> {
             reader,
             writer,
             documents: HashMap::new(),
+            target: TargetProfile::default(),
             shutdown: false,
         }
     }
@@ -195,6 +207,14 @@ impl<R: BufRead, W: Write> LspServer<R, W> {
 
         match method {
             "initialize" => {
+                self.target = TargetProfile::parse(
+                    msg.pointer("/params/initializationOptions/vibeTarget")
+                        .and_then(|value| value.as_str())
+                        .or_else(|| {
+                            msg.pointer("/params/initializationOptions/vibe/target")
+                                .and_then(|value| value.as_str())
+                        }),
+                );
                 let response = json!({
                     "jsonrpc": "2.0",
                     "id": id,
@@ -219,6 +239,20 @@ impl<R: BufRead, W: Write> LspServer<R, W> {
             }
             "initialized" => {
                 // No response needed for notification.
+            }
+            "workspace/didChangeConfiguration" => {
+                self.target = TargetProfile::parse(
+                    msg.pointer("/params/settings/vibe/target")
+                        .and_then(|value| value.as_str())
+                        .or_else(|| {
+                            msg.pointer("/params/settings/vibeTarget")
+                                .and_then(|value| value.as_str())
+                        }),
+                );
+                let uris: Vec<String> = self.documents.keys().cloned().collect();
+                for uri in uris {
+                    self.publish_diagnostics(&uri)?;
+                }
             }
             "shutdown" => {
                 self.shutdown = true;
@@ -287,11 +321,19 @@ impl<R: BufRead, W: Write> LspServer<R, W> {
             "textDocument/codeAction" => {
                 let mut actions = Vec::new();
                 if let Some(params) = msg.get("params") {
-                    let uri = params.pointer("/textDocument/uri").and_then(|v| v.as_str()).unwrap_or("");
+                    let uri = params
+                        .pointer("/textDocument/uri")
+                        .and_then(|v| v.as_str())
+                        .unwrap_or("");
                     let src = self.documents.get(uri).cloned().unwrap_or_default();
-                    if let Some(diags) = params.pointer("/context/diagnostics").and_then(|v| v.as_array()) {
+                    if let Some(diags) = params
+                        .pointer("/context/diagnostics")
+                        .and_then(|v| v.as_array())
+                    {
                         for d in diags {
-                            if let Some(fix) = d.pointer("/data/suggested_fix").and_then(|v| v.as_str()) {
+                            if let Some(fix) =
+                                d.pointer("/data/suggested_fix").and_then(|v| v.as_str())
+                            {
                                 let mut action = json!({
                                     "title": format!("Apply fix: {fix}"),
                                     "kind": "quickfix",
@@ -316,14 +358,18 @@ impl<R: BufRead, W: Write> LspServer<R, W> {
             "textDocument/formatting" => {
                 let mut edits = Vec::new();
                 if let Some(params) = msg.get("params") {
-                    if let Some(uri) = params.pointer("/textDocument/uri").and_then(|v| v.as_str()) {
+                    if let Some(uri) = params.pointer("/textDocument/uri").and_then(|v| v.as_str())
+                    {
                         if let Some(text) = self.documents.get(uri) {
                             if let Ok(prog) = parse_program(text) {
-                                let formatted = project_program(&prog, &ProjectOptions {
-                                    indent: "  ".to_string(),
-                                    blank_lines_between_decls: 1,
-                                    max_line_width: 80,
-                                });
+                                let formatted = project_program(
+                                    &prog,
+                                    &ProjectOptions {
+                                        indent: "  ".to_string(),
+                                        blank_lines_between_decls: 1,
+                                        max_line_width: 80,
+                                    },
+                                );
                                 let (end_line, end_char) = offset_to_position(text, text.len());
                                 edits.push(json!({
                                     "range": {
@@ -380,7 +426,7 @@ impl<R: BufRead, W: Write> LspServer<R, W> {
 
     fn publish_diagnostics(&mut self, uri: &str) -> io::Result<()> {
         let text = self.documents.get(uri).cloned().unwrap_or_default();
-        let diags = get_diagnostics(&text);
+        let diags = get_diagnostics_for_target(&text, self.target);
         self.send_notification(
             "textDocument/publishDiagnostics",
             json!({
@@ -455,6 +501,29 @@ mod tests {
     }
 
     #[test]
+    fn wasm_target_reports_native_bridge_requirement() {
+        let input = format!(
+            "{}{}",
+            encode_message(
+                r#"{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"initializationOptions":{"vibeTarget":"wasm-standalone"}}}"#
+            ),
+            encode_message(
+                r#"{"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"uri":"file:///test.vibe","languageId":"vibe","version":1,"text":"using GraphDatabase;\nGraphDatabase.sparql(query);"}}}"#
+            ),
+        );
+        let mut output = Vec::new();
+        {
+            let reader = BufReader::new(Cursor::new(input.as_bytes()));
+            let writer = Cursor::new(&mut output);
+            let mut server = LspServer::new(reader, writer);
+            server.run().unwrap();
+        }
+        let output = String::from_utf8(output).unwrap();
+        assert!(output.contains("QDB0402"));
+        assert!(output.contains("native-bridge"));
+    }
+
+    #[test]
     fn did_open_publishes_diagnostics() {
         let bad_src = "fn main() { let x = ; }";
         let body = serde_json::to_string(&json!({
@@ -485,7 +554,9 @@ mod tests {
 
     #[test]
     fn completion_response() {
-        let input = encode_message(r#"{"jsonrpc":"2.0","id":2,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///test.vibe"},"position":{"line":0,"character":0}}}"#);
+        let input = encode_message(
+            r#"{"jsonrpc":"2.0","id":2,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///test.vibe"},"position":{"line":0,"character":0}}}"#,
+        );
         let mut output = Vec::new();
         {
             let reader = BufReader::new(Cursor::new(input.as_bytes()));
@@ -515,7 +586,9 @@ mod tests {
             }
         }))
         .unwrap();
-        let format_req = encode_message(r#"{"jsonrpc":"2.0","id":3,"method":"textDocument/formatting","params":{"textDocument":{"uri":"file:///test.vibe"},"options":{"tabSize":2,"insertSpaces":true}}}"#);
+        let format_req = encode_message(
+            r#"{"jsonrpc":"2.0","id":3,"method":"textDocument/formatting","params":{"textDocument":{"uri":"file:///test.vibe"},"options":{"tabSize":2,"insertSpaces":true}}}"#,
+        );
         let input = format!("{}{}", encode_message(&body), format_req);
         let mut output = Vec::new();
         {
