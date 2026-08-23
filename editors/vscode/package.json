@@ -7,7 +7,6 @@
   "license": "CC-BY-NC-ND-4.0",
   "engines": { "vscode": "^1.85.0" },
   "categories": ["Programming Languages"],
-  "activationEvents": ["onLanguage:vibe"],
   "main": "./extension.js",
   "contributes": {
     "languages": [{

@@ -29,6 +29,22 @@
 <span class="keyword">pure fn</span> <span class="fn">term</span>() {
   <span class="keyword">return</span> snomed:386661006;
 }</pre><div class="callout"><strong>No rename layer</strong><p>The program names the canonical identifier. Vocabulary support is bounded around referenced terms; it does not imply embedding an entire external ontology in the engine.</p></div></div></section>
+  <section class="section" aria-labelledby="ui-title"><div class="section-heading"><div><p class="eyebrow">05 / UI &amp; presentation</p><h2 id="ui-title">Zero-recompile hypermedia furniture.</h2></div><p class="section-intro">Describe dock panels, sub-trays, metrics, and actions directly in VibeScript. The host reconciles DOM elements in real time with no host recompilation loops.</p></div><div class="split"><pre class="code-block"><span class="keyword">let</span> dock_ui = {
+  type: <span class="string">"dock_panel"</span>,
+  title: <span class="string">"Aura Tray"</span>,
+  badge: <span class="string">"4/4 Valid"</span>,
+  collapsed: <span class="keyword">false</span>,
+  children: [
+    {
+      type: <span class="string">"subtray"</span>,
+      title: <span class="string">"SHACL Shapes"</span>,
+      children: [
+        { type: <span class="string">"shacl_shape"</span>, shape: <span class="string">"soc:PeerShape"</span>, conformant: <span class="keyword">true</span>, nodes: <span class="number">42</span> }
+      ]
+    }
+  ]
+};
+<span class="keyword">return</span> dock_ui;</pre><div class="callout"><strong>Live Hot-Reloading</strong><p>VibeScript UI declarations evaluate inside the in-memory Rust/WASM AST engine. Editing source immediately updates the host interface live without rebuild cycles.</p></div></div></section>
   <section class="section" aria-labelledby="fixture-gallery">
     <div class="section-heading"><div><p class="eyebrow">Fixture gallery</p><h2 id="fixture-gallery">The language reaches beyond the usual demo domains.</h2></div><p class="section-intro">These compact extracts mirror shipped engine fixture families: scientific computation, policy, graphics hosts, and localized authoring.</p></div>
     <div class="card-grid">
