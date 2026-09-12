@@ -1,10 +1,350 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="How VibeScript runs in the browser and connects to resource hosts."><title>Runtime guide · VibeScript</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="site.css"></head>
-<body><header class="site-header"><div class="header-inner"><a class="brand" href="index.html" aria-label="VibeScript home"><span class="brand-mark">V</span><span>VibeScript <small>0.1</small></span></a><nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Playground</a><a href="atlas.html">Capability atlas</a><a href="showcase.html">Examples</a><a href="reality.html" aria-current="page">Runtime guide</a><a href="spec.html">Language guide</a><a href="honesty.html">Honesty</a><a href="dev-docs.html">Engine API</a><a class="github" href="https://github.com/mediaprophet/vibe-script" target="_blank" rel="noopener">GitHub ↗</a></nav></div></header>
-<main class="page"><section class="hero reality-hero"><p class="eyebrow">Execution profiles</p><h1>One language.<br><em>More than one runtime.</em></h1><p class="lede">VibeScript can run directly in a browser, with deterministic local kernels for selected capabilities. A resource host extends the same source into live graph, device, security, timing, and compute environments when an application supplies those resources.</p><div class="hero-actions"><a class="button button--primary" href="atlas.html#live-lab">Check shipped fixtures</a><a class="button" href="index.html#playground">Open the browser workbench</a></div></section>
-  <section class="section"><div class="section-heading"><div><p class="eyebrow">Choose the right profile</p><h2>Every result has a clear execution home.</h2></div><p class="section-intro">The browser build is a useful Vibe runtime in its own right. Resource hosts add the parts that should belong to an application, machine, or approved environment.</p></div><div class="reality-grid"><article class="reality-card"><span class="status-label status-now">BROWSER ENGINE</span><h3>Author, check, and evaluate</h3><p>WebAssembly provides parsing, checking, diagnostics, source projection, structural edits, reactive evaluation, budgets, quantities, and bytecode operations inside the page.</p></article><article class="reality-card"><span class="status-label status-now">LOCAL KERNELS</span><h3>Deterministic, in-process work</h3><p>Animation presets, spring evaluation, and selected logic kernels run locally. The browser runner also carries in-memory graph and pulse state for compact, repeatable experiments.</p></article><article class="reality-card"><span class="status-label status-host">RESOURCE HOST</span><h3>Attach a live environment</h3><p>A host implementation can connect the same language to real graph data, clocks, devices, credentials, compute, receipts, and application-specific capability handlers.</p></article></div></section>
-  <section class="section"><div class="section-heading"><div><p class="eyebrow">The path from source to result</p><h2>Vibe keeps language semantics and resource access composable.</h2></div><p class="section-intro">The engine owns language work. The host owns the resources it chooses to make available.</p></div><div class="boundary-flow"><div class="boundary-node active"><strong>Author</strong>Vibe source</div><div class="boundary-arrow">→</div><div class="boundary-node active"><strong>Engine</strong>parse · check · evaluate</div><div class="boundary-arrow">→</div><div class="boundary-node active"><strong>Capability</strong>named operation</div><div class="boundary-arrow">→</div><div class="boundary-node pending"><strong>Host</strong>local kernel or live resource</div></div></section>
-  <section class="section"><div class="section-heading"><div><p class="eyebrow">Browser LocalHost</p><h2>What the GitHub Pages runner performs locally.</h2></div><p class="section-intro">The public workbench uses the Vibe WebAssembly package with its built-in <code>LocalHost</code>. These are the concrete behaviours of that profile.</p></div><table class="reality-table"><thead><tr><th>Surface</th><th>Browser behaviour</th><th>Use it for</th></tr></thead><tbody><tr><td>Language engine</td><td>Parsing, checking, diagnostics, projections, source edits, reactive cells, and the available bytecode operations execute in WebAssembly.</td><td>Writing, learning, fixture verification, and self-contained programs.</td></tr><tr><td>Animation</td><td>Preset evaluation, preset enumeration, and spring stepping are actual in-process numeric kernels.</td><td>Motion studies, parameter exploration, and deterministic samples.</td></tr><tr><td>Graph, pulse, and time</td><td>State is local to the runner: graph staging and commits are in memory, pulse topics are recorded in memory, and time is deterministic.</td><td>Language experiments and repeatable tests.</td></tr><tr><td>Catalog-shaped calls</td><td>Known capability names resolve in the local catalog. Where no local kernel exists, the runner returns a local descriptor rather than performing a live external operation.</td><td>Checking source structure and capability wiring.</td></tr><tr><td>HID-shaped calls</td><td>The local profile returns synthetic HID-shaped records; it does not open or control physical devices.</td><td>Program shape and interface development before a device host is attached.</td></tr><tr><td>Acceleration</td><td>The WebAssembly profile runs scalar CPU work, with a 64-cell ready batch.</td><td>Portable browser execution.</td></tr></tbody></table></section>
-  <section class="section"><div class="section-heading"><div><p class="eyebrow">When an application attaches a host</p><h2>Live resources stay on the same language contract.</h2></div><p class="section-intro">A native or application host implements only the bindings it can responsibly provide. A missing bind is <strong>held / not yet</strong> — never unavailable theatre or a silent substitute.</p></div><table class="reality-table"><thead><tr><th>Host attachment</th><th>Examples from the host contract</th><th>Browser LocalHost profile</th></tr></thead><tbody><tr><td>Live graph and application state</td><td>Graph queries, transactions, snapshots, validation, and application data.</td><td>Uses its local in-memory model.</td></tr><tr><td>Time, fields, and laws</td><td>Wall or receipt clocks, proper time, field sampling, law application, conservation, and causal relations.</td><td>Uses deterministic local time; advanced bindings are not attached.</td></tr><tr><td>Devices and human output</td><td>Inbound HID events, device waits, haptic/audio/visual cues, and accessibility outputs.</td><td>Uses synthetic records; no physical device loop or outbound cue channel.</td></tr><tr><td>Secure operations</td><td>Hashing, key generation, signing, AEAD, and zero-knowledge proof services.</td><td>Requires a host-provided security implementation.</td></tr><tr><td>Workflow execution</td><td>DAG validation and execution, deontic checks, and isolated snapshots.</td><td>Requires a host-provided runtime implementation.</td></tr><tr><td>Acceleration</td><td>Native hosts can advertise the measured tier for a pass; the Vibe crate detects scalar or AVX-512 availability and uses a 512-cell native batch.</td><td>Scalar CPU / 64-cell browser batch.</td></tr></tbody></table><p class="reality-source">Source basis: QualiaDB tree 0.0.38 <code>crates/vibe</code> / <code>vibe-wasm</code> / <code>LocalHost</code>. This repo’s Pages snapshot may lag live ALL_BOUND. CSCP-08/12 stay parked. No invented wss:// or MASQUE tick.</p></section>
-  <section class="section split"><div><p class="eyebrow">Try it in the page</p><h2>See the browser engine doing the work it owns.</h2><p class="section-intro">The capability atlas checks shipped fixture source with Vibe WebAssembly. The workbench runs local programs and bytecode operations in the same browser profile described above.</p><div class="hero-actions"><a class="button button--primary" href="atlas.html#live-lab">Verify a fixture</a><a class="button" href="index.html#playground">Run a local program</a></div></div><div class="callout"><strong>Reading browser results</strong><p>Use a browser result as evidence for the Vibe engine and its local kernels. When a program needs a live resource, select or build a host that provides that resource; the source language and its capability names remain the same.</p></div></section>
-</main><footer class="site-footer">VibeScript 0.1 · © 2026 Timothy Charles Holborn · <a href="https://github.com/mediaprophet/vibe-script">Source and issue tracker</a></footer></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A human-readable map of VibeScript reality: runtimes, logic modalities, and Host families from QualiaDB crates/vibe, with honest held / not yet.">
+  <title>Reality · VibeScript</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body class="reality-page">
+  <div class="reality-mesh" aria-hidden="true"></div>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html" aria-label="VibeScript home"><span class="brand-mark">V</span><span>VibeScript <small>0.1</small></span></a>
+    <nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Playground</a><a href="atlas.html">Capability atlas</a><a href="showcase.html">Examples</a><a href="reality.html" aria-current="page">Reality</a><a href="spec.html">Language guide</a><a href="honesty.html">Honesty</a><a href="dev-docs.html">Engine API</a><a class="github" href="https://github.com/mediaprophet/vibe-script" target="_blank" rel="noopener">GitHub ↗</a></nav>
+  </div></header>
+
+  <main class="page">
+    <section class="hero reality-hero">
+      <p class="eyebrow">A map, not a demo</p>
+      <h1>VibeScript reality<br><em>from the logic stack up.</em></h1>
+      <p class="lede">This page is a human-readable map of the language as it lives in QualiaDB <code>crates/vibe</code>. It is not a thin Animation / LinearAlgebra workbench. Grammar is closed. The Host catalog grows. A chatbot is a tool — never the other human.</p>
+      <div class="sot-row" aria-label="Source of truth">
+        <span class="sot-chip">ecosystem <b>vibe-script 0.0.1</b></span>
+        <span class="sot-chip">engine SoT <b>QualiaDB v0.0.38</b></span>
+        <span class="sot-chip">tree <b>cdd7ae728 · crates/vibe</b></span>
+        <span class="sot-chip">Pages WASM <b>vibe-wasm 0.0.34</b></span>
+      </div>
+      <div class="hero-actions" style="margin-top:22px">
+        <a class="button button--primary" href="#layers">Open the layer map</a>
+        <a class="button" href="#honesty">Read held / not yet</a>
+        <a class="button" href="https://github.com/mediaprophet/qualiaDB/tree/v0.0.38/crates/vibe" target="_blank" rel="noopener">Engine source ↗</a>
+      </div>
+    </section>
+
+    <section class="soft-rise" data-soft-rise="timothy" aria-labelledby="continuity-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Continuity care</p>
+          <h2 id="continuity-title">Handle is not the human.</h2>
+        </div>
+        <p class="section-intro">Chrome says <strong>human</strong>. Law keeps <strong>person</strong>. A DID, DNS name, or session id is a handle. Revoking a handle is not who-erase.</p>
+      </div>
+      <div class="continuity-strip">
+        <article class="continuity-item">
+          <p class="kicker">human</p>
+          <h3>NaturalAgent</h3>
+          <p>The living nucleus. Directory lists humans first. Qualia is human-centric — a structural fact, not a methodology slogan.</p>
+        </article>
+        <article class="continuity-item">
+          <p class="kicker">person</p>
+          <h3>Law keeps the word</h3>
+          <p>Jural / legal-person who-kind stays in law text. Do not collapse person into a handle, a bot, or <code>owl:Thing</code>.</p>
+        </article>
+        <article class="continuity-item">
+          <p class="kicker">handle</p>
+          <h3>Locator, not who</h3>
+          <p>DID, DNS, session, coord. Handle ≠ human. A lost domain must not erase a human from the fabric.</p>
+        </article>
+        <article class="continuity-item">
+          <p class="kicker">tool</p>
+          <h3>Chatbot last</h3>
+          <p>Agent, model, chatbot — a tool. Never the other party. Organizations sit after humans, before tools.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section soft-rise" data-soft-rise="legend" aria-labelledby="read-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">How to read this map</p>
+          <h2 id="read-title">No false-green.</h2>
+        </div>
+        <p class="section-intro">Diagnose voice is <strong>held / not yet</strong> — never unavailable or broken. Live kernels must not be painted as waiting. Catalog-known is not the same as evaluated in this browser.</p>
+      </div>
+      <div class="legend-row" role="list">
+        <span class="legend-chip" role="listitem"><i class="legend-dot live" aria-hidden="true"></i><b>live kernel</b> this surface actually computes</span>
+        <span class="legend-chip" role="listitem"><i class="legend-dot catalog" aria-hidden="true"></i><b>catalog live</b> on QualiaDB ALL_BOUND — count the tip</span>
+        <span class="legend-chip" role="listitem"><i class="legend-dot local" aria-hidden="true"></i><b>local descriptor</b> LocalHost acknowledges; does not run the Quin / N3 / SHACL VM</span>
+        <span class="legend-chip" role="listitem"><i class="legend-dot parked" aria-hidden="true"></i><b>held / not yet · parked</b> Pages snapshot, sanctuary, or CSCP</span>
+      </div>
+    </section>
+
+    <section class="section soft-rise" id="layers" data-soft-rise="davinci" data-honey aria-labelledby="layers-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Interactive layer explainer</p>
+          <h2 id="layers-title">Tap a cell. Plain first, then the lease.</h2>
+        </div>
+        <p class="section-intro">Honeycomb for humans who do not want a catalog dump, and for humans who do. Keyboard works. Reduced motion still arrives.</p>
+      </div>
+      <div class="layer-tabs" role="tablist" aria-label="Layer family">
+        <button class="layer-tab" type="button" role="tab" aria-selected="true" data-layer-tab="runtimes">Runtimes</button>
+        <button class="layer-tab" type="button" role="tab" aria-selected="false" data-layer-tab="logic">Logic stack</button>
+        <button class="layer-tab" type="button" role="tab" aria-selected="false" data-layer-tab="hosts">Host clusters</button>
+      </div>
+
+      <div class="honey-stage">
+        <div data-layer-panel="runtimes">
+          <p class="eyebrow" style="text-align:center">Runtime honeycomb</p>
+          <div class="honey-board" role="group" aria-label="Runtime layers">
+            <div class="hex-row">
+              <button class="hex" type="button" id="rt-author" data-tone="live" data-title="Author" data-status="live kernel" data-plain="A human writes sayables. using Animation, LinearAlgebra; then Family.method. Capability.method is secondary." data-tech="Workshop dialect on vibe-0.1. Closed grammar. Diagnose before eval. Do not teach capability.invoke as the human dialect."><small>01</small>Author</button>
+              <button class="hex" type="button" id="rt-engine" data-tone="live" data-title="Engine" data-status="live kernel" data-plain="The language engine parses, checks, diagnoses, and evaluates source. It does not invent Host ids." data-tech="QualiaDB crates/vibe — parse, check, diagnose, eval, projection. Pages ships vibe-wasm 0.0.34; live catalog truth is v0.0.38 / cdd7ae728."><small>02</small>Engine</button>
+              <button class="hex" type="button" id="rt-catalog" data-tone="catalog" data-title="Catalog" data-status="catalog live" data-plain="Named Family.method leases. Unknown names fail closed. The catalog grows; vibe-host-0.1 is an outcome, not a freeze." data-tech="ALL_INVOKE_IDS in crates/vibe/src/catalog/ids.rs · ALL_BOUND in poet_host/invoke/ids.rs. Wave 40 / 7928e3d counted 1121 — count the tip."><small>03</small>Catalog</button>
+            </div>
+            <div class="hex-row">
+              <button class="hex" type="button" id="rt-localhost" data-tone="local" data-title="LocalHost" data-status="local descriptor" data-plain="The browser runner has real numeric kernels for some Animation work, and honest local records for much else." data-tech="invoke_local: Animation presets/spring are kernels; HID is synthetic; GraphDatabase.sparql returns []. Deontic/Epistemic/Paraconsistent/Temporal return honesty:&quot;local&quot; — not the Quin VM."><small>04</small>LocalHost</button>
+              <button class="hex" type="button" id="rt-pages" data-tone="parked" data-title="Pages WASM" data-status="held / not yet" data-plain="This GitHub Pages snapshot is older than the engine tree. A miss here is held / not yet — not a smashed product." data-tech="Bundled vibe-wasm 0.0.34. LinearAlgebra.dot may E100 until JOBS E10 rebuilds from QualiaDB vibe-wasm. Do not invent the snapshot’s guess."><small>05</small>Pages WASM</button>
+              <button class="hex" type="button" id="rt-native" data-tone="catalog" data-title="Native host" data-status="catalog live" data-plain="A native or Poet host may attach sanctuary volumes, clocks, devices, and compute the LocalHost only describes." data-tech="GraphDatabase.volume_open / volume_commit: native sanctuary when permitted; wasm E300 — not a saved .q42. GPU / HWND fail closed until a real host advertises them."><small>06</small>Native host</button>
+              <button class="hex" type="button" id="rt-poet" data-tone="catalog" data-title="Poet" data-status="catalog live" data-plain="Poet is a host — the habitat — not the language. Ask · Keep · Talk are teachable loops, not this site’s top nav." data-tech="Poet.* catalog ids exist (manifold_create, container_place, …). This Pages site is not Poet furniture. Hot-edit: a .vibe change must not force a host rebuild."><small>07</small>Poet</button>
+            </div>
+          </div>
+        </div>
+
+        <div data-layer-panel="logic" hidden>
+          <p class="eyebrow" style="text-align:center">Logic honeycomb</p>
+          <div class="honey-board" role="group" aria-label="Logic modalities">
+            <div class="hex-row">
+              <button class="hex" type="button" id="lg-n3" data-tone="catalog" data-title="N3 Logic" data-status="catalog live" data-plain="If-then arrows for graph knowledge. Notation3 is how the engine writes rules humans can still read." data-tech="N3Logic.evaluate on ALL_INVOKE_IDS. Qualia observatory: N3 Defeasible Chain (=> ~> ^>). Pages WASM: held / not yet. LocalHost: local descriptor, not the forward-chainer."><small>N3</small>Notation3</button>
+              <button class="hex" type="button" id="lg-shacl" data-tone="catalog" data-title="SHACL" data-status="catalog live" data-plain="Shapes that say whether a graph is well-formed. A tray badge is not the same as a live validate." data-tech="SHACL.validate · SHACL.extensions. Qualia lists 90+ extensions. Natural persons are rdfs:Class + SHACL/ShEx — owl:Thing is forbidden for persons."><small>SHACL</small>Shapes</button>
+              <button class="hex" type="button" id="lg-deontic" data-tone="local" data-title="Deontic" data-status="local descriptor" data-plain="Ought-language: must, may, must-not. A duty can expire or be defeated. Modal verbs stay terms unless the family is leased." data-tech="DeonticLogic.evaluate. SDL triad O/P/F (0x10–0x12), q42:unless defeaters. Never stamp &quot;Active&quot; in chrome. deontic_interrupt.rs: phase lease + prohibition hard-stop."><small>O/P/F</small>Deontic</button>
+            </div>
+            <div class="hex-row">
+              <button class="hex" type="button" id="lg-epistemic" data-tone="local" data-title="Epistemic" data-status="local descriptor" data-plain="Who knows, who believes, what is common knowledge. Certainty is graded — it is not a green light." data-tech="EpistemicLogic.evaluate. Knows / Believes / CommonKnowledge (0x20–0x22). Mens rea composes epistemic × deontic. Pages snapshot: not yet."><small>K/B</small>Epistemic</button>
+              <button class="hex" type="button" id="lg-para" data-tone="local" data-title="Paraconsistent" data-status="local descriptor" data-plain="When two facts clash, isolate the clash instead of exploding the whole graph." data-tech="ParaconsistentLogic.route. LocalHost returns honesty:&quot;local&quot;. Qualia router splits consistent vs isolated quins."><small>⊥</small>Paraconsistent</button>
+              <button class="hex" type="button" id="lg-ltl" data-tone="local" data-title="Temporal LTL" data-status="local descriptor" data-plain="Always, eventually, until — time as a promise, not a slideshow." data-tech="TemporalAndDescriptionLogic.ltl.globally / finally / evaluate. Allen’s 7-relation algebra is a sibling temporal surface."><small>LTL</small>Temporal</button>
+              <button class="hex" type="button" id="lg-dl" data-tone="catalog" data-title="Description logic" data-status="catalog live" data-plain="Is this kind a kind of that kind? Subsumption, not a vibes guess." data-tech="TemporalAndDescriptionLogic.subsumption. LegalLogic / FormalLogic / AdvancedLogic.compute sit beside it on the catalog."><small>DL</small>Subsumption</button>
+            </div>
+            <div class="hex-row">
+              <button class="hex" type="button" id="lg-legal" data-tone="catalog" data-title="Legal &amp; jural" data-status="catalog live" data-plain="Rights travel with correlative duties. A claim with no duty-bearer is a visible gap — not a slogan." data-tech="LegalLogic.compute · GovernanceLogic.compute. Qualia Hohfeld square 0x30–0x37. Law keeps person. Handle revoke ≠ who-erase."><small>law</small>Jural</button>
+              <button class="hex" type="button" id="lg-asp" data-tone="catalog" data-title="Defeasible / ASP" data-status="catalog live" data-plain="Rules that can lose to better rules. Answer sets, not a single forced story." data-tech="SymbolicAndDefeasibleLogic.asp. Qualia: ASP + dialectical synthesis + linear consume-once. Not evaluated on Pages WASM."><small>ASP</small>Defeasible</button>
+              <button class="hex" type="button" id="lg-causal" data-tone="catalog" data-title="Causal &amp; fuzzy" data-status="catalog live" data-plain="What caused what, and how much is enough. Soft thresholds stay named." data-tech="CausalFuzzyAndControl.caused · t_norm. FuzzyQuery.* is a separate live family. No invented qualia.* IRIs."><small>cause</small>Causal</button>
+            </div>
+          </div>
+        </div>
+
+        <div data-layer-panel="hosts" hidden>
+          <p class="eyebrow" style="text-align:center">Host-cluster honeycomb</p>
+          <div class="honey-board" role="group" aria-label="Host family clusters">
+            <div class="hex-row">
+              <button class="hex" type="button" id="hc-graph" data-tone="local" data-title="Graph &amp; lexicon" data-status="local descriptor" data-plain="Query and commit live on a host that actually opens a volume. The browser keeps an in-memory sketch." data-tech="GraphDatabase.sparql / stats / lexicon_manifest / volume_open / volume_commit. GraphAuthoring.process. wasm volume is E300 — not a saved .q42."><small>graph</small>Graph DB</button>
+              <button class="hex" type="button" id="hc-la" data-tone="catalog" data-title="Linear algebra" data-status="catalog live" data-plain="Dot, gemm, norms — a first-class Host family for apps and the REPL. Grammar stays closed." data-tech="LinearAlgebra.dot · gemm · norm · … live on 0.0.38 ALL_BOUND (§11.5). Pages 0.0.34 may E100 (JOBS E10). wasm without wasm-scientific → E300."><small>§11.5</small>LinAlg</button>
+              <button class="hex" type="button" id="hc-anim" data-tone="live" data-title="Animation" data-status="live kernel" data-plain="Preset orbits and springs can run as real numbers in-process. That is one family — not the whole language." data-tech="Animation.evaluate_preset / spring_step / list_presets. orbit_spin aliases evaluate_preset. LocalHost computes samples."><small>motion</small>Animation</button>
+            </div>
+            <div class="hex-row">
+              <button class="hex" type="button" id="hc-render" data-tone="catalog" data-title="Render" data-status="catalog live" data-plain="Still, clip, and scene share one Render family. GPU only when the machine has an accelerator." data-tech="Render.scene · animation_* · gpu_* · svg_*. Preview handles: still / clip / scene. No sibling Host invent. HWND / wgpu: fail closed here."><small>draw</small>Render</button>
+              <button class="hex" type="button" id="hc-hid" data-tone="local" data-title="HID" data-status="local descriptor" data-plain="The browser can speak the shape of a device. It does not open your gamepad or your hands." data-tech="HID.poll / wait / haptic_* / spatial_*. LocalHost returns synthetic connected records. Physical loop needs a host."><small>body</small>HID</button>
+              <button class="hex" type="button" id="hc-infer" data-tone="catalog" data-title="Inference" data-status="catalog live" data-plain="Embed, ground, verify a turn. Chrome that cannot load a model says held / not yet — not ‘AI ready’." data-tech="Inference.grounding / verify_turn / run_transformer / vector_search / … Live ids only. Do not invent qualia.infer.complete."><small>infer</small>Inference</button>
+              <button class="hex" type="button" id="hc-pulse" data-tone="catalog" data-title="Pulse" data-status="catalog live" data-plain="Pulse is transport. It is not a person, and it is not a public Internet tick." data-tech="Pulse.publish_* · open_channel · set_transport. In-page topics are local memory. CSCP-08 WSS/MASQUE stays parked. No invented wss://."><small>bus</small>Pulse</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="explainer" data-explainer>
+          <div class="plain">
+            <strong>Plain</strong>
+            <p data-explainer-title class="font-display" style="color:var(--ink);font-size:1.15rem;margin-bottom:8px"></p>
+            <span class="status-label status-catalog" data-explainer-status></span>
+            <p data-explainer-plain style="margin-top:12px"></p>
+          </div>
+          <div class="tech">
+            <strong>Technical</strong>
+            <p data-explainer-tech></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft-rise" data-soft-rise="families" data-family-map aria-labelledby="families-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Host families · catalog map</p>
+          <h2 id="families-title">Clusters, not a 1121-row dump.</h2>
+        </div>
+        <p class="section-intro">These families are live on QualiaDB tree 0.0.38 <code>ALL_INVOKE_IDS</code>. Wave 40 counted 1121 on <code>ALL_BOUND</code> — count the tip; do not freeze a number into this page. Tap a card for the same plain + technical pair.</p>
+      </div>
+      <div class="family-grid">
+        <button class="family-card" type="button" data-title="Logic &amp; graph" data-status="catalog live" data-tone="catalog" data-plain="The logic stack is first-class Host surface: N3, SHACL, deontic, epistemic, temporal, legal. Graph commits need a host that can open a volume." data-tech="SHACL.* · N3Logic.evaluate · DeonticLogic.evaluate · EpistemicLogic.evaluate · ParaconsistentLogic.route · TemporalAndDescriptionLogic.* · LegalLogic / GovernanceLogic / FormalLogic / AdvancedLogic / SpatialLogic / InfraLogic / InfraExtLogic · SymbolicAndDefeasibleLogic.asp · CausalFuzzyAndControl.* · GraphDatabase.* · GraphAuthoring.process">
+          <span class="status-label status-catalog">catalog live</span>
+          <h3>Logic &amp; graph</h3>
+          <p>N3, SHACL, modalities, and the graph host. Persons are not <code>owl:Thing</code>.</p>
+          <p class="ids">SHACL · N3Logic · DeonticLogic · EpistemicLogic · GraphDatabase · LegalLogic · …</p>
+        </button>
+        <button class="family-card" type="button" data-title="Science floor" data-status="catalog live" data-tone="catalog" data-plain="Linear algebra, statistics, physics, cosmic frames, calculus. Apps and the REPL call families. Grammar does not grow new keywords for them." data-tech="LinearAlgebra.* (§11.5) · Statistics.* · Physics.* · Cosmic.* · Calculus.* · Optimization.* · GeometricAlgebra.* · ComputationalGeometry.* · NumberTheory.* · SymbolicAlgebra.* · Ode.* · MachineLearning.* · Chemistry.* · ClinicalRisk.*">
+          <span class="status-label status-catalog">catalog live</span>
+          <h3>Science floor</h3>
+          <p>LinearAlgebra is live on 0.0.38. This Pages snapshot may still E100 <code>dot</code>.</p>
+          <p class="ids">LinearAlgebra · Statistics · Physics · Cosmic · Calculus · Chemistry · …</p>
+        </button>
+        <button class="family-card" type="button" data-title="Habitat &amp; body" data-status="mixed" data-tone="live" data-plain="Animation kernels run here. Render, HID, Scene, and Poet need the host that actually draws, feels, or places furniture." data-tech="Animation.* live kernels on LocalHost. Render.* / Scene.* / HID.* / Pulse.* / Poet.* catalog-live. GPU and physical HID: held / not yet on Pages. Poet is a host, not this site.">
+          <span class="status-label status-live">Animation live · others host</span>
+          <h3>Habitat &amp; body</h3>
+          <p>Motion in-process. Devices and Poet furniture stay on a real host.</p>
+          <p class="ids">Animation · Render · HID · Pulse · Scene · Poet · Asset</p>
+        </button>
+        <button class="family-card" type="button" data-title="Inference &amp; research" data-status="catalog live" data-tone="catalog" data-plain="Grounding, verification, corpora, investigations. A missing model is held / not yet — the chatbot is not the other human." data-tech="Inference.* · Research.* · NLP.* · OntologyAlignment.align · GraphReasoning.* · Corpus.* · Agent.* · Orchestration.* · Agency.evaluate. Do not invent qualia.infer.complete.">
+          <span class="status-label status-catalog">catalog live</span>
+          <h3>Inference &amp; research</h3>
+          <p>Ground, verify, investigate. No false ‘AI ready’ on this snapshot.</p>
+          <p class="ids">Inference · Research · NLP · GraphReasoning · Orchestration · …</p>
+        </button>
+        <button class="family-card" type="button" data-title="Media &amp; world" data-status="catalog live" data-tone="catalog" data-plain="Image, video, audio, worlds, lights. Catalog names exist. This page does not pretend to composite your timeline." data-tech="Image.* · Video.* · Audio.* · ThreeD.* · World.* · Portal.* · Avatar.* · Dmx.* · HbbTV.* · Interactive.* · SecondScreen.sync. Host-owned. Pages: held / not yet.">
+          <span class="status-label status-notyet">Pages · held / not yet</span>
+          <h3>Media &amp; world</h3>
+          <p>Families are named. Evaluation waits on a host that can render or light.</p>
+          <p class="ids">Image · Video · Audio · World · Dmx · ThreeD · HbbTV</p>
+        </button>
+        <button class="family-card" type="button" data-title="Econ, identity, capability" data-status="catalog live" data-tone="catalog" data-plain="Ledgers, grants, sentinels. Identity.current_user is a handle path — not a human. Capability leases fail closed." data-tech="Econ.* · Finance.* · Identity.current_user · Capability.grant/revoke/audit · Sentinel.* · CooperativeDelegation.permits · ContractsIdentityAndConsensus.parse_did_q42 · Forensic.*">
+          <span class="status-label status-catalog">catalog live</span>
+          <h3>Econ &amp; capability</h3>
+          <p>Money and grants. A DID parse is a handle. Capability is leased, then revoked.</p>
+          <p class="ids">Econ · Finance · Identity · Capability · Sentinel · Forensic</p>
+        </button>
+      </div>
+      <div class="explainer" data-explainer hidden>
+        <div class="plain">
+          <strong>Plain</strong>
+          <p data-explainer-title class="font-display" style="color:var(--ink);font-size:1.15rem;margin-bottom:8px"></p>
+          <span class="status-label status-catalog" data-explainer-status></span>
+          <p data-explainer-plain style="margin-top:12px"></p>
+        </div>
+        <div class="tech">
+          <strong>Technical</strong>
+          <p data-explainer-tech></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft-rise" id="honesty" data-soft-rise="monet" aria-labelledby="honesty-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Honesty ledger</p>
+          <h2 id="honesty-title">What this snapshot can hold.</h2>
+        </div>
+        <p class="section-intro">Three columns, same contract as Qualia QDNF Pages: landed on the engine tree, local or waiting on this site, parked on purpose. Soft-rise stamp for monet.</p>
+      </div>
+      <div class="honesty-ledger">
+        <article class="ledger-col live soft-rise" data-soft-rise="monet" style="--rise-delay:0ms">
+          <span class="status-label status-live">live on QualiaDB 0.0.38</span>
+          <h3>Engine tree holds</h3>
+          <ul>
+            <li>Closed vibe-0.1 grammar + <code>diagnose</code> JSON (<code>errors[]</code> up to eight).</li>
+            <li>Host catalog including <code>LinearAlgebra.*</code>, logic families, <code>GraphDatabase.volume_*</code>, <code>Render.*</code>, <code>Inference.*</code>.</li>
+            <li>LocalHost numeric kernels: Animation presets, spring, Cosmic, list_presets.</li>
+            <li>Deontic phase leaser + signed law packages in-tree (<code>deontic_interrupt</code>, <code>law_package</code>).</li>
+            <li>Qualia Modalities Observatory: N3, SHACL, deontic, epistemic, LTL, ASP, … — on Qualia Pages, not this repo’s WASM.</li>
+          </ul>
+        </article>
+        <article class="ledger-col local soft-rise" data-soft-rise="monet" style="--rise-delay:90ms">
+          <span class="status-label status-local">this Pages site</span>
+          <h3>Held / not yet here</h3>
+          <ul>
+            <li>Bundled <code>vibe-wasm 0.0.34</code> may E100 <code>LinearAlgebra.dot</code> (JOBS E10). Do not invent the snapshot’s suggestion.</li>
+            <li>Logic families: catalog-known on 0.0.38; LocalHost returns <code>honesty: "local"</code> — not N3/SHACL/Quin eval.</li>
+            <li><code>GraphDatabase.volume_*</code> on wasm is E300 or local memory — not a saved <code>.q42</code>.</li>
+            <li>HID / GPU / HWND / Poet furniture: shape or fail-closed. Not a device loop.</li>
+            <li>Hot-edit north star is real; this workbench is not live Poet.</li>
+          </ul>
+        </article>
+        <article class="ledger-col parked soft-rise" data-soft-rise="monet" style="--rise-delay:180ms">
+          <span class="status-label status-parked">parked · do not tick</span>
+          <h3>Not invented</h3>
+          <ul>
+            <li><strong>CSCP-08</strong> Internet WSS / MASQUE relay — parked. No invented <code>wss://</code>.</li>
+            <li><strong>CSCP-12</strong> datatracker submit — parked.</li>
+            <li>QDNF public relay / two-host Internet: map, not a finished mesh. Handle ≠ human.</li>
+            <li>No Host invent. No dotted <code>qualia.*</code> ahead of live <code>ALL_BOUND</code>.</li>
+            <li>Ask · Keep · Talk are not this page’s information architecture.</li>
+          </ul>
+        </article>
+      </div>
+      <p class="reality-source">Hypothesis checked: the previous runtime guide only tabulated LocalHost Animation / graph / HID and under-listed logic modalities that already exist on QualiaDB <code>crates/vibe</code> (<code>N3Logic</code>, <code>SHACL</code>, <code>DeonticLogic</code>, <code>EpistemicLogic</code>, and the wider observatory). Discarded as “the whole language.” Kept as “what the old page actually showed.”</p>
+    </section>
+
+    <section class="section soft-rise" id="marvin" data-soft-rise="marvin" aria-labelledby="marvin-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Marvin fold</p>
+          <h2 id="marvin-title">who · claim · handle · tool</h2>
+        </div>
+        <p class="section-intro">Room for ontology / semiotic examples. Seats are named. Living-safe: do not model a human, personhood, or living-natural relation as <code>owl:Thing</code>. No Host invent in this bay.</p>
+      </div>
+      <div class="marvin-bay">
+        <article class="marvin-seat" id="marvin-who">
+          <p class="kicker">who</p>
+          <h3>Human first</h3>
+          <p>Example seat: a named human (NaturalAgent). Not a DID. Not a session. Marvin can drop a living-safe graph here.</p>
+        </article>
+        <article class="marvin-seat" id="marvin-claim">
+          <p class="kicker">claim</p>
+          <h3>Said, then leased</h3>
+          <p>A claim is speech or a quin. If it touches a family, lease that family. Modal verbs stay terms until <code>DeonticLogic</code> / <code>EpistemicLogic</code> is leased.</p>
+        </article>
+        <article class="marvin-seat" id="marvin-handle">
+          <p class="kicker">handle</p>
+          <h3>Coord only</h3>
+          <p>Example seat: <code>did:qi:…</code> or a DNS name as locator. Revoke the handle; the who remains. Continuity, not a mesh tick.</p>
+        </article>
+        <article class="marvin-seat" id="marvin-tool">
+          <p class="kicker">tool</p>
+          <h3>Never the other party</h3>
+          <p>Chatbot / agent / model sits last. Useful. Not a human. Not listed as the correspondent in Talk stories.</p>
+        </article>
+      </div>
+      <p class="marvin-note"><strong style="color:var(--ink)">Living-safe.</strong> Standing OWL constraints (B-OWL-PERSON / B-OWL-NATURAL / B-OWL-LIFE-UPLIFT) stay in force. Technical artifacts may use OWL where Thing is apt — humans are not those artifacts. This bay waits for Marvin examples; it does not mint ids to look finished.</p>
+    </section>
+
+    <section class="section split soft-rise" data-soft-rise="neo" aria-labelledby="neo-title">
+      <div>
+        <p class="eyebrow">Neo fold</p>
+        <h2 id="neo-title">Do not fork the engine into this repo.</h2>
+        <p class="section-intro">vibe-script stays <code>0.0.1</code>. QualiaDB <code>v0.0.38</code> is the engine tree this ecosystem tracks. Neo sole-pushes. New tool work lands here; in-tree Qualia drafts stay until Timothy says to delete them.</p>
+        <div class="hero-actions">
+          <a class="button button--primary" href="honesty.html">Honesty contract</a>
+          <a class="button" href="https://github.com/mediaprophet/qualiaDB/blob/v0.0.38/docs/manuals/standards/vibescript-core.md" target="_blank" rel="noopener">Core language ↗</a>
+          <a class="button" href="https://github.com/mediaprophet/qualiaDB/blob/v0.0.38/docs/qdnf.html" target="_blank" rel="noopener">QDNF map ↗</a>
+          <a class="button" href="index.html#playground">Open the workbench</a>
+        </div>
+      </div>
+      <div class="neo-fold">
+        <dl>
+          <div>
+            <dt>Engine SoT</dt>
+            <dd><a class="q-link" href="https://github.com/mediaprophet/qualiaDB/tree/v0.0.38/crates/vibe" style="color:var(--cyan)">mediaprophet/qualiaDB</a> tag <code>v0.0.38</code> / <code>cdd7ae728</code> · <code>crates/vibe</code></dd>
+          </div>
+          <div>
+            <dt>Normative manuals</dt>
+            <dd><code>vibescript-core.md</code> · <code>vibescript-sprint-deltas.md</code> · human-centric nomenclature</dd>
+          </div>
+          <div>
+            <dt>This repo</dt>
+            <dd>LSP, grammar copies, playground, Pages chrome. Workspace version <code>0.0.1</code> — no bump for a docs map.</dd>
+          </div>
+          <div>
+            <dt>Pages snapshot</dt>
+            <dd><code>docs/pkg/vibe</code> stamps <code>0.0.34</code>. Rebuild when Neo publishes vibe-wasm. Do not vendor engine source.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">VibeScript 0.1 · © 2026 Timothy Charles Holborn · Handle ≠ human · <a href="https://github.com/mediaprophet/vibe-script">Source and issue tracker</a></footer>
+  <script src="reality.js" defer></script>
+</body>
+</html>
