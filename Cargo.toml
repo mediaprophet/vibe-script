@@ -9,4 +9,5 @@ license-file = "LICENSE"
 authors = ["Timothy Charles Holborn <timothy.holborn@gmail.com>"]
 repository = "https://github.com/mediaprophet/vibe-script"
 
-# Language engine is QualiaDB `crates/vibe`. Do not fork it here.
+# Language engine is QualiaDB tree 0.0.38 `crates/vibe`. Do not fork it here.
+# Workspace version stays 0.0.1 — catalog alignment is not a crate bump.

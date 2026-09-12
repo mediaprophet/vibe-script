@@ -1,7 +1,12 @@
 # Vibe-host execution targets
 
 VibeScript remains one language. Its host determines where a capability runs.
-Poet is a user interface; `vibe-host` is the reusable execution boundary.
+Poet is a host (UI / CLI / habitat), not the language. A chatbot is a tool.
+`vibe-host` is the reusable execution boundary. Engine truth is QualiaDB `0.0.38`
+`crates/vibe` — this file is tooling metadata, not a Host invent.
+
+Missing daemon or WASM-only snapshot: **held / not yet**, never “unavailable”
+or “broken”. No invented `wss://` / MASQUE path.
 
 The LSP accepts either of these initialization settings:
 

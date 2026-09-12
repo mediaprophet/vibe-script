@@ -65,7 +65,7 @@
     },
     "catalog": {
       "name": "entity.name.function.catalog.vibe",
-      "match": "\\b(Animation|Render|HID|GraphDatabase|DeonticLogic|EpistemicLogic|ParaconsistentLogic|SHACL)\\.[A-Za-z_][A-Za-z0-9_]*\\b"
+      "match": "\\b(Animation|Render|HID|GraphDatabase|LinearAlgebra|Cosmic|Inference|DeonticLogic|EpistemicLogic|ParaconsistentLogic|SHACL|Asset|Orchestration)\\.[A-Za-z_][A-Za-z0-9_]*\\b"
     },
     "numbers": {
       "name": "constant.numeric.vibe",

@@ -10,14 +10,14 @@
 <body>
   <header class="site-header"><div class="header-inner">
     <a class="brand" href="index.html" aria-label="VibeScript home"><span class="brand-mark">V</span><span>VibeScript <small>0.1</small></span></a>
-    <nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Playground</a><a href="atlas.html" aria-current="page">Capability atlas</a><a href="showcase.html">Examples</a><a href="reality.html">Runtime guide</a><a href="spec.html">Language guide</a><a href="dev-docs.html">Engine API</a><a class="github" href="https://github.com/mediaprophet/vibe-script" target="_blank" rel="noopener">GitHub ↗</a></nav>
+    <nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Playground</a><a href="atlas.html" aria-current="page">Capability atlas</a><a href="showcase.html">Examples</a><a href="reality.html">Runtime guide</a><a href="spec.html">Language guide</a><a href="honesty.html">Honesty</a><a href="dev-docs.html">Engine API</a><a class="github" href="https://github.com/mediaprophet/vibe-script" target="_blank" rel="noopener">GitHub ↗</a></nav>
   </div></header>
   <main class="page">
     <section class="hero atlas-hero">
       <p class="atlas-kicker"><i></i> Grounded in shipped Vibe engine fixtures</p>
       <p class="eyebrow" style="margin-top:20px">VibeScript capability atlas</p>
       <h1>A language for<br><em>systems with context.</em></h1>
-      <p class="lede">VibeScript describes reactive state, spatial motion, physical fields, graph-aware policy, and output across human modalities. This page puts selected engine fixtures beside an executable visual companion—then lets the WebAssembly engine validate the source itself.</p>
+      <p class="lede">VibeScript describes reactive state, spatial motion, physical fields, graph-aware policy, and output across human modalities. Fixtures here are shipped engine samples — not invented Host APIs. The bundled WebAssembly checker may lag QualiaDB 0.0.38; a miss is held / not yet.</p>
       <div class="hero-actions"><a class="button button--primary" href="#live-lab">Enter the live lab ↓</a><a class="button" href="index.html#playground">Open source workbench</a></div>
     </section>
 
@@ -47,7 +47,8 @@
         <article class="capability"><span class="number">05 / HUMAN</span><h3>Presentation sheaves</h3><p>One source value can be coherently presented through visual, haptic, auditory, speech, and Braille forms.</p><a href="atlas.html#live-lab">Explore the presentation view →</a></article>
         <article class="capability"><span class="number">06 / POLICY</span><h3>Modal &amp; deontic terms</h3><p>Permit, forbid, obligate, beliefs, temporal terms, consent workflows, and capability-gated execution remain explicit.</p><a href="dev-docs.html">Browse engine primitives →</a></article>
         <article class="capability"><span class="number">07 / SCIENCE</span><h3>Cosmic &amp; scientific kernels</h3><p>Celestial transformations, EMF, chemistry, solvers, statistics, and physics fixtures share the same language surface.</p><a href="dev-docs.html">Search the API index →</a></article>
-        <article class="capability"><span class="number">08 / TRUST</span><h3>Fail-closed capability use</h3><p>Known family methods must be leased; unknown catalog-shaped calls are diagnosed instead of silently guessed.</p><a href="index.html#playground">Run diagnostics →</a></article>
+        <article class="capability"><span class="number">08 / TRUST</span><h3>Fail-closed capability use</h3><p>Known family methods must be leased; unknown catalog-shaped calls are diagnosed instead of silently guessed. Voice: held / not yet.</p><a href="index.html#playground">Run diagnostics →</a></article>
+        <article class="capability"><span class="number">09 / ALGEBRA</span><h3>LinearAlgebra</h3><p>Live Host family on ALL_BOUND (gemm, dot, norm, …). Catalog grows; do not hardcode a forever id count. WASM scientific profile may be held / not yet.</p><a href="honesty.html">Catalog honesty →</a></article>
       </div>
     </section>
 
@@ -71,6 +72,6 @@
       else { const labels=["VISUAL","HAPTIC","AUDIO","BRAILLE"], colors=["#6ee7ff","#7df0bf","#b29aff","#ffc86b"]; const cols=2, bw=Math.min(160,(w-70)/2), bh=80; labels.forEach((label,i)=>{const x=w*.5+(i%2?1:-1)*(bw*.55)-bw/2, y=h*.5+(i<2?-1:1)*(bh*.85)-bh/2; context.fillStyle="rgba(9,26,45,.85)"; context.strokeStyle=colors[i]; context.lineWidth=1; context.fillRect(x,y,bw,bh); context.strokeRect(x,y,bw,bh); context.fillStyle=colors[i]; context.font="700 12px monospace"; context.fillText(label,x+13,y+22); if(i===0){context.fillStyle=colors[i]; context.fillRect(x+14,y+37,bw-28,8);} if(i===1){for(let k=0;k<6;k++){context.fillStyle=colors[i];context.fillRect(x+14+k*20,y+38,9,20+Math.sin(t*5+k)*8);}} if(i===2){context.beginPath();for(let k=0;k<bw-28;k+=5){const yy=y+52+Math.sin(k*.11-t*4)*12;if(k===0)context.moveTo(x+14+k,yy);else context.lineTo(x+14+k,yy)}context.stroke();} if(i===3){for(let k=0;k<5;k++){context.fillStyle=colors[i];context.beginPath();context.arc(x+20+k*22,y+47+(k%2)*10,4,0,Math.PI*2);context.fill();}}}); context.strokeStyle="rgba(255,255,255,.2)"; context.setLineDash([4,7]); context.beginPath(); context.moveTo(w*.5,h*.5-24); context.lineTo(w*.5,h*.5+24); context.moveTo(w*.5-42,h*.5); context.lineTo(w*.5+42,h*.5); context.stroke(); context.setLineDash([]); }
       requestAnimationFrame(draw); }
     document.querySelectorAll(".atlas-tab").forEach(tab => tab.addEventListener("click", () => applyFixture(tab.dataset.fixture))); document.getElementById("btn-check").addEventListener("click", () => { if (!wasmReady) return; try { const check = diagnose_src(fixtures[active].source); result.className = `engine-result ${check.ok ? "ok" : "error"}`; result.textContent = check.ok ? "✓ Vibe engine diagnostic: fixture accepted." : `Engine diagnostic: ${JSON.stringify(check)}`; } catch (error) { result.className = "engine-result error"; result.textContent = `Engine diagnostic failed: ${error}`; } });
-    window.addEventListener("resize", resize); resize(); applyFixture(active); requestAnimationFrame(draw); init().then(() => { wasmReady=true; result.textContent="Vibe WebAssembly checker ready. Select a fixture and verify it."; }).catch(error => { result.className="engine-result error"; result.textContent=`Checker unavailable: ${error}`; });
+    window.addEventListener("resize", resize); resize(); applyFixture(active); requestAnimationFrame(draw); init().then(() => { wasmReady=true; result.textContent="Vibe WebAssembly checker ready. Select a fixture and verify it."; }).catch(error => { result.className="engine-result error"; result.textContent=`Checker held / not yet: ${error}`; });
   </script>
 </body></html>

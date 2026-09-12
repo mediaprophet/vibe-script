@@ -14,5 +14,5 @@ jobs:
           if (Test-Path "../qualia-27062026/crates/vibe") {
             cargo test --workspace
           } else {
-            Write-Host "Engine sibling missing; skip. Path-dep is C:\Projects\qualia-27062026\crates\vibe"
+            Write-Host "Engine sibling missing; skip. Path-dep is ../qualia-27062026/crates/vibe (QualiaDB tree 0.0.38)."
           }

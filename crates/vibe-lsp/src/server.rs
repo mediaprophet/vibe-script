@@ -114,7 +114,7 @@ fn severity_for_code(code: &vibe::DiagCode) -> u8 {
         vibe::DiagCode::E300 => 1, // missing capability
         vibe::DiagCode::E600 => 1, // runtime error
         vibe::DiagCode::E701 => 1, // mut violation
-        vibe::DiagCode::E702 => 2, // capability unavailable — warning
+        vibe::DiagCode::E702 => 2, // capability held / not yet on this target — warning
         _ => 1,
     }
 }
@@ -232,7 +232,7 @@ impl<R: BufRead, W: Write> LspServer<R, W> {
                         },
                         "serverInfo": {
                             "name": "vibe-lsp",
-                            "version": "0.0.32",
+                            "version": "0.0.1",
                         }
                     }
                 });
