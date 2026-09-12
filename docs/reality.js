@@ -56,8 +56,8 @@ function wireSelectable(root, selector) {
     });
     setExplainer(root, {
       title: item.dataset.title || item.textContent.trim(),
-      status: item.dataset.status || "catalog live",
-      tone: item.dataset.tone || "catalog",
+      status: item.dataset.status || "held / not yet",
+      tone: item.dataset.tone || "notyet",
       plain: item.dataset.plain || "",
       tech: item.dataset.tech || "",
     });
@@ -102,4 +102,6 @@ reduceMotion.addEventListener?.("change", () => {
 });
 document.querySelectorAll("[data-honey]").forEach((root) => wireSelectable(root, ".hex"));
 document.querySelectorAll("[data-family-map]").forEach((root) => wireSelectable(root, ".family-card"));
+document.querySelectorAll("[data-flow]").forEach((root) => wireSelectable(root, ".boundary-node"));
+document.querySelectorAll("[data-logic-tiles]").forEach((root) => wireSelectable(root, ".reality-card"));
 wireLayerTabs();

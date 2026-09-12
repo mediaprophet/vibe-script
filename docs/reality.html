@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="vibe-reality" data-monet-stamp="vibe-reality">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/vibe-reality.css">
   <link rel="stylesheet" href="site.css">
 </head>
 <body class="reality-page">
@@ -84,6 +85,81 @@
       </div>
     </section>
 
+    <section class="section soft-rise" id="runtime-flow" data-soft-rise="monet" data-flow aria-labelledby="flow-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Diagram 1 · runtime flow</p>
+          <h2 id="flow-title">Author → Engine → Capability → Host</h2>
+        </div>
+        <p class="section-intro">A human authors. The engine checks. A named <code>Family.method</code> is the lease. The host supplies the resource. <code>Capability.method</code> is secondary. Tap a node.</p>
+      </div>
+      <div class="boundary-flow runtime-flow">
+        <button class="boundary-node active" type="button" id="flow-author" data-title="Author" data-status="live kernel" data-tone="live" data-plain="A human writes sayables. using Animation, LinearAlgebra; then Family.method. Do not invent dotted qualia.*." data-tech="Workshop dialect on vibe-0.1. Closed grammar. Diagnose before eval. Capability.method is secondary — do not teach capability.invoke as the human dialect."><strong>Author</strong>human source</button>
+        <div class="boundary-arrow" aria-hidden="true">→</div>
+        <button class="boundary-node active" type="button" id="flow-engine" data-title="Engine" data-status="live kernel" data-tone="live" data-plain="Parse, check, diagnose. Eval on this page is only as old as vibe-wasm 0.0.34." data-tech="QualiaDB crates/vibe. Live catalog truth is v0.0.38 / cdd7ae728 ALL_BOUND. This snapshot stamps 0.0.34."><strong>Engine</strong>parse · check</button>
+        <div class="boundary-arrow" aria-hidden="true">→</div>
+        <button class="boundary-node pending" type="button" id="flow-capability" data-title="Capability" data-status="ALL_BOUND" data-tone="catalog" data-plain="The named operation is Family.method. Capability.method is the same lease, written second." data-tech="ALL_BOUND fail-closed. Unknown Family.method is E100. Missing lease is E300. No invented ids."><strong>Capability</strong>Family.method</button>
+        <div class="boundary-arrow" aria-hidden="true">→</div>
+        <button class="boundary-node pending" type="button" id="flow-host" data-title="Host" data-status="held / not yet" data-tone="notyet" data-plain="The host owns the resource. This Pages WASM is not Poet, not a sanctuary, not a public relay." data-tech="Native volume / GPU / HID: held / not yet here. CSCP-08/12 parked. No invented wss:// or MASQUE."><strong>Host</strong>local or live</button>
+      </div>
+      <div class="explainer" data-explainer>
+        <div class="plain">
+          <strong>Plain</strong>
+          <p data-explainer-title class="font-display" style="color:var(--ink);font-size:1.15rem;margin-bottom:8px"></p>
+          <span class="status-label status-catalog" data-explainer-status></span>
+          <p data-explainer-plain style="margin-top:12px"></p>
+        </div>
+        <div class="tech">
+          <strong>Technical</strong>
+          <p data-explainer-tech></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft-rise" id="logic-tiles" data-soft-rise="davinci" data-logic-tiles aria-labelledby="logic-tiles-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Diagram 2 · logic cluster</p>
+          <h2 id="logic-tiles-title">N3 · SHACL · deontic · epistemic</h2>
+        </div>
+        <p class="section-intro">Live on QualiaDB <code>v0.0.38</code> <code>ALL_BOUND</code>. Held / not yet on Pages <code>0.0.34</code>. Modalities attach to a <strong>claim</strong>. They never rewrite who. A chatbot cannot launder into the human.</p>
+      </div>
+      <div class="reality-grid grid-4">
+        <button class="reality-card" type="button" id="tile-n3" data-title="N3 Logic" data-status="held / not yet" data-tone="notyet" data-plain="If-then arrows a human can still read. ALL_BOUND on 0.0.38. This snapshot cannot eval them." data-tech="ALL_BOUND: N3Logic.evaluate. Pages vibe-wasm 0.0.34: held / not yet. Do not fake N3 success.">
+          <span class="status-label status-plan">held / not yet</span>
+          <h3>N3</h3>
+          <p><code>N3Logic.evaluate</code> is live on the engine tree. Not on this WASM.</p>
+        </button>
+        <button class="reality-card" type="button" id="tile-shacl" data-title="SHACL" data-status="held / not yet" data-tone="notyet" data-plain="Shapes on a graph. A tray badge is not a live validate. A human is not owl:Thing. Law keeps person." data-tech="ALL_BOUND: SHACL.validate · SHACL.extensions. Pages 0.0.34: held / not yet.">
+          <span class="status-label status-plan">held / not yet</span>
+          <h3>SHACL</h3>
+          <p><code>SHACL.validate</code> is ALL_BOUND. Do not fake conformance here.</p>
+        </button>
+        <button class="reality-card" type="button" id="tile-deontic" data-title="Deontic" data-status="held / not yet" data-tone="notyet" data-plain="Ought-language sits on a claim, not on a who. Modal verbs stay terms unless DeonticLogic is leased." data-tech="ALL_BOUND: DeonticLogic.evaluate. Pages 0.0.34: held / not yet. Never stamp Active. Never rewrite the human.">
+          <span class="status-label status-plan">held / not yet</span>
+          <h3>Deontic</h3>
+          <p><code>DeonticLogic.evaluate</code> — must / may / must-not on the claim only.</p>
+        </button>
+        <button class="reality-card" type="button" id="tile-epistemic" data-title="Epistemic" data-status="held / not yet" data-tone="notyet" data-plain="A human knows or believes. Certainty is graded. A corp-bot cannot become the knower." data-tech="ALL_BOUND: EpistemicLogic.evaluate. Pages 0.0.34: held / not yet. No corp-bot launder of who.">
+          <span class="status-label status-plan">held / not yet</span>
+          <h3>Epistemic</h3>
+          <p><code>EpistemicLogic.evaluate</code> — knows / believes. Subject stays the human.</p>
+        </button>
+      </div>
+      <div class="explainer" data-explainer>
+        <div class="plain">
+          <strong>Plain</strong>
+          <p data-explainer-title class="font-display" style="color:var(--ink);font-size:1.15rem;margin-bottom:8px"></p>
+          <span class="status-label status-notyet" data-explainer-status></span>
+          <p data-explainer-plain style="margin-top:12px"></p>
+        </div>
+        <div class="tech">
+          <strong>Technical</strong>
+          <p data-explainer-tech></p>
+        </div>
+      </div>
+    </section>
+
     <section class="section soft-rise" id="layers" data-soft-rise="davinci" data-honey aria-labelledby="layers-title">
       <div class="section-heading">
         <div>
@@ -109,7 +185,7 @@
             </div>
             <div class="hex-row">
               <button class="hex" type="button" id="rt-localhost" data-tone="local" data-title="LocalHost" data-status="held / not yet" data-plain="On QualiaDB 0.0.38, LocalHost has Animation kernels and honesty:&quot;local&quot; records for logic. This Pages 0.0.34 snapshot is older — do not treat it as that LocalHost." data-tech="0.0.38 invoke_local: Animation presets/spring are kernels; HID synthetic; GraphDatabase.sparql []. Deontic/Epistemic/Paraconsistent/Temporal return honesty:&quot;local&quot; — not the Quin VM. Pages 0.0.34: held / not yet for LinearAlgebra and logic."><small>04</small>LocalHost</button>
-              <button class="hex" type="button" id="rt-pages" data-tone="parked" data-title="Pages WASM" data-status="held / not yet" data-plain="This GitHub Pages snapshot stamps vibe-wasm 0.0.34. LinearAlgebra and the logic families are held / not yet here. A miss is not a smashed product." data-tech="Bundled vibe-wasm 0.0.34. LinearAlgebra.dot may E100 until JOBS E10. Do not invent the snapshot’s guess. Do not fake logic or LinearAlgebra success."><small>05</small>Pages WASM</button>
+              <button class="hex" type="button" id="rt-pages" data-tone="notyet" data-title="Pages WASM" data-status="held / not yet" data-plain="This GitHub Pages snapshot stamps vibe-wasm 0.0.34. LinearAlgebra and the logic families are held / not yet here. A miss is not a smashed product." data-tech="Bundled vibe-wasm 0.0.34. LinearAlgebra.dot may E100 until JOBS E10. Do not invent the snapshot’s guess. Do not fake logic or LinearAlgebra success."><small>05</small>Pages WASM</button>
               <button class="hex" type="button" id="rt-native" data-tone="catalog" data-title="Native host" data-status="ALL_BOUND" data-plain="A native host may attach sanctuary volumes and devices. This Pages WASM does not. Those binds stay held / not yet here." data-tech="GraphDatabase.volume_open / volume_commit are ALL_BOUND. Native sanctuary when permitted; wasm E300 — not a saved .q42. GPU / HWND fail closed until a host advertises them."><small>06</small>Native host</button>
               <button class="hex" type="button" id="rt-poet" data-tone="catalog" data-title="Poet" data-status="ALL_BOUND" data-plain="Poet is a host — the habitat — not the language. Ask · Keep · Talk are teachable loops, not locked nav on this site." data-tech="Poet.manifold_create · Poet.container_place · Poet.nested_link · Poet.subject_declare · Poet.participant_invite are ALL_BOUND. This Pages site is not Poet furniture. Hot-edit: a .vibe change must not force a host rebuild."><small>07</small>Poet</button>
             </div>
@@ -120,20 +196,20 @@
           <p class="eyebrow" style="text-align:center">Logic honeycomb</p>
           <div class="honey-board" role="group" aria-label="Logic modalities">
             <div class="hex-row">
-              <button class="hex" type="button" id="lg-n3" data-tone="parked" data-title="N3 Logic" data-status="held / not yet" data-plain="If-then arrows a human can still read. Live on QualiaDB v0.0.38 ALL_BOUND. This Pages 0.0.34 WASM cannot eval it." data-tech="ALL_BOUND: N3Logic.evaluate. Pages vibe-wasm 0.0.34: held / not yet. Do not fake N3 success. No invented Family.method."><small>N3</small>Notation3</button>
-              <button class="hex" type="button" id="lg-shacl" data-tone="parked" data-title="SHACL" data-status="held / not yet" data-plain="Shapes that say whether a graph is well-formed. A tray badge is not a live validate. A human is not owl:Thing. Law keeps person." data-tech="ALL_BOUND: SHACL.validate · SHACL.extensions. Pages 0.0.34: held / not yet. Do not fake SHACL success."><small>SHACL</small>Shapes</button>
-              <button class="hex" type="button" id="lg-deontic" data-tone="parked" data-title="Deontic" data-status="held / not yet" data-plain="Ought-language: must, may, must-not. Modal verbs stay terms unless DeonticLogic is leased. Not evaluated on this Pages WASM." data-tech="ALL_BOUND: DeonticLogic.evaluate. Pages 0.0.34: held / not yet. Never stamp &quot;Active&quot;. deontic_interrupt.rs is engine-tree, not this snapshot."><small>O/P/F</small>Deontic</button>
+              <button class="hex" type="button" id="lg-n3" data-tone="notyet" data-title="N3 Logic" data-status="held / not yet" data-plain="If-then arrows a human can still read. Live on QualiaDB v0.0.38 ALL_BOUND. This Pages 0.0.34 WASM cannot eval it." data-tech="ALL_BOUND: N3Logic.evaluate. Pages vibe-wasm 0.0.34: held / not yet. Do not fake N3 success. No invented Family.method."><small>N3</small>Notation3</button>
+              <button class="hex" type="button" id="lg-shacl" data-tone="notyet" data-title="SHACL" data-status="held / not yet" data-plain="Shapes that say whether a graph is well-formed. A tray badge is not a live validate. A human is not owl:Thing. Law keeps person." data-tech="ALL_BOUND: SHACL.validate · SHACL.extensions. Pages 0.0.34: held / not yet. Do not fake SHACL success."><small>SHACL</small>Shapes</button>
+              <button class="hex" type="button" id="lg-deontic" data-tone="notyet" data-title="Deontic" data-status="held / not yet" data-plain="Ought-language: must, may, must-not. Modal verbs stay terms unless DeonticLogic is leased. Not evaluated on this Pages WASM." data-tech="ALL_BOUND: DeonticLogic.evaluate. Pages 0.0.34: held / not yet. Never stamp &quot;Active&quot;. deontic_interrupt.rs is engine-tree, not this snapshot."><small>O/P/F</small>Deontic</button>
             </div>
             <div class="hex-row">
-              <button class="hex" type="button" id="lg-epistemic" data-tone="parked" data-title="Epistemic" data-status="held / not yet" data-plain="A human knows or believes; certainty is graded. Not a green light. Not evaluated on this Pages WASM." data-tech="ALL_BOUND: EpistemicLogic.evaluate. Pages 0.0.34: held / not yet. Do not fake epistemic success."><small>K/B</small>Epistemic</button>
-              <button class="hex" type="button" id="lg-para" data-tone="parked" data-title="Paraconsistent" data-status="held / not yet" data-plain="When two facts clash, isolate the clash instead of exploding the graph. ALL_BOUND on 0.0.38; held / not yet on Pages 0.0.34." data-tech="ALL_BOUND: ParaconsistentLogic.route. Pages 0.0.34: held / not yet."><small>⊥</small>Paraconsistent</button>
-              <button class="hex" type="button" id="lg-ltl" data-tone="parked" data-title="Temporal LTL" data-status="held / not yet" data-plain="Always, eventually, until. Live ALL_BOUND ids only — no invented temporal Host methods." data-tech="ALL_BOUND: TemporalAndDescriptionLogic.ltl.globally · ltl.finally · ltl.evaluate. Pages 0.0.34: held / not yet."><small>LTL</small>Temporal</button>
-              <button class="hex" type="button" id="lg-dl" data-tone="parked" data-title="Description logic" data-status="held / not yet" data-plain="Is this kind a kind of that kind? Subsumption is on ALL_BOUND. This snapshot does not eval it." data-tech="ALL_BOUND: TemporalAndDescriptionLogic.subsumption. Sibling ALL_BOUND computes: LegalLogic · FormalLogic · AdvancedLogic. Pages 0.0.34: held / not yet."><small>DL</small>Subsumption</button>
+              <button class="hex" type="button" id="lg-epistemic" data-tone="notyet" data-title="Epistemic" data-status="held / not yet" data-plain="A human knows or believes; certainty is graded. Not a green light. Not evaluated on this Pages WASM." data-tech="ALL_BOUND: EpistemicLogic.evaluate. Pages 0.0.34: held / not yet. Do not fake epistemic success."><small>K/B</small>Epistemic</button>
+              <button class="hex" type="button" id="lg-para" data-tone="notyet" data-title="Paraconsistent" data-status="held / not yet" data-plain="When two facts clash, isolate the clash instead of exploding the graph. ALL_BOUND on 0.0.38; held / not yet on Pages 0.0.34." data-tech="ALL_BOUND: ParaconsistentLogic.route. Pages 0.0.34: held / not yet."><small>⊥</small>Paraconsistent</button>
+              <button class="hex" type="button" id="lg-ltl" data-tone="notyet" data-title="Temporal LTL" data-status="held / not yet" data-plain="Always, eventually, until. Live ALL_BOUND ids only — no invented temporal Host methods." data-tech="ALL_BOUND: TemporalAndDescriptionLogic.ltl.globally · ltl.finally · ltl.evaluate. Pages 0.0.34: held / not yet."><small>LTL</small>Temporal</button>
+              <button class="hex" type="button" id="lg-dl" data-tone="notyet" data-title="Description logic" data-status="held / not yet" data-plain="Is this kind a kind of that kind? Subsumption is on ALL_BOUND. This snapshot does not eval it." data-tech="ALL_BOUND: TemporalAndDescriptionLogic.subsumption. Sibling ALL_BOUND computes: LegalLogic · FormalLogic · AdvancedLogic. Pages 0.0.34: held / not yet."><small>DL</small>Subsumption</button>
             </div>
             <div class="hex-row">
-              <button class="hex" type="button" id="lg-legal" data-tone="parked" data-title="Legal &amp; jural" data-status="held / not yet" data-plain="Law keeps person. A claim with no duty-bearer is a gap. Handle revoke ≠ who-erase. Not eval’d on Pages 0.0.34." data-tech="ALL_BOUND: LegalLogic.compute · GovernanceLogic.compute. Pages 0.0.34: held / not yet. No invented jural Family.method."><small>law</small>Jural</button>
-              <button class="hex" type="button" id="lg-asp" data-tone="parked" data-title="Defeasible / ASP" data-status="held / not yet" data-plain="Rules that can lose to better rules. Live ALL_BOUND id only. This Pages WASM does not run ASP." data-tech="ALL_BOUND: SymbolicAndDefeasibleLogic.asp. Pages 0.0.34: held / not yet."><small>ASP</small>Defeasible</button>
-              <button class="hex" type="button" id="lg-causal" data-tone="parked" data-title="Causal &amp; fuzzy" data-status="held / not yet" data-plain="What caused what, and how much is enough. Named ALL_BOUND methods only. No dotted qualia.*." data-tech="ALL_BOUND: CausalFuzzyAndControl.caused · CausalFuzzyAndControl.t_norm. FuzzyQuery is a separate ALL_BOUND family. Pages 0.0.34: held / not yet."><small>cause</small>Causal</button>
+              <button class="hex" type="button" id="lg-legal" data-tone="notyet" data-title="Legal &amp; jural" data-status="held / not yet" data-plain="Law keeps person. A claim with no duty-bearer is a gap. Handle revoke ≠ who-erase. Not eval’d on Pages 0.0.34." data-tech="ALL_BOUND: LegalLogic.compute · GovernanceLogic.compute. Pages 0.0.34: held / not yet. No invented jural Family.method."><small>law</small>Jural</button>
+              <button class="hex" type="button" id="lg-asp" data-tone="notyet" data-title="Defeasible / ASP" data-status="held / not yet" data-plain="Rules that can lose to better rules. Live ALL_BOUND id only. This Pages WASM does not run ASP." data-tech="ALL_BOUND: SymbolicAndDefeasibleLogic.asp. Pages 0.0.34: held / not yet."><small>ASP</small>Defeasible</button>
+              <button class="hex" type="button" id="lg-causal" data-tone="notyet" data-title="Causal &amp; fuzzy" data-status="held / not yet" data-plain="What caused what, and how much is enough. Named ALL_BOUND methods only. No dotted qualia.*." data-tech="ALL_BOUND: CausalFuzzyAndControl.caused · CausalFuzzyAndControl.t_norm. FuzzyQuery is a separate ALL_BOUND family. Pages 0.0.34: held / not yet."><small>cause</small>Causal</button>
             </div>
           </div>
         </div>
@@ -142,15 +218,15 @@
           <p class="eyebrow" style="text-align:center">Host-cluster honeycomb</p>
           <div class="honey-board" role="group" aria-label="Host family clusters">
             <div class="hex-row">
-              <button class="hex" type="button" id="hc-graph" data-tone="parked" data-title="Graph &amp; lexicon" data-status="held / not yet" data-plain="Query and commit need a host that opens a volume. This Pages WASM does not save a .q42." data-tech="ALL_BOUND: GraphDatabase.sparql · stats · lexicon_manifest · volume_open · volume_commit · GraphAuthoring.process. wasm volume is E300 — not a saved .q42. Pages 0.0.34: held / not yet."><small>graph</small>Graph DB</button>
-              <button class="hex" type="button" id="hc-la" data-tone="parked" data-title="Linear algebra" data-status="held / not yet" data-plain="LinearAlgebra is live on QualiaDB v0.0.38 ALL_BOUND. This Pages 0.0.34 WASM may E100. Do not fake a dot product success." data-tech="ALL_BOUND §11.5: LinearAlgebra.dot · gemm · norm · matmul · transpose · inverse · solve · svd · … Pages vibe-wasm 0.0.34: held / not yet (JOBS E10). wasm without wasm-scientific → E300."><small>§11.5</small>LinAlg</button>
+              <button class="hex" type="button" id="hc-graph" data-tone="notyet" data-title="Graph &amp; lexicon" data-status="held / not yet" data-plain="Query and commit need a host that opens a volume. This Pages WASM does not save a .q42." data-tech="ALL_BOUND: GraphDatabase.sparql · stats · lexicon_manifest · volume_open · volume_commit · GraphAuthoring.process. wasm volume is E300 — not a saved .q42. Pages 0.0.34: held / not yet."><small>graph</small>Graph DB</button>
+              <button class="hex" type="button" id="hc-la" data-tone="notyet" data-title="Linear algebra" data-status="held / not yet" data-plain="LinearAlgebra is live on QualiaDB v0.0.38 ALL_BOUND. This Pages 0.0.34 WASM may E100. Do not fake a dot product success." data-tech="ALL_BOUND §11.5: LinearAlgebra.dot · gemm · norm · matmul · transpose · inverse · solve · svd · … Pages vibe-wasm 0.0.34: held / not yet (JOBS E10). wasm without wasm-scientific → E300."><small>§11.5</small>LinAlg</button>
               <button class="hex" type="button" id="hc-anim" data-tone="live" data-title="Animation" data-status="live kernel" data-plain="Preset orbits and springs can run as numbers in this snapshot. That is one family — not LinearAlgebra, and not the logic stack." data-tech="ALL_BOUND: Animation.evaluate_preset · spring_step · list_presets · sclerp_step · squad_step · bezier_eval · easing. orbit_spin aliases evaluate_preset. Other families stay held / not yet here."><small>motion</small>Animation</button>
             </div>
             <div class="hex-row">
-              <button class="hex" type="button" id="hc-render" data-tone="parked" data-title="Render" data-status="held / not yet" data-plain="Still, clip, and scene share one Render family on ALL_BOUND. GPU only when a host has an accelerator. Held / not yet on Pages 0.0.34." data-tech="ALL_BOUND: Render.scene · css_animation · animation_eval_preset · gpu_render_frame · gpu_read_pixels · … No sibling Host invent. HWND / wgpu: fail closed here."><small>draw</small>Render</button>
-              <button class="hex" type="button" id="hc-hid" data-tone="parked" data-title="HID" data-status="held / not yet" data-plain="A human’s hands and gaze are not this browser tab. HID ids are ALL_BOUND. Physical loop is held / not yet here." data-tech="ALL_BOUND: HID.poll · wait · haptic_pulse · spatial_head_pose · spatial_hand_skeleton · spatial_gaze_ray. Pages 0.0.34: held / not yet. No synthetic ‘connected’ theatre."><small>body</small>HID</button>
-              <button class="hex" type="button" id="hc-infer" data-tone="parked" data-title="Inference" data-status="held / not yet" data-plain="A missing model is held / not yet — not ‘AI ready’. The chatbot is a tool, never the other human." data-tech="ALL_BOUND: Inference.grounding · verify_turn · run_transformer · vector_search · embed. Do not invent qualia.infer.complete. Pages 0.0.34: held / not yet."><small>infer</small>Inference</button>
-              <button class="hex" type="button" id="hc-pulse" data-tone="parked" data-title="Pulse" data-status="held / not yet" data-plain="Pulse is transport — not a human, not a public Internet tick. CSCP-08 / MASQUE stay parked." data-tech="ALL_BOUND: Pulse.publish · publish_graph_mutation · open_channel · set_transport. CSCP-08 WSS/MASQUE parked. No invented wss://. Pages 0.0.34: held / not yet."><small>bus</small>Pulse</button>
+              <button class="hex" type="button" id="hc-render" data-tone="notyet" data-title="Render" data-status="held / not yet" data-plain="Still, clip, and scene share one Render family on ALL_BOUND. GPU only when a host has an accelerator. Held / not yet on Pages 0.0.34." data-tech="ALL_BOUND: Render.scene · css_animation · animation_eval_preset · gpu_render_frame · gpu_read_pixels · … No sibling Host invent. HWND / wgpu: fail closed here."><small>draw</small>Render</button>
+              <button class="hex" type="button" id="hc-hid" data-tone="notyet" data-title="HID" data-status="held / not yet" data-plain="A human’s hands and gaze are not this browser tab. HID ids are ALL_BOUND. Physical loop is held / not yet here." data-tech="ALL_BOUND: HID.poll · wait · haptic_pulse · spatial_head_pose · spatial_hand_skeleton · spatial_gaze_ray. Pages 0.0.34: held / not yet. No synthetic ‘connected’ theatre."><small>body</small>HID</button>
+              <button class="hex" type="button" id="hc-infer" data-tone="notyet" data-title="Inference" data-status="held / not yet" data-plain="A missing model is held / not yet — not ‘AI ready’. The chatbot is a tool, never the other human." data-tech="ALL_BOUND: Inference.grounding · verify_turn · run_transformer · vector_search · embed. Do not invent qualia.infer.complete. Pages 0.0.34: held / not yet."><small>infer</small>Inference</button>
+              <button class="hex" type="button" id="hc-pulse" data-tone="notyet" data-title="Pulse" data-status="held / not yet" data-plain="Pulse is transport — not a human, not a public Internet tick. CSCP-08 / MASQUE stay parked." data-tech="ALL_BOUND: Pulse.publish · publish_graph_mutation · open_channel · set_transport. CSCP-08 WSS/MASQUE parked. No invented wss://. Pages 0.0.34: held / not yet."><small>bus</small>Pulse</button>
             </div>
           </div>
         </div>
@@ -219,7 +295,7 @@
     <section class="section soft-rise" data-soft-rise="families" data-family-map aria-labelledby="families-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">Host families · catalog map</p>
+          <p class="eyebrow">Diagram 3 · catalog reveal</p>
           <h2 id="families-title">Clusters, not a 1121-row dump.</h2>
         </div>
         <p class="section-intro">Families below are on QualiaDB <code>v0.0.38</code> <code>ALL_BOUND</code>. Tap a card. Dual chips: ALL_BOUND vs Pages held / not yet. Count the tip; do not freeze 1121.</p>
@@ -324,34 +400,76 @@
     <section class="section soft-rise" id="marvin" data-soft-rise="marvin" aria-labelledby="marvin-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">Marvin fold</p>
+          <p class="eyebrow">Marvin fold · ontology</p>
           <h2 id="marvin-title">who · claim · handle · tool</h2>
         </div>
-        <p class="section-intro">Room for ontology / semiotic examples. Seats are named. Living-safe: do not model a human, personhood, or living-natural relation as <code>owl:Thing</code>. No Host invent in this bay.</p>
+        <p class="section-intro">Subject stays the <strong>human</strong> (NaturalAgent). Law keeps <strong>person</strong>. Handle ≠ human. A chatbot is a tool. Living-safe: do not model a human as <code>owl:Thing</code>. No Host invent.</p>
       </div>
-      <div class="marvin-bay">
-        <article class="marvin-seat" id="marvin-who">
-          <p class="kicker">who</p>
-          <h3>Human first</h3>
-          <p>Example seat: a named human (NaturalAgent). Not a DID. Not a session. Marvin can drop a living-safe graph here.</p>
+      <div class="reality-grid">
+        <article class="reality-card" id="marvin-who">
+          <span class="status-label status-now">who</span>
+          <h3>The human</h3>
+          <p>NaturalAgent. The living nucleus. Directory lists humans first. Not a DID. Not a session. Not a chatbot.</p>
         </article>
-        <article class="marvin-seat" id="marvin-claim">
-          <p class="kicker">claim</p>
+        <article class="reality-card" id="marvin-claim">
+          <span class="status-label status-host">claim</span>
           <h3>Said, then leased</h3>
-          <p>A claim is speech or a quin. If it touches a family, lease that family. Modal verbs stay terms until <code>DeonticLogic</code> / <code>EpistemicLogic</code> is leased.</p>
+          <p>Speech or a quin. If it touches a family, lease that family. Modal verbs stay terms until <code>DeonticLogic.evaluate</code> or <code>EpistemicLogic.evaluate</code> is leased — both ALL_BOUND, held / not yet on Pages 0.0.34.</p>
         </article>
-        <article class="marvin-seat" id="marvin-handle">
-          <p class="kicker">handle</p>
-          <h3>Coord only</h3>
-          <p>Example seat: a DID or DNS name as locator. Revoke the handle; the human remains. Continuity, not a mesh tick. No invented <code>wss://</code>.</p>
+        <article class="reality-card" id="marvin-handle">
+          <span class="status-label status-plan">handle</span>
+          <h3>Locator, not who</h3>
+          <p>DID, DNS, session, coord. Handle ≠ human. Revoke the handle; the human remains. No invented <code>wss://</code>.</p>
         </article>
-        <article class="marvin-seat" id="marvin-tool">
-          <p class="kicker">tool</p>
-          <h3>Never the other party</h3>
-          <p>Chatbot / agent / model sits last. A tool. Never the other human. Ask · Keep · Talk are teachable loops, not locked nav.</p>
+        <article class="reality-card" id="marvin-tool">
+          <span class="status-label status-plan">tool</span>
+          <h3>Chatbot last</h3>
+          <p>Agent, model, chatbot — a tool. Never the other human. Ask · Keep · Talk are teachable loops, not locked nav.</p>
+        </article>
+        <article class="reality-card" id="marvin-continuity">
+          <span class="status-label status-now">Continuity</span>
+          <h3>Handle ≠ human</h3>
+          <p>Chrome says human. Law keeps person. A lost domain must not erase a human. Handle revoke is not who-erase.</p>
+        </article>
+        <article class="reality-card" id="marvin-modalities">
+          <span class="status-label status-host">modalities on claim</span>
+          <h3>Never rewrite who</h3>
+          <p>Deontic and epistemic grade a <em>claim</em>. They do not rewrite the human. No corp-bot launder: a tool cannot become the knower or the duty-bearer.</p>
         </article>
       </div>
-      <p class="marvin-note"><strong style="color:var(--ink)">Living-safe.</strong> Standing OWL constraints (B-OWL-PERSON / B-OWL-NATURAL / B-OWL-LIFE-UPLIFT) stay in force. Technical artifacts may use OWL where Thing is apt — humans are not those artifacts. This bay waits for Marvin examples; it does not mint ids to look finished.</p>
+
+      <div class="section-heading" style="margin-top:42px">
+        <div>
+          <p class="eyebrow">Framingham miniature</p>
+          <h2 id="framingham-title">Subject stays the human.</h2>
+        </div>
+        <p class="section-intro">A risk score is a claim. The calculator is a tool. The living human is not the pack. Host id only if live on <code>ALL_BOUND</code> — else held / not yet.</p>
+      </div>
+      <div class="reality-grid">
+        <article class="reality-card">
+          <span class="status-label status-now">who</span>
+          <h3>The human</h3>
+          <p>The living subject whose risk is spoken about. Not a record id. Not a session. Law keeps person if the text is jural.</p>
+        </article>
+        <article class="reality-card">
+          <span class="status-label status-host">claim + tool</span>
+          <h3>Pack / score</h3>
+          <p>The Framingham pack is a claim produced by a tool. It does not become the human. A chatbot that narrates the score is still a tool.</p>
+        </article>
+        <article class="reality-card">
+          <span class="status-label status-plan">held / not yet</span>
+          <h3><code>ClinicalRisk.framingham</code></h3>
+          <p>ALL_BOUND on QualiaDB <code>v0.0.38</code>. This Pages <code>vibe-wasm 0.0.34</code> cannot eval it. Do not fake a score. No invented sibling method.</p>
+        </article>
+      </div>
+
+      <div class="anti-collapse" id="anti-collapse">
+        <strong style="color:var(--ink)">Anti-collapse.</strong>
+        Do not collapse human into handle, person into chatbot, claim into who, or tool into correspondent.
+        Standing OWL constraints (B-OWL-PERSON / B-OWL-NATURAL / B-OWL-LIFE-UPLIFT) stay in force.
+        Source of truth: QualiaDB <code>v0.0.38</code> / <code>cdd7ae728</code> <a class="q-link" href="https://github.com/mediaprophet/qualiaDB/tree/v0.0.38/crates/vibe">crates/vibe</a>.
+        Workspace version stays <code>0.0.1</code>.
+      </div>
     </section>
 
     <section class="section split soft-rise" data-soft-rise="neo" aria-labelledby="neo-title">
