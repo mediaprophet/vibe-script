@@ -58,7 +58,7 @@ Do not invent extra LinearAlgebra methods. If a name is not on `ALL_BOUND`, it i
 |---|---|
 | Native `GraphDatabase.volume_commit` | durable when sanctuary permits |
 | wasm / LocalHost volume invoke | local or E300 — **not** a saved `.q42` |
-| This repo’s Pages WASM | may lag QualiaDB `0.0.38`; not live-unless-connected |
+| This repo’s Pages WASM | `vibe-wasm 0.0.38` from QualiaDB tag `v0.0.38`. LocalHost evals ALL_BOUND logic / LinearAlgebra (`honesty: "local"` residual). Not a native sanctuary. |
 | Inference chrome | live `Inference.*` or gated |
 
 A demo that cannot open a volume says **held / not yet**, not “saved”.

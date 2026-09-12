@@ -498,6 +498,49 @@ button.boundary-node, button.reality-card { font: inherit; color: inherit; width
   .hex { width: 100%; height: 7.2rem; font-size: .72rem; }
 }
 
+.eval-lab {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(13, 29, 49, .55);
+}
+.eval-lab-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.eval-lab-tools .field {
+  min-width: min(100%, 22rem);
+  max-width: none;
+  flex: 1;
+}
+.eval-src {
+  margin: 0;
+  min-height: 7.5rem;
+  max-height: 14rem;
+  overflow: auto;
+}
+.output.eval-out,
+.eval-out {
+  margin: 0;
+  min-height: 8rem;
+  max-height: 18rem;
+  overflow: auto;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #050f1c;
+  color: var(--muted);
+  font: .78rem/1.5 var(--mono);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.eval-out.ok { color: var(--mint); }
+.eval-out.err { color: var(--red); }
+
 @media (prefers-reduced-motion: reduce) {
   .soft-rise,
   .soft-rise.is-in,

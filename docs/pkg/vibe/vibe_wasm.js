@@ -67,6 +67,22 @@ export function ast_schema_json() {
 }
 
 /**
+ * Capability invoke pin — default fail-closed E300 (parity with Host::capability_invoke).
+ * Args are accepted as a JSON string for the JS boundary.
+ * @param {string} id
+ * @param {string} _args_json
+ * @returns {any}
+ */
+export function capability_invoke(id, _args_json) {
+    const ptr0 = passStringToWasm0(id, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len0 = WASM_VECTOR_LEN;
+    const ptr1 = passStringToWasm0(_args_json, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+    const len1 = WASM_VECTOR_LEN;
+    const ret = wasm.capability_invoke(ptr0, len0, ptr1, len1);
+    return ret;
+}
+
+/**
  * Check a cell expression.
  * @param {string} src
  * @returns {any}
@@ -174,7 +190,7 @@ export function encode_cell_bytecode(src) {
 
 /**
  * Evaluate a cell and return the result as a JSON-compatible JS value.
- * This is the main entry point for the playground.
+ * Playground Run uses `eval_program_src` (module + optional `main`), not this.
  * @param {string} src
  * @returns {any}
  */
@@ -199,6 +215,8 @@ export function eval_cell_src(src) {
 
 /**
  * Evaluate a full program on LocalHost (workshop dialect).
+ *
+ * Runs preamble items, then `main` when present — same as `vibe eval FILE main`.
  * @param {string} src
  * @returns {any}
  */
@@ -218,6 +236,23 @@ export function gbnf_grammar() {
     let deferred1_1;
     try {
         const ret = wasm.gbnf_grammar();
+        deferred1_0 = ret[0];
+        deferred1_1 = ret[1];
+        return getStringFromWasm0(ret[0], ret[1]);
+    } finally {
+        wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
+    }
+}
+
+/**
+ * Frozen host ABI stamp (`vibe-host-0.1`).
+ * @returns {string}
+ */
+export function host_version() {
+    let deferred1_0;
+    let deferred1_1;
+    try {
+        const ret = wasm.host_version();
         deferred1_0 = ret[0];
         deferred1_1 = ret[1];
         return getStringFromWasm0(ret[0], ret[1]);
@@ -353,6 +388,10 @@ function __wbg_get_imports() {
             const ret = new Uint8Array(getArrayU8FromWasm0(arg0, arg1));
             return ret;
         },
+        __wbg_parse_1f9d3f9cbc8a7da2: function() { return handleError(function (arg0, arg1) {
+            const ret = JSON.parse(getStringFromWasm0(arg0, arg1));
+            return ret;
+        }, arguments); },
         __wbg_push_f724b5db8acf89d2: function(arg0, arg1) {
             const ret = arg0.push(arg1);
             return ret;
