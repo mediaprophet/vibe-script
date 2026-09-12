@@ -1,7 +1,7 @@
 {
   "name": "vibe-script",
   "displayName": "VibeScript",
-  "description": "VibeScript 0.1 — highlighting + LSP for the JS-replacement language.",
+  "description": "VibeScript 0.1 — highlighting + LSP. Engine is QualiaDB 0.0.38 crates/vibe; this extension stays 0.0.1.",
   "version": "0.0.1",
   "publisher": "timothy-charles-holborn",
   "license": "CC-BY-NC-ND-4.0",

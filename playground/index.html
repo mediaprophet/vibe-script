@@ -242,6 +242,7 @@
     <div class="nav-links">
       <a href="/docs/showcase.html">Showcase</a>
       <a href="/docs/spec.html">Spec</a>
+      <a href="/docs/honesty.html">Honesty</a>
       <a href="/docs/dev-docs.html">API Scan</a>
       <a href="/skills/SKILL.md">Agent Skill</a>
       <a href="/docs/index.html">Docs</a>
@@ -267,7 +268,7 @@
   </main>
 
   <footer>
-    <span>Hybrid Engine &middot; Client-Side Pure WebAssembly (Primary) &middot; LocalHost Port 7420 (CLI Fallback)</span>
+    <span>QualiaDB 0.0.38 dialect &middot; held / not yet (never unavailable) &middot; WASM snapshot may lag live ALL_BOUND</span>
     <span>Host CLI: <code>cargo run -p vibe-play</code></span>
   </footer>
 
@@ -295,14 +296,15 @@
     }
 
     const samples = {
-      lamp: `using Animation, HID;\n\neffect cell t := time.now();\ncell pose := Animation.orbit_spin(1.0);\ncell glow := oklch(0.72, 0.12, 230.0);\n\npresent lamp {\n    color: glow\n    pose: pose\n}`,
+      lamp: `using Animation, HID;\n\neffect cell t := time.unix();\ncell pose := Animation.orbit_spin(1.0);\ncell glow := oklch(0.72, 0.12, 230.0);\n\npresent lamp {\n    color: glow\n    pose: pose\n}`,
       orbit: `using Animation;\n\neffect fn run(t: f64) -> Record {\n    return Animation.orbit_spin(t);\n}\n\nfn main() {\n    return run(1.0);\n}`,
+      linear_algebra: `// Live on QualiaDB 0.0.38 ALL_BOUND (LinearAlgebra.dot). Pages WASM may still E100 until JOBS E10.\nusing LinearAlgebra;\n\neffect fn main() {\n    return LinearAlgebra.dot({ a: [1.0, 2.0, 3.0], b: [4.0, 5.0, 6.0] });\n}`,
       bind: `let mut volume = 0.2;\nlet mut slider = 0.2;\nbind slider <-> volume using Clamp[0.0, 1.0] resolve latest;\n\nfn main() {\n    return volume;\n}`,
       tween: `fn main() {\n    return 0.0 ~ 10.0 over 400ms ease linear;\n}`,
       clinic: `prefix snomed: <http://snomed.info/id/>;\nusing GraphDatabase;\n\npure fn term() {\n    return snomed:386661006;\n}`,
       reactive_cells: `cell a := 10;\ncell b := a * 2 + 5;\ncell c := b + a;\n\nfn main() {\n    return c;\n}`,
       destructure: `struct Point { x: f64, y: f64 }\n\nfn main() {\n    let p = Point { x: 3.0, y: 4.0 };\n    let Point { x, y } = p;\n    return x * x + y * y;\n}`,
-      vector_math: `using Math;\n\nfn main() {\n    let v = vec3(1.0, 2.0, 3.0);\n    return v;\n}`,
+      vector_math: `using LinearAlgebra;\n\nfn main() {\n    return LinearAlgebra.norm({ a: [3.0, 4.0] });\n}`,
       zh: `locale zh;\n\n函数 f() -> i64 {\n    返回 42;\n}\n\n函数 main() -> i64 {\n    返回 f();\n}`
     };
 
@@ -404,7 +406,7 @@
       } catch (e) {
         statusDot.className = "status-dot red";
         out.className = "err";
-        out.textContent = "Execution failed: " + e;
+        out.textContent = "Eval held / not yet: " + e;
       }
     }
 

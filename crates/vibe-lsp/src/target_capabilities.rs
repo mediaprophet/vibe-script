@@ -47,7 +47,7 @@ const SNAPSHOT_IDS: &[&str] = &[
 ];
 
 /// `QDB0402` is a tooling diagnostic. The Vibe engine keeps its established
-/// `E702` capability-unavailable code for execution-time failures.
+/// `E702` code for execution-time capability misses (voice: held / not yet).
 pub fn diagnostics(src: &str, target: TargetProfile) -> Vec<Value> {
     if target != TargetProfile::WasmStandalone {
         return Vec::new();
@@ -63,7 +63,7 @@ pub fn diagnostics(src: &str, target: TargetProfile) -> Vec<Value> {
                 path,
                 "native-bridge",
                 2,
-                "requires a paired local QualiaDB daemon; it is unavailable in a standalone WASM target",
+                "requires a paired local QualiaDB daemon; held / not yet on a standalone WASM target",
             ));
         } else if SNAPSHOT_IDS.contains(&path.as_str()) {
             out.push(diagnostic(
@@ -194,6 +194,13 @@ mod tests {
         assert_eq!(diags.len(), 1);
         assert_eq!(diags[0]["code"], "QDB0402");
         assert_eq!(diags[0]["data"]["mode"], "native-bridge");
+        assert!(
+            diags[0]["message"]
+                .as_str()
+                .unwrap_or("")
+                .contains("held / not yet"),
+            "diagnose voice must be held / not yet"
+        );
     }
 
     #[test]
