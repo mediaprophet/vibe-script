@@ -5,15 +5,17 @@ Returns JSON with `error_code`, `span`, `suggested_fix`, and `errors[]` (up to e
 
 This repo’s LSP (`crates/vibe-lsp`) and playgrounds wrap that report. They must not invent a second diagnostic language.
 
-## Voice: held / not yet
+## Voice: live / planned
 
-Wait-honest chrome and tooling say **held / not yet** — plus a short why.
+Wait-honest chrome and tooling say **live** or **planned** — plus a short why.
 
-Never paint user-visible **unavailable** or **broken**. Those words are theatre. A missing lease, a WASM-only snapshot, a parked network trial, or a daemon that is not paired is *held*, not a smashed product.
+Pages chips: **Works here** · **Works in Poet / Desktop** · **Planned**.
 
-Live binds must not false-held. If `ALL_BOUND` has the id and the attached host implements it, diagnose the call as live.
+Never paint user-visible **unavailable** or **broken**. Those words are theatre. A missing lease, a WASM-only snapshot, or a daemon that is not paired is *planned* (or “Works in Poet / Desktop”), not a smashed product.
 
-`Capability.method` is secondary to **human sayables**. Prefer:
+Live binds must not be marked planned. If the catalog has the id and this page (or Poet / Desktop) implements it, diagnose the call as live.
+
+Workshop first. Prefer:
 
 ```vibe
 using LinearAlgebra;
@@ -44,19 +46,19 @@ A safe suggested fix MUST NOT add authority.
 
 | Mode | Meaning |
 |---|---|
-| `native-bridge` | Needs a paired local QualiaDB daemon. **Held / not yet** on standalone WASM. |
+| `native-bridge` | Needs a paired local QualiaDB daemon. **Planned** on standalone WASM. |
 | `standalone-snapshot` | Runs against an isolated in-memory graph. Not a persistent native transaction. |
 
-Do not describe either mode as broken. Do not invent a `wss://` or MASQUE path to “fix” them.
+Do not describe either mode as broken. Do not invent a public-relay path to “fix” them.
 
 ## Cross-frame spans
 
-Diagnose spans are UTF-8 byte ranges on the **source cell**. Timeline glow maps those bytes per frame. That does not need a new Host method (sprint B-007).
+Diagnose spans are UTF-8 byte ranges on the **source cell**. Timeline glow maps those bytes per frame. That does not need a new family method (sprint B-007).
 
 ## Agent loop
 
 1. Read `docs/language-contract.md` and Qualia core §3 / §9 / §11.5.
 2. `diagnose(src)` before eval.
 3. If the report is not valid: show codes + spans + suggested fixes. Stop.
-4. If a family is unleased: add `using Family;` only when that family is live on `ALL_BOUND`.
-5. If the id is not on the live catalog: **held / not yet**. Do not mint `qualia.*`.
+4. If a family is unleased: add `using Family;` only when that family is live on the catalog.
+5. If the id is not on the live catalog: **planned**. Do not mint `qualia.*`.

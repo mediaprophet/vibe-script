@@ -31,6 +31,6 @@
   fetch("dev-docs.json").then(response => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }).then(modules => {
     entries = modules.flatMap(module => (module.items || []).map(item => ({ module: module.name || "root", name: item.name || "unnamed", kind: item.kind || "item", doc: item.doc || "", signature: item.signature || "", search: normalise([module.name, item.name, item.kind, item.doc, item.signature].join(" ")) })));
     render("");
-  }).catch(error => { list.replaceChildren(element("div", "empty", `API index held / not yet (${error.message}). Regenerate docs/dev-docs.json from the QualiaDB 0.0.38 sibling and redeploy.`)); count.textContent = "held / not yet"; });
+  }).catch(error => { list.replaceChildren(element("div", "empty", `API index planned (${error.message}). Regenerate docs/dev-docs.json from the QualiaDB 0.0.38 sibling and redeploy.`)); count.textContent = "planned"; });
   input.addEventListener("input", event => render(event.target.value));
 </script></body></html>

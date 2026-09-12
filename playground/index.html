@@ -268,7 +268,7 @@
   </main>
 
   <footer>
-    <span>QualiaDB 0.0.38 dialect &middot; vibe-wasm 0.0.38 evals ALL_BOUND LocalHost &middot; held / not yet only when unbound</span>
+    <span>QualiaDB 0.0.38 dialect &middot; vibe-wasm 0.0.38 · live / planned</span>
     <span>Host CLI: <code>cargo run -p vibe-play</code></span>
   </footer>
 
@@ -298,8 +298,8 @@
     const samples = {
       lamp: `using Animation, HID;\n\neffect cell t := time.unix();\ncell pose := Animation.orbit_spin(1.0);\ncell glow := oklch(0.72, 0.12, 230.0);\n\npresent lamp {\n    color: glow\n    pose: pose\n}`,
       orbit: `using Animation;\n\neffect fn run(t: f64) -> Record {\n    return Animation.orbit_spin(t);\n}\n\nfn main() {\n    return run(1.0);\n}`,
-      linear_algebra: `// Live on QualiaDB 0.0.38 ALL_BOUND. Pages vibe-wasm 0.0.38 evals LinearAlgebra.dot on LocalHost.\nusing LinearAlgebra;\n\neffect fn main() {\n    return LinearAlgebra.dot({ a: [1.0, 2.0, 3.0], b: [4.0, 5.0, 6.0] });\n}`,
-      deontic: `// Live LocalHost term eval. Never stamps Active. A chatbot is a tool.\nusing DeonticLogic;\n\npure fn main() {\n    return obligate { "did:q42:agent_must_sign" };\n}`,
+      linear_algebra: `// Math — live on this page. vibe-wasm 0.0.38 runs LinearAlgebra.dot.\nusing LinearAlgebra;\n\neffect fn main() {\n    return LinearAlgebra.dot({ a: [1.0, 2.0, 3.0], b: [4.0, 5.0, 6.0] });\n}`,
+      deontic: `// Ought — live on this page. Never stamps Active. A chatbot is a tool.\nusing DeonticLogic;\n\npure fn main() {\n    return obligate { "did:q42:agent_must_sign" };\n}`,
       bind: `let mut volume = 0.2;\nlet mut slider = 0.2;\nbind slider <-> volume using Clamp[0.0, 1.0] resolve latest;\n\nfn main() {\n    return volume;\n}`,
       tween: `fn main() {\n    return 0.0 ~ 10.0 over 400ms ease linear;\n}`,
       clinic: `prefix snomed: <http://snomed.info/id/>;\nusing GraphDatabase;\n\npure fn term() {\n    return snomed:386661006;\n}`,
@@ -409,7 +409,7 @@
       } catch (e) {
         statusDot.className = "status-dot red";
         out.className = "err";
-        out.textContent = "Eval held / not yet: " + e;
+        out.textContent = "Eval miss: " + e;
       }
     }
 

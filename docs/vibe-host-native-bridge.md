@@ -5,8 +5,8 @@ Poet is a host (UI / CLI / habitat), not the language. A chatbot is a tool.
 `vibe-host` is the reusable execution boundary. Engine truth is QualiaDB `0.0.38`
 `crates/vibe` — this file is tooling metadata, not a Host invent.
 
-Missing daemon or WASM-only snapshot: **held / not yet**, never “unavailable”
-or “broken”. No invented `wss://` / MASQUE path.
+Missing daemon or WASM-only snapshot: **planned**, never “unavailable”
+or “broken”. No invented public-relay path.
 
 The LSP accepts either of these initialization settings:
 

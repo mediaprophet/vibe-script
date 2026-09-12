@@ -1,7 +1,7 @@
 # Vibe Pages coverage scorecard
 
 **Prior UAT tip:** vibe-script `d7774789b` (PR #5 sole-push) · **SoT:** QualiaDB `v0.0.38`/`cdd7ae728`
-**This fold:** complete family map kept; customer-voice rewrite on `reality.html` / `atlas.html` (showcase, not essay)
+**This fold:** complete family map kept; customer voice + grammar-may-grow on Pages / language-contract / skill
 **Owner:** Capt.
 
 ## Scores
@@ -26,7 +26,7 @@ Bioinformatics, Calculus, CalculusWorkbench, CapabilityDiscovery, ChatGraph, Com
 - Every Capt SoT family is a visible `<code>Family</code>` tile with method count.
 - Already-partial families stay named: ClinicalRisk, Statistics, Econ, Research, LinearAlgebra, Animation, logic stack.
 - Lowercase `agent` (`agent.dag.*`) is also named — catalog prefix on `ALL_INVOKE_IDS`, omitted from Capt’s 104-row table. Do not hide SoT.
-- Native-only binds stay on the map with **see Poet/Desktop** / held. Live LocalHost where this WASM evals.
+- Native-only binds stay on the map as **Works in Poet / Desktop**. **Works here** where this WASM evals.
 - Title stays **What it can do**. URL stays `reality.html`. vibe-script version stays **0.0.1**. Engine not forked.
 
 Machine list: [`docs/sot-families.json`](sot-families.json) (105 prefixes / 1107 `ALL_INVOKE_IDS` rows; Capt table cites 104 / 1101 because TADL was counted as 1 and `agent.dag.*` was omitted).

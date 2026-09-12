@@ -7,4 +7,4 @@ Syntax highlighting for `.vibe` and an optional LSP client. Extension version **
 3. Set `vibe.lsp.path` to that binary if it is not on `PATH`.
 4. Open a `.vibe` file.
 
-The language engine is **not** vendored here. Workshop dialect: `using Family;` then `Family.method(...)`. Diagnose voice: **held / not yet**.
+The language engine is **not** vendored here. Workshop dialect: `using LinearAlgebra;` then `LinearAlgebra.dot(...)`. Diagnose voice: **live** / **planned**. Grammar may grow (versioned, documented).
