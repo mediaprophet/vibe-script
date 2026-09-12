@@ -109,6 +109,11 @@
   background: rgba(34, 211, 238, 0.1);
 }
 
+[data-theme="vibe-reality"] .status-label.status-poet {
+  color: var(--q-violet);
+  background: rgba(167, 139, 250, 0.12);
+}
+
 [data-theme="vibe-reality"] .soft-rise {
   opacity: 0;
   transform: translateY(16px);

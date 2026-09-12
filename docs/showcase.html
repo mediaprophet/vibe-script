@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Small, focused VibeScript examples."><title>Examples · VibeScript</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="site.css"></head>
-<body><header class="site-header"><div class="header-inner"><a class="brand" href="index.html" aria-label="VibeScript home"><span class="brand-mark">V</span><span>VibeScript <small>0.1</small></span></a><nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Playground</a><a href="atlas.html">Capability atlas</a><a href="showcase.html" aria-current="page">Examples</a><a href="reality.html">What it can do</a><a href="spec.html">Language guide</a><a href="honesty.html">Honesty</a><a href="dev-docs.html">Engine API</a><a class="github" href="https://github.com/mediaprophet/vibe-script" target="_blank" rel="noopener">GitHub ↗</a></nav></div></header>
+<body><header class="site-header"><div class="header-inner"><a class="brand" href="index.html" aria-label="VibeScript home"><span class="brand-mark">V</span><span>VibeScript <small>0.1</small></span></a><nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Playground</a><a href="atlas.html">Atlas</a><a href="showcase.html" aria-current="page">Examples</a><a href="reality.html">What it can do</a><a href="spec.html">Language guide</a><a href="honesty.html">Honesty</a><a href="dev-docs.html">Engine API</a><a class="github" href="https://github.com/mediaprophet/vibe-script" target="_blank" rel="noopener">GitHub ↗</a></nav></div></header>
 <main class="page"><section class="hero"><p class="eyebrow">Examples</p><h1>Small programs, <em>clear contracts.</em></h1><p class="lede">The syntax earns its space by describing what changes, what a program needs, and what the host should present. Start here, then paste a fixture into the playground.</p><div class="hero-actions"><a class="button button--primary" href="index.html#playground">Try these in the playground</a><a class="button" href="spec.html">Read the language guide</a></div></section>
   <section class="section" aria-labelledby="motion-title"><div class="section-heading"><div><p class="eyebrow">01 / spatial</p><h2 id="motion-title">Describe movement as a value.</h2></div><p class="section-intro">Capability imports make the host contract explicit. A pure function can calculate a pose without performing effects.</p></div><div class="split"><pre class="code-block"><span class="keyword">using</span> Animation;
 
@@ -24,11 +24,11 @@
 
   <span class="keyword">return</span> { opacity: opacity };
 }</pre><div class="callout"><strong>Host-facing by design</strong><p>Vibe provides values and semantics. A host such as a canvas or UI runtime decides how a calculated value becomes a rendered or physical change.</p></div></div></section>
-  <section class="section" aria-labelledby="vocab-title"><div class="section-heading"><div><p class="eyebrow">04 / vocabulary</p><h2 id="vocab-title">Keep domain terms canonical.</h2></div><p class="section-intro">Prefixes make long IRIs legible while preserving their identity for graph, query, and provenance-oriented systems.</p></div><div class="split"><pre class="code-block"><span class="keyword">prefix</span> snomed: &lt;http://snomed.info/id/&gt;;
+  <section class="section" aria-labelledby="vocab-title"><div class="section-heading"><div><p class="eyebrow">04 / vocabulary</p><h2 id="vocab-title">Keep domain terms canonical.</h2></div><p class="section-intro">Prefixes make long IRIs legible while preserving their identity. The page word list is in <a href="vocab.md">vocab</a>: human, person, handle, Works here · Works in Poet / Desktop · Planned. vibe-0.1 may grow when humans need a better form.</p></div><div class="split"><pre class="code-block"><span class="keyword">prefix</span> snomed: &lt;http://snomed.info/id/&gt;;
 
 <span class="keyword">pure fn</span> <span class="fn">term</span>() {
   <span class="keyword">return</span> snomed:386661006;
-}</pre><div class="callout"><strong>No rename layer</strong><p>The program names the canonical identifier. Vocabulary support is bounded around referenced terms; it does not imply embedding an entire external ontology in the engine.</p></div></div></section>
+}</pre><div class="callout"><strong>No rename layer</strong><p>The program names the canonical identifier. Vocabulary support is bounded around referenced terms; it does not ingest an entire external ontology.</p></div></div></section>
   <section class="section" aria-labelledby="ui-title"><div class="section-heading"><div><p class="eyebrow">05 / UI &amp; presentation</p><h2 id="ui-title">Zero-recompile hypermedia furniture.</h2></div><p class="section-intro">Describe dock panels, sub-trays, metrics, and actions directly in VibeScript. Hot-edit north star: script changes must not force a host rebuild. This Pages workbench is not Poet furniture.</p></div><div class="split"><pre class="code-block"><span class="keyword">let</span> dock_ui = {
   type: <span class="string">"dock_panel"</span>,
   title: <span class="string">"Aura Tray"</span>,
@@ -52,7 +52,7 @@
   return 500ms + 20ms;
 }</pre><p>Units are values with checks—not a convention left to comments.</p></article>
       <article class="info-card"><h3>Linear algebra</h3><pre class="code-block">using LinearAlgebra;
-return LinearAlgebra.dot({ a: xs, b: ys });</pre><p>Live Host family (§11.5). Pages vibe-wasm 0.0.38 evals it on LocalHost. Residual: honesty:"local" — not a fake product. Do not invent extra methods ahead of ALL_BOUND.</p></article>
+return LinearAlgebra.dot({ a: xs, b: ys });</pre><p>Math that runs. This page evals it. Do not invent extra methods ahead of the live catalog.</p></article>
       <article class="info-card"><h3>Cosmic transforms</h3><pre class="code-block">using Cosmic;
 return Cosmic.geodetic_distance({ lat_deg: a, lon_deg: b, lat2_deg: c, lon2_deg: d });</pre><p>Scientific and coordinate-system work lives on the same host surface. Args match core §11.1.</p></article>
       <article class="info-card"><h3>Consent workflows</h3><pre class="code-block">requires [ capability("graph.write") ];
@@ -65,6 +65,6 @@ Render.gpu_set_camera({ handle, yaw, pitch, zoom });</pre><p>Hosts provide capab
 return obligate { "did:q42:agent_must_sign" };</pre><p>Policy expressions are terms. This Pages 0.0.38 WASM evals DeonticLogic.evaluate. Never stamps Active. A chatbot is a tool.</p></article>
       <article class="info-card"><h3>Localized syntax</h3><pre class="code-block">locale zh;
 函数 平方(n: i64) -> i64 { 返回 n * n; }</pre><p>Locale views map to the same underlying language structure.</p></article>
-    </div><div class="hero-actions" style="margin-top:22px"><a class="button button--primary" href="atlas.html">See the interactive capability atlas</a><a class="button" href="dev-docs.html">Search the full engine API</a></div>
+    </div><div class="hero-actions" style="margin-top:22px"><a class="button button--primary" href="atlas.html">See the atlas</a><a class="button" href="dev-docs.html">Search the full engine API</a></div>
   </section>
 </main><footer class="site-footer">VibeScript 0.1 · © 2026 Timothy Charles Holborn · <a href="https://github.com/mediaprophet/vibe-script">Source and issue tracker</a></footer></body></html>

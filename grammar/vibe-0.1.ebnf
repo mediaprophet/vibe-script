@@ -1,5 +1,5 @@
 (* vibe-0.1 — copy of QualiaDB 0.0.38 vibescript-core.md §3.
-   Normative source is that document (Host catalog grows; grammar stays closed).
+   Normative source is that document (catalog grows; grammar may grow when versioned).
    PresentProp / EnumDecl / FieldDecl / MaterialDecl / LawDecl / ParamList /
    UnitSuffix complete Item productions the engine §3 copy leaves unnamed.
    GBNF + source.schema.json match crates/vibe/grammar/ on 0.0.38. *)

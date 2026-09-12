@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="What VibeScript can do: logic modalities and Host families from QualiaDB crates/vibe, eval’d live on this Pages vibe-wasm 0.0.38.">
+  <meta name="description" content="What VibeScript can do: write a script, run it, change it without rebuilding the app.">
   <title>What it can do · VibeScript</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,357 +16,177 @@
   <div class="reality-mesh" aria-hidden="true"></div>
   <header class="site-header"><div class="header-inner">
     <a class="brand" href="index.html" aria-label="VibeScript home"><span class="brand-mark">V</span><span>VibeScript <small>0.1</small></span></a>
-    <nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Playground</a><a href="atlas.html">Capability atlas</a><a href="showcase.html">Examples</a><a href="reality.html" aria-current="page">What it can do</a><a href="spec.html">Language guide</a><a href="honesty.html">Honesty</a><a href="dev-docs.html">Engine API</a><a class="github" href="https://github.com/mediaprophet/vibe-script" target="_blank" rel="noopener">GitHub ↗</a></nav>
+    <nav class="site-nav" aria-label="Primary navigation"><a href="index.html">Playground</a><a href="atlas.html">Atlas</a><a href="showcase.html">Examples</a><a href="reality.html" aria-current="page">What it can do</a><a href="spec.html">Language guide</a><a href="honesty.html">Honesty</a><a href="dev-docs.html">Engine API</a><a class="github" href="https://github.com/mediaprophet/vibe-script" target="_blank" rel="noopener">GitHub ↗</a></nav>
   </div></header>
 
   <main class="page">
     <section class="hero reality-hero">
-      <p class="eyebrow">QualiaDB v0.0.38 · crates/vibe</p>
+      <p class="eyebrow">VibeScript 0.0.1</p>
       <h1>What it can do</h1>
-      <p class="lede">Logic modalities and Host families that are live on QualiaDB <code>v0.0.38</code> <code>ALL_BOUND</code>. This Pages <code>vibe-wasm 0.0.38</code> evals them on LocalHost. <strong>held / not yet</strong> is only for what is still unbound: native sanctuary, CSCP-08/12, physical devices, a missing model. Subject is the <strong>human</strong>. Law keeps <strong>person</strong>. Handle ≠ human. A chatbot is a tool.</p>
-      <div class="sot-row" aria-label="Source of truth">
-        <span class="sot-chip">ecosystem <b>vibe-script 0.0.1</b></span>
-        <span class="sot-chip">engine SoT <b>QualiaDB v0.0.38</b></span>
-        <span class="sot-chip">tree <b>cdd7ae728 · crates/vibe</b></span>
-        <span class="sot-chip">Pages WASM <b>vibe-wasm 0.0.38</b></span>
-      </div>
-      <div class="legend-row" role="list" style="margin-top:16px">
-        <span class="legend-chip" role="listitem"><i class="legend-dot catalog" aria-hidden="true"></i><b>ALL_BOUND</b> live on QualiaDB v0.0.38</span>
-        <span class="legend-chip" role="listitem"><i class="legend-dot live" aria-hidden="true"></i><b>live LocalHost</b> this 0.0.38 snapshot evals</span>
-        <span class="legend-chip" role="listitem"><i class="legend-dot local" aria-hidden="true"></i><b>held / not yet</b> unbound here (sanctuary · devices · CSCP · model)</span>
-        <span class="legend-chip" role="listitem"><i class="legend-dot parked" aria-hidden="true"></i><b>parked</b> CSCP-08 / CSCP-12</span>
+      <p class="lede">Write a script. Run it. Change it without rebuilding the app.</p>
+      <p class="continuity-once">You are the human. The law still says person. A name or login is not the person. A chatbot is a tool.</p>
+      <p class="grammar-grow">vibe-0.1 is the current dialect. The grammar may grow when humans need a better form — versioned and documented. A Host does not invent new words. The catalog already grows.</p>
+      <div class="legend-row" role="list" aria-label="Status" style="margin-top:16px">
+        <span class="legend-chip" role="listitem"><i class="legend-dot live" aria-hidden="true"></i><b>Works here</b></span>
+        <span class="legend-chip" role="listitem"><i class="legend-dot catalog" aria-hidden="true"></i><b>Works in Poet / Desktop</b></span>
+        <span class="legend-chip" role="listitem"><i class="legend-dot local" aria-hidden="true"></i><b>Planned</b></span>
       </div>
       <div class="hero-actions" style="margin-top:22px">
-        <a class="button button--primary" href="#live-eval">Eval on this page</a>
-        <a class="button" href="#logic-tiles">Logic modalities</a>
-        <a class="button" href="#hosts">Host families</a>
-        <a class="button" href="https://github.com/mediaprophet/qualiaDB/tree/v0.0.38/crates/vibe" target="_blank" rel="noopener">Engine source ↗</a>
+        <a class="button button--primary" href="#try">Try it</a>
+        <a class="button" href="#already">It already does</a>
+        <a class="button" href="#family-roster">Everything it includes</a>
       </div>
     </section>
 
-    <section class="soft-rise" data-soft-rise="timothy" aria-labelledby="continuity-title">
+    <section class="section soft-rise" id="already" data-soft-rise="davinci" aria-labelledby="already-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">Continuity</p>
-          <h2 id="continuity-title">Handle is not the human.</h2>
+          <p class="eyebrow">Shipped</p>
+          <h2 id="already-title">It already does</h2>
         </div>
-        <p class="section-intro">Chrome says <strong>human</strong> (NaturalAgent). Law keeps <strong>person</strong>. A DID or session is a handle. A chatbot is a tool.</p>
+        <p class="section-intro">If it is listed here, it works. A miss is a bug to finish — not a greyed-out promise.</p>
       </div>
-      <div class="continuity-strip">
-        <article class="continuity-item">
-          <p class="kicker">human</p>
-          <h3>NaturalAgent</h3>
-          <p>The living nucleus. Directory lists humans first. Not a DID. Not a chatbot.</p>
+      <div class="does-grid">
+        <article class="does-card">
+          <h3>Logic you can check</h3>
+          <p>Rules, constraints, should / may. Grade a claim. Never rewrite who a person is.</p>
         </article>
-        <article class="continuity-item">
-          <p class="kicker">person</p>
-          <h3>Law keeps the word</h3>
-          <p>Jural who-kind stays in law text. Do not collapse a human or a person into a handle.</p>
+        <article class="does-card">
+          <h3>Math that runs</h3>
+          <p>Including linear algebra. Dot products, matrices, stats, solvers — run them.</p>
         </article>
-        <article class="continuity-item">
-          <p class="kicker">handle</p>
-          <h3>Locator, not who</h3>
-          <p>DID, DNS, session, coord. Revoking a handle is not who-erase.</p>
+        <article class="does-card">
+          <h3>Graphs you can ask</h3>
+          <p>Query a graph. Write a piece of it. Keep the shape honest.</p>
         </article>
-        <article class="continuity-item">
-          <p class="kicker">tool</p>
-          <h3>Chatbot last</h3>
-          <p>Agent, model, chatbot — a tool. Never the other party.</p>
+        <article class="does-card">
+          <h3>Motion you can play</h3>
+          <p>Orbits, springs, pulses. Change a number, see it move.</p>
+        </article>
+        <article class="does-card">
+          <h3>Saves you can open again</h3>
+          <p>Open what you stored and keep going. No rebuild to try a change.</p>
         </article>
       </div>
     </section>
 
-    <section class="section soft-rise" id="live-eval" data-soft-rise="davinci" aria-labelledby="live-eval-title">
+    <section class="section soft-rise" id="try" data-soft-rise="davinci" aria-labelledby="try-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">Measured on vibe-wasm 0.0.38</p>
-          <h2 id="live-eval-title">This page evals ALL_BOUND work.</h2>
+          <p class="eyebrow">On this page</p>
+          <h2 id="try-title">Try it</h2>
         </div>
-        <p class="section-intro">Same LocalHost the playground uses. Logic and <code>LinearAlgebra.dot</code> run. Residual: LocalHost returns <code>honesty: "local"</code> for catalog ids that are not numeric Animation kernels — not a fake 32.0, not a saved <code>.q42</code>.</p>
+        <p class="section-intro">Pick a small script. Run it. Then change it in the playground if you want.</p>
       </div>
       <div class="eval-lab">
         <div class="eval-lab-tools">
-          <label class="visually-hidden" for="eval-picker">Choose a live fixture</label>
+          <label class="visually-hidden" for="eval-picker">Choose a script</label>
           <select class="field" id="eval-picker"></select>
-          <button class="button button--primary" id="btn-live-eval" type="button">Eval</button>
-          <button class="button" id="btn-live-diagnose" type="button">Diagnose</button>
-          <span class="status" id="eval-badge">loading WASM…</span>
+          <button class="button button--primary" id="btn-live-eval" type="button">Run</button>
+          <button class="button" id="btn-live-diagnose" type="button">Check</button>
+          <span class="status" id="eval-badge">loading…</span>
         </div>
-        <pre class="code-block eval-src" id="eval-src" aria-label="Fixture source"></pre>
-        <pre class="output eval-out" id="eval-out" aria-live="polite">Preparing vibe-wasm 0.0.38…</pre>
+        <pre class="code-block eval-src" id="eval-src" aria-label="Script"></pre>
+        <pre class="output eval-out" id="eval-out" aria-live="polite">Getting ready…</pre>
       </div>
     </section>
 
-    <section class="section soft-rise" id="logic-tiles" data-soft-rise="davinci" data-logic-tiles aria-labelledby="logic-tiles-title">
+    <section class="section soft-rise" id="family-roster" data-soft-rise="families" data-family-roster aria-labelledby="roster-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">Landed on v0.0.38 · tap a tile</p>
-          <h2 id="logic-tiles-title">N3 · SHACL · deontic · epistemic</h2>
+          <p class="eyebrow">105 families</p>
+          <h2 id="roster-title">Everything it includes</h2>
         </div>
-        <p class="section-intro"><code>ALL_BOUND</code> on the engine tree. This Pages WASM evals them on LocalHost. Modalities grade a <strong>claim</strong>. They never rewrite who.</p>
+        <p class="section-intro">105 families in plain words (104 Capt + lowercase agent). Search Rules, Math, Motion, or the catalog name. <strong>Works here</strong> runs on this page. <strong>Works in Poet / Desktop</strong> is the full app — still in the product. <strong>Planned</strong> is not built yet.</p>
       </div>
-      <div class="reality-grid grid-4">
-        <button class="reality-card" type="button" id="tile-n3" data-title="N3 Logic" data-status="live LocalHost" data-tone="live" data-plain="If-then arrows a human can still read. ALL_BOUND on 0.0.38. This snapshot evals N3Logic.evaluate as a LocalHost record." data-tech="ALL_BOUND: N3Logic.evaluate. Pages vibe-wasm 0.0.38 evals { honesty: &quot;local&quot;, id }. Residual: not the Quin VM rewrite. Do not invent Family.method.">
-          <span class="status-label status-live">live LocalHost</span>
-          <h3>N3</h3>
-          <p><code>N3Logic.evaluate</code></p>
-        </button>
-        <button class="reality-card" type="button" id="tile-shacl" data-title="SHACL" data-status="live LocalHost" data-tone="live" data-plain="Shapes on a graph. This snapshot evals SHACL.validate. A tray badge is still not a native validate. A human is not owl:Thing. Law keeps person." data-tech="ALL_BOUND: SHACL.validate · SHACL.extensions. Pages 0.0.38 evals { honesty: &quot;local&quot;, id }. Residual: not a sanctuary SHACL run.">
-          <span class="status-label status-live">live LocalHost</span>
-          <h3>SHACL</h3>
-          <p><code>SHACL.validate</code></p>
-        </button>
-        <button class="reality-card" type="button" id="tile-deontic" data-title="Deontic" data-status="live LocalHost" data-tone="live" data-plain="Ought-language sits on a claim, not on a who. Modal verbs stay terms unless DeonticLogic is leased. This snapshot evals obligate as DeonticLogic.evaluate." data-tech="ALL_BOUND: DeonticLogic.evaluate. Pages 0.0.38: { honesty: &quot;local&quot;, evaluated: true }. Never stamp Active. Never rewrite the human.">
-          <span class="status-label status-live">live LocalHost</span>
-          <h3>Deontic</h3>
-          <p><code>DeonticLogic.evaluate</code></p>
-        </button>
-        <button class="reality-card" type="button" id="tile-epistemic" data-title="Epistemic" data-status="live LocalHost" data-tone="live" data-plain="A human knows or believes. Certainty is graded. This snapshot evals EpistemicLogic.evaluate. A corp-bot cannot become the knower." data-tech="ALL_BOUND: EpistemicLogic.evaluate. Pages 0.0.38: { honesty: &quot;local&quot;, evaluated: true }. No corp-bot launder of who.">
-          <span class="status-label status-live">live LocalHost</span>
-          <h3>Epistemic</h3>
-          <p><code>EpistemicLogic.evaluate</code></p>
-        </button>
-      </div>
-      <div class="explainer" data-explainer>
-        <div class="plain">
-          <strong>Plain</strong>
-          <p data-explainer-title class="font-display" style="color:var(--ink);font-size:1.15rem;margin-bottom:8px"></p>
-          <span class="status-label status-notyet" data-explainer-status></span>
-          <p data-explainer-plain style="margin-top:12px"></p>
+      <div class="roster-tools">
+        <label class="roster-search-label"><span class="visually-hidden">Search families</span>
+          <input class="search roster-search" id="roster-search" type="search" placeholder="Try Rules, Math, Bioinformatics…" autocomplete="off">
+        </label>
+        <div class="roster-filters" role="group" aria-label="Filter">
+          <button class="roster-filter is-on" type="button" data-roster-filter="all">All</button>
+          <button class="roster-filter" type="button" data-roster-filter="logic">Logic</button>
+          <button class="roster-filter" type="button" data-roster-filter="graph">Graphs</button>
+          <button class="roster-filter" type="button" data-roster-filter="science">Math</button>
+          <button class="roster-filter" type="button" data-roster-filter="habitat">Motion</button>
+          <button class="roster-filter" type="button" data-roster-filter="research">Research</button>
+          <button class="roster-filter" type="button" data-roster-filter="media">Media</button>
+          <button class="roster-filter" type="button" data-roster-filter="econ">Money</button>
         </div>
-        <div class="tech">
-          <strong>Technical</strong>
-          <p data-explainer-tech></p>
+        <p class="roster-count-live" id="roster-count" aria-live="polite">105 families</p>
+      </div>
+      <div class="roster-cluster" data-roster-cluster="logic">
+        <h3 class="roster-cluster-title">Logic <span>16</span></h3>
+        <div class="roster-grid">
+          <button class="roster-tile" type="button" data-name="SHACL" data-cluster="logic" data-title="Shapes" data-status="Works here" data-tone="live" data-plain="Check that a graph keeps the shape you asked for." data-tech="2 calls. Example: SHACL.validate."><span class="status-label status-live">Works here</span><h3>Shapes</h3><p class="roster-count"><code>SHACL</code></p></button><button class="roster-tile" type="button" data-name="N3Logic" data-cluster="logic" data-title="Rules" data-status="Works here" data-tone="live" data-plain="If-then rules a person can still read." data-tech="1 call. Example: N3Logic.evaluate."><span class="status-label status-live">Works here</span><h3>Rules</h3><p class="roster-count"><code>N3Logic</code></p></button><button class="roster-tile" type="button" data-name="DeonticLogic" data-cluster="logic" data-title="Ought" data-status="Works here" data-tone="live" data-plain="Should, may, must-not — on a claim, not on a person." data-tech="1 call. Example: DeonticLogic.evaluate."><span class="status-label status-live">Works here</span><h3>Ought</h3><p class="roster-count"><code>DeonticLogic</code></p></button><button class="roster-tile" type="button" data-name="EpistemicLogic" data-cluster="logic" data-title="Knowing" data-status="Works here" data-tone="live" data-plain="Someone knows or believes. A chatbot does not become the knower." data-tech="1 call. Example: EpistemicLogic.evaluate."><span class="status-label status-live">Works here</span><h3>Knowing</h3><p class="roster-count"><code>EpistemicLogic</code></p></button><button class="roster-tile" type="button" data-name="ParaconsistentLogic" data-cluster="logic" data-title="Clash" data-status="Works here" data-tone="live" data-plain="When two facts clash, keep the clash in a box. Don’t blow up the rest." data-tech="1 call. Example: ParaconsistentLogic.route."><span class="status-label status-live">Works here</span><h3>Clash</h3><p class="roster-count"><code>ParaconsistentLogic</code></p></button><button class="roster-tile" type="button" data-name="TemporalAndDescriptionLogic" data-cluster="logic" data-title="Time &amp; kinds" data-status="Works here" data-tone="live" data-plain="Is this a kind of that? Always / eventually for time." data-tech="4 calls. Example: TemporalAndDescriptionLogic.ltl.globally."><span class="status-label status-live">Works here</span><h3>Time &amp; kinds</h3><p class="roster-count"><code>TemporalAndDescriptionLogic</code></p></button><button class="roster-tile" type="button" data-name="AdvancedLogic" data-cluster="logic" data-title="Advanced" data-status="Works here" data-tone="live" data-plain="Heavier logic checks, same language." data-tech="1 call. Example: AdvancedLogic.compute."><span class="status-label status-live">Works here</span><h3>Advanced</h3><p class="roster-count"><code>AdvancedLogic</code></p></button><button class="roster-tile" type="button" data-name="FormalLogic" data-cluster="logic" data-title="Formal" data-status="Works here" data-tone="live" data-plain="Formal proofs and checks." data-tech="1 call. Example: FormalLogic.compute."><span class="status-label status-live">Works here</span><h3>Formal</h3><p class="roster-count"><code>FormalLogic</code></p></button><button class="roster-tile" type="button" data-name="LegalLogic" data-cluster="logic" data-title="Law" data-status="Works here" data-tone="live" data-plain="Law still says person. A claim needs a duty-bearer." data-tech="1 call. Example: LegalLogic.compute."><span class="status-label status-live">Works here</span><h3>Law</h3><p class="roster-count"><code>LegalLogic</code></p></button><button class="roster-tile" type="button" data-name="GovernanceLogic" data-cluster="logic" data-title="Governance" data-status="Works here" data-tone="live" data-plain="Who may decide what. Revoking a name is not erasing a person." data-tech="1 call. Example: GovernanceLogic.compute."><span class="status-label status-live">Works here</span><h3>Governance</h3><p class="roster-count"><code>GovernanceLogic</code></p></button><button class="roster-tile" type="button" data-name="SpatialLogic" data-cluster="logic" data-title="Space" data-status="Works here" data-tone="live" data-plain="Rules about place and region." data-tech="1 call. Example: SpatialLogic.compute."><span class="status-label status-live">Works here</span><h3>Space</h3><p class="roster-count"><code>SpatialLogic</code></p></button><button class="roster-tile" type="button" data-name="InfraLogic" data-cluster="logic" data-title="Infra" data-status="Works here" data-tone="live" data-plain="Rules about the pipes underneath." data-tech="1 call. Example: InfraLogic.compute."><span class="status-label status-live">Works here</span><h3>Infra</h3><p class="roster-count"><code>InfraLogic</code></p></button><button class="roster-tile" type="button" data-name="InfraExtLogic" data-cluster="logic" data-title="Infra extra" data-status="Works here" data-tone="live" data-plain="More of those infrastructure rules." data-tech="1 call. Example: InfraExtLogic.compute."><span class="status-label status-live">Works here</span><h3>Infra extra</h3><p class="roster-count"><code>InfraExtLogic</code></p></button><button class="roster-tile" type="button" data-name="SymbolicAndDefeasibleLogic" data-cluster="logic" data-title="Defeasible" data-status="Works here" data-tone="live" data-plain="Rules that can lose to better rules." data-tech="1 call. Example: SymbolicAndDefeasibleLogic.asp."><span class="status-label status-live">Works here</span><h3>Defeasible</h3><p class="roster-count"><code>SymbolicAndDefeasibleLogic</code></p></button><button class="roster-tile" type="button" data-name="CausalFuzzyAndControl" data-cluster="logic" data-title="Cause" data-status="Works here" data-tone="live" data-plain="What caused what, and how much is enough." data-tech="2 calls. Example: CausalFuzzyAndControl.caused."><span class="status-label status-live">Works here</span><h3>Cause</h3><p class="roster-count"><code>CausalFuzzyAndControl</code></p></button><button class="roster-tile" type="button" data-name="FuzzyQuery" data-cluster="logic" data-title="Soft query" data-status="Works here" data-tone="live" data-plain="Soft matches — about, more than, less than." data-tech="12 calls. Example: FuzzyQuery.triangular."><span class="status-label status-live">Works here</span><h3>Soft query</h3><p class="roster-count"><code>FuzzyQuery</code></p></button>
         </div>
       </div>
-    </section>
-
-    <section class="section soft-rise" id="hosts" data-soft-rise="families" data-family-map aria-labelledby="families-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Landed on v0.0.38 · tap a card</p>
-          <h2 id="families-title">Host families</h2>
+      <div class="roster-cluster" data-roster-cluster="graph">
+        <h3 class="roster-cluster-title">Graphs <span>13</span></h3>
+        <div class="roster-grid">
+          <button class="roster-tile" type="button" data-name="CapabilityDiscovery" data-cluster="graph" data-title="What&#x27;s bound" data-status="Works here" data-tone="live" data-plain="Ask what this app can actually do." data-tech="3 calls. Example: CapabilityDiscovery.list."><span class="status-label status-live">Works here</span><h3>What&#x27;s bound</h3><p class="roster-count"><code>CapabilityDiscovery</code></p></button><button class="roster-tile" type="button" data-name="GraphDatabase" data-cluster="graph" data-title="Graphs" data-status="Works here" data-tone="live" data-plain="Ask a graph. Open a save and come back to it." data-tech="5 calls. Example: GraphDatabase.stats."><span class="status-label status-live">Works here</span><h3>Graphs</h3><p class="roster-count"><code>GraphDatabase</code></p></button><button class="roster-tile" type="button" data-name="GraphAuthoring" data-cluster="graph" data-title="Write graph" data-status="Works here" data-tone="live" data-plain="Write a piece of the graph." data-tech="1 call. Example: GraphAuthoring.process."><span class="status-label status-live">Works here</span><h3>Write graph</h3><p class="roster-count"><code>GraphAuthoring</code></p></button><button class="roster-tile" type="button" data-name="hash" data-cluster="graph" data-title="Hash" data-status="Works here" data-tone="live" data-plain="Stable names for things." data-tech="1 call. Example: hash.iri."><span class="status-label status-live">Works here</span><h3>Hash</h3><p class="roster-count"><code>hash</code></p></button><button class="roster-tile" type="button" data-name="Manifold" data-cluster="graph" data-title="Manifold" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Distance and projection in the habitat. Open Poet or Desktop." data-tech="3 calls. Example: Manifold.distance."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Manifold</h3><p class="roster-count"><code>Manifold</code></p></button><button class="roster-tile" type="button" data-name="Document" data-cluster="graph" data-title="Documents" data-status="Works here" data-tone="live" data-plain="Take a document in." data-tech="1 call. Example: Document.ingest."><span class="status-label status-live">Works here</span><h3>Documents</h3><p class="roster-count"><code>Document</code></p></button><button class="roster-tile" type="button" data-name="Sheet" data-cluster="graph" data-title="Sheets" data-status="Works here" data-tone="live" data-plain="Sums and stats on a sheet." data-tech="2 calls. Example: Sheet.stats."><span class="status-label status-live">Works here</span><h3>Sheets</h3><p class="roster-count"><code>Sheet</code></p></button><button class="roster-tile" type="button" data-name="ChatGraph" data-cluster="graph" data-title="Chat graph" data-status="Works here" data-tone="live" data-plain="Thread a conversation as a graph. The chatbot is still a tool." data-tech="3 calls. Example: ChatGraph.validate_fragment."><span class="status-label status-live">Works here</span><h3>Chat graph</h3><p class="roster-count"><code>ChatGraph</code></p></button><button class="roster-tile" type="button" data-name="Social" data-cluster="graph" data-title="Social" data-status="Works here" data-tone="live" data-plain="Fairness and who connects to whom." data-tech="4 calls. Example: Social.lww."><span class="status-label status-live">Works here</span><h3>Social</h3><p class="roster-count"><code>Social</code></p></button><button class="roster-tile" type="button" data-name="Net" data-cluster="graph" data-title="Network" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Peers and packed messages. Open Poet or Desktop." data-tech="2 calls. Example: Net.peer_hash."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Network</h3><p class="roster-count"><code>Net</code></p></button><button class="roster-tile" type="button" data-name="OntologyAlignment" data-cluster="graph" data-title="Align ontologies" data-status="Works here" data-tone="live" data-plain="Line two vocabularies up." data-tech="1 call. Example: OntologyAlignment.align."><span class="status-label status-live">Works here</span><h3>Align ontologies</h3><p class="roster-count"><code>OntologyAlignment</code></p></button><button class="roster-tile" type="button" data-name="GraphMatch" data-cluster="graph" data-title="Match graphs" data-status="Works here" data-tone="live" data-plain="Find near-matches between graphs." data-tech="3 calls. Example: GraphMatch.fuzzy_jaccard."><span class="status-label status-live">Works here</span><h3>Match graphs</h3><p class="roster-count"><code>GraphMatch</code></p></button><button class="roster-tile" type="button" data-name="GraphReasoning" data-cluster="graph" data-title="Graph paths" data-status="Works here" data-tone="live" data-plain="Shortest path, spread a signal, top hits." data-tech="3 calls. Example: GraphReasoning.top_k."><span class="status-label status-live">Works here</span><h3>Graph paths</h3><p class="roster-count"><code>GraphReasoning</code></p></button>
         </div>
-        <p class="section-intro">Named on QualiaDB <code>ALL_BOUND</code>. No invented <code>Family.method</code>. No dotted <code>qualia.*</code>. Animation is a numeric kernel here. Logic and LinearAlgebra eval as LocalHost records. Sanctuary, devices, and a missing model stay held / not yet.</p>
       </div>
-      <div class="family-grid">
-        <button class="family-card" type="button" data-title="Logic &amp; graph" data-status="live LocalHost" data-tone="live" data-plain="Logic families eval on this Pages 0.0.38 WASM. A human is not owl:Thing. Law keeps person. Graph SPARQL returns a local empty list — not a sanctuary query." data-tech="Measured eval: SHACL.validate · N3Logic.evaluate · DeonticLogic.evaluate · EpistemicLogic.evaluate · ParaconsistentLogic.route · TemporalAndDescriptionLogic.subsumption · LegalLogic.compute · FormalLogic.compute · GraphDatabase.sparql []. Residual: TemporalAndDescriptionLogic.ltl.* three-segment ids E100 on the workshop dotted path. volume_* is local — not a saved .q42.">
-          <div class="chip-pair"><span class="status-label status-allbound">ALL_BOUND</span><span class="status-label status-live">live LocalHost</span></div>
-          <h3>Logic &amp; graph</h3>
-          <p>N3, SHACL, deontic, epistemic — eval’d here. LTL dotted path residual.</p>
-          <p class="ids">SHACL · N3Logic · DeonticLogic · EpistemicLogic · GraphDatabase · LegalLogic</p>
-        </button>
-        <button class="family-card" type="button" data-title="Science floor" data-status="live LocalHost" data-tone="live" data-plain="LinearAlgebra.dot and gemm eval on this Pages 0.0.38 WASM. Residual: LocalHost returns honesty:local with the args — not the numeric solver product. ClinicalRisk.framingham is a claim about a human — the pack is a tool." data-tech="ALL_BOUND §11.5: LinearAlgebra.dot · gemm · norm · matmul · transpose · inverse · solve. Measured: effect fn LinearAlgebra.dot / gemm eval { honesty: &quot;local&quot;, id }. Pure fn LinearAlgebra.norm is E200 (External) — use effect fn. Not a fake 32.0.">
-          <div class="chip-pair"><span class="status-label status-allbound">ALL_BOUND</span><span class="status-label status-live">live LocalHost</span></div>
-          <h3>Science floor</h3>
-          <p>LinearAlgebra evals here. Residual: descriptor, not a computed product.</p>
-          <p class="ids">LinearAlgebra · Statistics · Physics · Chemistry · ClinicalRisk</p>
-        </button>
-        <button class="family-card" type="button" data-title="Habitat &amp; body" data-status="live kernel" data-tone="live" data-plain="Animation presets compute numbers here. Render, HID, Scene, and Poet are ALL_BOUND. Physical HID, GPU, and Poet furniture stay held / not yet. Poet is a host, not this site." data-tech="ALL_BOUND: Animation.evaluate_preset · Render.scene · HID.poll · Pulse.publish · Poet.manifold_create · Asset.persist. Measured: Animation.orbit_spin is a numeric kernel. HID.poll is a synthetic local record — not a device loop. GPU / HWND: held / not yet.">
-          <div class="chip-pair"><span class="status-label status-live">Animation live kernel</span><span class="status-label status-notyet">devices held / not yet</span></div>
-          <h3>Habitat &amp; body</h3>
-          <p>Motion evals. Physical devices and Poet furniture stay held / not yet.</p>
-          <p class="ids">Animation · Render · HID · Pulse · Scene · Poet · Asset</p>
-        </button>
-        <button class="family-card" type="button" data-title="Inference &amp; research" data-status="held / not yet" data-tone="notyet" data-plain="A missing model is held / not yet. The call may return a LocalHost record; that is not a grounded turn. The chatbot is a tool, never the other human. No invented qualia.infer.complete." data-tech="ALL_BOUND: Inference.grounding · verify_turn · run_transformer · Research.set_purpose · NLP.tokenize · OntologyAlignment.align · GraphReasoning.shortest_path · Corpus.load · Agent.plan · Orchestration.session_create · Agency.evaluate. Measured: Inference.grounding evals { honesty: &quot;local&quot; } — no model attached. Real inference: held / not yet.">
-          <div class="chip-pair"><span class="status-label status-allbound">ALL_BOUND</span><span class="status-label status-notyet">no model · held / not yet</span></div>
-          <h3>Inference &amp; research</h3>
-          <p>Ground and verify on a host with a model. Not ‘AI ready’ here.</p>
-          <p class="ids">Inference · Research · NLP · GraphReasoning · Orchestration</p>
-        </button>
-        <button class="family-card" type="button" data-title="Media &amp; world" data-status="held / not yet" data-tone="notyet" data-plain="These families are named on ALL_BOUND. This page does not composite a timeline or light a universe." data-tech="ALL_BOUND: Image.new · Video.new_project · Audio.spectrum · ThreeD.add_object · World.new · Portal.set_target · Avatar.move · Dmx.new_universe · HbbTV.new_app · Interactive.add_trigger · SecondScreen.sync. Pages: held / not yet for a live compositor.">
-          <div class="chip-pair"><span class="status-label status-allbound">ALL_BOUND</span><span class="status-label status-notyet">held / not yet</span></div>
-          <h3>Media &amp; world</h3>
-          <p>Named on the catalog. A live compositor waits on a host.</p>
-          <p class="ids">Image · Video · Audio · World · Dmx · ThreeD · HbbTV</p>
-        </button>
-        <button class="family-card" type="button" data-title="Econ, identity, capability" data-status="held / not yet" data-tone="notyet" data-plain="Identity.current_user is a handle path — not a human. Capability.grant is ALL_BOUND. A live ledger or DID registry is held / not yet here." data-tech="ALL_BOUND: Econ.npv · Finance.ledger_balance · Identity.current_user · Capability.grant · Capability.revoke · Sentinel.gate · CooperativeDelegation.permits · ContractsIdentityAndConsensus.parse_did_q42 · Forensic.malfeasance_delta. Handle ≠ human.">
-          <div class="chip-pair"><span class="status-label status-allbound">ALL_BOUND</span><span class="status-label status-notyet">held / not yet</span></div>
-          <h3>Econ &amp; capability</h3>
-          <p>A DID parse is a handle. Capability is leased, then revoked.</p>
-          <p class="ids">Econ · Finance · Identity · Capability · Sentinel · Forensic</p>
-        </button>
+      <div class="roster-cluster" data-roster-cluster="science">
+        <h3 class="roster-cluster-title">Math &amp; science <span>41</span></h3>
+        <div class="roster-grid">
+          <button class="roster-tile" type="button" data-name="SymbolicAlgebra" data-cluster="science" data-title="Algebra" data-status="Works here" data-tone="live" data-plain="Differentiate, integrate, simplify, solve." data-tech="42 calls. Example: SymbolicAlgebra.eval."><span class="status-label status-live">Works here</span><h3>Algebra</h3><p class="roster-count"><code>SymbolicAlgebra</code></p></button><button class="roster-tile" type="button" data-name="LinearAlgebra" data-cluster="science" data-title="Math" data-status="Works here" data-tone="live" data-plain="Dot products, matrix multiply, norms — it runs." data-tech="33 calls. Example: LinearAlgebra.matmul."><span class="status-label status-live">Works here</span><h3>Math</h3><p class="roster-count"><code>LinearAlgebra</code></p></button><button class="roster-tile" type="button" data-name="NumericalCalculus" data-cluster="science" data-title="Numeric calc" data-status="Works here" data-tone="live" data-plain="Simpson and friends." data-tech="1 call. Example: NumericalCalculus.simpson."><span class="status-label status-live">Works here</span><h3>Numeric calc</h3><p class="roster-count"><code>NumericalCalculus</code></p></button><button class="roster-tile" type="button" data-name="CalculusWorkbench" data-cluster="science" data-title="Calc bench" data-status="Works here" data-tone="live" data-plain="A bench for calculus work." data-tech="1 call. Example: CalculusWorkbench.compute."><span class="status-label status-live">Works here</span><h3>Calc bench</h3><p class="roster-count"><code>CalculusWorkbench</code></p></button><button class="roster-tile" type="button" data-name="Optimization" data-cluster="science" data-title="Optimize" data-status="Works here" data-tone="live" data-plain="Climb, anneal, search for a better point." data-tech="3 calls. Example: Optimization.hill_climb."><span class="status-label status-live">Works here</span><h3>Optimize</h3><p class="roster-count"><code>Optimization</code></p></button><button class="roster-tile" type="button" data-name="GeometricAlgebra" data-cluster="science" data-title="Geometric algebra" data-status="Works here" data-tone="live" data-plain="Rotors and products for space." data-tech="11 calls. Example: GeometricAlgebra.dot."><span class="status-label status-live">Works here</span><h3>Geometric algebra</h3><p class="roster-count"><code>GeometricAlgebra</code></p></button><button class="roster-tile" type="button" data-name="ComputationalGeometry" data-cluster="science" data-title="Geometry" data-status="Works here" data-tone="live" data-plain="Hulls, distances, polygons, turns." data-tech="68 calls. Example: ComputationalGeometry.convex_hull_2."><span class="status-label status-live">Works here</span><h3>Geometry</h3><p class="roster-count"><code>ComputationalGeometry</code></p></button><button class="roster-tile" type="button" data-name="ComputerVision" data-cluster="science" data-title="Vision" data-status="Works here" data-tone="live" data-plain="Blur, edges, hashes of pictures." data-tech="10 calls. Example: ComputerVision.ahash."><span class="status-label status-live">Works here</span><h3>Vision</h3><p class="roster-count"><code>ComputerVision</code></p></button><button class="roster-tile" type="button" data-name="NumberTheory" data-cluster="science" data-title="Numbers" data-status="Works here" data-tone="live" data-plain="Primes, gcd, remainders." data-tech="20 calls. Example: NumberTheory.gcd."><span class="status-label status-live">Works here</span><h3>Numbers</h3><p class="roster-count"><code>NumberTheory</code></p></button><button class="roster-tile" type="button" data-name="SpecialFunctionsAndTransforms" data-cluster="science" data-title="Transforms" data-status="Works here" data-tone="live" data-plain="A sibling Bessel / transform call." data-tech="1 call. Example: SpecialFunctionsAndTransforms.bessel_j."><span class="status-label status-live">Works here</span><h3>Transforms</h3><p class="roster-count"><code>SpecialFunctionsAndTransforms</code></p></button><button class="roster-tile" type="button" data-name="Statistics" data-cluster="science" data-title="Stats" data-status="Works here" data-tone="live" data-plain="Means, tests, distributions." data-tech="107 calls. Example: Statistics.mean."><span class="status-label status-live">Works here</span><h3>Stats</h3><p class="roster-count"><code>Statistics</code></p></button><button class="roster-tile" type="button" data-name="MachineLearning" data-cluster="science" data-title="Learning" data-status="Works here" data-tone="live" data-plain="Fit, score, split, cluster — the maths, not a mystery box." data-tech="81 calls. Example: MachineLearning.ols."><span class="status-label status-live">Works here</span><h3>Learning</h3><p class="roster-count"><code>MachineLearning</code></p></button><button class="roster-tile" type="button" data-name="biosignal" data-cluster="science" data-title="Biosignal" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Filter a body signal. Open Poet or Desktop for the device." data-tech="2 calls. Example: biosignal.dp_filter."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Biosignal</h3><p class="roster-count"><code>biosignal</code></p></button><button class="roster-tile" type="button" data-name="SpecialFunctions" data-cluster="science" data-title="Special functions" data-status="Works here" data-tone="live" data-plain="Bessel, Airy, zeta, orthogonal polynomials." data-tech="12 calls. Example: SpecialFunctions.airy_ai."><span class="status-label status-live">Works here</span><h3>Special functions</h3><p class="roster-count"><code>SpecialFunctions</code></p></button><button class="roster-tile" type="button" data-name="Interpolation" data-cluster="science" data-title="Interpolate" data-status="Works here" data-tone="live" data-plain="Fill the values between the points you have." data-tech="6 calls. Example: Interpolation.linear_interp."><span class="status-label status-live">Works here</span><h3>Interpolate</h3><p class="roster-count"><code>Interpolation</code></p></button><button class="roster-tile" type="button" data-name="PhysicsAndODE" data-cluster="science" data-title="Physics ODE" data-status="Works here" data-tone="live" data-plain="Projectiles and paths." data-tech="1 call. Example: PhysicsAndODE.projectile."><span class="status-label status-live">Works here</span><h3>Physics ODE</h3><p class="roster-count"><code>PhysicsAndODE</code></p></button><button class="roster-tile" type="button" data-name="Bioinformatics" data-cluster="science" data-title="Bioinformatics" data-status="Works here" data-tone="live" data-plain="Align sequences." data-tech="2 calls. Example: Bioinformatics.align."><span class="status-label status-live">Works here</span><h3>Bioinformatics</h3><p class="roster-count"><code>Bioinformatics</code></p></button><button class="roster-tile" type="button" data-name="OrganicChemistry" data-cluster="science" data-title="Organic chem" data-status="Works here" data-tone="live" data-plain="Check a SMILES string." data-tech="2 calls. Example: OrganicChemistry.validate_smiles."><span class="status-label status-live">Works here</span><h3>Organic chem</h3><p class="roster-count"><code>OrganicChemistry</code></p></button><button class="roster-tile" type="button" data-name="ClinicalRisk" data-cluster="science" data-title="Clinical risk" data-status="Works here" data-tone="live" data-plain="Framingham and related scores. About a person — not instead of one." data-tech="7 calls. Example: ClinicalRisk.framingham."><span class="status-label status-live">Works here</span><h3>Clinical risk</h3><p class="roster-count"><code>ClinicalRisk</code></p></button><button class="roster-tile" type="button" data-name="MedicalImaging" data-cluster="science" data-title="Medical imaging" data-status="Works here" data-tone="live" data-plain="Window a CT-style grid." data-tech="1 call. Example: MedicalImaging.hu_window."><span class="status-label status-live">Works here</span><h3>Medical imaging</h3><p class="roster-count"><code>MedicalImaging</code></p></button><button class="roster-tile" type="button" data-name="FinancialModeling" data-cluster="science" data-title="Finance models" data-status="Works here" data-tone="live" data-plain="Options and portfolio risk." data-tech="3 calls. Example: FinancialModeling.black_scholes."><span class="status-label status-live">Works here</span><h3>Finance models</h3><p class="roster-count"><code>FinancialModeling</code></p></button><button class="roster-tile" type="button" data-name="EngineeringAnalysis" data-cluster="science" data-title="Engineering" data-status="Works here" data-tone="live" data-plain="Stress, drag, fatigue, a simple beam." data-tech="12 calls. Example: EngineeringAnalysis.kinematics."><span class="status-label status-live">Works here</span><h3>Engineering</h3><p class="roster-count"><code>EngineeringAnalysis</code></p></button><button class="roster-tile" type="button" data-name="Chemistry" data-cluster="science" data-title="Chemistry" data-status="Works here" data-tone="live" data-plain="Elements, integrals, simple molecules." data-tech="22 calls. Example: Chemistry.element_symbol."><span class="status-label status-live">Works here</span><h3>Chemistry</h3><p class="roster-count"><code>Chemistry</code></p></button><button class="roster-tile" type="button" data-name="Medical" data-cluster="science" data-title="Medical" data-status="Works here" data-tone="live" data-plain="Fingerprints and intensity grids. A pack is a tool." data-tech="3 calls. Example: Medical.tanimoto."><span class="status-label status-live">Works here</span><h3>Medical</h3><p class="roster-count"><code>Medical</code></p></button><button class="roster-tile" type="button" data-name="MedicalComputing" data-cluster="science" data-title="Medical compute" data-status="Works here" data-tone="live" data-plain="Screen compounds, read a differential." data-tech="2 calls. Example: MedicalComputing.analyze_differential."><span class="status-label status-live">Works here</span><h3>Medical compute</h3><p class="roster-count"><code>MedicalComputing</code></p></button><button class="roster-tile" type="button" data-name="QuantumAndCryptographic" data-cluster="science" data-title="Crypto" data-status="Works here" data-tone="live" data-plain="SHA and Blake hashes." data-tech="3 calls. Example: QuantumAndCryptographic.sha256."><span class="status-label status-live">Works here</span><h3>Crypto</h3><p class="roster-count"><code>QuantumAndCryptographic</code></p></button><button class="roster-tile" type="button" data-name="nlp" data-cluster="science" data-title="nlp" data-status="Works here" data-tone="live" data-plain="Read a short text (this name is lowercase on purpose)." data-tech="1 call. Example: nlp.analyze."><span class="status-label status-live">Works here</span><h3>nlp</h3><p class="roster-count"><code>nlp</code></p></button><button class="roster-tile" type="button" data-name="sampler" data-cluster="science" data-title="Sampler" data-status="Works here" data-tone="live" data-plain="Draw a sample under constraints." data-tech="5 calls. Example: sampler.configure."><span class="status-label status-live">Works here</span><h3>Sampler</h3><p class="roster-count"><code>sampler</code></p></button><button class="roster-tile" type="button" data-name="PhysicsWorkbench" data-cluster="science" data-title="Physics bench" data-status="Works here" data-tone="live" data-plain="A bench for physics work." data-tech="1 call. Example: PhysicsWorkbench.compute."><span class="status-label status-live">Works here</span><h3>Physics bench</h3><p class="roster-count"><code>PhysicsWorkbench</code></p></button><button class="roster-tile" type="button" data-name="Physics" data-cluster="science" data-title="Physics" data-status="Works here" data-tone="live" data-plain="Waves, heat, pendulums, fields." data-tech="18 calls. Example: Physics.wave_1d."><span class="status-label status-live">Works here</span><h3>Physics</h3><p class="roster-count"><code>Physics</code></p></button><button class="roster-tile" type="button" data-name="Spectral" data-cluster="science" data-title="Spectral" data-status="Works here" data-tone="live" data-plain="Light as a spectrum, then colour." data-tech="5 calls. Example: Spectral.emf_to_spd."><span class="status-label status-live">Works here</span><h3>Spectral</h3><p class="roster-count"><code>Spectral</code></p></button><button class="roster-tile" type="button" data-name="Calculus" data-cluster="science" data-title="Calculus" data-status="Works here" data-tone="live" data-plain="Integrals, derivatives, stepping through time." data-tech="24 calls. Example: Calculus.solve_poisson_dirichlet."><span class="status-label status-live">Works here</span><h3>Calculus</h3><p class="roster-count"><code>Calculus</code></p></button><button class="roster-tile" type="button" data-name="IntegralTransforms" data-cluster="science" data-title="Integrals" data-status="Works here" data-tone="live" data-plain="Fourier, Laplace, Z." data-tech="8 calls. Example: IntegralTransforms.idft."><span class="status-label status-live">Works here</span><h3>Integrals</h3><p class="roster-count"><code>IntegralTransforms</code></p></button><button class="roster-tile" type="button" data-name="VectorCalculus" data-cluster="science" data-title="Vectors" data-status="Works here" data-tone="live" data-plain="Grad, div, curl, flux." data-tech="7 calls. Example: VectorCalculus.gradient."><span class="status-label status-live">Works here</span><h3>Vectors</h3><p class="roster-count"><code>VectorCalculus</code></p></button><button class="roster-tile" type="button" data-name="Ode" data-cluster="science" data-title="ODE" data-status="Works here" data-tone="live" data-plain="Step an ordinary differential equation." data-tech="4 calls. Example: Ode.rk4_integrate."><span class="status-label status-live">Works here</span><h3>ODE</h3><p class="roster-count"><code>Ode</code></p></button><button class="roster-tile" type="button" data-name="SymbolicODE" data-cluster="science" data-title="Symbolic ODE" data-status="Works here" data-tone="live" data-plain="Solve a written differential equation." data-tech="5 calls. Example: SymbolicODE.solve_linear_first_order."><span class="status-label status-live">Works here</span><h3>Symbolic ODE</h3><p class="roster-count"><code>SymbolicODE</code></p></button><button class="roster-tile" type="button" data-name="PolynomialAlgebra" data-cluster="science" data-title="Polynomials" data-status="Works here" data-tone="live" data-plain="Add, divide, gcd of polynomials." data-tech="16 calls. Example: PolynomialAlgebra.div_rem."><span class="status-label status-live">Works here</span><h3>Polynomials</h3><p class="roster-count"><code>PolynomialAlgebra</code></p></button><button class="roster-tile" type="button" data-name="Constructibility" data-cluster="science" data-title="Constructible" data-status="Works here" data-tone="live" data-plain="What a compass and straightedge can make." data-tech="9 calls. Example: Constructibility.is_regular_polygon_constructible."><span class="status-label status-live">Works here</span><h3>Constructible</h3><p class="roster-count"><code>Constructibility</code></p></button><button class="roster-tile" type="button" data-name="Cosmic" data-cluster="science" data-title="Cosmic" data-status="Works here" data-tone="live" data-plain="Earth, sky, redshift, distances." data-tech="23 calls. Example: Cosmic.warp_factor_c."><span class="status-label status-live">Works here</span><h3>Cosmic</h3><p class="roster-count"><code>Cosmic</code></p></button><button class="roster-tile" type="button" data-name="Privacy" data-cluster="science" data-title="Privacy" data-status="Works here" data-tone="live" data-plain="A noise scale for private sums." data-tech="1 call. Example: Privacy.gaussian_sigma."><span class="status-label status-live">Works here</span><h3>Privacy</h3><p class="roster-count"><code>Privacy</code></p></button><button class="roster-tile" type="button" data-name="PhysicalUnits" data-cluster="science" data-title="Units" data-status="Works here" data-tone="live" data-plain="Convert units." data-tech="1 call. Example: PhysicalUnits.convert."><span class="status-label status-live">Works here</span><h3>Units</h3><p class="roster-count"><code>PhysicalUnits</code></p></button>
+        </div>
+      </div>
+      <div class="roster-cluster" data-roster-cluster="habitat">
+        <h3 class="roster-cluster-title">Motion &amp; place <span>7</span></h3>
+        <div class="roster-grid">
+          <button class="roster-tile" type="button" data-name="Pulse" data-cluster="habitat" data-title="Pulse" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Messages between parts of the app. A public internet relay is still planned." data-tech="10 calls. Example: Pulse.publish."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Pulse</h3><p class="roster-count"><code>Pulse</code></p></button><button class="roster-tile" type="button" data-name="Render" data-cluster="habitat" data-title="Render" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Draw a still, a clip, a scene. Open Poet or Desktop." data-tech="53 calls. Example: Render.scene."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Render</h3><p class="roster-count"><code>Render</code></p></button><button class="roster-tile" type="button" data-name="Animation" data-cluster="habitat" data-title="Motion" data-status="Works here" data-tone="live" data-plain="Play an orbit, a spring, a pulse." data-tech="7 calls. Example: Animation.evaluate_preset."><span class="status-label status-live">Works here</span><h3>Motion</h3><p class="roster-count"><code>Animation</code></p></button><button class="roster-tile" type="button" data-name="Asset" data-cluster="habitat" data-title="Assets" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Keep a thing with time, topic, and place. Open Poet or Desktop." data-tech="21 calls. Example: Asset.create."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Assets</h3><p class="roster-count"><code>Asset</code></p></button><button class="roster-tile" type="button" data-name="Scene" data-cluster="habitat" data-title="Scene" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Cameras, meshes, lights. Open Poet or Desktop." data-tech="19 calls. Example: Scene.lerp_camera."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Scene</h3><p class="roster-count"><code>Scene</code></p></button><button class="roster-tile" type="button" data-name="HID" data-cluster="habitat" data-title="Hands &amp; gaze" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Hands, gaze, a gamepad. Open Poet or Desktop." data-tech="16 calls. Example: HID.poll."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Hands &amp; gaze</h3><p class="roster-count"><code>HID</code></p></button><button class="roster-tile" type="button" data-name="Poet" data-cluster="habitat" data-title="Poet" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="The habitat app itself." data-tech="5 calls. Example: Poet.manifold_create."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Poet</h3><p class="roster-count"><code>Poet</code></p></button>
+        </div>
+      </div>
+      <div class="roster-cluster" data-roster-cluster="research">
+        <h3 class="roster-cluster-title">Research <span>10</span></h3>
+        <div class="roster-grid">
+          <button class="roster-tile" type="button" data-name="NLP" data-cluster="research" data-title="Language" data-status="Works here" data-tone="live" data-plain="Tokenise, look up, pull relations." data-tech="10 calls. Example: NLP.tokenize."><span class="status-label status-live">Works here</span><h3>Language</h3><p class="roster-count"><code>NLP</code></p></button><button class="roster-tile" type="button" data-name="Inference" data-cluster="research" data-title="Inference" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Ground a turn with a model. The chatbot is a tool. Open Poet or Desktop." data-tech="16 calls. Example: Inference.relu."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Inference</h3><p class="roster-count"><code>Inference</code></p></button><button class="roster-tile" type="button" data-name="agent" data-cluster="research" data-title="agent" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="A job graph (this name is lowercase on purpose). Open Poet or Desktop." data-tech="3 calls. Example: agent.dag.execute."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>agent</h3><p class="roster-count"><code>agent</code></p></button><button class="roster-tile" type="button" data-name="Orchestration" data-cluster="research" data-title="Orchestration" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="A session and a roster. Open Poet or Desktop." data-tech="8 calls. Example: Orchestration.session_create."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Orchestration</h3><p class="roster-count"><code>Orchestration</code></p></button><button class="roster-tile" type="button" data-name="Agent" data-cluster="research" data-title="Agent" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Plan and check a tool’s steps. Never the other human." data-tech="5 calls. Example: Agent.trace."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Agent</h3><p class="roster-count"><code>Agent</code></p></button><button class="roster-tile" type="button" data-name="Corpus" data-cluster="research" data-title="Corpus" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Load a corpus. Open Poet or Desktop." data-tech="2 calls. Example: Corpus.load."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Corpus</h3><p class="roster-count"><code>Corpus</code></p></button><button class="roster-tile" type="button" data-name="Agency" data-cluster="research" data-title="Agency" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Score an action. Open Poet or Desktop." data-tech="1 call. Example: Agency.evaluate."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Agency</h3><p class="roster-count"><code>Agency</code></p></button><button class="roster-tile" type="button" data-name="CooperativeDelegation" data-cluster="research" data-title="Delegation" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Permit, then take it back." data-tech="1 call. Example: CooperativeDelegation.permits."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Delegation</h3><p class="roster-count"><code>CooperativeDelegation</code></p></button><button class="roster-tile" type="button" data-name="CooperativeWork" data-cluster="research" data-title="Shared work" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="A shared board. Open Poet or Desktop." data-tech="1 call. Example: CooperativeWork.board_project."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Shared work</h3><p class="roster-count"><code>CooperativeWork</code></p></button><button class="roster-tile" type="button" data-name="Research" data-cluster="research" data-title="Research" data-status="Works here" data-tone="live" data-plain="Purpose, sources, gaps, a hypothesis." data-tech="73 calls. Example: Research.new."><span class="status-label status-live">Works here</span><h3>Research</h3><p class="roster-count"><code>Research</code></p></button>
+        </div>
+      </div>
+      <div class="roster-cluster" data-roster-cluster="media">
+        <h3 class="roster-cluster-title">Media <span>11</span></h3>
+        <div class="roster-grid">
+          <button class="roster-tile" type="button" data-name="Audio" data-cluster="media" data-title="Audio" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Tones, meters, a spectrum. Open Poet or Desktop." data-tech="22 calls. Example: Audio.epistemic_temperature_from_q."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Audio</h3><p class="roster-count"><code>Audio</code></p></button><button class="roster-tile" type="button" data-name="Image" data-cluster="media" data-title="Images" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Layers and brushes. Open Poet or Desktop." data-tech="15 calls. Example: Image.new."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Images</h3><p class="roster-count"><code>Image</code></p></button><button class="roster-tile" type="button" data-name="Video" data-cluster="media" data-title="Video" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Tracks and grade. Open Poet or Desktop." data-tech="10 calls. Example: Video.new_project."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Video</h3><p class="roster-count"><code>Video</code></p></button><button class="roster-tile" type="button" data-name="ThreeD" data-cluster="media" data-title="3D" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Objects and lights. Open Poet or Desktop." data-tech="8 calls. Example: ThreeD.add_object."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>3D</h3><p class="roster-count"><code>ThreeD</code></p></button><button class="roster-tile" type="button" data-name="HbbTV" data-cluster="media" data-title="TV app" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="A TV app. Open Poet or Desktop." data-tech="4 calls. Example: HbbTV.new_app."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>TV app</h3><p class="roster-count"><code>HbbTV</code></p></button><button class="roster-tile" type="button" data-name="SecondScreen" data-cluster="media" data-title="Second screen" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Keep a second screen in time. Open Poet or Desktop." data-tech="1 call. Example: SecondScreen.sync."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Second screen</h3><p class="roster-count"><code>SecondScreen</code></p></button><button class="roster-tile" type="button" data-name="Interactive" data-cluster="media" data-title="Interactive" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Triggers and posts. Open Poet or Desktop." data-tech="2 calls. Example: Interactive.add_trigger."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Interactive</h3><p class="roster-count"><code>Interactive</code></p></button><button class="roster-tile" type="button" data-name="World" data-cluster="media" data-title="World" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="A room with gravity. Open Poet or Desktop." data-tech="7 calls. Example: World.new."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>World</h3><p class="roster-count"><code>World</code></p></button><button class="roster-tile" type="button" data-name="Portal" data-cluster="media" data-title="Portal" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="A door to another place. Open Poet or Desktop." data-tech="3 calls. Example: Portal.set_target."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Portal</h3><p class="roster-count"><code>Portal</code></p></button><button class="roster-tile" type="button" data-name="Avatar" data-cluster="media" data-title="Avatar" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Move a figure. Open Poet or Desktop." data-tech="2 calls. Example: Avatar.move."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Avatar</h3><p class="roster-count"><code>Avatar</code></p></button><button class="roster-tile" type="button" data-name="Dmx" data-cluster="media" data-title="Lighting" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Lights and cues. Open Poet or Desktop." data-tech="14 calls. Example: Dmx.new_universe."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Lighting</h3><p class="roster-count"><code>Dmx</code></p></button>
+        </div>
+      </div>
+      <div class="roster-cluster" data-roster-cluster="econ">
+        <h3 class="roster-cluster-title">Money &amp; identity <span>7</span></h3>
+        <div class="roster-grid">
+          <button class="roster-tile" type="button" data-name="ContractsIdentityAndConsensus" data-cluster="econ" data-title="Contracts" data-status="Works here" data-tone="live" data-plain="Read a DID. That’s a handle, not a person." data-tech="1 call. Example: ContractsIdentityAndConsensus.parse_did_q42."><span class="status-label status-live">Works here</span><h3>Contracts</h3><p class="roster-count"><code>ContractsIdentityAndConsensus</code></p></button><button class="roster-tile" type="button" data-name="Finance" data-cluster="econ" data-title="Finance" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="A ledger and a currency check. Open Poet or Desktop." data-tech="3 calls. Example: Finance.convert_currency."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Finance</h3><p class="roster-count"><code>Finance</code></p></button><button class="roster-tile" type="button" data-name="Econ" data-cluster="econ" data-title="Econ" data-status="Works here" data-tone="live" data-plain="Prices, welfare, a portfolio — the maths." data-tech="106 calls. Example: Econ.capm_expected_return."><span class="status-label status-live">Works here</span><h3>Econ</h3><p class="roster-count"><code>Econ</code></p></button><button class="roster-tile" type="button" data-name="Capability" data-cluster="econ" data-title="Access" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Grant access, then revoke it." data-tech="5 calls. Example: Capability.grant."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Access</h3><p class="roster-count"><code>Capability</code></p></button><button class="roster-tile" type="button" data-name="Sentinel" data-cluster="econ" data-title="Sentinel" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Look, then gate. Open Poet or Desktop." data-tech="2 calls. Example: Sentinel.inspect."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Sentinel</h3><p class="roster-count"><code>Sentinel</code></p></button><button class="roster-tile" type="button" data-name="Identity" data-cluster="econ" data-title="Identity" data-status="Works in Poet / Desktop" data-tone="poet" data-plain="Who is signed in — a handle, not the human." data-tech="1 call. Example: Identity.current_user."><span class="status-label status-poet">Works in Poet / Desktop</span><h3>Identity</h3><p class="roster-count"><code>Identity</code></p></button><button class="roster-tile" type="button" data-name="Forensic" data-cluster="econ" data-title="Forensic" data-status="Works here" data-tone="live" data-plain="How far a story drifted." data-tech="2 calls. Example: Forensic.malfeasance_delta."><span class="status-label status-live">Works here</span><h3>Forensic</h3><p class="roster-count"><code>Forensic</code></p></button>
+        </div>
       </div>
       <div class="explainer" data-explainer hidden>
         <div class="plain">
-          <strong>Plain</strong>
+          <strong>What it does</strong>
           <p data-explainer-title class="font-display" style="color:var(--ink);font-size:1.15rem;margin-bottom:8px"></p>
-          <span class="status-label status-catalog" data-explainer-status></span>
+          <span class="status-label status-live" data-explainer-status></span>
           <p data-explainer-plain style="margin-top:12px"></p>
         </div>
         <div class="tech">
-          <strong>Technical</strong>
+          <strong>A call you can write</strong>
           <p data-explainer-tech></p>
         </div>
       </div>
     </section>
 
-    <section class="section soft-rise" id="layers" data-soft-rise="davinci" data-honey aria-labelledby="layers-title">
+    <section class="section soft-rise" id="planned" data-soft-rise="monet" aria-labelledby="planned-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">Interactive map · tap a cell</p>
-          <h2 id="layers-title">Logic stack · Host clusters · Runtimes</h2>
+          <p class="eyebrow">Not built yet</p>
+          <h2 id="planned-title">Still planned</h2>
         </div>
-        <p class="section-intro">Honeycomb for the wider catalog. Keyboard works. Reduced motion still arrives.</p>
+        <p class="section-intro">Only work that is not in the product. Everything above already is.</p>
       </div>
-      <div class="layer-tabs" role="tablist" aria-label="Layer family">
-        <button class="layer-tab" type="button" role="tab" aria-selected="true" data-layer-tab="logic">Logic stack</button>
-        <button class="layer-tab" type="button" role="tab" aria-selected="false" data-layer-tab="hosts">Host clusters</button>
-        <button class="layer-tab" type="button" role="tab" aria-selected="false" data-layer-tab="runtimes">Runtimes</button>
-      </div>
-
-      <div class="honey-stage">
-        <div data-layer-panel="logic">
-          <p class="eyebrow" style="text-align:center">Logic honeycomb</p>
-          <div class="honey-board" role="group" aria-label="Logic modalities">
-            <div class="hex-row">
-              <button class="hex" type="button" id="lg-n3" data-tone="live" data-title="N3 Logic" data-status="live LocalHost" data-plain="If-then arrows a human can still read. Live on QualiaDB v0.0.38 ALL_BOUND. This Pages 0.0.38 WASM evals it." data-tech="ALL_BOUND: N3Logic.evaluate. Pages vibe-wasm 0.0.38 evals { honesty: &quot;local&quot;, id }. Residual: not the Quin VM. No invented Family.method."><small>N3</small>Notation3</button>
-              <button class="hex" type="button" id="lg-shacl" data-tone="live" data-title="SHACL" data-status="live LocalHost" data-plain="Shapes that say whether a graph is well-formed. This snapshot evals SHACL.validate. A tray badge is not a native validate. A human is not owl:Thing. Law keeps person." data-tech="ALL_BOUND: SHACL.validate · SHACL.extensions. Pages 0.0.38 evals { honesty: &quot;local&quot;, id }."><small>SHACL</small>Shapes</button>
-              <button class="hex" type="button" id="lg-deontic" data-tone="live" data-title="Deontic" data-status="live LocalHost" data-plain="Ought-language: must, may, must-not. Modal verbs stay terms unless DeonticLogic is leased. This snapshot evals obligate as DeonticLogic.evaluate." data-tech="ALL_BOUND: DeonticLogic.evaluate. Pages 0.0.38: { honesty: &quot;local&quot;, evaluated: true }. Never stamp &quot;Active&quot;."><small>O/P/F</small>Deontic</button>
-            </div>
-            <div class="hex-row">
-              <button class="hex" type="button" id="lg-epistemic" data-tone="live" data-title="Epistemic" data-status="live LocalHost" data-plain="A human knows or believes; certainty is graded. Not a green light. This snapshot evals EpistemicLogic.evaluate." data-tech="ALL_BOUND: EpistemicLogic.evaluate. Pages 0.0.38: { honesty: &quot;local&quot;, evaluated: true }."><small>K/B</small>Epistemic</button>
-              <button class="hex" type="button" id="lg-para" data-tone="live" data-title="Paraconsistent" data-status="live LocalHost" data-plain="When two facts clash, isolate the clash instead of exploding the graph. ALL_BOUND on 0.0.38; this Pages WASM evals the route." data-tech="ALL_BOUND: ParaconsistentLogic.route. Pages 0.0.38: { honesty: &quot;local&quot;, evaluated: true }."><small>⊥</small>Paraconsistent</button>
-              <button class="hex" type="button" id="lg-ltl" data-tone="notyet" data-title="Temporal LTL" data-status="held / not yet" data-plain="Always, eventually, until. The catalog id is TemporalAndDescriptionLogic.ltl.evaluate — three segments. The workshop dotted path E100s here. Residual, not a fake LTL success." data-tech="ALL_BOUND: TemporalAndDescriptionLogic.ltl.globally · ltl.finally · ltl.evaluate. Measured Pages 0.0.38: Family.ltl.evaluate → E100 unknown binding evaluate. Sibling two-segment TemporalAndDescriptionLogic.subsumption evals. Do not invent a workaround id."><small>LTL</small>Temporal</button>
-              <button class="hex" type="button" id="lg-dl" data-tone="live" data-title="Description logic" data-status="live LocalHost" data-plain="Is this kind a kind of that kind? Subsumption is on ALL_BOUND and evals on this snapshot." data-tech="ALL_BOUND: TemporalAndDescriptionLogic.subsumption. Measured Pages 0.0.38: evals { honesty: &quot;local&quot;, evaluated: true }. Sibling ALL_BOUND computes: LegalLogic · FormalLogic · AdvancedLogic."><small>DL</small>Subsumption</button>
-            </div>
-            <div class="hex-row">
-              <button class="hex" type="button" id="lg-legal" data-tone="live" data-title="Legal &amp; jural" data-status="live LocalHost" data-plain="Law keeps person. A claim with no duty-bearer is a gap. Handle revoke ≠ who-erase. This snapshot evals LegalLogic.compute as a LocalHost record." data-tech="ALL_BOUND: LegalLogic.compute · GovernanceLogic.compute. Pages 0.0.38 evals { honesty: &quot;local&quot;, id }. No invented jural Family.method."><small>law</small>Jural</button>
-              <button class="hex" type="button" id="lg-asp" data-tone="live" data-title="Defeasible / ASP" data-status="live LocalHost" data-plain="Rules that can lose to better rules. Live ALL_BOUND id. This Pages WASM evals the catalog record — not a clingo solve." data-tech="ALL_BOUND: SymbolicAndDefeasibleLogic.asp. Pages 0.0.38 LocalHost honesty:local for known ids. Residual: not an ASP solver kernel."><small>ASP</small>Defeasible</button>
-              <button class="hex" type="button" id="lg-causal" data-tone="live" data-title="Causal &amp; fuzzy" data-status="live LocalHost" data-plain="What caused what, and how much is enough. Named ALL_BOUND methods only. This snapshot evals the catalog record. No dotted qualia.*." data-tech="ALL_BOUND: CausalFuzzyAndControl.caused · CausalFuzzyAndControl.t_norm. FuzzyQuery is a separate ALL_BOUND family. Pages 0.0.38 LocalHost honesty:local for known ids."><small>cause</small>Causal</button>
-            </div>
-          </div>
-        </div>
-
-        <div data-layer-panel="hosts" hidden>
-          <p class="eyebrow" style="text-align:center">Host-cluster honeycomb</p>
-          <div class="honey-board" role="group" aria-label="Host family clusters">
-            <div class="hex-row">
-              <button class="hex" type="button" id="hc-graph" data-tone="notyet" data-title="Graph &amp; lexicon" data-status="held / not yet" data-plain="SPARQL evals as an empty local list. volume_open returns a LocalHost record — not a saved .q42. Native sanctuary stays held / not yet." data-tech="ALL_BOUND: GraphDatabase.sparql · stats · lexicon_manifest · volume_open · volume_commit · GraphAuthoring.process. Measured: sparql → []. volume_open → { honesty: &quot;local&quot; }. Not a saved .q42. Native sanctuary: held / not yet."><small>graph</small>Graph DB</button>
-              <button class="hex" type="button" id="hc-la" data-tone="live" data-title="Linear algebra" data-status="live LocalHost" data-plain="LinearAlgebra is live on QualiaDB v0.0.38 ALL_BOUND. This Pages 0.0.38 WASM evals LinearAlgebra.dot. Residual: honesty:local with the args — not a fake 32.0 product." data-tech="ALL_BOUND §11.5: LinearAlgebra.dot · gemm · norm · matmul · transpose · inverse · solve · svd · … Measured: effect fn LinearAlgebra.dot / gemm eval. Pure fn norm is E200 External. LocalHost descriptor, not the engine solver."><small>§11.5</small>LinAlg</button>
-              <button class="hex" type="button" id="hc-anim" data-tone="live" data-title="Animation" data-status="live kernel" data-plain="Preset orbits and springs run as numbers in this snapshot. That is one family — not LinearAlgebra, and not the logic stack." data-tech="ALL_BOUND: Animation.evaluate_preset · spring_step · list_presets · sclerp_step · squad_step · bezier_eval · easing. orbit_spin aliases evaluate_preset. Measured: numeric sample { scalar, vector, secondary, settled }."><small>motion</small>Animation</button>
-            </div>
-            <div class="hex-row">
-              <button class="hex" type="button" id="hc-render" data-tone="notyet" data-title="Render" data-status="held / not yet" data-plain="Still, clip, and scene share one Render family on ALL_BOUND. GPU only when a host has an accelerator. Held / not yet on Pages for a live frame." data-tech="ALL_BOUND: Render.scene · css_animation · animation_eval_preset · gpu_render_frame · gpu_read_pixels · … Measured: Render.scene evals { honesty: &quot;local&quot; }. HWND / wgpu: fail closed here."><small>draw</small>Render</button>
-              <button class="hex" type="button" id="hc-hid" data-tone="notyet" data-title="HID" data-status="held / not yet" data-plain="A human’s hands and gaze are not this browser tab. HID ids are ALL_BOUND. Physical loop is held / not yet here." data-tech="ALL_BOUND: HID.poll · wait · haptic_pulse · spatial_head_pose · spatial_hand_skeleton · spatial_gaze_ray. Measured: HID.poll returns a synthetic local record. That is not a connected device. No theatre."><small>body</small>HID</button>
-              <button class="hex" type="button" id="hc-infer" data-tone="notyet" data-title="Inference" data-status="held / not yet" data-plain="A missing model is held / not yet — not ‘AI ready’. The chatbot is a tool, never the other human." data-tech="ALL_BOUND: Inference.grounding · verify_turn · run_transformer · vector_search · embed. Measured: Inference.grounding evals { honesty: &quot;local&quot; } without a model. Do not invent qualia.infer.complete."><small>infer</small>Inference</button>
-              <button class="hex" type="button" id="hc-pulse" data-tone="notyet" data-title="Pulse" data-status="held / not yet" data-plain="Pulse is transport — not a human, not a public Internet tick. CSCP-08 / MASQUE stay parked." data-tech="ALL_BOUND: Pulse.publish · publish_graph_mutation · open_channel · set_transport. CSCP-08 WSS/MASQUE parked. No invented wss://."><small>bus</small>Pulse</button>
-            </div>
-          </div>
-        </div>
-
-        <div data-layer-panel="runtimes" hidden>
-          <p class="eyebrow" style="text-align:center">Runtime honeycomb</p>
-          <div class="honey-board" role="group" aria-label="Runtime layers">
-            <div class="hex-row">
-              <button class="hex" type="button" id="rt-author" data-tone="live" data-title="Author" data-status="live kernel" data-plain="A human writes sayables: using Animation, LinearAlgebra; then Family.method. Capability.method is secondary. Do not invent dotted qualia.*." data-tech="Workshop dialect on vibe-0.1. Closed grammar. Diagnose before eval. Do not teach capability.invoke as the human dialect."><small>01</small>Author</button>
-              <button class="hex" type="button" id="rt-engine" data-tone="live" data-title="Engine" data-status="live kernel" data-plain="The language engine parses, checks, diagnoses, and evals. This Pages WASM is vibe-wasm 0.0.38 from QualiaDB tag v0.0.38. It does not invent Host ids." data-tech="QualiaDB crates/vibe — parse, check, diagnose, eval, projection. Live catalog truth is v0.0.38 / cdd7ae728 ALL_BOUND. This snapshot stamps 0.0.38."><small>02</small>Engine</button>
-              <button class="hex" type="button" id="rt-catalog" data-tone="catalog" data-title="Catalog" data-status="ALL_BOUND" data-plain="Named Family.method leases on QualiaDB v0.0.38 ALL_BOUND. Unknown names fail closed. vibe-host-0.1 is an outcome, not a freeze." data-tech="ALL_BOUND in poet_host/invoke/ids.rs · ALL_INVOKE_IDS in crates/vibe/src/catalog/ids.rs. Wave 40 / 7928e3d counted 1121 — count the tip. No invented Family.method."><small>03</small>Catalog</button>
-            </div>
-            <div class="hex-row">
-              <button class="hex" type="button" id="rt-localhost" data-tone="live" data-title="LocalHost" data-status="live LocalHost" data-plain="This Pages 0.0.38 snapshot is that LocalHost. Animation kernels are numeric. Logic and LinearAlgebra return honesty:local. That is an eval, not held." data-tech="0.0.38 invoke_local: Animation presets/spring are kernels; Cosmic has kernels; GraphDatabase.sparql []. Deontic/Epistemic/Paraconsistent/Temporal two-segment ids return honesty:&quot;local&quot; (evaluated:true where wired). Other known ids return honesty:&quot;local&quot;."><small>04</small>LocalHost</button>
-              <button class="hex" type="button" id="rt-pages" data-tone="live" data-title="Pages WASM" data-status="live LocalHost" data-plain="This GitHub Pages snapshot stamps vibe-wasm 0.0.38. LinearAlgebra and the two-segment logic families eval here. A miss is not a smashed product." data-tech="Bundled vibe-wasm 0.0.38 built from QualiaDB tag v0.0.38 crates/vibe-wasm (web target). Residual: LTL three-segment ids E100; LinearAlgebra is a LocalHost descriptor, not the engine solver."><small>05</small>Pages WASM</button>
-              <button class="hex" type="button" id="rt-native" data-tone="notyet" data-title="Native host" data-status="held / not yet" data-plain="A native host may attach sanctuary volumes and devices. This Pages WASM does not. Those binds stay held / not yet here." data-tech="GraphDatabase.volume_open / volume_commit are ALL_BOUND. Native sanctuary when permitted; wasm volume is local or E300 — not a saved .q42. GPU / HWND fail closed until a host advertises them."><small>06</small>Native host</button>
-              <button class="hex" type="button" id="rt-poet" data-tone="catalog" data-title="Poet" data-status="ALL_BOUND" data-plain="Poet is a host — the habitat — not the language. Ask · Keep · Talk are teachable loops, not locked nav on this site." data-tech="Poet.manifold_create · Poet.container_place · Poet.nested_link · Poet.subject_declare · Poet.participant_invite are ALL_BOUND. This Pages site is not Poet furniture. Hot-edit: a .vibe change must not force a host rebuild."><small>07</small>Poet</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="explainer" data-explainer>
-          <div class="plain">
-            <strong>Plain</strong>
-            <p data-explainer-title class="font-display" style="color:var(--ink);font-size:1.15rem;margin-bottom:8px"></p>
-            <span class="status-label status-catalog" data-explainer-status></span>
-            <p data-explainer-plain style="margin-top:12px"></p>
-          </div>
-          <div class="tech">
-            <strong>Technical</strong>
-            <p data-explainer-tech></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section soft-rise" id="runtime-flow" data-soft-rise="monet" data-flow aria-labelledby="flow-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Runtime · tap a node</p>
-          <h2 id="flow-title">Author → Engine → Capability → Host</h2>
-        </div>
-        <p class="section-intro">A human authors. The engine checks. A named <code>Family.method</code> is the lease. The host supplies the resource.</p>
-      </div>
-      <div class="boundary-flow runtime-flow">
-        <button class="boundary-node active" type="button" id="flow-author" data-title="Author" data-status="live kernel" data-tone="live" data-plain="A human writes sayables. using Animation, LinearAlgebra; then Family.method. Do not invent dotted qualia.*." data-tech="Workshop dialect on vibe-0.1. Closed grammar. Diagnose before eval. Capability.method is secondary — do not teach capability.invoke as the human dialect."><strong>Author</strong>human source</button>
-        <div class="boundary-arrow" aria-hidden="true">→</div>
-        <button class="boundary-node active" type="button" id="flow-engine" data-title="Engine" data-status="live kernel" data-tone="live" data-plain="Parse, check, diagnose, eval. This page is vibe-wasm 0.0.38 from QualiaDB tag v0.0.38." data-tech="QualiaDB crates/vibe. Live catalog truth is v0.0.38 / cdd7ae728 ALL_BOUND. This snapshot stamps 0.0.38."><strong>Engine</strong>parse · check · eval</button>
-        <div class="boundary-arrow" aria-hidden="true">→</div>
-        <button class="boundary-node pending" type="button" id="flow-capability" data-title="Capability" data-status="ALL_BOUND" data-tone="catalog" data-plain="The named operation is Family.method. Capability.method is the same lease, written second." data-tech="ALL_BOUND fail-closed. Unknown Family.method is E100. Missing lease is E300. No invented ids."><strong>Capability</strong>Family.method</button>
-        <div class="boundary-arrow" aria-hidden="true">→</div>
-        <button class="boundary-node pending" type="button" id="flow-host" data-title="Host" data-status="held / not yet" data-tone="notyet" data-plain="The host owns the resource. This Pages WASM is LocalHost — not Poet, not a sanctuary, not a public relay." data-tech="Native volume / GPU / HID: held / not yet here. CSCP-08/12 parked. No invented wss:// or MASQUE."><strong>Host</strong>local or live</button>
-      </div>
-      <div class="explainer" data-explainer>
-        <div class="plain">
-          <strong>Plain</strong>
-          <p data-explainer-title class="font-display" style="color:var(--ink);font-size:1.15rem;margin-bottom:8px"></p>
-          <span class="status-label status-catalog" data-explainer-status></span>
-          <p data-explainer-plain style="margin-top:12px"></p>
-        </div>
-        <div class="tech">
-          <strong>Technical</strong>
-          <p data-explainer-tech></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section soft-rise" id="honesty" data-soft-rise="monet" aria-labelledby="honesty-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Honesty</p>
-          <h2 id="honesty-title">What this snapshot can hold.</h2>
-        </div>
-        <p class="section-intro">Dual chips: <code>ALL_BOUND</code> on QualiaDB <code>v0.0.38</code>, <strong>live LocalHost</strong> where Pages <code>0.0.38</code> evals, <strong>held / not yet</strong> only where a bind is still unbound. Never unavailable theatre.</p>
-      </div>
-      <div class="honesty-ledger">
-        <article class="ledger-col live soft-rise" data-soft-rise="monet" style="--rise-delay:0ms">
-          <span class="status-label status-live">live · Pages vibe-wasm 0.0.38</span>
-          <h3>This snapshot evals</h3>
-          <ul>
-            <li>Closed vibe-0.1 grammar + <code>diagnose</code>.</li>
-            <li>Logic: <code>N3Logic.evaluate</code>, <code>SHACL.validate</code>, <code>DeonticLogic.evaluate</code>, <code>EpistemicLogic.evaluate</code>, <code>ParaconsistentLogic.route</code>, <code>TemporalAndDescriptionLogic.subsumption</code>.</li>
-            <li><code>LinearAlgebra.dot</code> / <code>gemm</code> as <code>effect fn</code> — LocalHost <code>honesty: "local"</code>, not a fake product.</li>
-            <li>Animation presets are a numeric kernel. <code>GraphDatabase.sparql</code> returns <code>[]</code>.</li>
-          </ul>
-        </article>
-        <article class="ledger-col local soft-rise" data-soft-rise="monet" style="--rise-delay:90ms">
-          <span class="status-label status-notyet">held / not yet · unbound here</span>
-          <h3>Do not fake completeness</h3>
-          <ul>
-            <li><code>GraphDatabase.volume_*</code> is a local record — not a saved <code>.q42</code>. Native sanctuary stays held.</li>
-            <li>Physical HID / GPU / HWND / Poet furniture: held / not yet.</li>
-            <li>Inference without a model: held / not yet. The chatbot is a tool.</li>
-            <li>Residual: <code>TemporalAndDescriptionLogic.ltl.*</code> three-segment ids E100 on the workshop dotted path.</li>
-          </ul>
-        </article>
-        <article class="ledger-col parked soft-rise" data-soft-rise="monet" style="--rise-delay:180ms">
-          <span class="status-label status-parked">parked · do not tick</span>
-          <h3>Not invented</h3>
-          <ul>
-            <li><strong>CSCP-08</strong> / <strong>CSCP-12</strong> parked. No invented <code>wss://</code> or MASQUE.</li>
-            <li>No Host invent. No dotted <code>qualia.*</code>. <code>Capability.method</code> is secondary.</li>
-            <li>Handle ≠ human. A chatbot is a tool. Ask · Keep · Talk are teachable — not locked nav.</li>
-          </ul>
-        </article>
-      </div>
-      <div class="anti-collapse" id="anti-collapse">
-        <strong style="color:var(--ink)">Anti-collapse.</strong>
-        Do not collapse human into handle, person into chatbot, claim into who, or tool into correspondent.
-        Source of truth: QualiaDB <code>v0.0.38</code> / <code>cdd7ae728</code> <a class="q-link" href="https://github.com/mediaprophet/qualiaDB/tree/v0.0.38/crates/vibe">crates/vibe</a>.
-        Workspace version stays <code>0.0.1</code>.
+      <div class="planned-note">
+        <p>A public internet relay — so two machines talk across the open net without a private wire — is still planned. We will not pretend it is here.</p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">VibeScript 0.1 · © 2026 Timothy Charles Holborn · Subject = human · Handle ≠ human · Chatbot = tool · <a href="https://github.com/mediaprophet/vibe-script">Source and issue tracker</a></footer>
+  <footer class="site-footer">VibeScript 0.0.1 · © 2026 Timothy Charles Holborn · <a href="https://github.com/mediaprophet/vibe-script">Source</a></footer>
   <script type="module" src="reality.js"></script>
+  <script type="module" src="family-roster.js"></script>
 </body>
 </html>

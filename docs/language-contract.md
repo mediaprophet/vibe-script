@@ -1,26 +1,31 @@
-# Vibe 0.1 language contract (ecosystem summary)
+# Vibe 0.1 language contract (current dialect)
 
 **Normative source:** QualiaDB `0.0.38` [`vibescript-core.md`](https://github.com/mediaprophet/qualiaDB/blob/0.0.38/docs/manuals/standards/vibescript-core.md).  
-This file is a human-readable contract for tools in *this* repo. It is not a second spec.
+This file is the ecosystem contract for tools and pages in *this* repo. It is not a second spec. Word list: [`vocab.md`](vocab.md).
 
-## What 0.1 is
+Workspace / crate version stays **`0.0.1`**. QualiaDB `0.0.38` is the engine tree this ecosystem tracks.
 
-Vibe 0.1 is a typed, capability-bounded, non-JIT interpreted REPL language for:
+## What customers see
 
-- reactive HCF cell formulas (Pure only);
-- signed document / agent modules that query and transact on a graph snapshot;
-- host event handlers (`on pulse…`, `on ui…`) that Poet (or any host) dispatches;
-- application support — scripts that call Host families so Poet and other hosts can host apps, not only workshop cells.
+- Title: **What it can do** (`docs/reality.html`).
+- Lead: **Write a script. Run it. Change it without rebuilding the app.**
+- **It already does** names shipped work. A miss is a bug to finish.
+- **104 families** in plain words. Status chips only: **Works here** · **Works in Poet / Desktop** · **Planned**.
+- **Planned** is only work not in the product (today: a public internet relay).
+- Continuity once: you are the **human**; the law still says **person**; a name or login is not the person; a chatbot is a tool.
 
-**Vibe is the language.** Poet is a host (UI / CLI / habitat). Pulse is transport. Aura is ontology / schema.
+Do not put `ALL_BOUND`, `held / not yet`, or Capability soup on customer pages.
 
-## Closed grammar, growing catalog
+## vibe-0.1 is current — grammar may grow
 
-- The **grammar is closed**. Do not add keywords in this repo.
-- The **Host catalog grows**. `ALL_BOUND` / `Family.method` MAY gain new ids when they improve the app / REPL surface.
-- Adding a Host id MUST NOT change grammar, types, or effect classes.
-- `vibe-host-0.1` is the **outcome** of incorporating existing engine libraries — **not** a freeze of `ALL_BOUND`.
-- Historical “no Host widen” / “~885 freeze” wording is sprint-of-record only. Current policy is core §11.5 + the refreshed sprint-deltas header (2026-09-11).
+`vibe-0.1` is the **current dialect**, not a freeze-as-law.
+
+- Grammar **may grow** when humans need a better form. New forms are **versioned and documented**.
+- A **Host does not invent** grammar, keywords, or dotted ids.
+- This repo does not mint keywords ahead of the engine.
+- The **catalog already grows**. New live `Family.method` ids land when they improve the app / REPL surface. Adding a Host id MUST NOT silently invent grammar. Count the tip; do not hardcode a forever number.
+- `vibe-host-0.1` is an **outcome** of incorporating live libraries — not a lock on a historic id count.
+- Historical “grammar is closed” / “~885 freeze” / “no Host widen” wording is superseded.
 
 ## Human dialect
 
@@ -32,7 +37,7 @@ cell score := LinearAlgebra.dot({ a: xs, b: ys });
 present lamp { color: #ff8800 }
 ```
 
-`capability.invoke("Family.method", {…})` remains the JNI / catalog spelling. Both are the same language; `using` is the lease. **Do not teach `capability.invoke` as the human workshop dialect.**
+`capability.invoke("Family.method", {…})` remains the JNI / catalog spelling. Both are the same language; `using` is the lease. **Do not teach `capability.invoke` as the human dialect.**
 
 English keywords are always legal. Additional keyword locales are opt-in (`locale zh;`) and MUST round-trip on the AST.
 
@@ -44,7 +49,7 @@ From Timothy’s standards sense / NaturalAgent (see Qualia [`human-centric-nome
 |---|---|
 | **human** | Living NaturalAgent. The nucleus. Directory lists humans first. |
 | **person** | Law / jural / legal-person who-kind. Keep this word in law text. |
-| **handle** | DID, DNS name, session id, locator. Handle ≠ human. Revoking a handle is not who-erase. |
+| **handle** | DID, DNS name, session id, locator. A name or login is not the person. |
 | **chatbot / agent** | A tool. Not the other party. Not a human. |
 | **organization** | Legal-person who-kind, after humans, before tools. |
 
@@ -60,7 +65,7 @@ Do not model humans / personhood / sacred or living-natural relations as `owl:Th
 
 Script changes must not force a host rebuild.
 
-Vibe evaluates `present` blocks, UI records, and reactive cells. The host reconciles furniture in place. That is core §17 — zero-recompilation workflow. Pages ships `vibe-wasm 0.0.38` from QualiaDB tag `v0.0.38`. Script edits must not force a host rebuild.
+Vibe evaluates `present` blocks, UI records, and reactive cells. The host reconciles furniture in place. That is core §17 — zero-recompilation workflow. Pages ships `vibe-wasm 0.0.38` from QualiaDB tag `v0.0.38`.
 
 ## Effects, RDF, Quin
 
@@ -76,11 +81,11 @@ Vibe evaluates `present` blocks, UI records, and reactive cells. The host reconc
 
 §11 of core lists **0.1 library bindings** (`math.*`, `rdf.*`, `quin.statement`, `graph.*`, `aura.validate`, `pulse.publish`, `capability.resolve`). Those are not an invitation to paste every post-0.1 table into this repo.
 
-Post-0.1 Host families that **are** live on `ALL_BOUND` (cite the catalog, do not invent) include `LinearAlgebra.*` (§11.5), `Cosmic.*`, `Econ.*`, `Orchestration.*`, `Asset.persist_*`, `GraphDatabase.*`, `Render.*`, `Inference.*`, `Animation.*`, `HID.*`. If an id is not on live `ALL_BOUND`, it is **held / not yet**.
+Live Host families that **are** on the catalog (cite `ids.rs`, do not invent) include `LinearAlgebra.*` (§11.5), `Cosmic.*`, `Econ.*`, `Orchestration.*`, `Asset.persist_*`, `GraphDatabase.*`, `Render.*`, `Inference.*`, `Animation.*`, `HID.*`, and the rest of the **104-family map**. If an id is not on the live catalog, pages say **Works in Poet / Desktop** or **Planned** — do not invent it.
 
 ## Out of this repo
 
-- No Host invent. No dotted `qualia.*` ahead of live `ALL_BOUND`.
+- No Host invent. No dotted `qualia.*` ahead of the live catalog.
 - No CSCP ticks. No MASQUE / public `wss://` invent.
 - No claim that QDNF public relay or CSCP-08 / CSCP-12 is complete.
 - No copy of the QualiaDB engine into this tree.

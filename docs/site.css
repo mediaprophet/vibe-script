@@ -541,6 +541,112 @@ button.boundary-node, button.reality-card { font: inherit; color: inherit; width
 .eval-out.ok { color: var(--mint); }
 .eval-out.err { color: var(--red); }
 
+.continuity-once {
+  max-width: 640px;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+.does-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 12px;
+}
+.does-card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(13, 29, 49, .55);
+}
+.does-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+.does-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+.planned-note {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(13, 29, 49, .45);
+}
+.planned-note p { margin: 0; color: var(--muted); }
+
+/* Complete family roster — compact showcase, all SoT names in the HTML */
+.roster-tools { display: grid; gap: 12px; margin-bottom: 22px; }
+.roster-search { width: 100%; }
+.roster-filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.roster-filter {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: transparent;
+  font: 700 .72rem var(--sans);
+  cursor: pointer;
+}
+.roster-filter:hover,
+.roster-filter.is-on {
+  color: var(--cyan);
+  border-color: rgba(110, 231, 255, .28);
+  background: rgba(110, 231, 255, .08);
+}
+.roster-count-live { margin: 0; color: var(--faint); font: .74rem var(--mono); }
+.roster-cluster + .roster-cluster { margin-top: 22px; }
+.roster-cluster-title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+.roster-cluster-title span { color: var(--faint); font: 700 .7rem var(--mono); }
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11.4rem, 1fr));
+  gap: 8px;
+}
+.roster-tile[hidden] { display: none !important; }
+.roster-tile {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  min-height: 7.2rem;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(13, 29, 49, .55);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+}
+.roster-tile h3 { margin: 0; font-size: .92rem; letter-spacing: -.02em; }
+.roster-tile h3 code { padding: 0; background: none; color: var(--ink); font-size: .84rem; }
+.roster-tile .roster-count { margin: 0; color: var(--muted); font: .68rem/1.4 var(--mono); }
+.roster-tile .roster-count code { padding: 0; background: none; color: #9ec9e6; font-size: .66rem; }
+.roster-tile.is-active,
+.roster-tile:hover,
+.roster-tile:focus-visible {
+  border-color: rgba(110, 231, 255, .34);
+  background: rgba(24, 50, 80, .72);
+}
+.roster-cluster.is-empty { display: none; }
+.status-label.status-poet {
+  color: var(--violet);
+  background: rgba(178, 154, 255, .12);
+}
+.status-label.status-plan {
+  color: var(--amber);
+  background: rgba(255, 200, 107, .11);
+}
+.grammar-grow {
+  max-width: 46rem;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: .92rem;
+}
+@media (max-width: 640px) {
+  .roster-grid { grid-template-columns: repeat(auto-fill, minmax(9.6rem, 1fr)); }
+  .roster-tile { min-height: 6.4rem; padding: 10px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .soft-rise,
   .soft-rise.is-in,
