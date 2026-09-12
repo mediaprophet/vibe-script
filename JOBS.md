@@ -43,7 +43,7 @@ Sprint-B rows B-001–B-009 are done or parked as standing OWL constraints. See 
 | E7 | **Dev-docs generator** | Landed | `crates/vibe-docs` scans sibling QualiaDB `crates/vibe/src`. Refresh when Neo updates the sibling. |
 | E8 | **Docs / pages** | Landed | Language / diagnose / catalog honesty summaries + Pages site. WASM bundle may lag `0.0.38`. |
 | E9 | **CI** | Landed | `.github/workflows/ci.yml` tests when the QualiaDB sibling is present. |
-| E10 | **Refresh bundled `docs/pkg/vibe` WASM** | Remaining | Pages ships a snapshot (crate stamp in that package may lag). Rebuild from QualiaDB `vibe-wasm` when Neo publishes; do not vendor the engine source. |
+| E10 | **Refresh bundled `docs/pkg/vibe` WASM** | Remaining | Pages ships a snapshot (package stamp currently `0.0.34`). It can E100 `LinearAlgebra.dot` (live on `0.0.38` `ALL_BOUND`) and even suggest a non-catalog id. Rebuild from QualiaDB `vibe-wasm` when Neo publishes; do not vendor the engine source. Do not “fix” samples by inventing the snapshot’s guess. |
 | E11 | **Hot-edit in this playground** | Remaining (north star) | Script edits must not imply a host rebuild. Browser WASM eval is local; claiming live Poet furniture here is held / not yet. |
 
 ---

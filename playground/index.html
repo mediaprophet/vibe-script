@@ -298,7 +298,7 @@
     const samples = {
       lamp: `using Animation, HID;\n\neffect cell t := time.unix();\ncell pose := Animation.orbit_spin(1.0);\ncell glow := oklch(0.72, 0.12, 230.0);\n\npresent lamp {\n    color: glow\n    pose: pose\n}`,
       orbit: `using Animation;\n\neffect fn run(t: f64) -> Record {\n    return Animation.orbit_spin(t);\n}\n\nfn main() {\n    return run(1.0);\n}`,
-      linear_algebra: `using LinearAlgebra;\n\nfn main() {\n    return LinearAlgebra.dot({ a: [1.0, 2.0, 3.0], b: [4.0, 5.0, 6.0] });\n}`,
+      linear_algebra: `// Live on QualiaDB 0.0.38 ALL_BOUND (LinearAlgebra.dot). Pages WASM may still E100 until JOBS E10.\nusing LinearAlgebra;\n\neffect fn main() {\n    return LinearAlgebra.dot({ a: [1.0, 2.0, 3.0], b: [4.0, 5.0, 6.0] });\n}`,
       bind: `let mut volume = 0.2;\nlet mut slider = 0.2;\nbind slider <-> volume using Clamp[0.0, 1.0] resolve latest;\n\nfn main() {\n    return volume;\n}`,
       tween: `fn main() {\n    return 0.0 ~ 10.0 over 400ms ease linear;\n}`,
       clinic: `prefix snomed: <http://snomed.info/id/>;\nusing GraphDatabase;\n\npure fn term() {\n    return snomed:386661006;\n}`,
