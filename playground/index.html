@@ -296,17 +296,48 @@
     }
 
     const samples = {
-      lamp: `using Animation, HID;\n\neffect cell t := time.unix();\ncell pose := Animation.orbit_spin(1.0);\ncell glow := oklch(0.72, 0.12, 230.0);\n\npresent lamp {\n    color: glow\n    pose: pose\n}`,
-      orbit: `using Animation;\n\neffect fn run(t: f64) -> Record {\n    return Animation.orbit_spin(t);\n}\n\nfn main() {\n    return run(1.0);\n}`,
-      linear_algebra: `// Works here: LinearAlgebra.dot on this page.\nusing LinearAlgebra;\n\neffect fn main() {\n    return LinearAlgebra.dot({ a: [1.0, 2.0, 3.0], b: [4.0, 5.0, 6.0] });\n}`,
-      deontic: `// Works here — term eval. Never stamps Active. A chatbot is a tool.\nusing DeonticLogic;\n\npure fn main() {\n    return obligate { "did:q42:agent_must_sign" };\n}`,
-      bind: `let mut volume = 0.2;\nlet mut slider = 0.2;\nbind slider <-> volume using Clamp[0.0, 1.0] resolve latest;\n\nfn main() {\n    return volume;\n}`,
-      tween: `fn main() {\n    return 0.0 ~ 10.0 over 400ms ease linear;\n}`,
-      clinic: `prefix snomed: <http://snomed.info/id/>;\nusing GraphDatabase;\n\npure fn term() {\n    return snomed:386661006;\n}`,
-      reactive_cells: `cell a := 10;\ncell b := a * 2 + 5;\ncell c := b + a;\n\nfn main() {\n    return c;\n}`,
-      destructure: `struct Point { x: f64, y: f64 }\n\nfn main() {\n    let p = Point { x: 3.0, y: 4.0 };\n    let Point { x, y } = p;\n    return x * x + y * y;\n}`,
-      vector_math: `using LinearAlgebra;\n\neffect fn main() {\n    return LinearAlgebra.norm({ a: [3.0, 4.0] });\n}`,
-      zh: `locale zh;\n\n函数 f() -> i64 {\n    返回 42;\n}\n\n函数 main() -> i64 {\n    返回 f();\n}`
+      linear_algebra: `// Works here: LinearAlgebra.dot on this page.
+using LinearAlgebra;
+
+effect fn main() {
+    return LinearAlgebra.dot({ a: [1.0, 2.0, 3.0], b: [4.0, 5.0, 6.0] });
+}`,
+      reactive_cells: `// Reactive-style numbers (works here)
+pure fn main() {
+    let a = 42;
+    let b = a * 2 + 10;
+    let clamped = math.min(100, math.max(0, b));
+    return { a: a, b: b, clamped: clamped };
+}`,
+      deontic: `// Works here — term eval. Never stamps Active. A chatbot is a tool.
+using DeonticLogic;
+
+pure fn main() {
+    return obligate { "did:q42:agent_must_sign" };
+}`,
+      vector_math: `using LinearAlgebra;
+
+effect fn main() {
+    return LinearAlgebra.norm({ a: [3.0, 4.0] });
+}`,
+      orbit: `using Animation;
+
+effect fn run(t: f64) -> Record {
+    return Animation.orbit_spin(t);
+}
+
+fn main() {
+    return run(1.0);
+}`,
+      zh: `locale zh;
+
+函数 f() -> i64 {
+    返回 42;
+}
+
+函数 main() -> i64 {
+    返回 f();
+}`
     };
 
     const sel = document.getElementById("sample");
