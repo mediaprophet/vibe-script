@@ -297,10 +297,26 @@ code { padding: .12em .35em; border-radius: 4px; color: #cdf4ff; background: rgb
 .legend-dot.parked { background: var(--red); }
 
 .status-label.status-live { color: var(--mint); background: rgba(125, 240, 191, .1); }
-.status-label.status-catalog { color: var(--cyan); background: rgba(110, 231, 255, .1); }
+.status-label.status-catalog,
+.status-label.status-allbound { color: var(--cyan); background: rgba(110, 231, 255, .1); }
 .status-label.status-local { color: var(--amber); background: rgba(255, 200, 107, .11); }
 .status-label.status-parked { color: var(--red); background: rgba(255, 140, 155, .12); }
 .status-label.status-notyet { color: var(--amber); background: rgba(255, 200, 107, .11); }
+.chip-pair { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 12px; }
+.bound-roster { display: flex; flex-wrap: wrap; gap: 8px; }
+.bound-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 11.5rem;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(13, 29, 49, .55);
+}
+.bound-item code { font-size: .72rem; color: #c5e8ff; }
+.bound-item .pair { display: flex; flex-wrap: wrap; gap: 5px; }
 
 .layer-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
 .layer-tab {
