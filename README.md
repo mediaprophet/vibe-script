@@ -15,11 +15,11 @@ Workspace / crate version stays **`0.0.1`**. QualiaDB `0.0.38` is the engine tre
 
 Copyright © 2026 Timothy Charles Holborn.
 
-## Current dialect (workshop)
+## Current dialect
 
-Grammar is **closed**. The **Host catalog grows**. `vibe-host-0.1` is an outcome of incorporating live libraries, not a freeze of `ALL_BOUND`.
+`vibe-0.1` is the **current dialect**. Grammar **may grow** when humans need a better form — versioned, documented. A Host does not invent new words. The **catalog already grows**. Word list: [`docs/vocab.md`](docs/vocab.md).
 
-Authors write **human** sayables. `Capability.method` is the catalog spelling — secondary in teaching:
+Authors write **human** sayables:
 
 ```vibe
 using Animation, LinearAlgebra;
@@ -33,23 +33,25 @@ pure fn score(a: List, b: List) {
 }
 ```
 
-Unknown `Family.method` names fail closed. Modal verbs stay terms unless the engine family is leased. Do not invent dotted `qualia.*` IRIs ahead of live `ALL_BOUND`.
+Unknown `Family.method` names fail closed. Modal verbs stay terms unless the engine family is leased. Do not invent dotted `qualia.*` IRIs.
 
-Say **human** (Timothy standards sense / NaturalAgent). Law keeps **person**. A handle (DID, DNS name, session id) is not a human. Ask · Keep · Talk are teachable loops — not locked top-level information architecture.
+Say **human**. Law keeps **person**. A name or login is not the person. Ask · Keep · Talk are teachable loops — not locked top-level information architecture.
 
-Diagnose voice: **held / not yet**. Never “unavailable” or “broken”.
+Pages say **Works here** · **Works in Poet / Desktop** · **Planned**. Tooling diagnose still uses **held / not yet** — never “unavailable” or “broken”.
 
 Hot-edit north star: changing a `.vibe` script must not force a host rebuild.
+
+**104 families** in plain words live on [What it can do](docs/reality.html).
 
 ## Honesty
 
 | Claim | Truth on QualiaDB `0.0.38` |
 |---|---|
-| Catalog size | Live `ALL_BOUND` grew (~905 → **1121** at Wave 40 / `7928e3d`). Count the tip; do not hardcode a forever number. |
+| Catalog size | Live catalog grew (~905 → **1121** at Wave 40 / `7928e3d`). Count the tip; do not hardcode a forever number. |
 | Linear algebra | First-class Host family (`LinearAlgebra.gemm`, `dot`, `norm`, …). See core §11.5. |
 | CSCP-08 / CSCP-12 | **Parked**. No invented `wss://`, no MASQUE Internet tick, no fake completeness. |
-| QDNF / public relay | Map, not a finished mesh. Handle ≠ human. |
-| Bundled Pages WASM | `docs/pkg/vibe` is `vibe-wasm 0.0.38` built from QualiaDB tag `v0.0.38` (web target). LocalHost evals ALL_BOUND logic and `LinearAlgebra.dot` (`honesty: "local"` residual — not a fake product). Native sanctuary, CSCP-08/12, physical devices, and a missing model stay held / not yet. |
+| QDNF / public relay | Map, not a finished mesh. A name or login is not the person. **Planned** on pages. |
+| Bundled Pages WASM | `docs/pkg/vibe` is `vibe-wasm 0.0.38` built from QualiaDB tag `v0.0.38` (web target). This page evals logic and `LinearAlgebra.dot`. Native sanctuary, public relay, physical devices, and a missing model are Poet / Desktop or Planned. |
 
 Summaries in this repo: [`docs/language-contract.md`](docs/language-contract.md), [`docs/diagnose.md`](docs/diagnose.md), [`docs/catalog-honesty.md`](docs/catalog-honesty.md). Qualia operator pages: [`progress-0.0.38.html`](https://github.com/mediaprophet/qualiaDB/blob/0.0.38/docs/progress-0.0.38.html), [`qdnf.html`](https://github.com/mediaprophet/qualiaDB/blob/0.0.38/docs/qdnf.html).
 
@@ -62,7 +64,7 @@ Summaries in this repo: [`docs/language-contract.md`](docs/language-contract.md)
 | `grammar/` | Copy of engine EBNF / GBNF / schema for tools |
 | `playground/` | Static samples + optional `vibe-play` HTTP host |
 | `skills/SKILL.md` | Agent authoring rules |
-| `docs/` | Pages site + language / diagnose / catalog honesty |
+| `docs/` | Pages site + vocab / language / diagnose / catalog honesty |
 | `JOBS.md` | Remaining work vs what already landed in QualiaDB |
 
 ## Build the LSP

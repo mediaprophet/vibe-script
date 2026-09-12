@@ -602,6 +602,7 @@ button.boundary-node, button.reality-card { font: inherit; color: inherit; width
   grid-template-columns: repeat(auto-fill, minmax(11.4rem, 1fr));
   gap: 8px;
 }
+.roster-tile[hidden] { display: none !important; }
 .roster-tile {
   display: grid;
   gap: 6px;
@@ -630,6 +631,16 @@ button.boundary-node, button.reality-card { font: inherit; color: inherit; width
 .status-label.status-poet {
   color: var(--violet);
   background: rgba(178, 154, 255, .12);
+}
+.status-label.status-plan {
+  color: var(--amber);
+  background: rgba(255, 200, 107, .11);
+}
+.grammar-grow {
+  max-width: 46rem;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: .92rem;
 }
 @media (max-width: 640px) {
   .roster-grid { grid-template-columns: repeat(auto-fill, minmax(9.6rem, 1fr)); }

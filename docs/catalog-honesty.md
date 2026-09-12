@@ -42,7 +42,7 @@ One `Render.*` family. No sibling Host op.
 
 ## Linear algebra (live, §11.5)
 
-Post-0.1 Host family for apps / REPL. Grammar stays closed. Matrices are row-major `{ rows, cols, data }`.
+Post-0.1 Host family for apps / REPL. Grammar may grow when versioned; this family did not invent keywords. Matrices are row-major `{ rows, cols, data }`.
 
 Human sayables on the live catalog include:
 

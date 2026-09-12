@@ -55,6 +55,7 @@ function wireFamilyRoster(root) {
       const inSearch =
         !q ||
         name.toLowerCase().includes(q) ||
+        (tile.dataset.title || "").toLowerCase().includes(q) ||
         (tile.dataset.plain || "").toLowerCase().includes(q) ||
         (tile.textContent || "").toLowerCase().includes(q);
       const show = inCluster && inSearch;

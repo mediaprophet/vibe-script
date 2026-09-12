@@ -3,6 +3,7 @@
   "invokeIds": 1107,
   "familyPrefixes": 105,
   "captFamilies": 104,
+  "note": "Human titles from davinci customer-voice fold. Status chips: Works here · Works in Poet / Desktop · Planned. Capt 104 families plus lowercase agent.",
   "families": [
     {
       "name": "CapabilityDiscovery",
@@ -12,6 +13,7 @@
       "clusterLabel": "Graphs",
       "status": "Works here",
       "tone": "live",
+      "human": "What's bound",
       "blurb": "Ask what this app can actually do."
     },
     {
@@ -22,6 +24,7 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
+      "human": "Shapes",
       "blurb": "Check that a graph keeps the shape you asked for."
     },
     {
@@ -32,6 +35,7 @@
       "clusterLabel": "Graphs",
       "status": "Works here",
       "tone": "live",
+      "human": "Graphs",
       "blurb": "Ask a graph. Open a save and come back to it."
     },
     {
@@ -42,6 +46,7 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
+      "human": "Rules",
       "blurb": "If-then rules a person can still read."
     },
     {
@@ -52,6 +57,7 @@
       "clusterLabel": "Graphs",
       "status": "Works here",
       "tone": "live",
+      "human": "Write graph",
       "blurb": "Write a piece of the graph."
     },
     {
@@ -62,7 +68,8 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
-      "blurb": "Should, may, must-not \u2014 on a claim, not on a person."
+      "human": "Ought",
+      "blurb": "Should, may, must-not — on a claim, not on a person."
     },
     {
       "name": "EpistemicLogic",
@@ -72,6 +79,7 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
+      "human": "Knowing",
       "blurb": "Someone knows or believes. A chatbot does not become the knower."
     },
     {
@@ -82,7 +90,8 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
-      "blurb": "When two facts clash, keep the clash in a box. Don\u2019t blow up the rest."
+      "human": "Clash",
+      "blurb": "When two facts clash, keep the clash in a box. Don’t blow up the rest."
     },
     {
       "name": "TemporalAndDescriptionLogic",
@@ -92,6 +101,7 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
+      "human": "Time & kinds",
       "blurb": "Is this a kind of that? Always / eventually for time."
     },
     {
@@ -102,6 +112,7 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
+      "human": "Advanced",
       "blurb": "Heavier logic checks, same language."
     },
     {
@@ -112,6 +123,7 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
+      "human": "Formal",
       "blurb": "Formal proofs and checks."
     },
     {
@@ -122,6 +134,7 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
+      "human": "Law",
       "blurb": "Law still says person. A claim needs a duty-bearer."
     },
     {
@@ -132,6 +145,7 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
+      "human": "Governance",
       "blurb": "Who may decide what. Revoking a name is not erasing a person."
     },
     {
@@ -142,6 +156,7 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
+      "human": "Space",
       "blurb": "Rules about place and region."
     },
     {
@@ -152,6 +167,7 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
+      "human": "Infra",
       "blurb": "Rules about the pipes underneath."
     },
     {
@@ -162,6 +178,7 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
+      "human": "Infra extra",
       "blurb": "More of those infrastructure rules."
     },
     {
@@ -172,6 +189,7 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
+      "human": "Defeasible",
       "blurb": "Rules that can lose to better rules."
     },
     {
@@ -182,6 +200,7 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
+      "human": "Cause",
       "blurb": "What caused what, and how much is enough."
     },
     {
@@ -192,6 +211,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Algebra",
       "blurb": "Differentiate, integrate, simplify, solve."
     },
     {
@@ -202,7 +222,8 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
-      "blurb": "Dot products, matrix multiply, norms \u2014 it runs."
+      "human": "Math",
+      "blurb": "Dot products, matrix multiply, norms — it runs."
     },
     {
       "name": "NumericalCalculus",
@@ -212,6 +233,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Numeric calc",
       "blurb": "Simpson and friends."
     },
     {
@@ -222,6 +244,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Calc bench",
       "blurb": "A bench for calculus work."
     },
     {
@@ -232,6 +255,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Optimize",
       "blurb": "Climb, anneal, search for a better point."
     },
     {
@@ -242,6 +266,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Geometric algebra",
       "blurb": "Rotors and products for space."
     },
     {
@@ -252,6 +277,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Geometry",
       "blurb": "Hulls, distances, polygons, turns."
     },
     {
@@ -262,6 +288,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Vision",
       "blurb": "Blur, edges, hashes of pictures."
     },
     {
@@ -272,6 +299,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Numbers",
       "blurb": "Primes, gcd, remainders."
     },
     {
@@ -282,6 +310,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Transforms",
       "blurb": "A sibling Bessel / transform call."
     },
     {
@@ -292,6 +321,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Stats",
       "blurb": "Means, tests, distributions."
     },
     {
@@ -302,7 +332,8 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
-      "blurb": "Fit, score, split, cluster \u2014 the maths, not a mystery box."
+      "human": "Learning",
+      "blurb": "Fit, score, split, cluster — the maths, not a mystery box."
     },
     {
       "name": "biosignal",
@@ -310,8 +341,9 @@
       "sample": "biosignal.dp_filter",
       "cluster": "science",
       "clusterLabel": "Math & science",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Biosignal",
       "blurb": "Filter a body signal. Open Poet or Desktop for the device."
     },
     {
@@ -322,6 +354,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Special functions",
       "blurb": "Bessel, Airy, zeta, orthogonal polynomials."
     },
     {
@@ -332,6 +365,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Interpolate",
       "blurb": "Fill the values between the points you have."
     },
     {
@@ -342,7 +376,8 @@
       "clusterLabel": "Logic",
       "status": "Works here",
       "tone": "live",
-      "blurb": "Soft matches \u2014 about, more than, less than."
+      "human": "Soft query",
+      "blurb": "Soft matches — about, more than, less than."
     },
     {
       "name": "PhysicsAndODE",
@@ -352,6 +387,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Physics ODE",
       "blurb": "Projectiles and paths."
     },
     {
@@ -362,6 +398,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Bioinformatics",
       "blurb": "Align sequences."
     },
     {
@@ -372,6 +409,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Organic chem",
       "blurb": "Check a SMILES string."
     },
     {
@@ -382,7 +420,8 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
-      "blurb": "Framingham and related scores. About a person \u2014 not instead of one."
+      "human": "Clinical risk",
+      "blurb": "Framingham and related scores. About a person — not instead of one."
     },
     {
       "name": "MedicalImaging",
@@ -392,6 +431,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Medical imaging",
       "blurb": "Window a CT-style grid."
     },
     {
@@ -402,6 +442,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Finance models",
       "blurb": "Options and portfolio risk."
     },
     {
@@ -412,6 +453,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Engineering",
       "blurb": "Stress, drag, fatigue, a simple beam."
     },
     {
@@ -422,6 +464,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Chemistry",
       "blurb": "Elements, integrals, simple molecules."
     },
     {
@@ -432,6 +475,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Medical",
       "blurb": "Fingerprints and intensity grids. A pack is a tool."
     },
     {
@@ -442,6 +486,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Medical compute",
       "blurb": "Screen compounds, read a differential."
     },
     {
@@ -452,7 +497,8 @@
       "clusterLabel": "Money & identity",
       "status": "Works here",
       "tone": "live",
-      "blurb": "Read a DID. That\u2019s a handle, not a person."
+      "human": "Contracts",
+      "blurb": "Read a DID. That’s a handle, not a person."
     },
     {
       "name": "QuantumAndCryptographic",
@@ -462,6 +508,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Crypto",
       "blurb": "SHA and Blake hashes."
     },
     {
@@ -472,6 +519,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "nlp",
       "blurb": "Read a short text (this name is lowercase on purpose)."
     },
     {
@@ -482,6 +530,7 @@
       "clusterLabel": "Graphs",
       "status": "Works here",
       "tone": "live",
+      "human": "Hash",
       "blurb": "Stable names for things."
     },
     {
@@ -490,8 +539,9 @@
       "sample": "Manifold.distance",
       "cluster": "graph",
       "clusterLabel": "Graphs",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Manifold",
       "blurb": "Distance and projection in the habitat. Open Poet or Desktop."
     },
     {
@@ -502,6 +552,7 @@
       "clusterLabel": "Graphs",
       "status": "Works here",
       "tone": "live",
+      "human": "Documents",
       "blurb": "Take a document in."
     },
     {
@@ -512,6 +563,7 @@
       "clusterLabel": "Graphs",
       "status": "Works here",
       "tone": "live",
+      "human": "Sheets",
       "blurb": "Sums and stats on a sheet."
     },
     {
@@ -522,6 +574,7 @@
       "clusterLabel": "Graphs",
       "status": "Works here",
       "tone": "live",
+      "human": "Chat graph",
       "blurb": "Thread a conversation as a graph. The chatbot is still a tool."
     },
     {
@@ -532,6 +585,7 @@
       "clusterLabel": "Graphs",
       "status": "Works here",
       "tone": "live",
+      "human": "Social",
       "blurb": "Fairness and who connects to whom."
     },
     {
@@ -540,8 +594,9 @@
       "sample": "Net.peer_hash",
       "cluster": "graph",
       "clusterLabel": "Graphs",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Network",
       "blurb": "Peers and packed messages. Open Poet or Desktop."
     },
     {
@@ -550,8 +605,9 @@
       "sample": "Pulse.publish",
       "cluster": "habitat",
       "clusterLabel": "Motion & place",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Pulse",
       "blurb": "Messages between parts of the app. A public internet relay is still planned."
     },
     {
@@ -560,8 +616,9 @@
       "sample": "Render.scene",
       "cluster": "habitat",
       "clusterLabel": "Motion & place",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Render",
       "blurb": "Draw a still, a clip, a scene. Open Poet or Desktop."
     },
     {
@@ -572,6 +629,7 @@
       "clusterLabel": "Motion & place",
       "status": "Works here",
       "tone": "live",
+      "human": "Motion",
       "blurb": "Play an orbit, a spring, a pulse."
     },
     {
@@ -582,6 +640,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Sampler",
       "blurb": "Draw a sample under constraints."
     },
     {
@@ -590,8 +649,9 @@
       "sample": "Asset.create",
       "cluster": "habitat",
       "clusterLabel": "Motion & place",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Assets",
       "blurb": "Keep a thing with time, topic, and place. Open Poet or Desktop."
     },
     {
@@ -602,6 +662,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Physics bench",
       "blurb": "A bench for physics work."
     },
     {
@@ -612,6 +673,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Physics",
       "blurb": "Waves, heat, pendulums, fields."
     },
     {
@@ -622,6 +684,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Spectral",
       "blurb": "Light as a spectrum, then colour."
     },
     {
@@ -632,6 +695,7 @@
       "clusterLabel": "Graphs",
       "status": "Works here",
       "tone": "live",
+      "human": "Align ontologies",
       "blurb": "Line two vocabularies up."
     },
     {
@@ -642,6 +706,7 @@
       "clusterLabel": "Graphs",
       "status": "Works here",
       "tone": "live",
+      "human": "Match graphs",
       "blurb": "Find near-matches between graphs."
     },
     {
@@ -652,6 +717,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Calculus",
       "blurb": "Integrals, derivatives, stepping through time."
     },
     {
@@ -662,6 +728,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Integrals",
       "blurb": "Fourier, Laplace, Z."
     },
     {
@@ -672,6 +739,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Vectors",
       "blurb": "Grad, div, curl, flux."
     },
     {
@@ -682,6 +750,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "ODE",
       "blurb": "Step an ordinary differential equation."
     },
     {
@@ -692,6 +761,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Symbolic ODE",
       "blurb": "Solve a written differential equation."
     },
     {
@@ -702,6 +772,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Polynomials",
       "blurb": "Add, divide, gcd of polynomials."
     },
     {
@@ -712,6 +783,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Constructible",
       "blurb": "What a compass and straightedge can make."
     },
     {
@@ -722,6 +794,7 @@
       "clusterLabel": "Graphs",
       "status": "Works here",
       "tone": "live",
+      "human": "Graph paths",
       "blurb": "Shortest path, spread a signal, top hits."
     },
     {
@@ -732,6 +805,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Cosmic",
       "blurb": "Earth, sky, redshift, distances."
     },
     {
@@ -742,6 +816,7 @@
       "clusterLabel": "Research",
       "status": "Works here",
       "tone": "live",
+      "human": "Language",
       "blurb": "Tokenise, look up, pull relations."
     },
     {
@@ -750,8 +825,9 @@
       "sample": "Inference.relu",
       "cluster": "research",
       "clusterLabel": "Research",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Inference",
       "blurb": "Ground a turn with a model. The chatbot is a tool. Open Poet or Desktop."
     },
     {
@@ -760,8 +836,9 @@
       "sample": "Audio.epistemic_temperature_from_q",
       "cluster": "media",
       "clusterLabel": "Media",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Audio",
       "blurb": "Tones, meters, a spectrum. Open Poet or Desktop."
     },
     {
@@ -770,8 +847,9 @@
       "sample": "Scene.lerp_camera",
       "cluster": "habitat",
       "clusterLabel": "Motion & place",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Scene",
       "blurb": "Cameras, meshes, lights. Open Poet or Desktop."
     },
     {
@@ -782,6 +860,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Privacy",
       "blurb": "A noise scale for private sums."
     },
     {
@@ -792,6 +871,7 @@
       "clusterLabel": "Math & science",
       "status": "Works here",
       "tone": "live",
+      "human": "Units",
       "blurb": "Convert units."
     },
     {
@@ -800,8 +880,9 @@
       "sample": "agent.dag.execute",
       "cluster": "research",
       "clusterLabel": "Research",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "agent",
       "blurb": "A job graph (this name is lowercase on purpose). Open Poet or Desktop."
     },
     {
@@ -810,8 +891,9 @@
       "sample": "Orchestration.session_create",
       "cluster": "research",
       "clusterLabel": "Research",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Orchestration",
       "blurb": "A session and a roster. Open Poet or Desktop."
     },
     {
@@ -820,8 +902,9 @@
       "sample": "HID.poll",
       "cluster": "habitat",
       "clusterLabel": "Motion & place",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Hands & gaze",
       "blurb": "Hands, gaze, a gamepad. Open Poet or Desktop."
     },
     {
@@ -830,8 +913,9 @@
       "sample": "Finance.convert_currency",
       "cluster": "econ",
       "clusterLabel": "Money & identity",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Finance",
       "blurb": "A ledger and a currency check. Open Poet or Desktop."
     },
     {
@@ -842,7 +926,8 @@
       "clusterLabel": "Money & identity",
       "status": "Works here",
       "tone": "live",
-      "blurb": "Prices, welfare, a portfolio \u2014 the maths."
+      "human": "Econ",
+      "blurb": "Prices, welfare, a portfolio — the maths."
     },
     {
       "name": "Capability",
@@ -850,8 +935,9 @@
       "sample": "Capability.grant",
       "cluster": "econ",
       "clusterLabel": "Money & identity",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Access",
       "blurb": "Grant access, then revoke it."
     },
     {
@@ -860,8 +946,9 @@
       "sample": "Sentinel.inspect",
       "cluster": "econ",
       "clusterLabel": "Money & identity",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Sentinel",
       "blurb": "Look, then gate. Open Poet or Desktop."
     },
     {
@@ -870,9 +957,10 @@
       "sample": "Agent.trace",
       "cluster": "research",
       "clusterLabel": "Research",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "Plan and check a tool\u2019s steps. Never the other human."
+      "human": "Agent",
+      "blurb": "Plan and check a tool’s steps. Never the other human."
     },
     {
       "name": "Identity",
@@ -880,9 +968,10 @@
       "sample": "Identity.current_user",
       "cluster": "econ",
       "clusterLabel": "Money & identity",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "Who is signed in \u2014 a handle, not the human."
+      "human": "Identity",
+      "blurb": "Who is signed in — a handle, not the human."
     },
     {
       "name": "Forensic",
@@ -892,6 +981,7 @@
       "clusterLabel": "Money & identity",
       "status": "Works here",
       "tone": "live",
+      "human": "Forensic",
       "blurb": "How far a story drifted."
     },
     {
@@ -900,8 +990,9 @@
       "sample": "Corpus.load",
       "cluster": "research",
       "clusterLabel": "Research",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Corpus",
       "blurb": "Load a corpus. Open Poet or Desktop."
     },
     {
@@ -910,8 +1001,9 @@
       "sample": "Agency.evaluate",
       "cluster": "research",
       "clusterLabel": "Research",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Agency",
       "blurb": "Score an action. Open Poet or Desktop."
     },
     {
@@ -920,8 +1012,9 @@
       "sample": "CooperativeDelegation.permits",
       "cluster": "research",
       "clusterLabel": "Research",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Delegation",
       "blurb": "Permit, then take it back."
     },
     {
@@ -930,8 +1023,9 @@
       "sample": "CooperativeWork.board_project",
       "cluster": "research",
       "clusterLabel": "Research",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Shared work",
       "blurb": "A shared board. Open Poet or Desktop."
     },
     {
@@ -942,6 +1036,7 @@
       "clusterLabel": "Research",
       "status": "Works here",
       "tone": "live",
+      "human": "Research",
       "blurb": "Purpose, sources, gaps, a hypothesis."
     },
     {
@@ -950,8 +1045,9 @@
       "sample": "Image.new",
       "cluster": "media",
       "clusterLabel": "Media",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Images",
       "blurb": "Layers and brushes. Open Poet or Desktop."
     },
     {
@@ -960,8 +1056,9 @@
       "sample": "Video.new_project",
       "cluster": "media",
       "clusterLabel": "Media",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Video",
       "blurb": "Tracks and grade. Open Poet or Desktop."
     },
     {
@@ -970,8 +1067,9 @@
       "sample": "ThreeD.add_object",
       "cluster": "media",
       "clusterLabel": "Media",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "3D",
       "blurb": "Objects and lights. Open Poet or Desktop."
     },
     {
@@ -980,8 +1078,9 @@
       "sample": "HbbTV.new_app",
       "cluster": "media",
       "clusterLabel": "Media",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "TV app",
       "blurb": "A TV app. Open Poet or Desktop."
     },
     {
@@ -990,8 +1089,9 @@
       "sample": "SecondScreen.sync",
       "cluster": "media",
       "clusterLabel": "Media",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Second screen",
       "blurb": "Keep a second screen in time. Open Poet or Desktop."
     },
     {
@@ -1000,8 +1100,9 @@
       "sample": "Interactive.add_trigger",
       "cluster": "media",
       "clusterLabel": "Media",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Interactive",
       "blurb": "Triggers and posts. Open Poet or Desktop."
     },
     {
@@ -1010,8 +1111,9 @@
       "sample": "World.new",
       "cluster": "media",
       "clusterLabel": "Media",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "World",
       "blurb": "A room with gravity. Open Poet or Desktop."
     },
     {
@@ -1020,8 +1122,9 @@
       "sample": "Portal.set_target",
       "cluster": "media",
       "clusterLabel": "Media",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Portal",
       "blurb": "A door to another place. Open Poet or Desktop."
     },
     {
@@ -1030,8 +1133,9 @@
       "sample": "Avatar.move",
       "cluster": "media",
       "clusterLabel": "Media",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Avatar",
       "blurb": "Move a figure. Open Poet or Desktop."
     },
     {
@@ -1040,8 +1144,9 @@
       "sample": "Dmx.new_universe",
       "cluster": "media",
       "clusterLabel": "Media",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Lighting",
       "blurb": "Lights and cues. Open Poet or Desktop."
     },
     {
@@ -1050,8 +1155,9 @@
       "sample": "Poet.manifold_create",
       "cluster": "habitat",
       "clusterLabel": "Motion & place",
-      "status": "Poet / Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
+      "human": "Poet",
       "blurb": "The habitat app itself."
     }
   ]

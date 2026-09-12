@@ -5,6 +5,8 @@ Returns JSON with `error_code`, `span`, `suggested_fix`, and `errors[]` (up to e
 
 This repo’s LSP (`crates/vibe-lsp`) and playgrounds wrap that report. They must not invent a second diagnostic language.
 
+Customer pages use **Works here** · **Works in Poet / Desktop** · **Planned** ([`vocab.md`](vocab.md)). This file is for **tooling** chrome only.
+
 ## Voice: held / not yet
 
 Wait-honest chrome and tooling say **held / not yet** — plus a short why.
