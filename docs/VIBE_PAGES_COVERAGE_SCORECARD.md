@@ -1,122 +1,71 @@
-# Vibe coverage scorecard — Pages vs QualiaDB SoT
-**Owner:** Capt. · **SoT:** QualiaDB `v0.0.38` / `cdd7ae728` `crates/vibe` · **Pages:** vibe-script `main` `reality.html`
-**Rule:** No sentinel bot. Capt owns diligence. False-held on ALL_BOUND after WASM rebuild = FAIL.
+# Vibe Pages coverage scorecard
 
-## Gap (now)
-- SoT catalog: **104 families**, **1101** invoke ids (from `catalog/ids.rs`).
-- Pages `What it can do` still stamps logic tiles **held / not yet** citing `vibe-wasm 0.0.34`.
-- Timothy direction: implement/reveal — held only when truly unbound.
+**Tip UAT:** vibe-script `d7774789b` (PR #5 sole-push) · **SoT:** QualiaDB `v0.0.38`/`cdd7ae728`
+**Owner:** Capt.
 
-## Families (SoT)
-| Family | # methods |
-|--------|----------:|
-| `Statistics` | 107 |
-| `Econ` | 106 |
-| `MachineLearning` | 81 |
-| `Research` | 73 |
-| `ComputationalGeometry` | 68 |
-| `Render` | 53 |
-| `SymbolicAlgebra` | 42 |
-| `LinearAlgebra` | 33 |
-| `Calculus` | 24 |
-| `Cosmic` | 23 |
-| `Audio` | 22 |
-| `Chemistry` | 22 |
-| `Asset` | 21 |
-| `NumberTheory` | 20 |
-| `Scene` | 19 |
-| `Physics` | 18 |
-| `HID` | 16 |
-| `Inference` | 16 |
-| `PolynomialAlgebra` | 16 |
-| `Image` | 15 |
-| `Dmx` | 14 |
-| `EngineeringAnalysis` | 12 |
-| `FuzzyQuery` | 12 |
-| `SpecialFunctions` | 12 |
-| `GeometricAlgebra` | 11 |
-| `ComputerVision` | 10 |
-| `NLP` | 10 |
-| `Pulse` | 10 |
-| `Video` | 10 |
-| `Constructibility` | 9 |
-| `IntegralTransforms` | 8 |
-| `Orchestration` | 8 |
-| `ThreeD` | 8 |
-| `Animation` | 7 |
-| `ClinicalRisk` | 7 |
-| `VectorCalculus` | 7 |
-| `World` | 7 |
-| `Interpolation` | 6 |
-| `Agent` | 5 |
-| `Capability` | 5 |
-| `GraphDatabase` | 5 |
-| `Poet` | 5 |
-| `Spectral` | 5 |
-| `SymbolicODE` | 5 |
-| `sampler` | 5 |
-| `HbbTV` | 4 |
-| `Ode` | 4 |
-| `Social` | 4 |
-| `CapabilityDiscovery` | 3 |
-| `ChatGraph` | 3 |
-| `Finance` | 3 |
-| `FinancialModeling` | 3 |
-| `GraphMatch` | 3 |
-| `GraphReasoning` | 3 |
-| `Manifold` | 3 |
-| `Medical` | 3 |
-| `Optimization` | 3 |
-| `Portal` | 3 |
-| `QuantumAndCryptographic` | 3 |
-| `Avatar` | 2 |
-| `Bioinformatics` | 2 |
-| `CausalFuzzyAndControl` | 2 |
-| `Corpus` | 2 |
-| `Forensic` | 2 |
-| `Interactive` | 2 |
-| `MedicalComputing` | 2 |
-| `Net` | 2 |
-| `OrganicChemistry` | 2 |
-| `SHACL` | 2 |
-| `Sentinel` | 2 |
-| `Sheet` | 2 |
-| `biosignal` | 2 |
-| `AdvancedLogic` | 1 |
-| `Agency` | 1 |
-| `CalculusWorkbench` | 1 |
-| `ContractsIdentityAndConsensus` | 1 |
-| `CooperativeDelegation` | 1 |
-| `CooperativeWork` | 1 |
-| `DeonticLogic` | 1 |
-| `Document` | 1 |
-| `EpistemicLogic` | 1 |
-| `FormalLogic` | 1 |
-| `GovernanceLogic` | 1 |
-| `GraphAuthoring` | 1 |
-| `Identity` | 1 |
-| `InfraExtLogic` | 1 |
-| `InfraLogic` | 1 |
-| `LegalLogic` | 1 |
-| `MedicalImaging` | 1 |
-| `N3Logic` | 1 |
-| `NumericalCalculus` | 1 |
-| `OntologyAlignment` | 1 |
-| `ParaconsistentLogic` | 1 |
-| `PhysicalUnits` | 1 |
-| `PhysicsAndODE` | 1 |
-| `PhysicsWorkbench` | 1 |
-| `Privacy` | 1 |
-| `SecondScreen` | 1 |
-| `SpatialLogic` | 1 |
-| `SpecialFunctionsAndTransforms` | 1 |
-| `SymbolicAndDefeasibleLogic` | 1 |
-| `TemporalAndDescriptionLogic` | 1 |
-| `hash` | 1 |
-| `nlp` | 1 |
+## Scores
 
-## Beats
-1. Neo finishes WASM rebuild from QualiaDB v0.0.38 → vibe-script Pages.
-2. Capt re-UAT: every logic modality + Host family on the page must either **run** or cite a real unbound (daemon/CSCP/model) — not snapshot lag.
-3. Coverage: Pages must present complete family map (104), not Animation+LinearAlgebra-only demos.
-4. Poet/Webizen remain live surface for full eval; Pages must not under-claim SoT.
+| Gate | Score | Evidence |
+|------|-------|----------|
+| Pages WASM stamp | **PASS** | `docs/pkg/vibe/package.json` → `vibe-wasm` **0.0.38** |
+| Logic false-held cleared | **PASS** | N3 / SHACL / Deontic / Epistemic cards = `live LocalHost` |
+| Held only when unbound | **PASS*** | Remaining held: HID physical, Render GPU, missing model, native sanctuary, Pulse/CSCP park, Temporal LTL workshop path, LocalHost≠Poet — legitimate |
+| Complete family presentation | **FAIL** | SoT **104** families / **1101** ids; `reality.html` names **56**; **48** families still absent from page text |
+| Live GH Pages deploy | **PENDING** | Tip is on `main`; confirm mediaprophet.github.io after Actions |
+
+## Missing families (must appear on What it can do / atlas)
+
+- `Bioinformatics` (2 methods)
+- `Calculus` (24 methods)
+- `CalculusWorkbench` (1 methods)
+- `CapabilityDiscovery` (3 methods)
+- `ChatGraph` (3 methods)
+- `ComputationalGeometry` (68 methods)
+- `ComputerVision` (10 methods)
+- `Constructibility` (9 methods)
+- `CooperativeWork` (1 methods)
+- `Document` (1 methods)
+- `EngineeringAnalysis` (12 methods)
+- `FinancialModeling` (3 methods)
+- `GeometricAlgebra` (11 methods)
+- `GraphMatch` (3 methods)
+- `InfraExtLogic` (1 methods)
+- `InfraLogic` (1 methods)
+- `IntegralTransforms` (8 methods)
+- `Interpolation` (6 methods)
+- `MachineLearning` (81 methods)
+- `Manifold` (3 methods)
+- `Medical` (3 methods)
+- `MedicalComputing` (2 methods)
+- `MedicalImaging` (1 methods)
+- `Net` (2 methods)
+- `NumberTheory` (20 methods)
+- `NumericalCalculus` (1 methods)
+- `Ode` (4 methods)
+- `Optimization` (3 methods)
+- `OrganicChemistry` (2 methods)
+- `PhysicalUnits` (1 methods)
+- `PhysicsAndODE` (1 methods)
+- `PhysicsWorkbench` (1 methods)
+- `PolynomialAlgebra` (16 methods)
+- `Privacy` (1 methods)
+- `QuantumAndCryptographic` (3 methods)
+- `Sheet` (2 methods)
+- `Social` (4 methods)
+- `SpatialLogic` (1 methods)
+- `SpecialFunctions` (12 methods)
+- `SpecialFunctionsAndTransforms` (1 methods)
+- `Spectral` (5 methods)
+- `SymbolicAlgebra` (42 methods)
+- `SymbolicODE` (5 methods)
+- `VectorCalculus` (7 methods)
+- `biosignal` (2 methods)
+- `hash` (1 methods)
+- `nlp` (1 methods)
+- `sampler` (5 methods)
+
+## Next
+
+1. Neo: fold full 104-family map into `reality.html` / `atlas.html` (showcase, not essay).
+2. Capt: re-UAT after that tip — FAIL until `missing` = 0 (or explicit “see Poet” for native-only with link).
+3. Confirm GitHub Pages Actions deployed `d7774789b`.
