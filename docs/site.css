@@ -541,6 +541,33 @@ button.boundary-node, button.reality-card { font: inherit; color: inherit; width
 .eval-out.ok { color: var(--mint); }
 .eval-out.err { color: var(--red); }
 
+.continuity-once {
+  max-width: 640px;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+.does-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 12px;
+}
+.does-card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(13, 29, 49, .55);
+}
+.does-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+.does-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+.planned-note {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(13, 29, 49, .45);
+}
+.planned-note p { margin: 0; color: var(--muted); }
+
 /* Complete family roster — compact showcase, all SoT names in the HTML */
 .roster-tools { display: grid; gap: 12px; margin-bottom: 22px; }
 .roster-search { width: 100%; }

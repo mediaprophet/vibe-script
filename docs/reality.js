@@ -1,10 +1,6 @@
-/* What it can do — tap honeycomb / family cards for a plain + technical one-liner.
-   Soft-rise still arrives when the human prefers reduced motion.
-   Live eval uses the bundled vibe-wasm 0.0.38 LocalHost. */
+/* What it can do — try a script; family map is in family-roster.js. */
 
 import init, {
-  language_version,
-  host_version,
   eval_program_src,
   diagnose_src,
 } from "./pkg/vibe/vibe_wasm.js";
@@ -64,8 +60,8 @@ function wireSelectable(root, selector) {
     });
     setExplainer(root, {
       title: item.dataset.title || item.textContent.trim(),
-      status: item.dataset.status || "held / not yet",
-      tone: item.dataset.tone || "notyet",
+      status: item.dataset.status || "Works here",
+      tone: item.dataset.tone || "live",
       plain: item.dataset.plain || "",
       tech: item.dataset.tech || "",
     });
@@ -105,52 +101,44 @@ function wireLayerTabs() {
 }
 
 const LIVE_FIXTURES = {
-  linear_dot: {
-    label: "LinearAlgebra.dot (live LocalHost)",
+  math: {
+    label: "Math — a dot product",
     src: `using LinearAlgebra;
 
 effect fn main() {
     return LinearAlgebra.dot({ a: [1.0, 2.0, 3.0], b: [4.0, 5.0, 6.0] });
 }`,
   },
-  deontic: {
-    label: "DeonticLogic.evaluate (live LocalHost)",
+  should: {
+    label: "Logic — should",
     src: `using DeonticLogic;
 
 pure fn main() {
-    return obligate { "did:q42:agent_must_sign" };
+    return obligate { "the signer must confirm" };
 }`,
   },
-  n3: {
-    label: "N3Logic.evaluate (live LocalHost)",
-    src: `using N3Logic;
+  graph: {
+    label: "Graph — ask",
+    src: `using GraphDatabase;
 
 effect fn main() {
-    return N3Logic.evaluate({ formula: "{ :a :b :c }" });
+    return GraphDatabase.sparql({ query: "SELECT * WHERE { ?s ?p ?o }" });
 }`,
   },
-  shacl: {
-    label: "SHACL.validate (live LocalHost)",
-    src: `using SHACL;
+  save: {
+    label: "Save — open again",
+    src: `using GraphDatabase;
 
 effect fn main() {
-    return SHACL.validate({ graph: [], shapes: [] });
+    return GraphDatabase.volume_open({ name: "notes" });
 }`,
   },
-  animation: {
-    label: "Animation.orbit_spin (numeric kernel)",
+  motion: {
+    label: "Motion — an orbit",
     src: `using Animation;
 
 effect fn main() {
     return Animation.orbit_spin(1.0);
-}`,
-  },
-  ltl_residual: {
-    label: "LTL dotted path (measured residual E100)",
-    src: `using TemporalAndDescriptionLogic;
-
-effect fn main() {
-    return TemporalAndDescriptionLogic.ltl.evaluate({ formula: "G p" });
 }`,
   },
 };
@@ -193,9 +181,9 @@ function wireLiveEval() {
       outEl.className = `output eval-out ${ok ? "ok" : "err"}`;
       badge.textContent = `${(performance.now() - start).toFixed(2)} ms`;
     } catch (error) {
-      outEl.textContent = `Eval held / not yet: ${error}`;
+      outEl.textContent = `Couldn’t run that: ${error}`;
       outEl.className = "output eval-out err";
-      badge.textContent = "held / not yet";
+      badge.textContent = "try again";
     }
   };
 
@@ -205,13 +193,13 @@ function wireLiveEval() {
   init()
     .then(() => {
       ready = true;
-      badge.textContent = `${language_version()} · ${host_version()}`;
-      outEl.textContent = `vibe-wasm 0.0.38 ready (${language_version()} / ${host_version()}).\n\nPick a fixture and Eval. LinearAlgebra and logic run on LocalHost. Residual: honesty:"local" is an eval, not a fake product.`;
+      badge.textContent = "ready";
+      outEl.textContent = `Ready. Pick a script and Run.`;
       outEl.className = "output eval-out";
     })
     .catch((error) => {
-      badge.textContent = "held / not yet";
-      outEl.textContent = `WebAssembly engine held / not yet:\n${error}`;
+      badge.textContent = "try again";
+      outEl.textContent = `Couldn’t start the engine.\n${error}`;
       outEl.className = "output eval-out err";
     });
 }

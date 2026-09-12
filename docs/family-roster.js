@@ -1,4 +1,4 @@
-/* Complete Host-family roster — search / filter. Names stay in the HTML for Capt grep. */
+/* Family map — search / filter. Names stay in the HTML. */
 
 function setExplainer(root, { title, status, tone, plain, tech }) {
   const box = root.querySelector("[data-explainer]");
@@ -35,8 +35,8 @@ function wireFamilyRoster(root) {
     });
     setExplainer(root, {
       title: item.dataset.title || item.textContent.trim(),
-      status: item.dataset.status || "held / not yet",
-      tone: item.dataset.tone || "notyet",
+      status: item.dataset.status || "Works here",
+      tone: item.dataset.tone || "live",
       plain: item.dataset.plain || "",
       tech: item.dataset.tech || "",
     });
@@ -66,7 +66,7 @@ function wireFamilyRoster(root) {
       group.classList.toggle("is-empty", !any);
     });
     if (countEl) {
-      countEl.textContent = `${visible} visible · 104 SoT families · 105 prefixes named`;
+      countEl.textContent = `${visible} of 104 families`;
     }
   };
 
