@@ -1,4 +1,4 @@
-/* Reality map — tap honeycomb / family cards for a plain + technical one-liner.
+/* What it can do — tap honeycomb / family cards for a plain + technical one-liner.
    Soft-rise still arrives when the human prefers reduced motion. */
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
