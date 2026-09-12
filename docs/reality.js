@@ -1,6 +1,6 @@
 /* What it can do — tap honeycomb / family cards for a plain + technical one-liner.
    Soft-rise still arrives when the human prefers reduced motion.
-   Live eval uses the bundled vibe-wasm 0.0.38 LocalHost. */
+   Live eval uses the bundled vibe-wasm 0.0.38 on this page. */
 
 import init, {
   language_version,
@@ -64,7 +64,7 @@ function wireSelectable(root, selector) {
     });
     setExplainer(root, {
       title: item.dataset.title || item.textContent.trim(),
-      status: item.dataset.status || "held / not yet",
+      status: item.dataset.status || "Works here",
       tone: item.dataset.tone || "notyet",
       plain: item.dataset.plain || "",
       tech: item.dataset.tech || "",
@@ -106,7 +106,7 @@ function wireLayerTabs() {
 
 const LIVE_FIXTURES = {
   linear_dot: {
-    label: "LinearAlgebra.dot (live LocalHost)",
+    label: "LinearAlgebra.dot (Works here)",
     src: `using LinearAlgebra;
 
 effect fn main() {
@@ -114,7 +114,7 @@ effect fn main() {
 }`,
   },
   deontic: {
-    label: "DeonticLogic.evaluate (live LocalHost)",
+    label: "DeonticLogic.evaluate (Works here)",
     src: `using DeonticLogic;
 
 pure fn main() {
@@ -122,7 +122,7 @@ pure fn main() {
 }`,
   },
   n3: {
-    label: "N3Logic.evaluate (live LocalHost)",
+    label: "N3Logic.evaluate (Works here)",
     src: `using N3Logic;
 
 effect fn main() {
@@ -130,7 +130,7 @@ effect fn main() {
 }`,
   },
   shacl: {
-    label: "SHACL.validate (live LocalHost)",
+    label: "SHACL.validate (Works here)",
     src: `using SHACL;
 
 effect fn main() {
@@ -193,9 +193,9 @@ function wireLiveEval() {
       outEl.className = `output eval-out ${ok ? "ok" : "err"}`;
       badge.textContent = `${(performance.now() - start).toFixed(2)} ms`;
     } catch (error) {
-      outEl.textContent = `Eval held / not yet: ${error}`;
+      outEl.textContent = `Eval miss: ${error}`;
       outEl.className = "output eval-out err";
-      badge.textContent = "held / not yet";
+      badge.textContent = "miss";
     }
   };
 
@@ -206,12 +206,12 @@ function wireLiveEval() {
     .then(() => {
       ready = true;
       badge.textContent = `${language_version()} · ${host_version()}`;
-      outEl.textContent = `vibe-wasm 0.0.38 ready (${language_version()} / ${host_version()}).\n\nPick a fixture and Eval. LinearAlgebra and logic run on LocalHost. Residual: honesty:"local" is an eval, not a fake product.`;
+      outEl.textContent = `vibe-wasm 0.0.38 ready (${language_version()} / ${host_version()}).\n\nPick a fixture and run it. Math and rules run on this page. A local record is a run, not a fake product.`;
       outEl.className = "output eval-out";
     })
     .catch((error) => {
-      badge.textContent = "held / not yet";
-      outEl.textContent = `WebAssembly engine held / not yet:\n${error}`;
+      badge.textContent = "not ready";
+      outEl.textContent = `WebAssembly engine not ready:\n${error}`;
       outEl.className = "output eval-out err";
     });
 }

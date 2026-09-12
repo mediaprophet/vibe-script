@@ -128,9 +128,21 @@
   transform: none;
 }
 
-[data-theme="vibe-reality"] .hex[data-tone="notyet"] {
+[data-theme="vibe-reality"] .hex[data-tone="notyet"],
+[data-theme="vibe-reality"] .hex[data-tone="plan"] {
   background: linear-gradient(160deg, rgba(251, 191, 36, 0.22), rgba(34, 211, 238, 0.08));
   box-shadow: inset 0 0 0 1px rgba(251, 191, 36, 0.42);
+}
+
+[data-theme="vibe-reality"] .hex[data-tone="poet"] {
+  background: linear-gradient(160deg, rgba(167, 139, 250, 0.24), rgba(34, 211, 238, 0.08));
+  box-shadow: inset 0 0 0 1px rgba(167, 139, 250, 0.42);
+}
+
+[data-theme="vibe-reality"] .continuity-line {
+  border-color: rgba(251, 191, 36, 0.28);
+  background: linear-gradient(120deg, rgba(251, 191, 36, 0.09), rgba(34, 211, 238, 0.04));
+  font-family: var(--q-display);
 }
 
 [data-theme="vibe-reality"] .boundary-node {

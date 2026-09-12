@@ -52,7 +52,7 @@
   return 500ms + 20ms;
 }</pre><p>Units are values with checks—not a convention left to comments.</p></article>
       <article class="info-card"><h3>Linear algebra</h3><pre class="code-block">using LinearAlgebra;
-return LinearAlgebra.dot({ a: xs, b: ys });</pre><p>Live Host family (§11.5). Pages vibe-wasm 0.0.38 evals it on LocalHost. Residual: honesty:"local" — not a fake product. Do not invent extra methods ahead of ALL_BOUND.</p></article>
+return LinearAlgebra.dot({ a: xs, b: ys });</pre><p>Math runs on this page. vibe-wasm 0.0.38 returns a local record — not a fake product. Do not invent extra methods.</p></article>
       <article class="info-card"><h3>Cosmic transforms</h3><pre class="code-block">using Cosmic;
 return Cosmic.geodetic_distance({ lat_deg: a, lon_deg: b, lat2_deg: c, lon2_deg: d });</pre><p>Scientific and coordinate-system work lives on the same host surface. Args match core §11.1.</p></article>
       <article class="info-card"><h3>Consent workflows</h3><pre class="code-block">requires [ capability("graph.write") ];

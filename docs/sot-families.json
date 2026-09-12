@@ -3,7 +3,7 @@
   "invokeIds": 1107,
   "familyPrefixes": 105,
   "captFamilies": 104,
-  "note": "Capt SoT table is 104 families / 1101 ids (TADL counted as 1; agent.dag.* omitted). This snapshot names every ALL_INVOKE_IDS prefix, including agent.",
+  "note": "Capt family table is 104 families / 1101 ids (TADL counted as 1; agent.dag.* omitted). This snapshot names every catalog prefix, including agent. User-facing chips: Works here \u00b7 Works in Poet / Desktop \u00b7 Planned (not built).",
   "families": [
     {
       "name": "CapabilityDiscovery",
@@ -11,9 +11,10 @@
       "sample": "CapabilityDiscovery.list",
       "cluster": "graph",
       "clusterLabel": "Graph & discovery",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "list \u00b7 coverage \u00b7 catalog. Discover what a host actually binds."
+      "blurb": "List what this page or Poet / Desktop actually binds. Discover, do not invent.",
+      "human": "What's bound"
     },
     {
       "name": "SHACL",
@@ -21,9 +22,10 @@
       "sample": "SHACL.validate",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Shapes on a graph. This snapshot evals SHACL.validate as a LocalHost record."
+      "blurb": "Check whether a graph fits a shape. Runs on this page. A human is not a thing in the graph. Law keeps person.",
+      "human": "Shapes"
     },
     {
       "name": "GraphDatabase",
@@ -31,9 +33,10 @@
       "sample": "GraphDatabase.stats",
       "cluster": "graph",
       "clusterLabel": "Graph & discovery",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "SPARQL returns []. volume_* is local \u2014 not a saved .q42. Sanctuary: see Poet/Desktop."
+      "blurb": "Query a graph here. An empty list is honest. Saving a volume is in Poet / Desktop.",
+      "human": "Graphs"
     },
     {
       "name": "N3Logic",
@@ -41,9 +44,10 @@
       "sample": "N3Logic.evaluate",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "If-then arrows a human can still read. Eval\u2019d here as honesty:local."
+      "blurb": "If-then arrows a human can still read. Runs on this page.",
+      "human": "Rules"
     },
     {
       "name": "GraphAuthoring",
@@ -51,9 +55,10 @@
       "sample": "GraphAuthoring.process",
       "cluster": "graph",
       "clusterLabel": "Graph & discovery",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Author a graph fragment. LocalHost honesty:local."
+      "blurb": "Author a graph fragment on this page. A local record.",
+      "human": "Write graph"
     },
     {
       "name": "DeonticLogic",
@@ -61,9 +66,10 @@
       "sample": "DeonticLogic.evaluate",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Ought-language on a claim, not a who. Modal verbs stay terms unless leased."
+      "blurb": "Ought-language sits on a claim, not on a who. Modal verbs stay words unless this family is leased.",
+      "human": "Ought"
     },
     {
       "name": "EpistemicLogic",
@@ -71,9 +77,10 @@
       "sample": "EpistemicLogic.evaluate",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "A human knows or believes. A chatbot cannot become the knower."
+      "blurb": "A human knows or believes. A chatbot cannot become the knower.",
+      "human": "Knowing"
     },
     {
       "name": "ParaconsistentLogic",
@@ -81,9 +88,10 @@
       "sample": "ParaconsistentLogic.route",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Isolate a clash instead of exploding the graph."
+      "blurb": "When two facts clash, isolate the clash instead of exploding the graph.",
+      "human": "Clash"
     },
     {
       "name": "TemporalAndDescriptionLogic",
@@ -91,9 +99,10 @@
       "sample": "TemporalAndDescriptionLogic.ltl.globally",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Subsumption evals here. LTL three-segment ids are a measured E100 residual."
+      "blurb": "Is this kind a kind of that kind? Subsumption runs here. The three-part time path still needs a bind finish \u2014 not a status chip.",
+      "human": "Time & kinds"
     },
     {
       "name": "AdvancedLogic",
@@ -101,9 +110,10 @@
       "sample": "AdvancedLogic.compute",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "ALL_BOUND compute. LocalHost honesty:local \u2014 not a fake solver product."
+      "blurb": "Named compute on this page. A local record, not a fake solver product.",
+      "human": "Advanced"
     },
     {
       "name": "FormalLogic",
@@ -111,9 +121,10 @@
       "sample": "FormalLogic.compute",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "ALL_BOUND compute. LocalHost honesty:local."
+      "blurb": "Named compute on this page. A local record.",
+      "human": "Formal"
     },
     {
       "name": "LegalLogic",
@@ -121,9 +132,10 @@
       "sample": "LegalLogic.compute",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Law keeps person. A claim with no duty-bearer is a gap."
+      "blurb": "Law keeps person. A claim with no duty-bearer is a gap.",
+      "human": "Law"
     },
     {
       "name": "GovernanceLogic",
@@ -131,9 +143,10 @@
       "sample": "GovernanceLogic.compute",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Governance compute on ALL_BOUND. Handle revoke \u2260 who-erase."
+      "blurb": "Governance compute on this page. Revoking a name or login is not who-erase.",
+      "human": "Governance"
     },
     {
       "name": "SpatialLogic",
@@ -141,9 +154,10 @@
       "sample": "SpatialLogic.compute",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Spatial modality on ALL_BOUND. LocalHost honesty:local."
+      "blurb": "Spatial modality on this page. A local record.",
+      "human": "Space"
     },
     {
       "name": "InfraLogic",
@@ -151,9 +165,10 @@
       "sample": "InfraLogic.compute",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Infrastructure logic on ALL_BOUND. LocalHost honesty:local."
+      "blurb": "Infrastructure logic on this page. A local record.",
+      "human": "Infra"
     },
     {
       "name": "InfraExtLogic",
@@ -161,9 +176,10 @@
       "sample": "InfraExtLogic.compute",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Extended infra logic on ALL_BOUND. LocalHost honesty:local."
+      "blurb": "Extended infra logic on this page. A local record.",
+      "human": "Infra extra"
     },
     {
       "name": "SymbolicAndDefeasibleLogic",
@@ -171,9 +187,10 @@
       "sample": "SymbolicAndDefeasibleLogic.asp",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Rules that can lose to better rules. Not a clingo solve here."
+      "blurb": "Rules that can lose to better rules. Not a solver run here.",
+      "human": "Defeasible"
     },
     {
       "name": "CausalFuzzyAndControl",
@@ -181,9 +198,10 @@
       "sample": "CausalFuzzyAndControl.caused",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "What caused what, and how much is enough. Named methods only."
+      "blurb": "What caused what, and how much is enough. Named methods only.",
+      "human": "Cause"
     },
     {
       "name": "SymbolicAlgebra",
@@ -191,9 +209,10 @@
       "sample": "SymbolicAlgebra.eval",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Parse, differentiate, integrate, roots. LocalHost honesty:local."
+      "blurb": "Parse, differentiate, integrate, roots. A local record on this page.",
+      "human": "Algebra"
     },
     {
       "name": "LinearAlgebra",
@@ -201,9 +220,10 @@
       "sample": "LinearAlgebra.matmul",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "\u00a711.5 gemm \u00b7 dot \u00b7 norm. Residual: honesty:local, not a fake 32.0."
+      "blurb": "Dot products and matrices run here. The page returns a local record \u2014 not a fake number.",
+      "human": "Math"
     },
     {
       "name": "NumericalCalculus",
@@ -211,9 +231,10 @@
       "sample": "NumericalCalculus.simpson",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "simpson on ALL_BOUND."
+      "blurb": "Numeric integration on this page.",
+      "human": "Numeric calc"
     },
     {
       "name": "CalculusWorkbench",
@@ -221,9 +242,10 @@
       "sample": "CalculusWorkbench.compute",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Workbench compute on ALL_BOUND."
+      "blurb": "Calculus workbench on this page.",
+      "human": "Calc bench"
     },
     {
       "name": "Optimization",
@@ -231,9 +253,10 @@
       "sample": "Optimization.hill_climb",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "hill_climb \u00b7 simulated_annealing \u00b7 artificial_bee_colony."
+      "blurb": "Hill climb, annealing, bee colony. Runs on this page.",
+      "human": "Optimize"
     },
     {
       "name": "GeometricAlgebra",
@@ -241,9 +264,10 @@
       "sample": "GeometricAlgebra.dot",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "PGA product, rotors, translators. LocalHost honesty:local."
+      "blurb": "Products, rotors, translators. A local record.",
+      "human": "Geometric algebra"
     },
     {
       "name": "ComputationalGeometry",
@@ -251,9 +275,10 @@
       "sample": "ComputationalGeometry.convex_hull_2",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Hulls, distances, polygons, SO(3). Largest geometry family."
+      "blurb": "Hulls, distances, polygons. Largest geometry family.",
+      "human": "Geometry"
     },
     {
       "name": "ComputerVision",
@@ -261,9 +286,10 @@
       "sample": "ComputerVision.ahash",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "ahash \u00b7 blur \u00b7 sobel \u00b7 canny. LocalHost honesty:local."
+      "blurb": "Hash, blur, edges. A local record on this page.",
+      "human": "Vision"
     },
     {
       "name": "NumberTheory",
@@ -271,9 +297,10 @@
       "sample": "NumberTheory.gcd",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "gcd through CRT. LocalHost honesty:local."
+      "blurb": "GCD through remainder theorems. A local record.",
+      "human": "Numbers"
     },
     {
       "name": "SpecialFunctionsAndTransforms",
@@ -281,9 +308,10 @@
       "sample": "SpecialFunctionsAndTransforms.bessel_j",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "bessel_j sibling family. Named separately on SoT."
+      "blurb": "Bessel sibling family. Named separately.",
+      "human": "Transforms"
     },
     {
       "name": "Statistics",
@@ -291,9 +319,10 @@
       "sample": "Statistics.mean",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Mean through MVN. LocalHost honesty:local for catalog ids."
+      "blurb": "Mean through multivariate. A local record for catalog ids.",
+      "human": "Stats"
     },
     {
       "name": "MachineLearning",
@@ -301,9 +330,10 @@
       "sample": "MachineLearning.ols",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "OLS through BART. LocalHost honesty:local \u2014 not a trained model."
+      "blurb": "Fits and models as catalog work. Not a trained product here.",
+      "human": "Learning"
     },
     {
       "name": "biosignal",
@@ -311,9 +341,10 @@
       "sample": "biosignal.dp_filter",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "dp_filter \u00b7 dp_config. Physical loop: see Poet/Desktop."
+      "blurb": "Physical biosignal loop lives in Poet / Desktop.",
+      "human": "Biosignal"
     },
     {
       "name": "SpecialFunctions",
@@ -321,9 +352,10 @@
       "sample": "SpecialFunctions.airy_ai",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Airy, zeta, Bessel, orthogonal polynomials."
+      "blurb": "Airy, zeta, Bessel, orthogonal polynomials.",
+      "human": "Special functions"
     },
     {
       "name": "Interpolation",
@@ -331,9 +363,10 @@
       "sample": "Interpolation.linear_interp",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "linear \u00b7 Lagrange \u00b7 Newton \u00b7 poly_fit."
+      "blurb": "Linear, Lagrange, Newton, poly fit.",
+      "human": "Interpolate"
     },
     {
       "name": "FuzzyQuery",
@@ -341,9 +374,10 @@
       "sample": "FuzzyQuery.triangular",
       "cluster": "logic",
       "clusterLabel": "Logic",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Soft thresholds and ramps. Separate from CausalFuzzyAndControl."
+      "blurb": "Soft thresholds and ramps. Separate from Cause.",
+      "human": "Soft query"
     },
     {
       "name": "PhysicsAndODE",
@@ -351,9 +385,10 @@
       "sample": "PhysicsAndODE.projectile",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "projectile on ALL_BOUND."
+      "blurb": "Projectile and ODE sibling on this page.",
+      "human": "Physics ODE"
     },
     {
       "name": "Bioinformatics",
@@ -361,9 +396,10 @@
       "sample": "Bioinformatics.align",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "align \u00b7 compute. LocalHost honesty:local."
+      "blurb": "Align and compute sequences. A local record.",
+      "human": "Bioinformatics"
     },
     {
       "name": "OrganicChemistry",
@@ -371,9 +407,10 @@
       "sample": "OrganicChemistry.validate_smiles",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "validate_smiles \u00b7 compute. LocalHost honesty:local."
+      "blurb": "Validate a SMILES string. A local record.",
+      "human": "Organic chem"
     },
     {
       "name": "ClinicalRisk",
@@ -381,9 +418,10 @@
       "sample": "ClinicalRisk.framingham",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Framingham and siblings grade a claim about a human. The pack is a tool."
+      "blurb": "Framingham and siblings grade a claim about a human. The pack is a tool.",
+      "human": "Clinical risk"
     },
     {
       "name": "MedicalImaging",
@@ -391,9 +429,10 @@
       "sample": "MedicalImaging.hu_window",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "hu_window on ALL_BOUND."
+      "blurb": "Hounsfield window on this page.",
+      "human": "Medical imaging"
     },
     {
       "name": "FinancialModeling",
@@ -401,9 +440,10 @@
       "sample": "FinancialModeling.black_scholes",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "black_scholes \u00b7 gbm_var \u00b7 portfolio_risk."
+      "blurb": "Option and portfolio models. Catalog eval here.",
+      "human": "Finance models"
     },
     {
       "name": "EngineeringAnalysis",
@@ -411,9 +451,10 @@
       "sample": "EngineeringAnalysis.kinematics",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Kinematics, fatigue, FEM static. LocalHost honesty:local."
+      "blurb": "Kinematics, fatigue, statics. A local record.",
+      "human": "Engineering"
     },
     {
       "name": "Chemistry",
@@ -421,9 +462,10 @@
       "sample": "Chemistry.element_symbol",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Elements, Gaussian integrals, boys_function."
+      "blurb": "Elements and integrals. Runs on this page.",
+      "human": "Chemistry"
     },
     {
       "name": "Medical",
@@ -431,9 +473,10 @@
       "sample": "Medical.tanimoto",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "tanimoto \u00b7 fingerprint \u00b7 intensity grid. A pack is a tool."
+      "blurb": "Fingerprints and intensity grids. A pack is a tool.",
+      "human": "Medical"
     },
     {
       "name": "MedicalComputing",
@@ -441,9 +484,10 @@
       "sample": "MedicalComputing.analyze_differential",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "analyze_differential \u00b7 screen_compounds."
+      "blurb": "Differentials and compound screens.",
+      "human": "Medical compute"
     },
     {
       "name": "ContractsIdentityAndConsensus",
@@ -451,9 +495,10 @@
       "sample": "ContractsIdentityAndConsensus.parse_did_q42",
       "cluster": "econ",
       "clusterLabel": "Econ & identity",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "parse_did_q42. A DID is a handle, not a human."
+      "blurb": "Parse a DID. A DID is a name, not a person.",
+      "human": "Contracts"
     },
     {
       "name": "QuantumAndCryptographic",
@@ -461,9 +506,10 @@
       "sample": "QuantumAndCryptographic.sha256",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "sha256 \u00b7 sha512 \u00b7 blake3. LocalHost honesty:local."
+      "blurb": "Hash families on this page. A local record.",
+      "human": "Crypto"
     },
     {
       "name": "nlp",
@@ -471,9 +517,10 @@
       "sample": "nlp.analyze",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "nlp.analyze \u2014 lowercase sibling of NLP. Named separately on SoT."
+      "blurb": "Lowercase language sibling of Language. Named separately.",
+      "human": "nlp"
     },
     {
       "name": "hash",
@@ -481,9 +528,10 @@
       "sample": "hash.iri",
       "cluster": "graph",
       "clusterLabel": "Graph & discovery",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "hash.iri on ALL_BOUND. LocalHost honesty:local."
+      "blurb": "Hash an IRI on this page. A local record.",
+      "human": "Hash"
     },
     {
       "name": "Manifold",
@@ -491,9 +539,10 @@
       "sample": "Manifold.distance",
       "cluster": "graph",
       "clusterLabel": "Graph & discovery",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "distance \u00b7 axes \u00b7 project. Habitat geometry \u2014 see Poet/Desktop."
+      "blurb": "Distance, axes, project. Habitat geometry lives in Poet / Desktop.",
+      "human": "Manifold"
     },
     {
       "name": "Document",
@@ -501,9 +550,10 @@
       "sample": "Document.ingest",
       "cluster": "graph",
       "clusterLabel": "Graph & discovery",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Document.ingest on ALL_BOUND. LocalHost honesty:local."
+      "blurb": "Ingest a document on this page. A local record.",
+      "human": "Documents"
     },
     {
       "name": "Sheet",
@@ -511,9 +561,10 @@
       "sample": "Sheet.stats",
       "cluster": "graph",
       "clusterLabel": "Graph & discovery",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "stats \u00b7 sum_range. LocalHost honesty:local."
+      "blurb": "Sheet stats and ranges on this page. A local record.",
+      "human": "Sheets"
     },
     {
       "name": "ChatGraph",
@@ -521,9 +572,10 @@
       "sample": "ChatGraph.validate_fragment",
       "cluster": "graph",
       "clusterLabel": "Graph & discovery",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "validate_fragment \u00b7 link_reply \u00b7 session_summary. A chatbot is a tool."
+      "blurb": "Validate a chat fragment. A chatbot is a tool.",
+      "human": "Chat graph"
     },
     {
       "name": "Social",
@@ -531,9 +583,10 @@
       "sample": "Social.lww",
       "cluster": "graph",
       "clusterLabel": "Graph & discovery",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "lww \u00b7 gini \u00b7 lorenz \u00b7 degree_centrality. Catalog eval here."
+      "blurb": "Social graph measures on this page.",
+      "human": "Social"
     },
     {
       "name": "Net",
@@ -541,9 +594,10 @@
       "sample": "Net.peer_hash",
       "cluster": "graph",
       "clusterLabel": "Graph & discovery",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "peer_hash \u00b7 sonic_pack. Live peer fabric: see Poet/Desktop."
+      "blurb": "Live peer fabric lives in Poet / Desktop.",
+      "human": "Network"
     },
     {
       "name": "Pulse",
@@ -551,9 +605,10 @@
       "sample": "Pulse.publish",
       "cluster": "habitat",
       "clusterLabel": "Habitat & body",
-      "status": "held / not yet",
-      "tone": "notyet",
-      "blurb": "Transport, not a human. CSCP-08 / MASQUE parked. No invented wss://."
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "blurb": "Transport, not a person. Live bus work lives in Poet / Desktop.",
+      "human": "Pulse"
     },
     {
       "name": "Render",
@@ -561,9 +616,10 @@
       "sample": "Render.scene",
       "cluster": "habitat",
       "clusterLabel": "Habitat & body",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "Still / clip / scene share one family. GPU frame: see Poet/Desktop."
+      "blurb": "Still, clip, and scene share one family. A live frame lives in Poet / Desktop.",
+      "human": "Render"
     },
     {
       "name": "Animation",
@@ -571,9 +627,10 @@
       "sample": "Animation.evaluate_preset",
       "cluster": "habitat",
       "clusterLabel": "Habitat & body",
-      "status": "live kernel",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Preset orbits and springs compute numbers here."
+      "blurb": "Preset orbits and springs compute numbers here.",
+      "human": "Motion"
     },
     {
       "name": "sampler",
@@ -581,9 +638,10 @@
       "sample": "sampler.configure",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "configure \u00b7 constrain_* \u00b7 sample. LocalHost honesty:local."
+      "blurb": "Configure and sample. A local record.",
+      "human": "Sampler"
     },
     {
       "name": "Asset",
@@ -591,9 +649,10 @@
       "sample": "Asset.create",
       "cluster": "habitat",
       "clusterLabel": "Habitat & body",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "Aspect compile and persist. Durable sanctuary: see Poet/Desktop."
+      "blurb": "Compile and persist. Durable store lives in Poet / Desktop.",
+      "human": "Assets"
     },
     {
       "name": "PhysicsWorkbench",
@@ -601,9 +660,10 @@
       "sample": "PhysicsWorkbench.compute",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Workbench compute on ALL_BOUND."
+      "blurb": "Physics workbench on this page.",
+      "human": "Physics bench"
     },
     {
       "name": "Physics",
@@ -611,9 +671,10 @@
       "sample": "Physics.wave_1d",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Waves, oscillators, EMF, n-body. LocalHost honesty:local."
+      "blurb": "Waves, oscillators, fields. A local record.",
+      "human": "Physics"
     },
     {
       "name": "Spectral",
@@ -621,9 +682,10 @@
       "sample": "Spectral.emf_to_spd",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "EMF to SPD / XYZ / RGB. LocalHost honesty:local."
+      "blurb": "Light to color. A local record.",
+      "human": "Spectral"
     },
     {
       "name": "OntologyAlignment",
@@ -631,9 +693,10 @@
       "sample": "OntologyAlignment.align",
       "cluster": "graph",
       "clusterLabel": "Graph & discovery",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "align on ALL_BOUND. LocalHost honesty:local."
+      "blurb": "Align two vocabularies on this page. A local record.",
+      "human": "Align ontologies"
     },
     {
       "name": "GraphMatch",
@@ -641,9 +704,10 @@
       "sample": "GraphMatch.fuzzy_jaccard",
       "cluster": "graph",
       "clusterLabel": "Graph & discovery",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Fuzzy Jaccard / Dice / approximate match on ALL_BOUND."
+      "blurb": "Fuzzy match on graphs. Runs on this page.",
+      "human": "Match graphs"
     },
     {
       "name": "Calculus",
@@ -651,9 +715,10 @@
       "sample": "Calculus.solve_poisson_dirichlet",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Adaptive Simpson, BDF, Poisson, JVP/VJP. LocalHost honesty:local."
+      "blurb": "Adaptive integrals and Poisson. A local record.",
+      "human": "Calculus"
     },
     {
       "name": "IntegralTransforms",
@@ -661,9 +726,10 @@
       "sample": "IntegralTransforms.idft",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "DFT, Z, Laplace. LocalHost honesty:local."
+      "blurb": "Fourier, Z, Laplace. A local record.",
+      "human": "Integrals"
     },
     {
       "name": "VectorCalculus",
@@ -671,9 +737,10 @@
       "sample": "VectorCalculus.gradient",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "grad \u00b7 div \u00b7 curl \u00b7 laplacian \u00b7 flux."
+      "blurb": "Grad, div, curl, flux.",
+      "human": "Vectors"
     },
     {
       "name": "Ode",
@@ -681,9 +748,10 @@
       "sample": "Ode.rk4_integrate",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "rk4 \u00b7 dopri5 \u00b7 bdf \u00b7 symplectic_step."
+      "blurb": "Step an ordinary differential equation.",
+      "human": "ODE"
     },
     {
       "name": "SymbolicODE",
@@ -691,9 +759,10 @@
       "sample": "SymbolicODE.solve_linear_first_order",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Linear / separable ODE and PDE classify."
+      "blurb": "Classify and solve symbolic ODE / PDE.",
+      "human": "Symbolic ODE"
     },
     {
       "name": "PolynomialAlgebra",
@@ -701,9 +770,10 @@
       "sample": "PolynomialAlgebra.div_rem",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "div_rem \u00b7 gcd \u00b7 resultant \u00b7 eval."
+      "blurb": "Divide, gcd, resultant, eval.",
+      "human": "Polynomials"
     },
     {
       "name": "Constructibility",
@@ -711,9 +781,10 @@
       "sample": "Constructibility.is_regular_polygon_constructible",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Regular polygons, Fermat primes, classic impossibles."
+      "blurb": "Regular polygons, Fermat primes, classic impossibles.",
+      "human": "Constructible"
     },
     {
       "name": "GraphReasoning",
@@ -721,9 +792,10 @@
       "sample": "GraphReasoning.top_k",
       "cluster": "graph",
       "clusterLabel": "Graph & discovery",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "top_k \u00b7 shortest_path \u00b7 spreading_activation. Catalog eval here."
+      "blurb": "Top-k, shortest path, spread. Catalog eval here.",
+      "human": "Graph paths"
     },
     {
       "name": "Cosmic",
@@ -731,9 +803,10 @@
       "sample": "Cosmic.warp_factor_c",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Geodesy, FLRW, warp. Some kernels on LocalHost."
+      "blurb": "Geodesy and warp kernels. Some numbers run here.",
+      "human": "Cosmic"
     },
     {
       "name": "NLP",
@@ -741,9 +814,10 @@
       "sample": "NLP.tokenize",
       "cluster": "research",
       "clusterLabel": "Inference & research",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "tokenize \u00b7 gazetteer \u00b7 graphrag_query. Uppercase sibling of nlp."
+      "blurb": "Tokenize and query language. Uppercase sibling of nlp.",
+      "human": "Language"
     },
     {
       "name": "Inference",
@@ -751,9 +825,10 @@
       "sample": "Inference.relu",
       "cluster": "research",
       "clusterLabel": "Inference & research",
-      "status": "held / not yet",
-      "tone": "notyet",
-      "blurb": "A missing model is held / not yet. The chatbot is a tool."
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "blurb": "A grounded turn needs a model on Poet / Desktop. The chatbot is a tool.",
+      "human": "Inference"
     },
     {
       "name": "Audio",
@@ -761,9 +836,10 @@
       "sample": "Audio.epistemic_temperature_from_q",
       "cluster": "media",
       "clusterLabel": "Media & world",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "Spectrum, oscillator, meters. See Poet/Desktop."
+      "blurb": "Spectrum and meters live in Poet / Desktop.",
+      "human": "Audio"
     },
     {
       "name": "Scene",
@@ -771,9 +847,10 @@
       "sample": "Scene.lerp_camera",
       "cluster": "habitat",
       "clusterLabel": "Habitat & body",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "Camera, mesh, IK. Live compositor: see Poet/Desktop."
+      "blurb": "Camera, mesh, IK. Live compositor lives in Poet / Desktop.",
+      "human": "Scene"
     },
     {
       "name": "Privacy",
@@ -781,9 +858,10 @@
       "sample": "Privacy.gaussian_sigma",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "gaussian_sigma on ALL_BOUND. Not a privacy product claim."
+      "blurb": "Gaussian noise scale. Not a privacy product claim.",
+      "human": "Privacy"
     },
     {
       "name": "PhysicalUnits",
@@ -791,9 +869,10 @@
       "sample": "PhysicalUnits.convert",
       "cluster": "science",
       "clusterLabel": "Science & math",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "convert on ALL_BOUND."
+      "blurb": "Convert units on this page.",
+      "human": "Units"
     },
     {
       "name": "agent",
@@ -801,9 +880,10 @@
       "sample": "agent.dag.execute",
       "cluster": "research",
       "clusterLabel": "Inference & research",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "agent.dag.* \u2014 lowercase DAG prefix on ALL_INVOKE_IDS. See Poet/Desktop."
+      "blurb": "Lowercase DAG prefix. Live roster lives in Poet / Desktop.",
+      "human": "agent"
     },
     {
       "name": "Orchestration",
@@ -811,9 +891,10 @@
       "sample": "Orchestration.session_create",
       "cluster": "research",
       "clusterLabel": "Inference & research",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "session_* \u00b7 roster_*. Live roster: see Poet/Desktop."
+      "blurb": "Sessions and roster. Live roster lives in Poet / Desktop.",
+      "human": "Orchestration"
     },
     {
       "name": "HID",
@@ -821,9 +902,10 @@
       "sample": "HID.poll",
       "cluster": "habitat",
       "clusterLabel": "Habitat & body",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "Hands and gaze are not this tab. Physical loop: see Poet/Desktop."
+      "blurb": "A human\u2019s hands and gaze are not this tab. Physical loop lives in Poet / Desktop.",
+      "human": "Hands & gaze"
     },
     {
       "name": "Finance",
@@ -831,9 +913,10 @@
       "sample": "Finance.convert_currency",
       "cluster": "econ",
       "clusterLabel": "Econ & identity",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "currency \u00b7 multisig \u00b7 ledger_balance. Live ledger: see Poet/Desktop."
+      "blurb": "Currency and ledger live in Poet / Desktop.",
+      "human": "Finance"
     },
     {
       "name": "Econ",
@@ -841,9 +924,10 @@
       "sample": "Econ.capm_expected_return",
       "cluster": "econ",
       "clusterLabel": "Econ & identity",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "NPV through Leontief. LocalHost honesty:local \u2014 not a live ledger."
+      "blurb": "NPV through input-output. A local record \u2014 not a live ledger.",
+      "human": "Econ"
     },
     {
       "name": "Capability",
@@ -851,9 +935,10 @@
       "sample": "Capability.grant",
       "cluster": "econ",
       "clusterLabel": "Econ & identity",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "grant \u00b7 revoke \u00b7 audit. Lease, then revoke."
+      "blurb": "Grant, revoke, audit. Lease, then revoke. Lives in Poet / Desktop.",
+      "human": "Access"
     },
     {
       "name": "Sentinel",
@@ -861,9 +946,10 @@
       "sample": "Sentinel.inspect",
       "cluster": "econ",
       "clusterLabel": "Econ & identity",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "inspect \u00b7 gate. See Poet/Desktop."
+      "blurb": "Inspect and gate in Poet / Desktop.",
+      "human": "Sentinel"
     },
     {
       "name": "Agent",
@@ -871,9 +957,10 @@
       "sample": "Agent.trace",
       "cluster": "research",
       "clusterLabel": "Inference & research",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "plan \u00b7 execute \u00b7 evaluate \u00b7 trace \u00b7 verify. A tool, never the other human."
+      "blurb": "Plan, execute, trace. A tool, never the other human.",
+      "human": "Agent"
     },
     {
       "name": "Identity",
@@ -881,9 +968,10 @@
       "sample": "Identity.current_user",
       "cluster": "econ",
       "clusterLabel": "Econ & identity",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "current_user is a handle path \u2014 not a human."
+      "blurb": "current_user is a login path \u2014 not a human.",
+      "human": "Identity"
     },
     {
       "name": "Forensic",
@@ -891,9 +979,10 @@
       "sample": "Forensic.malfeasance_delta",
       "cluster": "econ",
       "clusterLabel": "Econ & identity",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "malfeasance_delta \u00b7 narrative_divergence. Catalog eval here."
+      "blurb": "Delta and divergence measures. Catalog eval here.",
+      "human": "Forensic"
     },
     {
       "name": "Corpus",
@@ -901,9 +990,10 @@
       "sample": "Corpus.load",
       "cluster": "research",
       "clusterLabel": "Inference & research",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "load \u00b7 parse. Live corpus host: see Poet/Desktop."
+      "blurb": "Load and parse a corpus in Poet / Desktop.",
+      "human": "Corpus"
     },
     {
       "name": "Agency",
@@ -911,9 +1001,10 @@
       "sample": "Agency.evaluate",
       "cluster": "research",
       "clusterLabel": "Inference & research",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "Agency.evaluate. See Poet/Desktop."
+      "blurb": "Evaluate agency in Poet / Desktop.",
+      "human": "Agency"
     },
     {
       "name": "CooperativeDelegation",
@@ -921,9 +1012,10 @@
       "sample": "CooperativeDelegation.permits",
       "cluster": "research",
       "clusterLabel": "Inference & research",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "permits. Delegation is leased, then revoked."
+      "blurb": "Permission is leased, then revoked.",
+      "human": "Delegation"
     },
     {
       "name": "CooperativeWork",
@@ -931,9 +1023,10 @@
       "sample": "CooperativeWork.board_project",
       "cluster": "research",
       "clusterLabel": "Inference & research",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "board_project. Cooperative surface: see Poet/Desktop."
+      "blurb": "Shared board surface lives in Poet / Desktop.",
+      "human": "Shared work"
     },
     {
       "name": "Research",
@@ -941,9 +1034,10 @@
       "sample": "Research.new",
       "cluster": "research",
       "clusterLabel": "Inference & research",
-      "status": "live LocalHost",
+      "status": "Works here",
       "tone": "live",
-      "blurb": "Purpose, corpus, dark-link, grounding. Catalog eval; host work stays on Poet."
+      "blurb": "Purpose, corpus, grounding. Catalog eval here; live research furniture is in Poet.",
+      "human": "Research"
     },
     {
       "name": "Image",
@@ -951,9 +1045,10 @@
       "sample": "Image.new",
       "cluster": "media",
       "clusterLabel": "Media & world",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "Layers, brush, composite. Live compositor: see Poet/Desktop."
+      "blurb": "Layers and composite live in Poet / Desktop.",
+      "human": "Images"
     },
     {
       "name": "Video",
@@ -961,9 +1056,10 @@
       "sample": "Video.new_project",
       "cluster": "media",
       "clusterLabel": "Media & world",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "Tracks, grade, render. See Poet/Desktop."
+      "blurb": "Tracks and grade live in Poet / Desktop.",
+      "human": "Video"
     },
     {
       "name": "ThreeD",
@@ -971,9 +1067,10 @@
       "sample": "ThreeD.add_object",
       "cluster": "media",
       "clusterLabel": "Media & world",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "Object, material, rig. See Poet/Desktop."
+      "blurb": "Object, material, rig live in Poet / Desktop.",
+      "human": "3D"
     },
     {
       "name": "HbbTV",
@@ -981,9 +1078,10 @@
       "sample": "HbbTV.new_app",
       "cluster": "media",
       "clusterLabel": "Media & world",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "new_app \u00b7 navigate. See Poet/Desktop."
+      "blurb": "TV app shell lives in Poet / Desktop.",
+      "human": "TV app"
     },
     {
       "name": "SecondScreen",
@@ -991,9 +1089,10 @@
       "sample": "SecondScreen.sync",
       "cluster": "media",
       "clusterLabel": "Media & world",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "sync. See Poet/Desktop."
+      "blurb": "Sync a second screen in Poet / Desktop.",
+      "human": "Second screen"
     },
     {
       "name": "Interactive",
@@ -1001,9 +1100,10 @@
       "sample": "Interactive.add_trigger",
       "cluster": "media",
       "clusterLabel": "Media & world",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "add_trigger \u00b7 add_social_post. See Poet/Desktop."
+      "blurb": "Triggers and posts live in Poet / Desktop.",
+      "human": "Interactive"
     },
     {
       "name": "World",
@@ -1011,9 +1111,10 @@
       "sample": "World.new",
       "cluster": "media",
       "clusterLabel": "Media & world",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "Gravity and portals. See Poet/Desktop."
+      "blurb": "Gravity and portals live in Poet / Desktop.",
+      "human": "World"
     },
     {
       "name": "Portal",
@@ -1021,9 +1122,10 @@
       "sample": "Portal.set_target",
       "cluster": "media",
       "clusterLabel": "Media & world",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "set_target \u00b7 activate. See Poet/Desktop."
+      "blurb": "Set a portal target in Poet / Desktop.",
+      "human": "Portal"
     },
     {
       "name": "Avatar",
@@ -1031,9 +1133,10 @@
       "sample": "Avatar.move",
       "cluster": "media",
       "clusterLabel": "Media & world",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "move \u00b7 set_appearance. See Poet/Desktop."
+      "blurb": "Move and appear in Poet / Desktop.",
+      "human": "Avatar"
     },
     {
       "name": "Dmx",
@@ -1041,9 +1144,10 @@
       "sample": "Dmx.new_universe",
       "cluster": "media",
       "clusterLabel": "Media & world",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "Universe, fixture, cue stack. See Poet/Desktop."
+      "blurb": "Universe, fixture, cue stack live in Poet / Desktop.",
+      "human": "Lighting"
     },
     {
       "name": "Poet",
@@ -1051,9 +1155,10 @@
       "sample": "Poet.manifold_create",
       "cluster": "habitat",
       "clusterLabel": "Habitat & body",
-      "status": "see Poet/Desktop",
+      "status": "Works in Poet / Desktop",
       "tone": "poet",
-      "blurb": "Poet is a host \u2014 the habitat \u2014 not this site."
+      "blurb": "Poet is the habitat app \u2014 not this site.",
+      "human": "Poet"
     }
   ]
 }

@@ -35,7 +35,7 @@ function wireFamilyRoster(root) {
     });
     setExplainer(root, {
       title: item.dataset.title || item.textContent.trim(),
-      status: item.dataset.status || "held / not yet",
+      status: item.dataset.status || "Works here",
       tone: item.dataset.tone || "notyet",
       plain: item.dataset.plain || "",
       tech: item.dataset.tech || "",
@@ -55,6 +55,7 @@ function wireFamilyRoster(root) {
       const inSearch =
         !q ||
         name.toLowerCase().includes(q) ||
+        (tile.dataset.title || "").toLowerCase().includes(q) ||
         (tile.dataset.plain || "").toLowerCase().includes(q) ||
         (tile.textContent || "").toLowerCase().includes(q);
       const show = inCluster && inSearch;
@@ -66,7 +67,7 @@ function wireFamilyRoster(root) {
       group.classList.toggle("is-empty", !any);
     });
     if (countEl) {
-      countEl.textContent = `${visible} visible · 104 SoT families · 105 prefixes named`;
+      countEl.textContent = `${visible} visible · 104 families · 105 prefixes named`;
     }
   };
 

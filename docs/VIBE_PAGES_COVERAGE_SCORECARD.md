@@ -1,7 +1,7 @@
 # Vibe Pages coverage scorecard
 
 **Prior UAT tip:** vibe-script `d7774789b` (PR #5 sole-push) · **SoT:** QualiaDB `v0.0.38`/`cdd7ae728`
-**This fold:** complete family map on `reality.html` / `atlas.html` (showcase, not essay)
+**This fold:** complete family map kept; customer-voice rewrite on `reality.html` / `atlas.html` (showcase, not essay)
 **Owner:** Capt.
 
 ## Scores
@@ -9,8 +9,8 @@
 | Gate | Score | Evidence |
 |------|-------|----------|
 | Pages WASM stamp | **PASS** | `docs/pkg/vibe/package.json` → `vibe-wasm` **0.0.38** |
-| Logic false-held cleared | **PASS** | N3 / SHACL / Deontic / Epistemic cards = `live LocalHost` |
-| Held only when unbound | **PASS*** | Remaining held: HID physical, Render GPU, missing model, native sanctuary, Pulse/CSCP park, Temporal LTL workshop path, LocalHost≠Poet — legitimate |
+| Logic false-held cleared | **PASS** | N3 / SHACL / Deontic / Epistemic cards = **Works here** |
+| Status chips | **PASS** | User-facing chips only: **Works here** · **Works in Poet / Desktop** · **Planned** (not built). No held/not yet lead copy. |
 | Complete family presentation | **MAP READY · Capt re-UAT** | SoT **104** families named on `reality.html` `#family-roster` and `atlas.html` `#family-roster`. Prior tip `d7774789b` was **FAIL** (56 named / 48 absent). This fold: **missing = 0** on page text. Capt re-UAT toward COMPLETE FAMILY MAP. |
 | Live GH Pages deploy | **PENDING** | Confirm mediaprophet.github.io after Neo sole-push |
 
