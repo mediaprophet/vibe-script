@@ -60,7 +60,7 @@ Do not model humans / personhood / sacred or living-natural relations as `owl:Th
 
 Script changes must not force a host rebuild.
 
-Vibe evaluates `present` blocks, UI records, and reactive cells. The host reconciles furniture in place. That is core §17 — zero-recompilation workflow. A Pages / playground WASM snapshot may lag the live engine; that lag is an honesty item, not a reason to compile the host for every `.vibe` edit.
+Vibe evaluates `present` blocks, UI records, and reactive cells. The host reconciles furniture in place. That is core §17 — zero-recompilation workflow. Pages ships `vibe-wasm 0.0.38` from QualiaDB tag `v0.0.38`. Script edits must not force a host rebuild.
 
 ## Effects, RDF, Quin
 

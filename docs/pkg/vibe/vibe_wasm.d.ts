@@ -36,6 +36,12 @@ export function apply_structural_edits(src: string, edits_json: string): any;
 export function ast_schema_json(): string;
 
 /**
+ * Capability invoke pin — default fail-closed E300 (parity with Host::capability_invoke).
+ * Args are accepted as a JSON string for the JS boundary.
+ */
+export function capability_invoke(id: string, _args_json: string): any;
+
+/**
  * Check a cell expression.
  */
 export function check_cell_src(src: string): any;
@@ -77,7 +83,7 @@ export function encode_cell_bytecode(src: string): any;
 
 /**
  * Evaluate a cell and return the result as a JSON-compatible JS value.
- * This is the main entry point for the playground.
+ * Playground Run uses `eval_program_src` (module + optional `main`), not this.
  */
 export function eval_cell_json(src: string): any;
 
@@ -88,6 +94,8 @@ export function eval_cell_src(src: string): any;
 
 /**
  * Evaluate a full program on LocalHost (workshop dialect).
+ *
+ * Runs preamble items, then `main` when present — same as `vibe eval FILE main`.
  */
 export function eval_program_src(src: string): any;
 
@@ -95,6 +103,11 @@ export function eval_program_src(src: string): any;
  * Get the GBNF grammar (for LLM constrained decoding).
  */
 export function gbnf_grammar(): string;
+
+/**
+ * Frozen host ABI stamp (`vibe-host-0.1`).
+ */
+export function host_version(): string;
 
 /**
  * Get the VibeScript language version string.
@@ -134,26 +147,28 @@ export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembl
 
 export interface InitOutput {
     readonly memory: WebAssembly.Memory;
-    readonly apply_structural_edit: (a: number, b: number, c: number, d: number) => any;
-    readonly apply_structural_edits: (a: number, b: number, c: number, d: number) => any;
-    readonly ast_schema_json: () => [number, number];
-    readonly check_cell_src: (a: number, b: number) => any;
-    readonly check_program_src: (a: number, b: number) => any;
-    readonly compile_cell_bytecode: (a: number, b: number) => any;
-    readonly decode_and_run: (a: number, b: number) => any;
-    readonly diagnose_src: (a: number, b: number) => any;
-    readonly diagnostic_schema_json: () => [number, number];
-    readonly ebnf_grammar: () => [number, number];
-    readonly encode_cell_bytecode: (a: number, b: number) => any;
-    readonly eval_cell_json: (a: number, b: number) => any;
-    readonly eval_program_src: (a: number, b: number) => any;
-    readonly gbnf_grammar: () => [number, number];
     readonly language_version: () => [number, number];
+    readonly host_version: () => [number, number];
+    readonly capability_invoke: (a: number, b: number, c: number, d: number) => any;
     readonly parse_cell_src: (a: number, b: number) => any;
+    readonly check_cell_src: (a: number, b: number) => any;
     readonly parse_program_src: (a: number, b: number) => any;
-    readonly project_source: (a: number, b: number) => any;
+    readonly check_program_src: (a: number, b: number) => any;
+    readonly eval_cell_json: (a: number, b: number) => any;
+    readonly diagnose_src: (a: number, b: number) => any;
+    readonly eval_program_src: (a: number, b: number) => any;
+    readonly compile_cell_bytecode: (a: number, b: number) => any;
     readonly run_cell_bytecode: (a: number, b: number) => any;
     readonly run_program_bytecode: (a: number, b: number, c: number, d: number, e: number, f: number) => any;
+    readonly encode_cell_bytecode: (a: number, b: number) => any;
+    readonly decode_and_run: (a: number, b: number) => any;
+    readonly ebnf_grammar: () => [number, number];
+    readonly gbnf_grammar: () => [number, number];
+    readonly ast_schema_json: () => [number, number];
+    readonly diagnostic_schema_json: () => [number, number];
+    readonly project_source: (a: number, b: number) => any;
+    readonly apply_structural_edit: (a: number, b: number, c: number, d: number) => any;
+    readonly apply_structural_edits: (a: number, b: number, c: number, d: number) => any;
     readonly eval_cell_src: (a: number, b: number) => any;
     readonly __wbindgen_malloc: (a: number, b: number) => number;
     readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;

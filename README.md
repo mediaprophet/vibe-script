@@ -49,7 +49,7 @@ Hot-edit north star: changing a `.vibe` script must not force a host rebuild.
 | Linear algebra | First-class Host family (`LinearAlgebra.gemm`, `dot`, `norm`, …). See core §11.5. |
 | CSCP-08 / CSCP-12 | **Parked**. No invented `wss://`, no MASQUE Internet tick, no fake completeness. |
 | QDNF / public relay | Map, not a finished mesh. Handle ≠ human. |
-| Bundled Pages WASM | This repo may ship an older `vibe-wasm` snapshot for the browser workbench. Cite QualiaDB `0.0.38` for live catalog truth. |
+| Bundled Pages WASM | `docs/pkg/vibe` is `vibe-wasm 0.0.38` built from QualiaDB tag `v0.0.38` (web target). LocalHost evals ALL_BOUND logic and `LinearAlgebra.dot` (`honesty: "local"` residual — not a fake product). Native sanctuary, CSCP-08/12, physical devices, and a missing model stay held / not yet. |
 
 Summaries in this repo: [`docs/language-contract.md`](docs/language-contract.md), [`docs/diagnose.md`](docs/diagnose.md), [`docs/catalog-honesty.md`](docs/catalog-honesty.md). Qualia operator pages: [`progress-0.0.38.html`](https://github.com/mediaprophet/qualiaDB/blob/0.0.38/docs/progress-0.0.38.html), [`qdnf.html`](https://github.com/mediaprophet/qualiaDB/blob/0.0.38/docs/qdnf.html).
 
