@@ -317,8 +317,14 @@ fn main() {
 
     // Language engine source — QualiaDB crates/vibe, not a fork in this repo.
     let manifest_dir = std::env::var("CARGO_MANIFEST_DIR").unwrap_or_else(|_| ".".to_string());
-    let vibe_src = PathBuf::from(&manifest_dir)
-        .join("../../../qualia-27062026/crates/vibe/src");
+    let primary_src = PathBuf::from(&manifest_dir).join("../../../qualiaDB/crates/vibe/src");
+    let fallback_src =
+        PathBuf::from(&manifest_dir).join("../../../qualia-27062026/crates/vibe/src");
+    let vibe_src = if primary_src.exists() {
+        primary_src
+    } else {
+        fallback_src
+    };
 
     if !vibe_src.exists() {
         eprintln!("vibe source not found at {:?}", vibe_src);

@@ -268,7 +268,7 @@
   </main>
 
   <footer>
-    <span>vibe-0.1 current dialect &middot; vibe-wasm 0.0.38 &middot; grammar may grow when versioned</span>
+    <span>vibe-0.1 / v0.02 stdlib current dialect &middot; QualiaDB 0.0.40 &middot; grammar may grow when versioned</span>
     <span>Host CLI: <code>cargo run -p vibe-play</code></span>
   </footer>
 
@@ -337,6 +337,22 @@ fn main() {
 
 函数 main() -> i64 {
     返回 f();
+}`,
+      v0_02_stdlib_cbor_ld: `// VibeScript v0.02 stdlib + CBOR-LD + Provider/TLD JSON Uplift
+pure fn main() {
+    let uplifted = cbor_ld.ingest_json("{\\"amount\\": \\"19.95\\", \\"items\\": [\\"item10\\", \\"item2\\"]}", "https://api.clinic.example.org/v1/intake");
+    let total = decimal.add(decimal.from_str("19.95"), decimal.from_str("5.05"));
+    let sorted = list.sort_natural(["item10", "item2", "item1"]);
+    let graphemes = str.grapheme_len("e\\u{0301}✨");
+    let betti = topology.betti_numbers([[0], [1], [2], [0, 1], [1, 2], [0, 2]]);
+    return {
+        provider_ns: uplifted.__provider_ns,
+        cbor_tag: uplifted.__cbor_ld.tag,
+        total: decimal.to_fixed(total, 2),
+        sorted: sorted,
+        graphemes: graphemes,
+        betti: betti
+    };
 }`
     };
 

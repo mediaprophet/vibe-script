@@ -75,10 +75,110 @@ fn clinic_chunk() -> &'static VocabChunk {
     static CHUNK: OnceLock<VocabChunk> = OnceLock::new();
     CHUNK.get_or_init(|| {
         parse_chunk(include_bytes!(
-            "../../../../qualia-27062026/crates/vibe/fixtures/vocab/clinic.n3"
+            "../../../../qualiaDB/crates/vibe/fixtures/vocab/clinic.n3"
         ))
         .expect("bundled clinic vocab")
     })
+}
+
+const WEB_RUNTIME_AND_CBOR_LD_BINDINGS: &[&str] = &[
+    "cbor_ld.compress_iri",
+    "cbor_ld.decode",
+    "cbor_ld.encode",
+    "cbor_ld.expand_term",
+    "cbor_ld.ingest_json",
+    "cbor_ld.provider_namespace",
+    "cbor_ld.verify_deterministic",
+    "form.can_redo",
+    "form.can_undo",
+    "form.checkpoint",
+    "form.commit_defaults",
+    "form.crdt_merge",
+    "form.create",
+    "form.diff",
+    "form.field_is_dirty",
+    "form.filter_disclosure",
+    "form.from_cbor_ld",
+    "form.from_provider_json",
+    "form.get_group_value",
+    "form.get_value",
+    "form.is_dirty",
+    "form.redo",
+    "form.request_submit",
+    "form.reset",
+    "form.rollback_to",
+    "form.set_value",
+    "form.sign_submission",
+    "form.to_cbor_ld",
+    "form.to_quins",
+    "form.to_rdf_turtle",
+    "form.to_record",
+    "form.to_url_params",
+    "form.undo",
+    "form.zk_prove_field",
+    "input.apply_mask",
+    "input.parse_coordinate",
+    "input.parse_currency",
+    "input.parse_duration",
+    "input.parse_instant",
+    "input.parse_quantity",
+    "input.parse_uncertainty",
+    "input.step",
+    "layout.solve_flex",
+    "layout.virtual_slice",
+    "selection.replace_range",
+    "selection.set_range",
+    "ui.accordion_toggle",
+    "ui.anchor_position",
+    "ui.blur",
+    "ui.combobox",
+    "ui.control",
+    "ui.dag_canvas",
+    "ui.data_grid",
+    "ui.dialog_close",
+    "ui.dialog_open",
+    "ui.focus",
+    "ui.focus_next",
+    "ui.hit_test",
+    "ui.ink_pad",
+    "ui.otp_input",
+    "ui.patch",
+    "ui.patch_batch",
+    "ui.patch_to_cbor_ld",
+    "ui.popover_toggle",
+    "ui.projectional_editor",
+    "ui.range_interval",
+    "ui.rating",
+    "ui.segmented_control",
+    "ui.select_get_selected",
+    "ui.select_persona",
+    "ui.select_set_options",
+    "ui.set_tri_state",
+    "ui.show_picker",
+    "ui.spectral_picker",
+    "ui.splitter",
+    "ui.stepper",
+    "ui.tag_input",
+    "ui.transfer_list",
+    "ui.tree_select",
+    "validate.check_field",
+    "validate.check_form",
+    "validate.cross_field",
+    "validate.paraconsistent",
+    "web.check_permit",
+    "web.range_response",
+    "web.response",
+    "web.route_mail",
+];
+
+fn stdlib_v2_all_bindings() -> impl Iterator<Item = &'static str> {
+    vibe::stdlib_v2::REFLECT_AND_TYPES_BINDINGS
+        .iter()
+        .chain(vibe::stdlib_v2::NUM_AND_AUTODIFF_BINDINGS.iter())
+        .chain(vibe::stdlib_v2::TEXT_AND_COLLECTIONS_BINDINGS.iter())
+        .chain(vibe::stdlib_v2::TOPOLOGY_AND_MANIFOLD_BINDINGS.iter())
+        .chain(WEB_RUNTIME_AND_CBOR_LD_BINDINGS.iter())
+        .copied()
 }
 
 pub fn completions_at(src: &str, line: usize, character: usize) -> Vec<Value> {
@@ -120,6 +220,22 @@ pub fn completions_at(src: &str, line: usize, character: usize) -> Vec<Value> {
                     })
                 })
                 .collect();
+        }
+        let ns_prefix = format!("{family}.");
+        let stdlib_matches: Vec<Value> = stdlib_v2_all_bindings()
+            .filter_map(|id| id.strip_prefix(&ns_prefix).map(|m| (id, m)))
+            .map(|(id, method)| {
+                json!({
+                    "label": method,
+                    "kind": 3,
+                    "detail": format!("VibeScript v0.02 stdlib `{id}`"),
+                    "insertText": method,
+                    "documentation": format!("Built-in pure v0.02 stdlib function `{id}(...)`"),
+                })
+            })
+            .collect();
+        if !stdlib_matches.is_empty() {
+            return stdlib_matches;
         }
     }
     let mut out = Vec::new();
@@ -165,6 +281,11 @@ pub fn hover_at(src: &str, line: usize, character: usize) -> String {
     }
     if let Some(hover) = vocab_hover(&token) {
         return hover;
+    }
+    if stdlib_v2_all_bindings().any(|id| id == token) {
+        return format!(
+            "**`{token}`**\n\nVibeScript v0.02 built-in standard library / CBOR-LD / web-runtime binding (pure, deterministic, zero-heap hot-path safe)."
+        );
     }
     for (kw, detail) in KEYWORDS {
         if *kw == token {
@@ -372,5 +493,32 @@ mod tests {
             labels.iter().any(|l| l == "386661006"),
             "expected SNOMED locals, got {labels:?}"
         );
+    }
+
+    #[test]
+    fn stdlib_v2_and_cbor_ld_dot_completes_and_hovers() {
+        let dec_items = completions_at("decimal.", 0, 8);
+        let dec_labels: Vec<String> = dec_items
+            .iter()
+            .filter_map(|v| v.get("label").and_then(|l| l.as_str()).map(str::to_string))
+            .collect();
+        assert!(
+            dec_labels.iter().any(|l| l == "from_str") && dec_labels.iter().any(|l| l == "add"),
+            "expected decimal.* methods, got {dec_labels:?}"
+        );
+
+        let cbor_items = completions_at("cbor_ld.", 0, 8);
+        let cbor_labels: Vec<String> = cbor_items
+            .iter()
+            .filter_map(|v| v.get("label").and_then(|l| l.as_str()).map(str::to_string))
+            .collect();
+        assert!(
+            cbor_labels.iter().any(|l| l == "ingest_json")
+                && cbor_labels.iter().any(|l| l == "encode"),
+            "expected cbor_ld.* methods, got {cbor_labels:?}"
+        );
+
+        let hover = hover_at("cbor_ld.ingest_json(raw, origin)", 0, 10);
+        assert!(hover.contains("cbor_ld.ingest_json") && hover.contains("v0.02"), "{hover}");
     }
 }

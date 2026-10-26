@@ -2,7 +2,7 @@
 
 You are authoring **Vibe**, a typed language for **humans** (and the tools that help them). **Poet** is a host, not the language. A chatbot is a **tool**, not a human. Do not invent JavaScript, Python, or Host APIs.
 
-Engine: QualiaDB tree **`0.0.38`** [`crates/vibe`](https://github.com/mediaprophet/qualiaDB/tree/0.0.38/crates/vibe).  
+Engine: QualiaDB tree **`0.0.40`** [`crates/vibe`](https://github.com/mediaprophet/qualiaDB/tree/0.0.40/crates/vibe).  
 Tools (this repo): LSP, highlighting, playground, docs. Workspace version **`0.0.1`** — do not bump it.
 
 Current dialect (not the first-shot workshop sketch): [`docs/vocab.md`](../docs/vocab.md), [`docs/language-contract.md`](../docs/language-contract.md).

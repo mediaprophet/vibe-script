@@ -1,9 +1,9 @@
 # Vibe 0.1 language contract (current dialect)
 
-**Normative source:** QualiaDB `0.0.38` [`vibescript-core.md`](https://github.com/mediaprophet/qualiaDB/blob/0.0.38/docs/manuals/standards/vibescript-core.md).  
+**Normative source:** QualiaDB `0.0.40` [`vibescript-core.md`](https://github.com/mediaprophet/qualiaDB/blob/0.0.40/docs/manuals/standards/vibescript-core.md).  
 This file is the ecosystem contract for tools and pages in *this* repo. It is not a second spec. Word list: [`vocab.md`](vocab.md).
 
-Workspace / crate version stays **`0.0.1`**. QualiaDB `0.0.38` is the engine tree this ecosystem tracks.
+Workspace / crate version stays **`0.0.1`**. QualiaDB `0.0.40` is the engine tree this ecosystem tracks.
 
 ## What customers see
 
@@ -79,7 +79,7 @@ Vibe evaluates `present` blocks, UI records, and reactive cells. The host reconc
 
 ## Bindings vs Host families
 
-§11 of core lists **0.1 library bindings** (`math.*`, `rdf.*`, `quin.statement`, `graph.*`, `aura.validate`, `pulse.publish`, `capability.resolve`). Those are not an invitation to paste every post-0.1 table into this repo.
+§11 of core lists **0.1 library bindings** (`math.*`, `rdf.*`, `quin.statement`, `graph.*`, `aura.validate`, `pulse.publish`, `capability.resolve`), and QualiaDB `0.0.40` adds the **VibeScript `v0.02` directory-backed standard library** (`reflect.*`, `record.*`, `uri.*`, `error.*`, `num.*`, `decimal.*`, `autodiff.*`, `str.*`, `regex.*`, `list.*`, `set.*`, `topology.*`, `sheaf.*`, `context.*`, `effect.*`, `code.*`, `sys.*`, `cbor_ld.*`, `form.*`, `input.*`, `validate.*`, `ui.*`, `selection.*`, `layout.*`, `web.*`).
 
 Live Host families that **are** on the catalog (cite `ids.rs`, do not invent) include `LinearAlgebra.*` (§11.5), `Cosmic.*`, `Econ.*`, `Orchestration.*`, `Asset.persist_*`, `GraphDatabase.*`, `Render.*`, `Inference.*`, `Animation.*`, `HID.*`, and the rest of the **104-family map**. If an id is not on the live catalog, pages say **Works in Poet / Desktop** or **Planned** — do not invent it.
 

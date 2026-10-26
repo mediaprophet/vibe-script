@@ -11,8 +11,10 @@ jobs:
       - name: Test (needs QualiaDB crates/vibe as sibling)
         shell: pwsh
         run: |
-          if (Test-Path "../qualia-27062026/crates/vibe") {
+          if (Test-Path "../qualiaDB/crates/vibe") {
+            cargo test --workspace
+          } elseif (Test-Path "../qualia-27062026/crates/vibe") {
             cargo test --workspace
           } else {
-            Write-Host "Engine sibling missing; skip. Path-dep is ../qualia-27062026/crates/vibe (QualiaDB tree 0.0.38)."
+            Write-Host "Engine sibling missing; skip. Path-dep is ../qualiaDB/crates/vibe (QualiaDB tree 0.0.40)."
           }

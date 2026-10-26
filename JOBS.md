@@ -1,6 +1,6 @@
 # VibeScript 0.1 — remaining jobs
 
-**Split:** QualiaDB tree [`0.0.38` `crates/vibe`](https://github.com/mediaprophet/qualiaDB/tree/0.0.38/crates/vibe) is the **language engine**. This repo is **tools** (LSP, editors, playground, agent files, docs). Do not fork the engine here.
+**Split:** QualiaDB tree [`0.0.40` `crates/vibe`](https://github.com/mediaprophet/qualiaDB/tree/0.0.40/crates/vibe) is the **language engine**. This repo is **tools** (LSP, editors, playground, agent files, docs). Do not fork the engine here.
 
 `vibe-0.1` is the **current dialect**. Grammar **may grow** when humans need a better form — versioned, documented, no Host invent. The **catalog already grows** (core §11.5). Do not mint keywords in this repo. Do not treat `vibe-host-0.1` as a freeze of a historic id count. Drop stale “grammar is closed” / “~885 freeze” language.
 
@@ -25,6 +25,7 @@ These are **not** blockers for LSP / highlighting. They are host / runtime or pr
 | A9 | Diagnose JSON `errors[]` | Landed |
 | A10 | CSCP-08 Internet WSS / MASQUE, CSCP-12 datatracker | **Parked**. No invented ticks. |
 | A11 | QDNF public relay / two-host Internet | **Planned**. A name or login is not the person. |
+| A12 | VibeScript `v0.02` directory-backed standard library (`stdlib_v2`, `web_runtime`, native CBOR-LD `0xD9 0x0501`, provider/TLD JSON uplift) | **Landed** (`crates/vibe/src/stdlib_v2/`, `crates/vibe/src/web_runtime/`, `crates/vibe/src/cbor_ast/cbor_ld/`) |
 
 Sprint-B rows B-001–B-009 are done or parked as standing OWL constraints. See Qualia [`vibescript-sprint-deltas.md`](https://github.com/mediaprophet/qualiaDB/blob/0.0.38/docs/manuals/standards/vibescript-sprint-deltas.md).
 

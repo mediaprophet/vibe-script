@@ -1,6 +1,6 @@
 # Vibe 0.1 vocab (current dialect)
 
-This is the **customer and authoring word list** for vibe-script pages and helpers. It is not the first-shot workshop sketch. Engine syntax still lives in QualiaDB `0.0.38` [`vibescript-core.md`](https://github.com/mediaprophet/qualiaDB/blob/0.0.38/docs/manuals/standards/vibescript-core.md). Workspace version stays **0.0.1**.
+This is the **customer and authoring word list** for vibe-script pages and helpers. It is not the first-shot workshop sketch. Engine syntax still lives in QualiaDB `0.0.40` [`vibescript-core.md`](https://github.com/mediaprophet/qualiaDB/blob/0.0.40/docs/manuals/standards/vibescript-core.md). Workspace version stays **0.0.1**.
 
 `vibe-0.1` is the **current dialect**. Grammar **may grow** when humans need a better form — versioned, documented. A Host does not invent new words. The **catalog already grows**.
 

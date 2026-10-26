@@ -57,7 +57,7 @@
     },
     "types": {
       "name": "storage.type.vibe",
-      "match": "\\b(i32|u32|i64|u64|f32|f64|bool|string|Iri|Quin|QuinRef|Result|Receipt|List|Record|Option)\\b"
+      "match": "\\b(i32|u32|i64|u64|f32|f64|bool|str|string|Decimal|Iri|Quin|QuinRef|Result|Receipt|List|Record|Option)\\b"
     },
     "prefixed": {
       "name": "entity.name.iri.prefixed.vibe",
@@ -65,7 +65,7 @@
     },
     "catalog": {
       "name": "entity.name.function.catalog.vibe",
-      "match": "\\b(Animation|Render|HID|GraphDatabase|LinearAlgebra|Cosmic|Inference|DeonticLogic|EpistemicLogic|ParaconsistentLogic|SHACL|Asset|Orchestration)\\.[A-Za-z_][A-Za-z0-9_]*\\b"
+      "match": "\\b(Animation|Render|HID|GraphDatabase|LinearAlgebra|Cosmic|Inference|DeonticLogic|EpistemicLogic|ParaconsistentLogic|SHACL|Asset|Orchestration|cbor_ld|web|ui|form|input|validate|selection|layout|reflect|record|uri|error|num|decimal|math|autodiff|str|regex|list|deque|pqueue|set|simplex|hypergraph|sheaf|topology|homotopy|context|manifold|inference|ast|diagnostic|effect|code|task|supervisor|contract|state|value|crypto|runtime|continuation|memory|simd|channel)\\.[A-Za-z_][A-Za-z0-9_]*\\b"
     },
     "numbers": {
       "name": "constant.numeric.vibe",

@@ -2,16 +2,16 @@
 
 **Vibe** is the language (`vibe-0.1`). This repository is the **ecosystem**: LSP, syntax highlighting, VS Code, playground, agent skill, grammar copies, and docs pages.
 
-The language engine is **not** here. Do not fork it into this repo. It lives in QualiaDB tree **`0.0.38`**:
+The language engine is **not** here. Do not fork it into this repo. It lives in QualiaDB tree **`0.0.40`**:
 
-- Engine: [`mediaprophet/qualiaDB` `crates/vibe`](https://github.com/mediaprophet/qualiaDB/tree/0.0.38/crates/vibe)
+- Engine: [`mediaprophet/qualiaDB` `crates/vibe`](https://github.com/mediaprophet/qualiaDB/tree/0.0.40/crates/vibe)
 - Also on that tree: `crates/vibe-lsp`, `crates/vibe-wasm` (in-tree drafts stay until Timothy says to delete them; **new tool work lands here**)
-- Normative language: [`docs/manuals/standards/vibescript-core.md`](https://github.com/mediaprophet/qualiaDB/blob/0.0.38/docs/manuals/standards/vibescript-core.md)
-- Sprint / catalog policy: [`docs/manuals/standards/vibescript-sprint-deltas.md`](https://github.com/mediaprophet/qualiaDB/blob/0.0.38/docs/manuals/standards/vibescript-sprint-deltas.md)
+- Normative language: [`docs/manuals/standards/vibescript-core.md`](https://github.com/mediaprophet/qualiaDB/blob/0.0.40/docs/manuals/standards/vibescript-core.md)
+- Sprint / catalog policy: [`docs/manuals/standards/vibescript-sprint-deltas.md`](https://github.com/mediaprophet/qualiaDB/blob/0.0.40/docs/manuals/standards/vibescript-sprint-deltas.md)
 
 Poet is a host. A chatbot is a tool. This is not a JavaScript clone.
 
-Workspace / crate version stays **`0.0.1`**. QualiaDB `0.0.38` is the engine tree this ecosystem tracks — not a version bump of vibe-script.
+Workspace / crate version stays **`0.0.1`**. QualiaDB `0.0.40` (including the VibeScript `v0.02` directory-backed standard library `stdlib_v2`, `web_runtime`, and native CBOR-LD `0xD9 0x0501` codec) is the engine tree this ecosystem tracks — not a version bump of vibe-script.
 
 Copyright © 2026 Timothy Charles Holborn.
 
@@ -69,7 +69,7 @@ Summaries in this repo: [`docs/language-contract.md`](docs/language-contract.md)
 
 ## Build the LSP
 
-From this directory, with QualiaDB `0.0.38` (or a compatible tip) checked out as the sibling the Cargo path-dep expects (`../qualia-27062026/crates/vibe` on Timothy’s disk):
+From this directory, with QualiaDB `0.0.40` (or a compatible tip) checked out as the sibling the Cargo path-dep expects (`../qualiaDB/crates/vibe` on disk):
 
 ```
 cargo test -p vibe-lsp
