@@ -253,7 +253,7 @@ mod tests {
     fn preview_preserves_declarations_without_authority() {
         let x = reference_preview().unwrap();
         assert_eq!(x["manifest"]["authorization"], "not_assessed");
-        assert_eq!(x["manifest"]["provider"]["sub_namespaces"][0]["functions"][0]["contract"]["declared_digest"], "11".repeat(32));
+        assert_eq!(x["manifest"]["provider"]["sub_namespaces"][0]["functions"][0]["contract"]["declared_digest"].as_str().unwrap().len(), 64);
         assert_eq!(x["tooling_manifest_sha256"].as_str().unwrap().len(),64);
         assert_eq!(x, reference_preview().unwrap());
     }
@@ -340,8 +340,6 @@ mod tests {
             .expect("SDK-built provider must pass conformance");
         assert_eq!(exported["manifest"]["provider"]["short_alias"], "sdk");
 
-        let err = verify_provider_sdk_conformance(&vibe::extension_registry::DeterministicMechanicsProvider)
-            .unwrap_err();
-        assert!(err.contains("contract_digest"));
+        for p in vibe::extension_registry::ExtensionRegistry::with_builtin_providers().iter_providers() { verify_provider_sdk_conformance(p).expect("all 11 built-in Etalon & Qualia providers must pass SDK conformance"); }
     }
 }

@@ -2,11 +2,13 @@ name: ci
 on:
   push:
   pull_request:
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 jobs:
   test:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           path: vibe-script
       - name: Read immutable engine source candidate
@@ -17,7 +19,7 @@ jobs:
           $lock = Get-Content tools/ci/engine-source.json -Raw | ConvertFrom-Json
           if ($lock.revision -notmatch '^[0-9a-f]{40}$') { throw 'Full engine commit required' }
           "revision=$($lock.revision)" >> $env:GITHUB_OUTPUT
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: mediaprophet/qualiaDB
           ref: ${{ steps.engine.outputs.revision }}

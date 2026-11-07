@@ -1,5 +1,6 @@
 [workspace]
-members = ["crates/vibescript-abi", "crates/vibe-lsp", "crates/vibe-play", "crates/vibe-docs", "crates/vibe-tooling"]
+members = ["crates/vibe-lsp", "crates/vibe-play", "crates/vibe-docs", "crates/vibe-tooling"]
+exclude = ["crates/vibescript-abi"]
 resolver = "2"
 
 [workspace.package]
@@ -13,4 +14,4 @@ repository = "https://github.com/mediaprophet/vibe-script"
 # Workspace version stays 0.0.1 — catalog alignment is not a crate bump.
 
 [patch."https://github.com/mediaprophet/vibe-script.git"]
-vibescript-abi = { path = "crates/vibescript-abi" }
+vibescript-abi = { path = "../qualia-27062026/crates/vibescript-abi" }

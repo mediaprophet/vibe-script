@@ -7,6 +7,6 @@ authors.workspace = true
 
 [dependencies]
 vibe = { path = "../../../qualia-27062026/crates/vibe" }
-vibescript-abi = { path = "../vibescript-abi" }
+vibescript-abi = { path = "../../../qualia-27062026/crates/vibescript-abi" }
 serde_json = "1.0"
 sha2 = "0.10.9"
