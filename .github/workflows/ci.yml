@@ -7,14 +7,32 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
-      - name: Test (needs QualiaDB crates/vibe as sibling)
+        with:
+          path: vibe-script
+      - name: Read immutable engine source candidate
+        id: engine
         shell: pwsh
+        working-directory: vibe-script
         run: |
-          if (Test-Path "../qualiaDB/crates/vibe") {
-            cargo test --workspace
-          } elseif (Test-Path "../qualia-27062026/crates/vibe") {
-            cargo test --workspace
-          } else {
-            Write-Host "Engine sibling missing; skip. Path-dep is ../qualiaDB/crates/vibe (QualiaDB tree 0.0.40)."
-          }
+          $lock = Get-Content tools/ci/engine-source.json -Raw | ConvertFrom-Json
+          if ($lock.revision -notmatch '^[0-9a-f]{40}$') { throw 'Full engine commit required' }
+          "revision=$($lock.revision)" >> $env:GITHUB_OUTPUT
+      - uses: actions/checkout@v4
+        with:
+          repository: mediaprophet/qualiaDB
+          ref: ${{ steps.engine.outputs.revision }}
+          path: qualia-27062026
+      - name: Verify committed engine sources (missing sources fail)
+        shell: pwsh
+        working-directory: vibe-script
+        run: ./tools/ci/verify-engine.ps1 -EngineRoot ../qualia-27062026
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Test tooling workspace
+        shell: pwsh
+        working-directory: vibe-script
+        env:
+          CARGO_BUILD_JOBS: 1
+          CARGO_TARGET_DIR: ${{ github.workspace }}/vibe-script/target/vs03-ci
+        run: |
+          cargo test --workspace --locked
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

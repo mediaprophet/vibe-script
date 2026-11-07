@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/mediaprophet/qualiaDB",
+  "revision": "3910f89697fbcf1d829a073644af9ec6ea9ab1c9",
+  "qualified": false,
+  "blocker": "Required vibescript-abi and extension_registry sources exist only in the uncommitted Qualia working tree; replace revision with a published full commit containing these sources and qualify it.",
+  "requiredPaths": ["Cargo.toml", "crates/vibe/Cargo.toml", "crates/vibe/src/extension_registry/mod.rs", "crates/vibescript-abi/Cargo.toml", "crates/vibescript-abi/src/lib.rs"]
+}

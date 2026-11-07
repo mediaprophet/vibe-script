@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Vibe extension descriptor preview</title>
+<style>body{max-width:70rem;margin:3rem auto;padding:1rem;background:#111827;color:#e5e7eb;font:16px system-ui}a{color:#93c5fd}pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:1rem;background:#1f2937}</style>
+<h1>Extension descriptor preview</h1>
+<p>Actual Qualia reference-provider declarations. Discovery does not grant authority or enable calls in playground evaluation. Provider contract digests are unverified declarations; the tooling manifest SHA-256 identifies this export only.</p>
+<p><a href="/">Playground</a> · <a href="/api/extensions">JSON export</a></p>
+<pre id="result" role="status">Loading descriptors…</pre>
+<script>fetch('/api/extensions').then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(v=>{document.getElementById('result').textContent=JSON.stringify(v,null,2)}).catch(e=>{document.getElementById('result').textContent='Descriptor discovery failed: '+e.message})</script></html>

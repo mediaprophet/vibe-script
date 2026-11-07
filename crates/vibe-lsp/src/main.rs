@@ -17,3 +17,6 @@ fn main() -> io::Result<()> {
     let mut server = LspServer::new(stdin.lock(), stdout.lock());
     server.run()
 }
+
+#[cfg(test)]
+mod extension_tests;

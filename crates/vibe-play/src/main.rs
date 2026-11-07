@@ -154,6 +154,12 @@ fn handle(mut stream: TcpStream) -> std::io::Result<()> {
                 respond_status(&mut stream, "404 Not Found", b"File not found")
             }
         }
+        ("GET", "/api/extensions") => {
+            match vibe_tooling::reference_preview().and_then(|v| vibe_tooling::manifest_bytes(&v)) {
+                Ok(bytes) => respond(&mut stream, "application/json", &bytes),
+                Err(e) => respond_status(&mut stream, "500 Internal Server Error", format!("Descriptor export failed: {e:?}").as_bytes()),
+            }
+        }
         ("POST", "/api/diagnose") => {
             let json = diagnose_src(&body);
             respond(
@@ -339,3 +345,6 @@ mod tests {
         assert!(res.is_none());
     }
 }
+
+#[cfg(test)]
+mod extension_tests;

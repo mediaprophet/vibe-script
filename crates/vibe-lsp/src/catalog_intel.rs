@@ -75,7 +75,7 @@ fn clinic_chunk() -> &'static VocabChunk {
     static CHUNK: OnceLock<VocabChunk> = OnceLock::new();
     CHUNK.get_or_init(|| {
         parse_chunk(include_bytes!(
-            "../../../../qualiaDB/crates/vibe/fixtures/vocab/clinic.n3"
+            "../../../../qualia-27062026/crates/vibe/fixtures/vocab/clinic.n3"
         ))
         .expect("bundled clinic vocab")
     })

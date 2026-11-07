@@ -61,3 +61,18 @@ Sprint-B rows B-001–B-009 are done or parked as standing OWL constraints. See 
 - Do not put more editor / plugin crates into QualiaDB.
 
 QualiaDB still has in-tree drafts (`crates/vibe-lsp`, `docs/vibe/*`). They stay until Timothy says to delete them; **new work lands here**.
+
+## Tooling and extension preparation
+
+The resumable [VibeScript tooling plan](docs/plans/vibe-0.03/README.md) defines
+current work packets, file boundaries, independent agent review and handoff state.
+QualiaDB retains ownership of the engine, canonical contracts and human-centric
+semantics. Start with [continuation state](docs/plans/vibe-0.03/STATE.md).
+
+## November 2026 extension tooling candidate
+
+crates/vibe-tooling consumes the actual Qualia-owned ibescript-abi and reference
+provider descriptors. Deterministic export, external consumer checks, LSP discovery
+and playground preview are implemented pending independent parent review. See
+[receipt](docs/plans/vibe-0.03/receipts/VT-IMPLEMENTATION.md).
+This does not complete engine runtime integration or production governance.

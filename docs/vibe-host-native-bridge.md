@@ -39,3 +39,11 @@ diagnostics:
 Clients can probe a paired daemon at `GET /vibe/capabilities`, which reports
 the `qualia-vibe-bridge/1` protocol. Browser integrations must make that probe
 after a user gesture and include the pairing token for production daemons.
+
+## Extension discovery
+
+Extension descriptors are available separately via LSP `vibe/extensionManifest` and
+playground GET `/api/extensions`. Declared target masks describe provider claims;
+these endpoints do not assess authorization, host readiness or capability leases.
+They do not connect providers to source-language evaluation or grant a Sentinel
+admission ticket. See [manifest schema](extensions/tooling-manifest.md).

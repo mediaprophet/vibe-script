@@ -10,5 +10,6 @@ name = "vibe-play"
 path = "src/main.rs"
 
 [dependencies]
-vibe = { path = "../../../qualiaDB/crates/vibe" }
+vibe = { path = "../../../qualia-27062026/crates/vibe" }
 serde_json = "1.0"
+vibe-tooling = { path = "../vibe-tooling" }

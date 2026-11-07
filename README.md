@@ -84,3 +84,22 @@ Point VS Code `vibe.lsp.path` at the resulting `vibe-lsp` binary.
 - Do not bump `workspace.package.version` for a docs/catalog alignment.
 - Do not invent Host ids, CSCP ticks, or MASQUE/WSS endpoints.
 - Do not teach `capability.invoke` as the human workshop dialect.
+
+## Tooling and extension preparation
+
+The resumable [VibeScript tooling plan](docs/plans/vibe-0.03/README.md) defines
+current work packets, file boundaries, independent agent review and handoff state.
+QualiaDB retains ownership of the engine, canonical contracts and human-centric
+semantics. Start with [continuation state](docs/plans/vibe-0.03/STATE.md).
+
+## Descriptor discovery and export
+
+cargo run -p vibe-tooling --locked exports the actual Qualia mechanics reference
+provider descriptor, ontology records and a full SHA-256 of the tooling manifest.
+The LSP advertises the custom ibe/extensionManifest request. The local playground
+serves the same export at /api/extensions and a readable preview at
+/playground/extensions.html. These surfaces discover declarations; they do not
+register providers, grant authority or add extension calls to language evaluation.
+
+See [export schema and limits](docs/extensions/tooling-manifest.md). Provider-supplied
+contract digests remain unverified; the current reference provider uses placeholders.

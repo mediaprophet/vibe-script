@@ -221,6 +221,7 @@ impl<R: BufRead, W: Write> LspServer<R, W> {
                     "id": id,
                     "result": {
                         "capabilities": {
+                            "experimental": {"vibeExtensionManifest": true},
                             "textDocumentSync": 1, // full sync
                             "diagnosticProvider": true,
                             "completionProvider": {
@@ -237,6 +238,10 @@ impl<R: BufRead, W: Write> LspServer<R, W> {
                     }
                 });
                 self.send_response(response)?;
+            }
+            "vibe/extensionManifest" => {
+                self.send_response(json!({"jsonrpc": "2.0", "id": id,
+                    "result": vibe_tooling::reference_preview().unwrap_or_else(|e| json!({"error": format!("{e:?}")}))}))?;
             }
             "initialized" => {
                 // No response needed for notification.
