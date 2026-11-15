@@ -91,36 +91,25 @@ pub fn diagnostic_to_lsp_with_src(diag: &Diagnostic, src: &str) -> Value {
     Value::Object(map)
 }
 
-#[allow(dead_code)]
-pub fn diagnostic_to_lsp(diag: &Diagnostic) -> Value {
-    let (line, character) = (0, diag.span.start as usize);
-    json!({
-        "range": {
-            "start": { "line": line, "character": character },
-            "end": { "line": line, "character": character + 1 }
-        },
-        "severity": severity_for_code(&diag.code),
-        "code": format!("{:?}", diag.code),
-        "message": diag.message,
-    })
-}
-
 /// Map a DiagCode to an LSP severity (1=Error, 2=Warning, 3=Info, 4=Hint).
 fn severity_for_code(code: &vibe::DiagCode) -> u8 {
     match code {
         vibe::DiagCode::E001 => 1, // parse error
-        vibe::DiagCode::E100 => 1, // unknown binding
+        vibe::DiagCode::E100 => 1, // unknown binding / type error
         vibe::DiagCode::E200 => 1, // effect mismatch
         vibe::DiagCode::E300 => 1, // missing capability
+        vibe::DiagCode::E400 => 1, // budget / unbounded loop
+        vibe::DiagCode::E500 => 1, // policy violation
         vibe::DiagCode::E600 => 1, // runtime error
+        vibe::DiagCode::E700 => 1, // deontic phase violation
         vibe::DiagCode::E701 => 1, // mut violation
         vibe::DiagCode::E702 => 2, // capability held / not yet on this target — warning
-        _ => 1,
+        vibe::DiagCode::E800 => 1, // disclosure denied
     }
 }
 
 /// Get diagnostics for a VibeScript source string (up to eight, matching diagnose).
-#[allow(dead_code)]
+#[cfg(test)]
 pub fn get_diagnostics(src: &str) -> Vec<Value> {
     get_diagnostics_for_target(src, TargetProfile::NativeHybrid)
 }

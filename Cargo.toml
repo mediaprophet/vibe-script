@@ -14,4 +14,12 @@ repository = "https://github.com/mediaprophet/vibe-script"
 # Workspace version stays 0.0.1 — catalog alignment is not a crate bump.
 
 [patch."https://github.com/mediaprophet/vibe-script.git"]
-vibescript-abi = { path = "../qualia-27062026/crates/vibescript-abi" }
+vibescript-abi = { path = "../qualiaDB/crates/vibescript-abi" }
+
+[patch."https://github.com/mediaprophet/etalon.git"]
+etalon-vibe = { path = "../etalon/crates/etalon-vibe" }
+etalon-wgsl-forge = { path = "../etalon/crates/etalon-wgsl-forge" }
+etalon-nquin = { path = "../etalon/crates/etalon-nquin" }
+etalon-signal = { path = "../etalon/crates/etalon-signal" }
+etalon-sense-core = { path = "../etalon/crates/etalon-sense-core" }
+etalon-resources = { path = "../etalon/crates/etalon-resources" }

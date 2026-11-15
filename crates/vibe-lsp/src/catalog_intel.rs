@@ -75,7 +75,7 @@ fn clinic_chunk() -> &'static VocabChunk {
     static CHUNK: OnceLock<VocabChunk> = OnceLock::new();
     CHUNK.get_or_init(|| {
         parse_chunk(include_bytes!(
-            "../../../../qualia-27062026/crates/vibe/fixtures/vocab/clinic.n3"
+            "../../../../qualiaDB/crates/vibe/fixtures/vocab/clinic.n3"
         ))
         .expect("bundled clinic vocab")
     })
@@ -332,12 +332,7 @@ pub fn workspace_edit_for_fix(uri: &str, diagnostic: &Value, src: &str) -> Optio
 }
 
 fn family_from_source_diagnostic(src: &str) -> Option<&'static str> {
-    for fam in families() {
-        if src.contains(fam) {
-            return Some(fam);
-        }
-    }
-    None
+    families().into_iter().find(|&fam| src.contains(fam))
 }
 
 fn vocab_hover(token: &str) -> Option<String> {

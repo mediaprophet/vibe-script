@@ -1,4 +1,4 @@
-# VibeScript 0.1 — remaining jobs
+﻿# VibeScript 0.1 — remaining jobs
 
 **Split:** QualiaDB tree [`0.0.40` `crates/vibe`](https://github.com/mediaprophet/qualiaDB/tree/0.0.40/crates/vibe) is the **language engine**. This repo is **tools** (LSP, editors, playground, agent files, docs). Do not fork the engine here.
 
@@ -71,7 +71,7 @@ semantics. Start with [continuation state](docs/plans/vibe-0.03/STATE.md).
 
 ## November 2026 extension tooling candidate
 
-crates/vibe-tooling consumes the actual Qualia-owned ibescript-abi and reference
+crates/vibe-tooling consumes the actual Qualia-owned vibescript-abi and reference
 provider descriptors. Deterministic export, external consumer checks, LSP discovery
 and playground preview are implemented pending independent parent review. See
 [receipt](docs/plans/vibe-0.03/receipts/VT-IMPLEMENTATION.md).

@@ -193,7 +193,7 @@ fn extract_item(rest: &str, full_line: &str) -> (String, String, String) {
         // Re-export — extract the last segment
         let name = rest
             .trim_start_matches("use ")
-            .rsplit(|c: char| c == ':' || c == ',')
+            .rsplit([':', ','])
             .next()
             .unwrap_or("")
             .trim()

@@ -1,4 +1,4 @@
-# VibeScript tools
+﻿# VibeScript tools
 
 **Vibe** is the language (`vibe-0.1`). This repository is the **ecosystem**: LSP, syntax highlighting, VS Code, playground, agent skill, grammar copies, and docs pages.
 
@@ -96,7 +96,7 @@ semantics. Start with [continuation state](docs/plans/vibe-0.03/STATE.md).
 
 cargo run -p vibe-tooling --locked exports the actual Qualia mechanics reference
 provider descriptor, ontology records and a full SHA-256 of the tooling manifest.
-The LSP advertises the custom ibe/extensionManifest request. The local playground
+The LSP advertises the custom vibe/extensionManifest request. The local playground
 serves the same export at /api/extensions and a readable preview at
 /playground/extensions.html. These surfaces discover declarations; they do not
 register providers, grant authority or add extension calls to language evaluation.

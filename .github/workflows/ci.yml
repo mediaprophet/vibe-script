@@ -23,11 +23,11 @@ jobs:
         with:
           repository: mediaprophet/qualiaDB
           ref: ${{ steps.engine.outputs.revision }}
-          path: qualia-27062026
+          path: qualiaDB
       - name: Verify committed engine sources (missing sources fail)
         shell: pwsh
         working-directory: vibe-script
-        run: ./tools/ci/verify-engine.ps1 -EngineRoot ../qualia-27062026
+        run: ./tools/ci/verify-engine.ps1 -EngineRoot ../qualiaDB
       - uses: dtolnay/rust-toolchain@stable
       - name: Test tooling workspace
         shell: pwsh

@@ -1,5 +1,5 @@
 param(
-    [string]$EngineRoot = (Join-Path $PSScriptRoot '../../../qualia-27062026'),
+    [string]$EngineRoot = (Join-Path $PSScriptRoot '../../../qualiaDB'),
     [string]$SourceLock = (Join-Path $PSScriptRoot 'engine-source.json')
 )
 $ErrorActionPreference = 'Stop'
