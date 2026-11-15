@@ -129,6 +129,7 @@ dependencies = [
 [[package]]
 name = "etalon-nquin"
 version = "0.0.2"
+source = "git+https://github.com/mediaprophet/etalon.git?rev=057545fc14bc1202a167b9a76a8f82e246c1738f#057545fc14bc1202a167b9a76a8f82e246c1738f"
 dependencies = [
  "bytemuck",
  "log",
@@ -138,18 +139,22 @@ dependencies = [
 [[package]]
 name = "etalon-resources"
 version = "0.0.2"
+source = "git+https://github.com/mediaprophet/etalon.git?rev=057545fc14bc1202a167b9a76a8f82e246c1738f#057545fc14bc1202a167b9a76a8f82e246c1738f"
 
 [[package]]
 name = "etalon-sense-core"
 version = "0.0.2"
+source = "git+https://github.com/mediaprophet/etalon.git?rev=057545fc14bc1202a167b9a76a8f82e246c1738f#057545fc14bc1202a167b9a76a8f82e246c1738f"
 
 [[package]]
 name = "etalon-signal"
 version = "0.0.2"
+source = "git+https://github.com/mediaprophet/etalon.git?rev=057545fc14bc1202a167b9a76a8f82e246c1738f#057545fc14bc1202a167b9a76a8f82e246c1738f"
 
 [[package]]
 name = "etalon-vibe"
 version = "0.0.2"
+source = "git+https://github.com/mediaprophet/etalon.git?rev=057545fc14bc1202a167b9a76a8f82e246c1738f#057545fc14bc1202a167b9a76a8f82e246c1738f"
 dependencies = [
  "etalon-nquin",
  "etalon-resources",
@@ -162,6 +167,7 @@ dependencies = [
 [[package]]
 name = "etalon-wgsl-forge"
 version = "0.0.2"
+source = "git+https://github.com/mediaprophet/etalon.git?rev=057545fc14bc1202a167b9a76a8f82e246c1738f#057545fc14bc1202a167b9a76a8f82e246c1738f"
 dependencies = [
  "blake3",
  "bytemuck",
