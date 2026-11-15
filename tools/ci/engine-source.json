@@ -1,6 +1,6 @@
 {
   "repository": "https://github.com/mediaprophet/qualiaDB",
-  "revision": "fb58676b5b9ed0763590b62dc5f099631fe95fb9",
+  "revision": "dc043329489a9ef541248497ff1628feda9f270d",
   "qualified": true,
   "requiredPaths": ["Cargo.toml", "crates/vibe/Cargo.toml", "crates/vibe/src/extension_registry/mod.rs", "crates/vibescript-abi/Cargo.toml", "crates/vibescript-abi/src/lib.rs"]
 }
