@@ -67,7 +67,7 @@ function wireFamilyRoster(root) {
       group.classList.toggle("is-empty", !any);
     });
     if (countEl) {
-      countEl.textContent = `${visible} of 105 families`;
+      countEl.textContent = `${visible} of ${tiles.length} families`;
     }
   };
 

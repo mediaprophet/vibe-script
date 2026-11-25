@@ -1,8 +1,8 @@
 {
-  "sot": "QualiaDB v0.0.38 / cdd7ae728 crates/vibe/src/catalog/ids.rs",
-  "invokeIds": 1107,
-  "familyPrefixes": 105,
-  "captFamilies": 104,
+  "sot": "QualiaDB v0.0.40 / cea504a9c crates/vibe/src/catalog/ids.rs",
+  "invokeIds": 1445,
+  "familyPrefixes": 141,
+  "captFamilies": 140,
   "note": "Human titles from davinci customer-voice fold. Status chips: Works here · Works in Poet / Desktop · Planned. Capt 104 families plus lowercase agent.",
   "families": [
     {
@@ -183,7 +183,7 @@
     },
     {
       "name": "SymbolicAndDefeasibleLogic",
-      "count": 1,
+      "count": 2,
       "sample": "SymbolicAndDefeasibleLogic.asp",
       "cluster": "logic",
       "clusterLabel": "Logic",
@@ -271,7 +271,7 @@
     },
     {
       "name": "ComputationalGeometry",
-      "count": 68,
+      "count": 98,
       "sample": "ComputationalGeometry.convex_hull_2",
       "cluster": "science",
       "clusterLabel": "Math & science",
@@ -315,7 +315,7 @@
     },
     {
       "name": "Statistics",
-      "count": 107,
+      "count": 108,
       "sample": "Statistics.mean",
       "cluster": "science",
       "clusterLabel": "Math & science",
@@ -546,7 +546,7 @@
     },
     {
       "name": "Document",
-      "count": 1,
+      "count": 6,
       "sample": "Document.ingest",
       "cluster": "graph",
       "clusterLabel": "Graphs",
@@ -557,7 +557,7 @@
     },
     {
       "name": "Sheet",
-      "count": 2,
+      "count": 7,
       "sample": "Sheet.stats",
       "cluster": "graph",
       "clusterLabel": "Graphs",
@@ -612,7 +612,7 @@
     },
     {
       "name": "Render",
-      "count": 53,
+      "count": 60,
       "sample": "Render.scene",
       "cluster": "habitat",
       "clusterLabel": "Motion & place",
@@ -667,7 +667,7 @@
     },
     {
       "name": "Physics",
-      "count": 18,
+      "count": 20,
       "sample": "Physics.wave_1d",
       "cluster": "science",
       "clusterLabel": "Math & science",
@@ -908,6 +908,17 @@
       "blurb": "Hands, gaze, a gamepad. Open Poet or Desktop."
     },
     {
+      "name": "Conditioning",
+      "count": 6,
+      "sample": "Conditioning.validate",
+      "cluster": "research",
+      "clusterLabel": "Research",
+      "status": "Works here",
+      "tone": "live",
+      "human": "Conditioning",
+      "blurb": "Validate and compile prompt-precision conditioning envelopes."
+    },
+    {
       "name": "Finance",
       "count": 3,
       "sample": "Finance.convert_currency",
@@ -920,7 +931,7 @@
     },
     {
       "name": "Econ",
-      "count": 106,
+      "count": 108,
       "sample": "Econ.capm_expected_return",
       "cluster": "econ",
       "clusterLabel": "Money & identity",
@@ -1151,7 +1162,7 @@
     },
     {
       "name": "Poet",
-      "count": 5,
+      "count": 17,
       "sample": "Poet.manifold_create",
       "cluster": "habitat",
       "clusterLabel": "Motion & place",
@@ -1159,6 +1170,391 @@
       "tone": "poet",
       "human": "Poet",
       "blurb": "The habitat app itself."
+    },
+    {
+      "name": "Shaders",
+      "count": 1,
+      "sample": "Shaders.list",
+      "cluster": "habitat",
+      "clusterLabel": "Motion & place",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "Shaders",
+      "blurb": "Inspect WGSL shader kernels. Open Poet or Desktop."
+    },
+    {
+      "name": "WgslForge",
+      "count": 16,
+      "sample": "WgslForge.list_kernels",
+      "cluster": "science",
+      "clusterLabel": "Math & science",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "WGSL Forge",
+      "blurb": "Synthesize, validate, and certify GPU compute kernels."
+    },
+    {
+      "name": "Deck",
+      "count": 4,
+      "sample": "Deck.create",
+      "cluster": "media",
+      "clusterLabel": "Media",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "Slide decks",
+      "blurb": "Build presentation slides and transitions in Poet."
+    },
+    {
+      "name": "Pdf",
+      "count": 4,
+      "sample": "Pdf.inspect_cos",
+      "cluster": "media",
+      "clusterLabel": "Media",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "PDF & QECP",
+      "blurb": "Inspect, preflight, redact, and sign PDF documents."
+    },
+    {
+      "name": "Raster",
+      "count": 2,
+      "sample": "Raster.cms_convert",
+      "cluster": "media",
+      "clusterLabel": "Media",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "Raster colour",
+      "blurb": "Colour-managed raster conversion and tone curves."
+    },
+    {
+      "name": "RawDevelop",
+      "count": 3,
+      "sample": "RawDevelop.demosaic",
+      "cluster": "media",
+      "clusterLabel": "Media",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "RAW photo",
+      "blurb": "Demosaic, denoise, and segment camera RAW images."
+    },
+    {
+      "name": "Vector",
+      "count": 4,
+      "sample": "Vector.path_boolean",
+      "cluster": "media",
+      "clusterLabel": "Media",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "Vector paths",
+      "blurb": "Boolean path operations, Bezier offsets, and SVG compile."
+    },
+    {
+      "name": "Cad",
+      "count": 4,
+      "sample": "Cad.sketch_constrain",
+      "cluster": "science",
+      "clusterLabel": "Math & science",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "CAD solids",
+      "blurb": "Constrained sketches, B-Rep solids, and DXF/DWG interop."
+    },
+    {
+      "name": "Timeline",
+      "count": 4,
+      "sample": "Timeline.scopes_analyze",
+      "cluster": "media",
+      "clusterLabel": "Media",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "Timeline & LUFS",
+      "blurb": "Video/audio scopes, captions sync, DSP chains, and LUFS mastering."
+    },
+    {
+      "name": "Simulation",
+      "count": 4,
+      "sample": "Simulation.soil_compaction",
+      "cluster": "science",
+      "clusterLabel": "Math & science",
+      "status": "Works here",
+      "tone": "live",
+      "human": "Earth simulation",
+      "blurb": "Soil compaction, trench excavation, fire ecology, and space weather."
+    },
+    {
+      "name": "Vibe",
+      "count": 1,
+      "sample": "Vibe.eval",
+      "cluster": "research",
+      "clusterLabel": "Research",
+      "status": "Works here",
+      "tone": "live",
+      "human": "Vibe eval",
+      "blurb": "Evaluate bounded VibeScript expressions."
+    },
+    {
+      "name": "Bookmarks",
+      "count": 1,
+      "sample": "Bookmarks.list",
+      "cluster": "graph",
+      "clusterLabel": "Graphs",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "Bookmarks",
+      "blurb": "Curate semantic GIS, RDF, and SPARQL bookmarks."
+    },
+    {
+      "name": "Codecs",
+      "count": 1,
+      "sample": "Codecs.matrix",
+      "cluster": "media",
+      "clusterLabel": "Media",
+      "status": "Works here",
+      "tone": "live",
+      "human": "Codecs matrix",
+      "blurb": "Inspect container and media codec support."
+    },
+    {
+      "name": "Domain",
+      "count": 1,
+      "sample": "Domain.info",
+      "cluster": "graph",
+      "clusterLabel": "Graphs",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "Domain info",
+      "blurb": "Inspect QDP and Webizen domain metadata."
+    },
+    {
+      "name": "Git",
+      "count": 1,
+      "sample": "Git.status",
+      "cluster": "graph",
+      "clusterLabel": "Graphs",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "Git work-graph",
+      "blurb": "Inspect repository status and provenance commits."
+    },
+    {
+      "name": "Job",
+      "count": 1,
+      "sample": "Job.list",
+      "cluster": "research",
+      "clusterLabel": "Research",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "Background jobs",
+      "blurb": "Inspect bounded host background jobs."
+    },
+    {
+      "name": "Studio",
+      "count": 8,
+      "sample": "Studio.create",
+      "cluster": "habitat",
+      "clusterLabel": "Motion & place",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "Poet Studio",
+      "blurb": "Create, edit, inspect, and export studio artifacts."
+    },
+    {
+      "name": "BotanicalAnatomy",
+      "count": 5,
+      "sample": "BotanicalAnatomy.synthesize_organ_10d",
+      "cluster": "science",
+      "clusterLabel": "Math & science",
+      "status": "Works here",
+      "tone": "live",
+      "human": "Botanical 10D",
+      "blurb": "Synthesize 10D plant organs, tissue layers, and sapwood hydraulics."
+    },
+    {
+      "name": "ZoologicalAnatomy",
+      "count": 3,
+      "sample": "ZoologicalAnatomy.synthesize_vertebrate_10d",
+      "cluster": "science",
+      "clusterLabel": "Math & science",
+      "status": "Works here",
+      "tone": "live",
+      "human": "Zoological 10D",
+      "blurb": "Synthesize vertebrate 10D anatomy, tissue peeling, and tendon strain."
+    },
+    {
+      "name": "BiologicalOntology",
+      "count": 2,
+      "sample": "BiologicalOntology.query_callout_pin",
+      "cluster": "graph",
+      "clusterLabel": "Graphs",
+      "status": "Works here",
+      "tone": "live",
+      "human": "Bio ontology",
+      "blurb": "Resolve PO/UBERON CURIEs and anatomical callout pins."
+    },
+    {
+      "name": "WorldContinuum",
+      "count": 5,
+      "sample": "WorldContinuum.sample_elevation_normal",
+      "cluster": "habitat",
+      "clusterLabel": "Motion & place",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "World continuum",
+      "blurb": "64 Hz rover/character stepping and Hilbert terrain chunk streaming."
+    },
+    {
+      "name": "SceneGraph10D",
+      "count": 3,
+      "sample": "SceneGraph10D.step_ontogeny",
+      "cluster": "habitat",
+      "clusterLabel": "Motion & place",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "10D scene graph",
+      "blurb": "Step ontogeny, dispatch affordances, and 4-tier indirect culling."
+    },
+    {
+      "name": "Topology",
+      "count": 8,
+      "sample": "Topology.define_geometry",
+      "cluster": "graph",
+      "clusterLabel": "Graphs",
+      "status": "Works here",
+      "tone": "live",
+      "human": "Topology & homology",
+      "blurb": "Harbour graphs, bind anchors, seal cell complexes, and analyze homology."
+    },
+    {
+      "name": "Geodesy",
+      "count": 17,
+      "sample": "Geodesy.wgs84_inverse",
+      "cluster": "science",
+      "clusterLabel": "Math & science",
+      "status": "Works here",
+      "tone": "live",
+      "human": "Geodesy",
+      "blurb": "WGS84 geodesics, datum transforms, and planetary projections."
+    },
+    {
+      "name": "Terrain",
+      "count": 47,
+      "sample": "Terrain.perlin",
+      "cluster": "science",
+      "clusterLabel": "Math & science",
+      "status": "Works here",
+      "tone": "live",
+      "human": "Terrain & DEM",
+      "blurb": "Multifractal terrain, hydrology flow, slope/aspect, and erosion."
+    },
+    {
+      "name": "GisIo",
+      "count": 28,
+      "sample": "GisIo.read_lidar_copc",
+      "cluster": "graph",
+      "clusterLabel": "Graphs",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "GIS & STAC I/O",
+      "blurb": "Read LiDAR COPC, COG, GeoParquet, Zarr, OGC CQL2, and compile 10D datacubes."
+    },
+    {
+      "name": "GeoSparql",
+      "count": 11,
+      "sample": "GeoSparql.de9im_matrix",
+      "cluster": "graph",
+      "clusterLabel": "Graphs",
+      "status": "Works here",
+      "tone": "live",
+      "human": "GeoSPARQL",
+      "blurb": "DE-9IM topological predicates, spatial quins, and deontic covenants."
+    },
+    {
+      "name": "GisGp",
+      "count": 40,
+      "sample": "GisGp.clip",
+      "cluster": "science",
+      "clusterLabel": "Math & science",
+      "status": "Works here",
+      "tone": "live",
+      "human": "Geoprocessing",
+      "blurb": "Vector overlays, Kriging, Moran's I, viewsheds, RUSLE, and network routing."
+    },
+    {
+      "name": "PoetGeo",
+      "count": 6,
+      "sample": "PoetGeo.cow_stroke_apply",
+      "cluster": "habitat",
+      "clusterLabel": "Motion & place",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "Poet Geo tools",
+      "blurb": "Copy-on-write terrain strokes, geodesic rulers, and orbital flythroughs."
+    },
+    {
+      "name": "Cartography",
+      "count": 6,
+      "sample": "Cartography.classify_jenks_thematic",
+      "cluster": "media",
+      "clusterLabel": "Media",
+      "status": "Works here",
+      "tone": "live",
+      "human": "Cartography",
+      "blurb": "Jenks classification, bivariate choropleths, WCAG contrast, and publication SVG."
+    },
+    {
+      "name": "WebizenGeo",
+      "count": 10,
+      "sample": "WebizenGeo.tessellate_polyline_capped",
+      "cluster": "habitat",
+      "clusterLabel": "Motion & place",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "Webizen Geo render",
+      "blurb": "CDLOD terrain quadtrees, MVT styling, curved labels, sky limb, and water foam."
+    },
+    {
+      "name": "Emf",
+      "count": 5,
+      "sample": "Emf.openContainer",
+      "cluster": "science",
+      "clusterLabel": "Math & science",
+      "status": "Works here",
+      "tone": "live",
+      "human": "EMF v4 containers",
+      "blurb": "Open, build, verify, and sonify Q42EMF64 electromagnetic field containers."
+    },
+    {
+      "name": "Qac",
+      "count": 5,
+      "sample": "Qac.openContainer",
+      "cluster": "media",
+      "clusterLabel": "Media",
+      "status": "Works here",
+      "tone": "live",
+      "human": "QAC v1 acoustics",
+      "blurb": "Open, build, and render binaural/directivity Qualia Acoustic Containers."
+    },
+    {
+      "name": "Dicom",
+      "count": 4,
+      "sample": "Dicom.parseDataset",
+      "cluster": "science",
+      "clusterLabel": "Math & science",
+      "status": "Works here",
+      "tone": "live",
+      "human": "DICOM Part-10",
+      "blurb": "Parse, verify, convert to EMF fields, and reconstruct 3D medical volumes."
+    },
+    {
+      "name": "Sensing",
+      "count": 2,
+      "sample": "Sensing.admitEvidence",
+      "cluster": "science",
+      "clusterLabel": "Math & science",
+      "status": "Works in Poet / Desktop",
+      "tone": "poet",
+      "human": "Hardware sensing",
+      "blurb": "Admit calibrated physical sensor evidence and verify calibration envelopes."
     }
   ]
 }

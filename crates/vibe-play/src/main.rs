@@ -160,6 +160,12 @@ fn handle(mut stream: TcpStream) -> std::io::Result<()> {
                 Err(e) => respond_status(&mut stream, "500 Internal Server Error", format!("Descriptor export failed: {e:?}").as_bytes()),
             }
         }
+        ("GET", "/api/extensions/all") => {
+            match vibe_tooling::export_all_builtin_providers().and_then(|v| vibe_tooling::manifest_bytes(&v)) {
+                Ok(bytes) => respond(&mut stream, "application/json", &bytes),
+                Err(e) => respond_status(&mut stream, "500 Internal Server Error", format!("Provider catalog export failed: {e:?}").as_bytes()),
+            }
+        }
         ("POST", "/api/diagnose") => {
             let json = diagnose_src(&body);
             respond(

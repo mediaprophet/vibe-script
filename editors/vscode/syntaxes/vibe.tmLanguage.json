@@ -65,7 +65,7 @@
     },
     "catalog": {
       "name": "entity.name.function.catalog.vibe",
-      "match": "\\b(Animation|Render|HID|GraphDatabase|LinearAlgebra|Cosmic|Inference|DeonticLogic|EpistemicLogic|ParaconsistentLogic|SHACL|Asset|Orchestration|cbor_ld|web|ui|form|input|validate|selection|layout|reflect|record|uri|error|num|decimal|math|autodiff|str|regex|list|deque|pqueue|set|simplex|hypergraph|sheaf|topology|homotopy|context|manifold|inference|ast|diagnostic|effect|code|task|supervisor|contract|state|value|crypto|runtime|continuation|memory|simd|channel)\\.[A-Za-z_][A-Za-z0-9_]*\\b"
+      "match": "\\b(Animation|Render|HID|GraphDatabase|LinearAlgebra|Cosmic|Inference|DeonticLogic|EpistemicLogic|ParaconsistentLogic|SHACL|Asset|Orchestration|Conditioning|Shaders|WgslForge|Deck|Pdf|Raster|RawDevelop|Vector|Cad|Timeline|Simulation|Vibe|Bookmarks|Codecs|Domain|Git|Job|Studio|BotanicalAnatomy|ZoologicalAnatomy|BiologicalOntology|WorldContinuum|SceneGraph10D|Topology|Geodesy|Terrain|GisIo|GeoSparql|GisGp|PoetGeo|Cartography|WebizenGeo|Emf|Qac|Dicom|Sensing|mech|gpu|forge|render|signal|sense|p64|nquin|infer|qgraph|modality|cbor_ld|web|ui|form|input|validate|selection|layout|reflect|record|uri|error|num|decimal|math|autodiff|str|regex|list|deque|pqueue|set|simplex|hypergraph|sheaf|topology|homotopy|context|manifold|inference|ast|diagnostic|effect|code|task|supervisor|contract|state|value|crypto|runtime|continuation|memory|simd|channel)\\.[A-Za-z_][A-Za-z0-9_]*\\b"
     },
     "numbers": {
       "name": "constant.numeric.vibe",

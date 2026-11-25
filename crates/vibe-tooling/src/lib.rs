@@ -139,6 +139,41 @@ pub fn reference_preview() -> Result<Value,ExportError> {
     export(&vibe::extension_registry::DeterministicMechanicsProvider)
 }
 
+/// Exports deterministic discovery manifests for all 11 built-in Etalon and Qualia
+/// `VibeNamespaceProvider`s registered in `ExtensionRegistry::with_builtin_providers()`,
+/// plus the canonical QUDT v3.5.3 unit catalog (`vibescript_abi::qudt_units::QUDT_UNITS`).
+pub fn export_all_builtin_providers() -> Result<Value, ExportError> {
+    let reg = vibe::extension_registry::ExtensionRegistry::with_builtin_providers();
+    let mut providers = Vec::new();
+    for p in reg.iter_providers() {
+        providers.push(export(p)?);
+    }
+    let qudt_units: Vec<Value> = vibescript_abi::qudt_units::QUDT_UNITS
+        .iter()
+        .map(|u| {
+            json!({
+                "code": u.code,
+                "iri": u.iri,
+                "dimension_iri": u.dimension_iri,
+                "conversion_multiplier_bits": format!("{:016x}", u.conversion_multiplier_bits),
+            })
+        })
+        .collect();
+    let catalog = json!({
+        "schema": "vibescript-tooling-provider-catalog/1",
+        "discovery_only": true,
+        "authorization": "not_assessed",
+        "provider_count": providers.len(),
+        "providers": providers,
+        "qudt_units": qudt_units,
+    });
+    let digest = hex(&Sha256::digest(manifest_bytes(&catalog)?));
+    Ok(json!({
+        "catalog": catalog,
+        "tooling_catalog_sha256": digest,
+    }))
+}
+
 /// Validates that a `VibeNamespaceProvider` conforms to the VibeScript Provider SDK contract:
 /// - `descriptor.canonical_iri.is_valid()` and non-empty `short_alias`
 /// - Every sub-namespace and function has valid `CanonicalIri`, unique `StableFuncId`,
@@ -341,5 +376,8 @@ mod tests {
         assert_eq!(exported["manifest"]["provider"]["short_alias"], "sdk");
 
         for p in vibe::extension_registry::ExtensionRegistry::with_builtin_providers().iter_providers() { verify_provider_sdk_conformance(p).expect("all 11 built-in Etalon & Qualia providers must pass SDK conformance"); }
+        let all_cat = export_all_builtin_providers().expect("export all 11 built-in providers");
+        assert_eq!(all_cat["catalog"]["provider_count"], 11);
+        assert_eq!(all_cat["catalog"]["qudt_units"].as_array().unwrap().len(), 14);
     }
 }

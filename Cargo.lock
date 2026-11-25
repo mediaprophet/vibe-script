@@ -129,7 +129,7 @@ dependencies = [
 [[package]]
 name = "etalon-nquin"
 version = "0.0.2"
-source = "git+https://github.com/mediaprophet/etalon.git?rev=057545fc14bc1202a167b9a76a8f82e246c1738f#057545fc14bc1202a167b9a76a8f82e246c1738f"
+source = "git+https://github.com/mediaprophet/etalon.git?rev=d4a6af1ad689c82696a07d68fb9999e8f301170d#d4a6af1ad689c82696a07d68fb9999e8f301170d"
 dependencies = [
  "bytemuck",
  "log",
@@ -139,22 +139,22 @@ dependencies = [
 [[package]]
 name = "etalon-resources"
 version = "0.0.2"
-source = "git+https://github.com/mediaprophet/etalon.git?rev=057545fc14bc1202a167b9a76a8f82e246c1738f#057545fc14bc1202a167b9a76a8f82e246c1738f"
+source = "git+https://github.com/mediaprophet/etalon.git?rev=d4a6af1ad689c82696a07d68fb9999e8f301170d#d4a6af1ad689c82696a07d68fb9999e8f301170d"
 
 [[package]]
 name = "etalon-sense-core"
 version = "0.0.2"
-source = "git+https://github.com/mediaprophet/etalon.git?rev=057545fc14bc1202a167b9a76a8f82e246c1738f#057545fc14bc1202a167b9a76a8f82e246c1738f"
+source = "git+https://github.com/mediaprophet/etalon.git?rev=d4a6af1ad689c82696a07d68fb9999e8f301170d#d4a6af1ad689c82696a07d68fb9999e8f301170d"
 
 [[package]]
 name = "etalon-signal"
 version = "0.0.2"
-source = "git+https://github.com/mediaprophet/etalon.git?rev=057545fc14bc1202a167b9a76a8f82e246c1738f#057545fc14bc1202a167b9a76a8f82e246c1738f"
+source = "git+https://github.com/mediaprophet/etalon.git?rev=d4a6af1ad689c82696a07d68fb9999e8f301170d#d4a6af1ad689c82696a07d68fb9999e8f301170d"
 
 [[package]]
 name = "etalon-vibe"
 version = "0.0.2"
-source = "git+https://github.com/mediaprophet/etalon.git?rev=057545fc14bc1202a167b9a76a8f82e246c1738f#057545fc14bc1202a167b9a76a8f82e246c1738f"
+source = "git+https://github.com/mediaprophet/etalon.git?rev=d4a6af1ad689c82696a07d68fb9999e8f301170d#d4a6af1ad689c82696a07d68fb9999e8f301170d"
 dependencies = [
  "etalon-nquin",
  "etalon-resources",
@@ -167,7 +167,7 @@ dependencies = [
 [[package]]
 name = "etalon-wgsl-forge"
 version = "0.0.2"
-source = "git+https://github.com/mediaprophet/etalon.git?rev=057545fc14bc1202a167b9a76a8f82e246c1738f#057545fc14bc1202a167b9a76a8f82e246c1738f"
+source = "git+https://github.com/mediaprophet/etalon.git?rev=d4a6af1ad689c82696a07d68fb9999e8f301170d#d4a6af1ad689c82696a07d68fb9999e8f301170d"
 dependencies = [
  "blake3",
  "bytemuck",

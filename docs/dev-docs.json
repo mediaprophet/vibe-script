@@ -1226,7 +1226,7 @@
         "kind": "struct",
         "doc": "",
         "file": "ast_merge.rs",
-        "line": 12,
+        "line": 11,
         "signature": "pub struct MergeResult"
       },
       {
@@ -1234,7 +1234,7 @@
         "kind": "struct",
         "doc": "",
         "file": "ast_merge.rs",
-        "line": 21,
+        "line": 20,
         "signature": "pub struct MergeConflict"
       },
       {
@@ -1242,7 +1242,7 @@
         "kind": "fn",
         "doc": "Perform a 3-way structural merge on VibeScript programs.",
         "file": "ast_merge.rs",
-        "line": 29,
+        "line": 28,
         "signature": "pub fn merge_programs(base: &Program, ours: &Program, theirs: &Program) -> MergeResult {"
       }
     ]
@@ -1486,7 +1486,7 @@
       {
         "name": "LocalHost",
         "kind": "struct",
-        "doc": "In-process host: graph/pulse/time in memory, catalog kernels for Animation/HID/etc.",
+        "doc": "In-process host: graph/pulse/time in memory, catalog kernels for Animation/etc.",
         "file": "local.rs",
         "line": 9,
         "signature": "pub struct LocalHost"
@@ -1588,7 +1588,7 @@
   },
   {
     "name": "bytecode",
-    "doc": "",
+    "doc": "`vibe-bc-0.1` bytecode compiler, VM, and binary codec.\n\nStack-based bytecode for VibeScript 0.1. Compiles a checked `Program`\nAST into a `Chunk`, which can be executed by the `Vm` or serialized\nto/from bytes.\n\n## Module layout\n\n- [`op`] — opcode definitions, `Chunk`, `Const`, `FuncMeta`\n- [`compiler`] — AST → `Chunk` compiler\n- [`vm`] — stack-based virtual machine\n- [`codec`] — binary encode/decode of `Chunk`",
     "items": [
       {
         "name": "codec",
@@ -1619,7 +1619,7 @@
         "kind": "module",
         "doc": "",
         "file": "mod.rs",
-        "line": 17,
+        "line": 20,
         "signature": "pub mod vm;"
       },
       {
@@ -1627,7 +1627,7 @@
         "kind": "use",
         "doc": "",
         "file": "mod.rs",
-        "line": 19,
+        "line": 22,
         "signature": "pub use codec::{decode_chunk, encode_chunk, ChunkDecodeError};"
       },
       {
@@ -1635,7 +1635,7 @@
         "kind": "use",
         "doc": "",
         "file": "mod.rs",
-        "line": 20,
+        "line": 23,
         "signature": "pub use compiler::{compile, compile_expr, CompileError};"
       },
       {
@@ -1643,7 +1643,7 @@
         "kind": "use",
         "doc": "",
         "file": "mod.rs",
-        "line": 21,
+        "line": 24,
         "signature": "pub use op::{Chunk, Const, FuncMeta, Op, MAGIC, MAX_CODE, MAX_CONSTANTS, MAX_FUNCTIONS, VERSION};"
       },
       {
@@ -1651,7 +1651,7 @@
         "kind": "use",
         "doc": "",
         "file": "mod.rs",
-        "line": 22,
+        "line": 25,
         "signature": "pub use vm::{Vm, VmError};"
       }
     ]
@@ -1703,7 +1703,7 @@
         "kind": "fn",
         "doc": "Compile a full `Program` AST into a `Chunk`.",
         "file": "compiler.rs",
-        "line": 971,
+        "line": 1318,
         "signature": "pub fn compile(program: &Program) -> Result<Chunk, CompileError> {"
       },
       {
@@ -1711,7 +1711,7 @@
         "kind": "fn",
         "doc": "Compile a single expression (for cell bodies) into a `Chunk`.\nThe chunk's preamble evaluates the expression and returns it.",
         "file": "compiler.rs",
-        "line": 979,
+        "line": 1329,
         "signature": "pub fn compile_expr(expr: &Expr) -> Result<Chunk, CompileError> {"
       }
     ]
@@ -1725,7 +1725,7 @@
         "kind": "const",
         "doc": "Magic bytes identifying a `vibe-bc-0.1` chunk.",
         "file": "op.rs",
-        "line": 68,
+        "line": 66,
         "signature": "pub const MAGIC: [u8; 4] = *b\"VBC1\""
       },
       {
@@ -1733,7 +1733,7 @@
         "kind": "const",
         "doc": "Bytecode format version.",
         "file": "op.rs",
-        "line": 71,
+        "line": 69,
         "signature": "pub const VERSION: u16 = 1"
       },
       {
@@ -1741,7 +1741,7 @@
         "kind": "const",
         "doc": "Maximum number of constants in a chunk.",
         "file": "op.rs",
-        "line": 74,
+        "line": 72,
         "signature": "pub const MAX_CONSTANTS: usize = 65535"
       },
       {
@@ -1749,7 +1749,7 @@
         "kind": "const",
         "doc": "Maximum number of local variable slots.",
         "file": "op.rs",
-        "line": 77,
+        "line": 75,
         "signature": "pub const MAX_LOCALS: usize = 65535"
       },
       {
@@ -1757,7 +1757,7 @@
         "kind": "const",
         "doc": "Maximum number of user-defined functions.",
         "file": "op.rs",
-        "line": 80,
+        "line": 78,
         "signature": "pub const MAX_FUNCTIONS: usize = 65535"
       },
       {
@@ -1765,7 +1765,7 @@
         "kind": "const",
         "doc": "Maximum code size in bytes.",
         "file": "op.rs",
-        "line": 83,
+        "line": 81,
         "signature": "pub const MAX_CODE: usize = 65535"
       },
       {
@@ -1773,7 +1773,7 @@
         "kind": "enum",
         "doc": "",
         "file": "op.rs",
-        "line": 88,
+        "line": 86,
         "signature": "pub enum Op"
       },
       {
@@ -1781,7 +1781,7 @@
         "kind": "fn",
         "doc": "Decode an opcode from a byte.",
         "file": "op.rs",
-        "line": 173,
+        "line": 202,
         "signature": "pub fn from_byte(b: u8) -> Option<Self> {"
       },
       {
@@ -1789,7 +1789,7 @@
         "kind": "fn",
         "doc": "Number of operand bytes following this opcode (not counting the opcode itself).",
         "file": "op.rs",
-        "line": 221,
+        "line": 264,
         "signature": "pub fn operand_size(self) -> usize {"
       },
       {
@@ -1797,7 +1797,7 @@
         "kind": "enum",
         "doc": "",
         "file": "op.rs",
-        "line": 268,
+        "line": 322,
         "signature": "pub enum Const"
       },
       {
@@ -1805,7 +1805,7 @@
         "kind": "struct",
         "doc": "",
         "file": "op.rs",
-        "line": 275,
+        "line": 329,
         "signature": "pub struct FuncMeta"
       },
       {
@@ -1813,7 +1813,7 @@
         "kind": "struct",
         "doc": "",
         "file": "op.rs",
-        "line": 290,
+        "line": 344,
         "signature": "pub struct Chunk"
       },
       {
@@ -1821,7 +1821,7 @@
         "kind": "fn",
         "doc": "Create an empty chunk.",
         "file": "op.rs",
-        "line": 303,
+        "line": 357,
         "signature": "pub fn new() -> Self {"
       },
       {
@@ -1829,7 +1829,7 @@
         "kind": "fn",
         "doc": "Add a string constant and return its index.",
         "file": "op.rs",
-        "line": 313,
+        "line": 367,
         "signature": "pub fn add_string(&mut self, s: &str) -> u16 {"
       },
       {
@@ -1837,7 +1837,7 @@
         "kind": "fn",
         "doc": "Add an IRI constant and return its index.",
         "file": "op.rs",
-        "line": 327,
+        "line": 381,
         "signature": "pub fn add_iri(&mut self, s: &str) -> u16 {"
       },
       {
@@ -1845,7 +1845,7 @@
         "kind": "fn",
         "doc": "Find a function by name. Returns its index in `functions`.",
         "file": "op.rs",
-        "line": 341,
+        "line": 395,
         "signature": "pub fn find_function(&self, name: &str) -> Option<u16> {"
       },
       {
@@ -1853,7 +1853,7 @@
         "kind": "fn",
         "doc": "Current code offset (where the next instruction will be emitted).",
         "file": "op.rs",
-        "line": 349,
+        "line": 403,
         "signature": "pub fn current_offset(&self) -> u16 {"
       },
       {
@@ -1861,7 +1861,7 @@
         "kind": "fn",
         "doc": "Emit a raw byte.",
         "file": "op.rs",
-        "line": 354,
+        "line": 408,
         "signature": "pub fn emit(&mut self, b: u8) {"
       },
       {
@@ -1869,7 +1869,7 @@
         "kind": "fn",
         "doc": "Emit an opcode.",
         "file": "op.rs",
-        "line": 359,
+        "line": 413,
         "signature": "pub fn emit_op(&mut self, op: Op) {"
       },
       {
@@ -1877,7 +1877,7 @@
         "kind": "fn",
         "doc": "Emit a u16 operand (little-endian).",
         "file": "op.rs",
-        "line": 364,
+        "line": 418,
         "signature": "pub fn emit_u16(&mut self, v: u16) {"
       },
       {
@@ -1885,7 +1885,7 @@
         "kind": "fn",
         "doc": "Emit a u8 operand.",
         "file": "op.rs",
-        "line": 370,
+        "line": 424,
         "signature": "pub fn emit_u8(&mut self, v: u8) {"
       },
       {
@@ -1893,7 +1893,7 @@
         "kind": "fn",
         "doc": "Emit an i64 operand (little-endian).",
         "file": "op.rs",
-        "line": 375,
+        "line": 429,
         "signature": "pub fn emit_i64(&mut self, v: i64) {"
       },
       {
@@ -1901,7 +1901,7 @@
         "kind": "fn",
         "doc": "Emit a u64 operand (little-endian).",
         "file": "op.rs",
-        "line": 380,
+        "line": 434,
         "signature": "pub fn emit_u64(&mut self, v: u64) {"
       },
       {
@@ -1909,7 +1909,7 @@
         "kind": "fn",
         "doc": "Emit an f64 operand (little-endian bits).",
         "file": "op.rs",
-        "line": 385,
+        "line": 439,
         "signature": "pub fn emit_f64(&mut self, v: f64) {"
       },
       {
@@ -1917,10 +1917,20 @@
         "kind": "fn",
         "doc": "Patch a u16 operand at the given code offset.",
         "file": "op.rs",
-        "line": 390,
+        "line": 444,
         "signature": "pub fn patch_u16(&mut self, offset: usize, value: u16) {"
       }
     ]
+  },
+  {
+    "name": "bytecode::task_admission",
+    "doc": "Whole-chunk admission precedes any host effect, including decoded/manual chunks.",
+    "items": []
+  },
+  {
+    "name": "bytecode::task_admission_tests",
+    "doc": "",
+    "items": []
   },
   {
     "name": "bytecode::vm",
@@ -1931,7 +1941,7 @@
         "kind": "enum",
         "doc": "",
         "file": "vm.rs",
-        "line": 17,
+        "line": 21,
         "signature": "pub enum VmError"
       },
       {
@@ -1939,7 +1949,7 @@
         "kind": "struct",
         "doc": "The virtual machine.",
         "file": "vm.rs",
-        "line": 98,
+        "line": 78,
         "signature": "pub struct Vm<'a, H: Host>"
       },
       {
@@ -1947,15 +1957,39 @@
         "kind": "fn",
         "doc": "Create a new VM for executing the given chunk.",
         "file": "vm.rs",
-        "line": 121,
+        "line": 108,
         "signature": "pub fn new(chunk: &'a Chunk, host: &'a mut H, budget: Budget) -> Self {"
+      },
+      {
+        "name": "with_extension_governance",
+        "kind": "fn",
+        "doc": "Configures governed extension execution (`CallExecutionContext` + optional `SentinelPolicyGate`).",
+        "file": "vm.rs",
+        "line": 129,
+        "signature": "pub fn with_extension_governance("
+      },
+      {
+        "name": "extension_registry_mut",
+        "kind": "fn",
+        "doc": "Mutable reference to the VM's `ExtensionRegistry`.",
+        "file": "vm.rs",
+        "line": 140,
+        "signature": "pub fn extension_registry_mut(&mut self) -> &mut ExtensionRegistry<'a> {"
+      },
+      {
+        "name": "last_extension_outcome",
+        "kind": "fn",
+        "doc": "Returns the most recent extension `DispatchOutcome` (receipt + audit `NQuin48`s), if any.",
+        "file": "vm.rs",
+        "line": 145,
+        "signature": "pub fn last_extension_outcome(&self) -> Option<&DispatchOutcome> {"
       },
       {
         "name": "run",
         "kind": "fn",
         "doc": "Execute the chunk's top-level preamble and return the last value on the stack.",
         "file": "vm.rs",
-        "line": 132,
+        "line": 150,
         "signature": "pub fn run(&mut self) -> Result<Value, VmError> {"
       },
       {
@@ -1963,21 +1997,109 @@
         "kind": "fn",
         "doc": "Execute a specific user function by index with the given arguments.",
         "file": "vm.rs",
-        "line": 174,
+        "line": 192,
         "signature": "pub fn call_function(&mut self, fn_idx: u16, args: &[Value]) -> Result<Value, VmError> {"
       }
     ]
   },
   {
     "name": "capability_schema",
-    "doc": "Machine schema exports for all bound host call ids (T51).\n\nEvery `ALL_BOUND` id exports a machine schema — not English prose.\nArguments, effect class, honesty label, and return type are\ndeclared in the same table that the catalog uses. This is the\nMCP replacement: the schema IS the protocol.\n\nThe schema is generated from the dispatch table so it can never\ndrift from the actual implementation. A host can query\n`host.schema()` to get the full catalog, or `host.schema_for(id)`\nto get a single entry.\n\nReference: `docs/vibescript-full-impl-PLAN.md` §8.11 T51,\nrecommendations §4.3.",
+    "doc": "Machine schema exports for all bound host call ids (T51).\n\nExplicit schemas for the covered host and runtime operations.\nThis registry is maintained alongside dispatch; source presence does not\nestablish provider availability or full dispatch/schema conformance.\nA host can query\n`host.schema()` to get the full catalog, or `host.schema_for(id)`\nto get a single entry.\n\nReference: `docs/vibescript-full-impl-PLAN.md` §8.11 T51,\nrecommendations §4.3.",
     "items": [
+      {
+        "name": "geo_geodesy_entries",
+        "kind": "module",
+        "doc": "",
+        "file": "capability_schema.rs",
+        "line": 18,
+        "signature": "pub mod geo_geodesy_entries;"
+      },
+      {
+        "name": "geo_terrain_node_entries",
+        "kind": "module",
+        "doc": "",
+        "file": "capability_schema.rs",
+        "line": 20,
+        "signature": "pub mod geo_terrain_node_entries;"
+      },
+      {
+        "name": "geo_geomorph_strata_entries",
+        "kind": "module",
+        "doc": "",
+        "file": "capability_schema.rs",
+        "line": 22,
+        "signature": "pub mod geo_geomorph_strata_entries;"
+      },
+      {
+        "name": "geo_gis_io_entries",
+        "kind": "module",
+        "doc": "",
+        "file": "capability_schema.rs",
+        "line": 24,
+        "signature": "pub mod geo_gis_io_entries;"
+      },
+      {
+        "name": "geo_sparql_deontic_entries",
+        "kind": "module",
+        "doc": "",
+        "file": "capability_schema.rs",
+        "line": 26,
+        "signature": "pub mod geo_sparql_deontic_entries;"
+      },
+      {
+        "name": "geo_vector_gp_entries",
+        "kind": "module",
+        "doc": "",
+        "file": "capability_schema.rs",
+        "line": 28,
+        "signature": "pub mod geo_vector_gp_entries;"
+      },
+      {
+        "name": "geo_spatial_stats_algebra_entries",
+        "kind": "module",
+        "doc": "",
+        "file": "capability_schema.rs",
+        "line": 30,
+        "signature": "pub mod geo_spatial_stats_algebra_entries;"
+      },
+      {
+        "name": "geo_wgsl_forge_entries",
+        "kind": "module",
+        "doc": "",
+        "file": "capability_schema.rs",
+        "line": 32,
+        "signature": "pub mod geo_wgsl_forge_entries;"
+      },
+      {
+        "name": "geo_cartography_poet_entries",
+        "kind": "module",
+        "doc": "",
+        "file": "capability_schema.rs",
+        "line": 34,
+        "signature": "pub mod geo_cartography_poet_entries;"
+      },
+      {
+        "name": "geo_viewport_entries",
+        "kind": "module",
+        "doc": "",
+        "file": "capability_schema.rs",
+        "line": 36,
+        "signature": "pub mod geo_viewport_entries;"
+      },
+      {
+        "name": "etalon_vibe_entries",
+        "kind": "module",
+        "doc": "",
+        "file": "capability_schema.rs",
+        "line": 38,
+        "signature": "pub mod etalon_vibe_entries;"
+      },
       {
         "name": "EffectClass",
         "kind": "enum",
         "doc": "",
         "file": "capability_schema.rs",
-        "line": 23,
+        "line": 44,
         "signature": "pub enum EffectClass"
       },
       {
@@ -1985,7 +2107,7 @@
         "kind": "fn",
         "doc": "`str` form.",
         "file": "capability_schema.rs",
-        "line": 36,
+        "line": 57,
         "signature": "pub fn as_str(&self) -> &'static str {"
       },
       {
@@ -1993,7 +2115,7 @@
         "kind": "enum",
         "doc": "",
         "file": "capability_schema.rs",
-        "line": 48,
+        "line": 69,
         "signature": "pub enum HonestyLabel"
       },
       {
@@ -2001,7 +2123,7 @@
         "kind": "fn",
         "doc": "`str` form.",
         "file": "capability_schema.rs",
-        "line": 61,
+        "line": 82,
         "signature": "pub fn as_str(&self) -> &'static str {"
       },
       {
@@ -2009,7 +2131,7 @@
         "kind": "struct",
         "doc": "",
         "file": "capability_schema.rs",
-        "line": 73,
+        "line": 94,
         "signature": "pub struct SchemaArg"
       },
       {
@@ -2017,7 +2139,7 @@
         "kind": "fn",
         "doc": "Creates a new `SchemaArg`.",
         "file": "capability_schema.rs",
-        "line": 86,
+        "line": 107,
         "signature": "pub fn new(name: &str, ty: &str, required: bool) -> Self {"
       },
       {
@@ -2025,7 +2147,7 @@
         "kind": "fn",
         "doc": "Builder — sets description.",
         "file": "capability_schema.rs",
-        "line": 96,
+        "line": 117,
         "signature": "pub fn with_description(mut self, desc: &str) -> Self {"
       },
       {
@@ -2033,7 +2155,7 @@
         "kind": "fn",
         "doc": "Converts to value.",
         "file": "capability_schema.rs",
-        "line": 102,
+        "line": 123,
         "signature": "pub fn to_value(&self) -> Value {"
       },
       {
@@ -2041,7 +2163,7 @@
         "kind": "struct",
         "doc": "",
         "file": "capability_schema.rs",
-        "line": 119,
+        "line": 140,
         "signature": "pub struct SchemaEntry"
       },
       {
@@ -2049,7 +2171,7 @@
         "kind": "fn",
         "doc": "Creates a new `SchemaEntry`.",
         "file": "capability_schema.rs",
-        "line": 136,
+        "line": 157,
         "signature": "pub fn new(id: &str, effect: EffectClass, honesty: HonestyLabel, returns: &str) -> Self {"
       },
       {
@@ -2057,7 +2179,7 @@
         "kind": "fn",
         "doc": "Builder — sets arg.",
         "file": "capability_schema.rs",
-        "line": 148,
+        "line": 169,
         "signature": "pub fn with_arg(mut self, arg: SchemaArg) -> Self {"
       },
       {
@@ -2065,7 +2187,7 @@
         "kind": "fn",
         "doc": "Builder — sets description.",
         "file": "capability_schema.rs",
-        "line": 154,
+        "line": 175,
         "signature": "pub fn with_description(mut self, desc: &str) -> Self {"
       },
       {
@@ -2073,7 +2195,7 @@
         "kind": "fn",
         "doc": "Converts to value.",
         "file": "capability_schema.rs",
-        "line": 160,
+        "line": 181,
         "signature": "pub fn to_value(&self) -> Value {"
       },
       {
@@ -2081,7 +2203,7 @@
         "kind": "fn",
         "doc": "The full capability schema — all bound host call ids (T51).\n\nThis is generated from the dispatch table so it never drifts from\nthe actual implementation. New host calls must be added here AND\nin the dispatch table — the schema test verifies they match.",
         "file": "capability_schema.rs",
-        "line": 188,
+        "line": 209,
         "signature": "pub fn all_schemas() -> Vec<SchemaEntry> {"
       },
       {
@@ -2089,7 +2211,7 @@
         "kind": "fn",
         "doc": "Get the schema for a single host call id.",
         "file": "capability_schema.rs",
-        "line": 619,
+        "line": 653,
         "signature": "pub fn schema_for(id: &str) -> Option<SchemaEntry> {"
       },
       {
@@ -2097,7 +2219,7 @@
         "kind": "fn",
         "doc": "Get all schema ids.",
         "file": "capability_schema.rs",
-        "line": 624,
+        "line": 658,
         "signature": "pub fn all_ids() -> Vec<String> {"
       },
       {
@@ -2105,7 +2227,7 @@
         "kind": "fn",
         "doc": "Get the full schema as a Value::List of Value::Records.",
         "file": "capability_schema.rs",
-        "line": 629,
+        "line": 663,
         "signature": "pub fn schema_to_value() -> Value {"
       }
     ]
@@ -2281,7 +2403,7 @@
         "kind": "const",
         "doc": "",
         "file": "ids.rs",
-        "line": 1254,
+        "line": 1455,
         "signature": "pub const INVOKE_ID_COUNT: usize = ALL_INVOKE_IDS.len()"
       }
     ]
@@ -2303,7 +2425,7 @@
         "kind": "fn",
         "doc": "Converts a sample to a value.",
         "file": "local.rs",
-        "line": 104,
+        "line": 108,
         "signature": "pub fn sample_to_value(s: AnimationSample) -> Value {"
       },
       {
@@ -2311,7 +2433,7 @@
         "kind": "fn",
         "doc": "Payload from args.",
         "file": "local.rs",
-        "line": 121,
+        "line": 125,
         "signature": "pub fn payload_from_args(pos: &[Value], named: &[(String, Value)]) -> Value {"
       }
     ]
@@ -2583,7 +2705,7 @@
         "kind": "const",
         "doc": "",
         "file": "terms.rs",
-        "line": 20,
+        "line": 38,
         "signature": "pub const DEFAULT_CONTEXT_IRI: &str = \"https://qualia.world/context/ui/v1\""
       },
       {
@@ -2591,7 +2713,7 @@
         "kind": "const",
         "doc": "",
         "file": "terms.rs",
-        "line": 21,
+        "line": 39,
         "signature": "pub const DYNAMIC_TERM_BIT: u64 = 1u64 << 59"
       },
       {
@@ -2599,7 +2721,7 @@
         "kind": "const",
         "doc": "",
         "file": "terms.rs",
-        "line": 22,
+        "line": 40,
         "signature": "pub const TOKEN_60BIT_MASK: u64 = 0x0FFF_FFFF_FFFF_FFFF"
       },
       {
@@ -2607,7 +2729,7 @@
         "kind": "const",
         "doc": "Built-in static term table for Qualia/Vibe/UI/Form/QUDT/SHACL/RDF terms (`1..=1023`).",
         "file": "terms.rs",
-        "line": 25,
+        "line": 43,
         "signature": "pub const STATIC_TERMS: &[(u64, &str)] = &["
       },
       {
@@ -2615,7 +2737,7 @@
         "kind": "fn",
         "doc": "Looks up a compact static term ID (`1..=1023`) for a known ontology term or IRI.",
         "file": "terms.rs",
-        "line": 74,
+        "line": 92,
         "signature": "pub fn lookup_static_term_id(iri: &str) -> Option<u64> {"
       },
       {
@@ -2623,7 +2745,7 @@
         "kind": "fn",
         "doc": "Looks up the static IRI or term string for a compact static term ID (`1..=1023`).",
         "file": "terms.rs",
-        "line": 84,
+        "line": 102,
         "signature": "pub fn lookup_static_term_iri(term_id: u64) -> Option<&'static str> {"
       },
       {
@@ -2631,7 +2753,7 @@
         "kind": "fn",
         "doc": "Compresses an IRI or property term into either a compact static table ID (`1..=1023`)\nor a deterministic 60-bit FNV-1a token with bit 59 set (`DYNAMIC_TERM_BIT`).",
         "file": "terms.rs",
-        "line": 95,
+        "line": 113,
         "signature": "pub fn compress_iri(iri: &str, context_iri: &str) -> u64 {"
       },
       {
@@ -2639,7 +2761,7 @@
         "kind": "fn",
         "doc": "Expands a compressed term ID back to a static IRI/term or a deterministic\n`did:q42:term:<hex>` topological identifier for dynamic 60-bit tokens.",
         "file": "terms.rs",
-        "line": 122,
+        "line": 140,
         "signature": "pub fn expand_term(term_id: u64, _context_iri: &str) -> Option<String> {"
       }
     ]
@@ -2653,7 +2775,7 @@
         "kind": "fn",
         "doc": "Encodes a runtime [`Value`] into deterministic compressed W3C CBOR-LD (`0xD9 0x0501`).",
         "file": "value_codec.rs",
-        "line": 11,
+        "line": 18,
         "signature": "pub fn encode_value_cbor_ld(value: &Value, context_iri: &str) -> Vec<u8> {"
       },
       {
@@ -2661,7 +2783,7 @@
         "kind": "fn",
         "doc": "Decodes compressed (`0x0501`) or uncompressed (`0x0500`) CBOR-LD bytes into `(context_iri, Value)`.",
         "file": "value_codec.rs",
-        "line": 23,
+        "line": 30,
         "signature": "pub fn decode_value_cbor_ld(bytes: &[u8]) -> Result<(String, Value), DecodeError> {"
       }
     ]
@@ -3311,11 +3433,19 @@
         "signature": "pub enum HierarchyLevel"
       },
       {
+        "name": "ALL",
+        "kind": "const",
+        "doc": "All 15 hierarchy levels from L_-2 through L_12 in ascending order.",
+        "file": "cb_usri.rs",
+        "line": 54,
+        "signature": "pub const ALL: [Self; 15] = ["
+      },
+      {
         "name": "as_u8",
         "kind": "fn",
         "doc": "`u8` form.",
         "file": "cb_usri.rs",
-        "line": 54,
+        "line": 73,
         "signature": "pub fn as_u8(&self) -> u8 {"
       },
       {
@@ -3323,7 +3453,7 @@
         "kind": "fn",
         "doc": "Constructs from u8.",
         "file": "cb_usri.rs",
-        "line": 75,
+        "line": 94,
         "signature": "pub fn from_u8(v: u8) -> Option<Self> {"
       },
       {
@@ -3331,7 +3461,7 @@
         "kind": "fn",
         "doc": "Name.",
         "file": "cb_usri.rs",
-        "line": 97,
+        "line": 116,
         "signature": "pub fn name(&self) -> &'static str {"
       },
       {
@@ -3339,7 +3469,7 @@
         "kind": "struct",
         "doc": "",
         "file": "cb_usri.rs",
-        "line": 120,
+        "line": 139,
         "signature": "pub struct CompactBinaryUsri"
       },
       {
@@ -3347,7 +3477,7 @@
         "kind": "fn",
         "doc": "Build a CB-USRI from components.",
         "file": "cb_usri.rs",
-        "line": 131,
+        "line": 150,
         "signature": "pub fn new("
       },
       {
@@ -3355,7 +3485,7 @@
         "kind": "fn",
         "doc": "Extract the realm class.",
         "file": "cb_usri.rs",
-        "line": 157,
+        "line": 176,
         "signature": "pub fn realm_class(&self) -> u8 {"
       },
       {
@@ -3363,7 +3493,7 @@
         "kind": "fn",
         "doc": "Extract the 56-bit path hash.",
         "file": "cb_usri.rs",
-        "line": 162,
+        "line": 181,
         "signature": "pub fn path_hash(&self) -> u64 {"
       },
       {
@@ -3371,7 +3501,7 @@
         "kind": "fn",
         "doc": "Extract the hierarchy level.",
         "file": "cb_usri.rs",
-        "line": 167,
+        "line": 186,
         "signature": "pub fn level(&self) -> u8 {"
       },
       {
@@ -3379,7 +3509,7 @@
         "kind": "fn",
         "doc": "Extract the nesting depth.",
         "file": "cb_usri.rs",
-        "line": 172,
+        "line": 191,
         "signature": "pub fn nesting_depth(&self) -> u8 {"
       },
       {
@@ -3387,7 +3517,7 @@
         "kind": "fn",
         "doc": "Extract the 48-bit anchor hash.",
         "file": "cb_usri.rs",
-        "line": 177,
+        "line": 196,
         "signature": "pub fn anchor_hash_48(&self) -> u64 {"
       },
       {
@@ -3395,7 +3525,7 @@
         "kind": "fn",
         "doc": "Encode to 16 bytes (big-endian for deterministic ordering).",
         "file": "cb_usri.rs",
-        "line": 182,
+        "line": 201,
         "signature": "pub fn to_bytes(&self) -> [u8; 16] {"
       },
       {
@@ -3403,7 +3533,7 @@
         "kind": "fn",
         "doc": "Decode from 16 bytes.",
         "file": "cb_usri.rs",
-        "line": 191,
+        "line": 210,
         "signature": "pub fn from_bytes(bytes: &[u8; 16]) -> Self {"
       },
       {
@@ -3411,29 +3541,61 @@
         "kind": "fn",
         "doc": "Compute from a USRI string and level/depth/anchor info.",
         "file": "cb_usri.rs",
-        "line": 205,
+        "line": 224,
         "signature": "pub fn from_usri("
+      },
+      {
+        "name": "to_quin_context_token",
+        "kind": "fn",
+        "doc": "Deterministically fold the 16-byte `CompactBinaryUsri` (`path_and_realm`,\n`level_and_depth`, `anchor_hash`) into a zero-heap 60-bit token (`MSB = 0`,\ndistinct from `did:q42` topological pointers, with 56-bit scoped realm hash in\nbits `[0..55]` and `SENSITIVITY_PUBLIC = 0` in bits `[56..63]`) for `NQuin.context`.",
+        "file": "cb_usri.rs",
+        "line": 244,
+        "signature": "pub fn to_quin_context_token(&self) -> u64 {"
+      },
+      {
+        "name": "to_quin_context_with_sensitivity",
+        "kind": "fn",
+        "doc": "Encode an `NQuin.context` word combining an 8-bit sensitivity class in `[56..63]`\nwith the 56-bit folded `CB-USRI` token in `[0..55]`.",
+        "file": "cb_usri.rs",
+        "line": 258,
+        "signature": "pub fn to_quin_context_with_sensitivity(&self, sensitivity: u8) -> u64 {"
       },
       {
         "name": "to_value",
         "kind": "fn",
         "doc": "Convert to a Value::Record for inspection.",
         "file": "cb_usri.rs",
-        "line": 222,
+        "line": 263,
         "signature": "pub fn to_value(&self) -> Value {"
       }
     ]
   },
   {
     "name": "cosmic::celestial",
-    "doc": "Celestial body taxonomy and profile types (OCS §2).\n\nReference: OCS Specification v2.2.0 §2.",
+    "doc": "Celestial body taxonomy, relativistic gravito-electromagnetic propagation,\nand pulsar triangulation (OCS §2, §6.2.5.2).\n\nReference: OCS Specification v2.2.0 §2 & Playbook v4 §6.2.5.2.",
     "items": [
+      {
+        "name": "C0_VACUUM_M_S",
+        "kind": "const",
+        "doc": "Exact SI speed of light in vacuum $c_0$ (m/s).\n\nUsed exclusively to define the invariant Lorentzian causal cone boundary.",
+        "file": "celestial.rs",
+        "line": 12,
+        "signature": "pub const C0_VACUUM_M_S: f64 = 299_792_458.0"
+      },
+      {
+        "name": "PULSAR_DISPERSION_CONSTANT_MS_GHZ2",
+        "kind": "const",
+        "doc": "Cold-plasma pulsar dispersion constant $\\mathcal{D} \\approx 4.148808\\text{ ms}\\cdot\\text{GHz}^2\\cdot\\text{pc}^{-1}\\cdot\\text{cm}^3$.",
+        "file": "celestial.rs",
+        "line": 18,
+        "signature": "pub const PULSAR_DISPERSION_CONSTANT_MS_GHZ2: f64 = 4.148808"
+      },
       {
         "name": "CelestialBodyClass",
         "kind": "enum",
         "doc": "",
         "file": "celestial.rs",
-        "line": 10,
+        "line": 22,
         "signature": "pub enum CelestialBodyClass"
       },
       {
@@ -3441,7 +3603,7 @@
         "kind": "fn",
         "doc": "`str` form.",
         "file": "celestial.rs",
-        "line": 26,
+        "line": 38,
         "signature": "pub fn as_str(&self) -> &'static str {"
       },
       {
@@ -3449,7 +3611,7 @@
         "kind": "fn",
         "doc": "Constructs from str.",
         "file": "celestial.rs",
-        "line": 43,
+        "line": 55,
         "signature": "pub fn from_str(s: &str) -> Option<Self> {"
       },
       {
@@ -3457,7 +3619,7 @@
         "kind": "fn",
         "doc": "Whether this body type has a solid surface.",
         "file": "celestial.rs",
-        "line": 61,
+        "line": 73,
         "signature": "pub fn has_solid_surface(&self) -> bool {"
       },
       {
@@ -3465,7 +3627,7 @@
         "kind": "fn",
         "doc": "Whether this body type requires relativistic metric handling.",
         "file": "celestial.rs",
-        "line": 74,
+        "line": 86,
         "signature": "pub fn is_relativistic(&self) -> bool {"
       },
       {
@@ -3473,15 +3635,71 @@
         "kind": "enum",
         "doc": "",
         "file": "celestial.rs",
-        "line": 81,
+        "line": 93,
         "signature": "pub enum ReferenceSurface"
+      },
+      {
+        "name": "CausalConeRelation",
+        "kind": "enum",
+        "doc": "",
+        "file": "celestial.rs",
+        "line": 106,
+        "signature": "pub enum CausalConeRelation"
+      },
+      {
+        "name": "PastLightCone",
+        "kind": "const",
+        "doc": "Alias for `PastCausalEnvelope` for light-cone callers.",
+        "file": "celestial.rs",
+        "line": 120,
+        "signature": "pub const PastLightCone: Self = Self::PastCausalEnvelope"
+      },
+      {
+        "name": "FutureLightCone",
+        "kind": "const",
+        "doc": "Alias for `FutureCausalEnvelope` for light-cone callers.",
+        "file": "celestial.rs",
+        "line": 122,
+        "signature": "pub const FutureLightCone: Self = Self::FutureCausalEnvelope"
+      },
+      {
+        "name": "EmfMediumSpec",
+        "kind": "struct",
+        "doc": "",
+        "file": "celestial.rs",
+        "line": 127,
+        "signature": "pub struct EmfMediumSpec"
+      },
+      {
+        "name": "fn",
+        "kind": "const",
+        "doc": "Exact vacuum propagation ($n_g = n_p = 1$, $\\text{DM} = 0$).",
+        "file": "celestial.rs",
+        "line": 140,
+        "signature": "pub const fn vacuum() -> Self {"
+      },
+      {
+        "name": "cold_plasma",
+        "kind": "fn",
+        "doc": "Cold ionized plasma from plasma frequency $f_p$ and carrier frequency $f > f_p$.\n\nSatisfies $\\varepsilon(\\omega) = 1 - \\omega_p^2 / \\omega^2$, so\n$n_p = \\sqrt{1 - (f_p/f)^2} < 1$, $n_g = 1 / n_p > 1$, and $v_p v_g = c_0^2$.",
+        "file": "celestial.rs",
+        "line": 153,
+        "signature": "pub fn cold_plasma("
+      },
+      {
+        "name": "MediumPropagationEstimate",
+        "kind": "struct",
+        "doc": "",
+        "file": "celestial.rs",
+        "line": 175,
+        "signature": "pub struct MediumPropagationEstimate"
       },
       {
         "name": "GravitationalField",
         "kind": "struct",
         "doc": "",
         "file": "celestial.rs",
-        "line": 94,
+        "line": 198,
         "signature": "pub struct GravitationalField"
       },
       {
@@ -3489,7 +3707,7 @@
         "kind": "fn",
         "doc": "Create a simple Newtonian field (no relativistic terms).",
         "file": "celestial.rs",
-        "line": 109,
+        "line": 213,
         "signature": "pub fn newtonian(mu: f64, r_ref: f64) -> Self {"
       },
       {
@@ -3497,7 +3715,7 @@
         "kind": "fn",
         "doc": "Kerr event horizon radius r₊ (OCS §2.3).\nr₊ = r_s/2 + sqrt((r_s/2)² - a²)",
         "file": "celestial.rs",
-        "line": 121,
+        "line": 225,
         "signature": "pub fn kerr_horizon_r(&self) -> f64 {"
       },
       {
@@ -3505,23 +3723,103 @@
         "kind": "fn",
         "doc": "Kerr ergosphere boundary r_E(θ) at θ = π/2 (equator) (OCS §2.3).\nr_E(θ) = r_s/2 + sqrt((r_s/2)² - a²cos²θ)",
         "file": "celestial.rs",
-        "line": 135,
+        "line": 239,
         "signature": "pub fn kerr_ergosphere_r(&self, theta: f64) -> f64 {"
       },
       {
         "name": "frame_dragging",
         "kind": "fn",
-        "doc": "Frame-dragging precession frequency Ω_LT (OCS §2.3).\nSimplified: Ω_LT ≈ 2GJ/(c²r³) for far-field.",
+        "doc": "Lense-Thirring frame-dragging precession frequency Ω_LT (OCS §2.3, Packet OCS-12).\n\nSince $\\mu = GM$ ($\\text{m}^3/\\text{s}^2$) and $a = J / (Mc)$ ($\\text{m}$),\n$GJ = \\mu c a$, so $\\Omega_{\\text{LT}} = \\frac{2GJ}{c^2 r^3} = \\frac{2\\mu a}{c r^3}$ ($\\text{rad/s}$).",
         "file": "celestial.rs",
-        "line": 150,
+        "line": 256,
         "signature": "pub fn frame_dragging(&self, r: f64) -> f64 {"
+      },
+      {
+        "name": "shapiro_delay_s",
+        "kind": "fn",
+        "doc": "First-order post-Newtonian (1PN) Shapiro gravitational time delay $\\Delta t_{\\text{Shapiro}}$ (s)\nfor a signal propagating from `r1_m` to `r2_m` past this gravitating body at the origin:\n\n$$\\Delta t_{\\text{Shapiro}} = \\frac{2\\mu}{c_0^3} \\ln\\!\\left(\\frac{r_1 + r_2 + R}{r_1 + r_2 - R}\\right)$$",
+        "file": "celestial.rs",
+        "line": 267,
+        "signature": "pub fn shapiro_delay_s(&self, r1_m: [f64; 3], r2_m: [f64; 3]) -> f64 {"
+      },
+      {
+        "name": "emf_manifold_causal_interval_s",
+        "kind": "fn",
+        "doc": "Evaluate the relativistic causal interval and dispersive medium propagation estimate\nbetween two events $(\\mathbf{r}_1, t_1)$ and $(\\mathbf{r}_2, t_2 = t_1 + \\Delta t)$ (§6.2.5.2).\n\nEnforces:\n1. Vacuum speed $c_0 = 299\\,792\\,458\\text{ m/s}$ defines the invariant causal cone.\n2. Signal group velocity satisfies $v_g \\le c_0$ ($n_g \\ge 1.0$).\n3. Phase velocity $v_p = c_0 / n_p$ may exceed $c_0$ in cold plasma ($n_p < 1$) without\n   corrupting causal ordering.",
+        "file": "celestial.rs",
+        "line": 291,
+        "signature": "pub fn emf_manifold_causal_interval_s("
+      },
+      {
+        "name": "emf_manifold_causal_interval_s",
+        "kind": "fn",
+        "doc": "Convenience wrapper for [`GravitationalField::emf_manifold_causal_interval_s`] (§6.2.5.2).",
+        "file": "celestial.rs",
+        "line": 359,
+        "signature": "pub fn emf_manifold_causal_interval_s("
+      },
+      {
+        "name": "PulsarAnchor",
+        "kind": "struct",
+        "doc": "",
+        "file": "celestial.rs",
+        "line": 371,
+        "signature": "pub struct PulsarAnchor"
+      },
+      {
+        "name": "x_ray",
+        "kind": "fn",
+        "doc": "Construct an X-ray pulsar anchor where cold-plasma dispersion is negligible.",
+        "file": "celestial.rs",
+        "line": 390,
+        "signature": "pub fn x_ray("
+      },
+      {
+        "name": "dispersion_delay_s",
+        "kind": "fn",
+        "doc": "Cold-plasma dispersion delay $\\Delta t_{\\text{DM}}$ (s) at this anchor's carrier frequency.",
+        "file": "celestial.rs",
+        "line": 409,
+        "signature": "pub fn dispersion_delay_s(&self) -> Result<f64, &'static str> {"
+      },
+      {
+        "name": "pulsar_dispersion_delay_s",
+        "kind": "fn",
+        "doc": "Single-band cold-plasma dispersion delay (s) relative to infinite frequency (§6.2.5.2):\n\n$$\\Delta t_{\\text{DM}}(f) = 4.148808 \\times 10^{-3}\\text{ s} \\cdot \\text{DM} \\cdot \\left(\\frac{f}{10^9\\text{ Hz}}\\right)^{-2}$$",
+        "file": "celestial.rs",
+        "line": 420,
+        "signature": "pub fn pulsar_dispersion_delay_s(dm_pc_cm3: f64, freq_hz: f64) -> Result<f64, &'static str> {"
+      },
+      {
+        "name": "dual_band_dedisperse_delay_s",
+        "kind": "fn",
+        "doc": "Differential cold-plasma dispersion delay (s) between two radio carrier frequencies $f_1, f_2$ (§6.2.5.2):\n\n$$\\Delta t_{\\text{DM}}(f_1, f_2) = 4.148808\\text{ ms} \\cdot \\text{DM} \\cdot (f_{1,\\text{GHz}}^{-2} - f_{2,\\text{GHz}}^{-2})$$",
+        "file": "celestial.rs",
+        "line": 434,
+        "signature": "pub fn dual_band_dedisperse_delay_s("
+      },
+      {
+        "name": "infer_dispersion_measure_dual_band",
+        "kind": "fn",
+        "doc": "Infer both the interstellar Dispersion Measure ($\\text{pc}\\cdot\\text{cm}^{-3}$) and the\ninfinite-frequency vacuum time of arrival $t_{\\infty}$ (s) from dual-band TOAs $(t_1, f_1)$ and $(t_2, f_2)$.",
+        "file": "celestial.rs",
+        "line": 446,
+        "signature": "pub fn infer_dispersion_measure_dual_band("
+      },
+      {
+        "name": "triangulate_from_pulsars",
+        "kind": "fn",
+        "doc": "Triangulate 3D BCRS position $\\mathbf{r} = [x, y, z]$ (m) from 4 pulsar phase observations (OCS-12, §6.2.5.2).\n\nEach pulsar $i \\in \\{0, 1, 2, 3\\}$ yields an observed phase offset $\\Delta\\phi_i$ (cycles)\nrelative to the BCRS origin reference model:\n\n$$\\Delta t_i = \\Delta\\phi_i \\cdot P_i - \\Delta t_{\\text{DM},i} = -\\frac{\\hat{n}_i \\cdot \\mathbf{r}}{c_0} + \\delta t_{\\text{clock}}$$\n\nDifferencing anchors $i = 1, 2, 3$ against anchor $0$ cancels the unknown local clock bias\n$\\delta t_{\\text{clock}}$ and produces a $3\\times 3$ linear system $(\\hat{n}_0 - \\hat{n}_i) \\cdot \\mathbf{r} = c_0 (\\Delta t_{\\text{vac},i} - \\Delta t_{\\text{vac},0})$.",
+        "file": "celestial.rs",
+        "line": 477,
+        "signature": "pub fn triangulate_from_pulsars("
       },
       {
         "name": "CelestialBodyProfile",
         "kind": "struct",
         "doc": "",
         "file": "celestial.rs",
-        "line": 164,
+        "line": 563,
         "signature": "pub struct CelestialBodyProfile"
       },
       {
@@ -3529,7 +3827,7 @@
         "kind": "fn",
         "doc": "Surface gravity g = GM/R² (m/s²).",
         "file": "celestial.rs",
-        "line": 177,
+        "line": 576,
         "signature": "pub fn surface_gravity(&self) -> f64 {"
       },
       {
@@ -3537,7 +3835,7 @@
         "kind": "fn",
         "doc": "Convert to Value::Record.",
         "file": "celestial.rs",
-        "line": 182,
+        "line": 581,
         "signature": "pub fn to_value(&self) -> Value {"
       },
       {
@@ -3545,7 +3843,7 @@
         "kind": "fn",
         "doc": "Known celestial body profiles (OCS §2 examples).",
         "file": "celestial.rs",
-        "line": 202,
+        "line": 601,
         "signature": "pub fn earth_profile() -> CelestialBodyProfile {"
       },
       {
@@ -3553,7 +3851,7 @@
         "kind": "fn",
         "doc": "Mars profile.",
         "file": "celestial.rs",
-        "line": 223,
+        "line": 622,
         "signature": "pub fn mars_profile() -> CelestialBodyProfile {"
       },
       {
@@ -3561,7 +3859,7 @@
         "kind": "fn",
         "doc": "Jupiter — gas giant (OCS §2.1).",
         "file": "celestial.rs",
-        "line": 244,
+        "line": 643,
         "signature": "pub fn jupiter_profile() -> CelestialBodyProfile {"
       },
       {
@@ -3569,7 +3867,7 @@
         "kind": "fn",
         "doc": "Saturn — gas giant (OCS §2.1).",
         "file": "celestial.rs",
-        "line": 260,
+        "line": 659,
         "signature": "pub fn saturn_profile() -> CelestialBodyProfile {"
       },
       {
@@ -3577,7 +3875,7 @@
         "kind": "fn",
         "doc": "Earth's Moon — natural satellite (OCS §2.1).",
         "file": "celestial.rs",
-        "line": 276,
+        "line": 675,
         "signature": "pub fn moon_profile() -> CelestialBodyProfile {"
       },
       {
@@ -3585,7 +3883,7 @@
         "kind": "fn",
         "doc": "Europa — icy moon with subsurface ocean (OCS §2.6).",
         "file": "celestial.rs",
-        "line": 293,
+        "line": 692,
         "signature": "pub fn europa_profile() -> CelestialBodyProfile {"
       },
       {
@@ -3593,7 +3891,7 @@
         "kind": "fn",
         "doc": "Neutron star — compact relativistic object (OCS §2.1).",
         "file": "celestial.rs",
-        "line": 310,
+        "line": 709,
         "signature": "pub fn neutron_star_profile() -> CelestialBodyProfile {"
       },
       {
@@ -3601,7 +3899,7 @@
         "kind": "fn",
         "doc": "Sagittarius A* — supermassive black hole (OCS §2.1, §2.3).",
         "file": "celestial.rs",
-        "line": 333,
+        "line": 732,
         "signature": "pub fn sgr_a_profile() -> CelestialBodyProfile {"
       },
       {
@@ -3609,7 +3907,7 @@
         "kind": "fn",
         "doc": "The Sun — main sequence star (OCS §2.1).",
         "file": "celestial.rs",
-        "line": 355,
+        "line": 754,
         "signature": "pub fn sun_profile() -> CelestialBodyProfile {"
       },
       {
@@ -3617,7 +3915,7 @@
         "kind": "fn",
         "doc": "Look up a body profile by name (OCS §2).",
         "file": "celestial.rs",
-        "line": 371,
+        "line": 770,
         "signature": "pub fn body_profile_by_name(name: &str) -> Option<CelestialBodyProfile> {"
       }
     ]
@@ -3734,14 +4032,22 @@
   },
   {
     "name": "cosmic::flrw",
-    "doc": "FLRW cosmological metric, scale factor, and redshift (OCS §1.2).\n\nImplements the Friedmann-Lemaître-Robertson-Walker metric for\nintergalactic cosmological distances, Hubble expansion, and\ncosmological redshift.\n\nReference: OCS Specification v2.2.0 §1.2.",
+    "doc": "FLRW cosmological metric, scale factor, redshift, and comoving intercept solver (OCS §1.2, OCS-12).\n\nImplements the Friedmann-Lemaître-Robertson-Walker metric for\nintergalactic cosmological distances, Hubble expansion, cosmological redshift,\nand comoving intercept trajectory estimation with explicit horizon failure states.\n\nReference: OCS Specification v2.2.0 §1.2 & Playbook v4 Packet OCS-12.",
     "items": [
+      {
+        "name": "MPC_IN_METERS",
+        "kind": "const",
+        "doc": "1 Megaparsec in meters.",
+        "file": "flrw.rs",
+        "line": 19,
+        "signature": "pub const MPC_IN_METERS: f64 = 3.085677581e22"
+      },
       {
         "name": "Curvature",
         "kind": "enum",
         "doc": "",
         "file": "flrw.rs",
-        "line": 26,
+        "line": 31,
         "signature": "pub enum Curvature"
       },
       {
@@ -3749,15 +4055,31 @@
         "kind": "fn",
         "doc": "Curvature constant.",
         "file": "flrw.rs",
-        "line": 34,
+        "line": 39,
         "signature": "pub fn k(&self) -> f64 {"
+      },
+      {
+        "name": "FlrwInterceptError",
+        "kind": "enum",
+        "doc": "",
+        "file": "flrw.rs",
+        "line": 50,
+        "signature": "pub enum FlrwInterceptError"
+      },
+      {
+        "name": "ComovingInterceptSolution",
+        "kind": "struct",
+        "doc": "",
+        "file": "flrw.rs",
+        "line": 67,
+        "signature": "pub struct ComovingInterceptSolution"
       },
       {
         "name": "FlrwMetric",
         "kind": "struct",
         "doc": "",
         "file": "flrw.rs",
-        "line": 45,
+        "line": 86,
         "signature": "pub struct FlrwMetric"
       },
       {
@@ -3765,7 +4087,7 @@
         "kind": "fn",
         "doc": "Create a flat ΛCDM metric at the current epoch (a=1).",
         "file": "flrw.rs",
-        "line": 56,
+        "line": 97,
         "signature": "pub fn flat_present_epoch() -> Self {"
       },
       {
@@ -3773,7 +4095,7 @@
         "kind": "fn",
         "doc": "FLRW line element: ds² = -c²dt² + a(t)²[dr²/(1-kr²) + r²(dθ² + sin²θ dφ²)]\n\nCompute the proper distance element for a radial comoving coordinate.\nReturns ds² (spatial part only, dt=0) for a given comoving radius r.",
         "file": "flrw.rs",
-        "line": 68,
+        "line": 109,
         "signature": "pub fn spatial_line_element(&self, r: f64, theta: f64) -> f64 {"
       },
       {
@@ -3781,7 +4103,7 @@
         "kind": "fn",
         "doc": "Physical distance from comoving distance: d_phys = a(t) * r_comoving (OCS §1.2).",
         "file": "flrw.rs",
-        "line": 77,
+        "line": 118,
         "signature": "pub fn physical_distance(&self, comoving_r: f64) -> f64 {"
       },
       {
@@ -3789,7 +4111,7 @@
         "kind": "fn",
         "doc": "Cosmological redshift: 1 + z = a(t_obs) / a(t_emit) (OCS §1.2).",
         "file": "flrw.rs",
-        "line": 82,
+        "line": 123,
         "signature": "pub fn redshift(&self, a_emit: f64) -> f64 {"
       },
       {
@@ -3797,7 +4119,7 @@
         "kind": "fn",
         "doc": "Hubble's law: v = H(z) * d (OCS §1.2).\nAt low redshift, v = H₀ * d.",
         "file": "flrw.rs",
-        "line": 88,
+        "line": 129,
         "signature": "pub fn hubble_velocity(&self, distance_m: f64) -> f64 {"
       },
       {
@@ -3805,7 +4127,7 @@
         "kind": "fn",
         "doc": "Convert redshift to comoving distance (approximate, low-z linear).\nd ≈ c * z / H₀ for z << 1.",
         "file": "flrw.rs",
-        "line": 94,
+        "line": 135,
         "signature": "pub fn redshift_to_distance(&self, z: f64) -> f64 {"
       },
       {
@@ -3813,23 +4135,39 @@
         "kind": "fn",
         "doc": "Convert distance to redshift (approximate, low-z linear).",
         "file": "flrw.rs",
-        "line": 99,
+        "line": 140,
         "signature": "pub fn distance_to_redshift(&self, distance_m: f64) -> f64 {"
+      },
+      {
+        "name": "intercept_vector_comoving",
+        "kind": "fn",
+        "doc": "Compute a comoving intercept vector and arrival solution for a target at\n`target_comoving_pos_mpc` with peculiar velocity `target_peculiar_vel_km_s`\npursued by an interceptor traveling at speed $v_{\\text{int}} = \\beta c_0$ (Packet OCS-12).\n\n### Cosmological Epoch & Trajectory Assumptions\n- Evaluates physical separation $\\mathbf{r}_0 = a(t_0)\\,\\boldsymbol{\\chi}_0$ at epoch $a(t_0)$.\n- Target effective velocity in the local comoving chart combines Hubble flow and peculiar velocity:\n  $\\mathbf{v}_{\\text{eff}} = \\mathbf{v}_{\\text{pec}} / a(t_0)$ in comoving coordinates, while the\n  physical radial recession check enforces $v_{\\text{H}} = H(t_0) \\|\\mathbf{r}_0\\| < \\beta c_0$.\n- Solves the quadratic intercept condition $\\|\\mathbf{r}_0 + \\mathbf{v}_{\\text{eff}} \\Delta t\\|^2 = (\\beta_{\\text{eff}} c_0 \\Delta t)^2$\n  where $\\beta_{\\text{eff}} c_0 = \\beta c_0 - v_{\\text{H}}$ accounts for Hubble expansion along the line of sight.",
+        "file": "flrw.rs",
+        "line": 155,
+        "signature": "pub fn intercept_vector_comoving("
       },
       {
         "name": "to_value",
         "kind": "fn",
         "doc": "Converts to value.",
         "file": "flrw.rs",
-        "line": 104,
+        "line": 293,
         "signature": "pub fn to_value(&self) -> Value {"
+      },
+      {
+        "name": "intercept_vector_comoving",
+        "kind": "fn",
+        "doc": "Top-level helper for [`FlrwMetric::intercept_vector_comoving`] (Packet OCS-12).",
+        "file": "flrw.rs",
+        "line": 307,
+        "signature": "pub fn intercept_vector_comoving("
       },
       {
         "name": "RedshiftObservation",
         "kind": "struct",
         "doc": "",
         "file": "flrw.rs",
-        "line": 119,
+        "line": 322,
         "signature": "pub struct RedshiftObservation"
       },
       {
@@ -3837,7 +4175,7 @@
         "kind": "fn",
         "doc": "Compute a redshift observation from a measured redshift value.",
         "file": "flrw.rs",
-        "line": 131,
+        "line": 334,
         "signature": "pub fn observe_redshift(z: f64) -> RedshiftObservation {"
       },
       {
@@ -3845,7 +4183,7 @@
         "kind": "struct",
         "doc": "",
         "file": "flrw.rs",
-        "line": 151,
+        "line": 354,
         "signature": "pub struct FloatingOrigin"
       },
       {
@@ -3853,7 +4191,7 @@
         "kind": "fn",
         "doc": "Creates a new `FloatingOrigin`.",
         "file": "flrw.rs",
-        "line": 158,
+        "line": 361,
         "signature": "pub fn new(origin: [f64; 3]) -> Self {"
       },
       {
@@ -3861,7 +4199,7 @@
         "kind": "fn",
         "doc": "Convert an absolute comoving position to a floating-origin offset.\nReturns offset in Mpc relative to the origin.",
         "file": "flrw.rs",
-        "line": 164,
+        "line": 367,
         "signature": "pub fn to_offset(&self, absolute_mpc: [f64; 3]) -> [f64; 3] {"
       },
       {
@@ -3869,7 +4207,7 @@
         "kind": "fn",
         "doc": "Convert a floating-origin offset back to absolute comoving coordinates.",
         "file": "flrw.rs",
-        "line": 173,
+        "line": 376,
         "signature": "pub fn to_absolute(&self, offset_mpc: [f64; 3]) -> [f64; 3] {"
       },
       {
@@ -3877,14 +4215,14 @@
         "kind": "fn",
         "doc": "Verify precision at a given comoving distance (OCS-T01).\nReturns the offset error in meters at the given distance.",
         "file": "flrw.rs",
-        "line": 183,
+        "line": 386,
         "signature": "pub fn precision_error_at(&self, distance_mpc: f64) -> f64 {"
       }
     ]
   },
   {
     "name": "cosmic::grounding",
-    "doc": "Grounding status and granular collapse operator (OCS §10).\n\nReference: OCS Specification v2.2.0 §10.",
+    "doc": "Grounding status and granular collapse operator (OCS §10, Packet OCS-13).\n\nReference: OCS Specification v2.2.0 §10 & Playbook v4 Packet OCS-13.",
     "items": [
       {
         "name": "GroundingStatus",
@@ -3903,11 +4241,19 @@
         "signature": "pub fn as_str(&self) -> &'static str {"
       },
       {
+        "name": "quantum_context_q",
+        "kind": "fn",
+        "doc": "Quantum context coordinate $q$ for `Tensor10D` integration (Packet OCS-13):\n- `EmpiricallyAnchored` $\\implies q \\in [0.0, 1.0)$ ($q = 0.0$ at full confidence $1.0$).\n- Uncollapsed narrative / counterfactual realms $\\implies q \\ge 1.0$.",
+        "file": "grounding.rs",
+        "line": 39,
+        "signature": "pub fn quantum_context_q(&self) -> f32 {"
+      },
+      {
         "name": "is_collapsible",
         "kind": "fn",
-        "doc": "Whether this element should be collapsed onto physical spacetime.",
+        "doc": "Whether this element should be collapsed onto physical spacetime ($q < 1.0$).",
         "file": "grounding.rs",
-        "line": 37,
+        "line": 51,
         "signature": "pub fn is_collapsible(&self) -> bool {"
       },
       {
@@ -3915,7 +4261,7 @@
         "kind": "fn",
         "doc": "Converts to value.",
         "file": "grounding.rs",
-        "line": 42,
+        "line": 56,
         "signature": "pub fn to_value(&self) -> Value {"
       },
       {
@@ -3923,7 +4269,7 @@
         "kind": "struct",
         "doc": "",
         "file": "grounding.rs",
-        "line": 63,
+        "line": 81,
         "signature": "pub struct NarrativeEntity"
       },
       {
@@ -3931,7 +4277,7 @@
         "kind": "fn",
         "doc": "Create a collapsed (empirically anchored) entity.",
         "file": "grounding.rs",
-        "line": 71,
+        "line": 89,
         "signature": "pub fn anchored(name: &str, realm: &str, anchor_iri: &str, confidence: f32) -> Self {"
       },
       {
@@ -3939,7 +4285,7 @@
         "kind": "fn",
         "doc": "Create a counterfactual/mythological entity.",
         "file": "grounding.rs",
-        "line": 84,
+        "line": 102,
         "signature": "pub fn mythos(name: &str, realm: &str) -> Self {"
       },
       {
@@ -3947,16 +4293,24 @@
         "kind": "fn",
         "doc": "Converts to value.",
         "file": "grounding.rs",
-        "line": 93,
+        "line": 111,
         "signature": "pub fn to_value(&self) -> Value {"
       },
       {
         "name": "collapse_entities",
         "kind": "fn",
-        "doc": "Granular collapse operator Ĉ (OCS §10.2).\n\nGiven a set of narrative entities, returns only those that are\nempirically anchored (collapsible onto physical spacetime).",
+        "doc": "Granular collapse operator Ĉ (OCS §10.2, Packet OCS-13).\n\nGiven a set of narrative entities, returns only those that are\nempirically anchored ($q < 1.0$, collapsible onto physical spacetime),\nleaving counterfactual or fictional entities uncollapsed in their narrative realm.",
         "file": "grounding.rs",
-        "line": 106,
+        "line": 125,
         "signature": "pub fn collapse_entities(entities: &[NarrativeEntity]) -> Vec<&NarrativeEntity> {"
+      },
+      {
+        "name": "normalized_lse_distance",
+        "kind": "fn",
+        "doc": "Normalized log-sum-exp distance metric subtracting $\\ln(N)$ so $d(x, x) = 0.0$ (Packet OCS-13).\n\n$$d_{\\text{LSE}}(\\mathbf{x}, \\mathbf{y}) = \\ln\\!\\left(\\sum_{i=1}^{N} e^{|x_i - y_i|}\\right) - \\ln(N)$$",
+        "file": "grounding.rs",
+        "line": 135,
+        "signature": "pub fn normalized_lse_distance(a: &[f64], b: &[f64]) -> f64 {"
       }
     ]
   },
@@ -4264,14 +4618,14 @@
   },
   {
     "name": "cosmic::nested",
-    "doc": "Nested realm context hashing and time dilation (OCS §7).\n\nReference: OCS Specification v2.2.0 §7.",
+    "doc": "Nested realm context hashing, floating-origin sector handoffs, and time dilation (OCS §7, §14).\n\nReference: OCS Specification v2.2.0 §7, §14.",
     "items": [
       {
         "name": "NestedRealm",
         "kind": "struct",
         "doc": "",
         "file": "nested.rs",
-        "line": 24,
+        "line": 14,
         "signature": "pub struct NestedRealm"
       },
       {
@@ -4279,15 +4633,15 @@
         "kind": "fn",
         "doc": "Creates a new `NestedRealm`.",
         "file": "nested.rs",
-        "line": 38,
+        "line": 28,
         "signature": "pub fn new(depth: u32, realm_usri: &str, time_dilation: f64, parent_context: u64) -> Self {"
       },
       {
         "name": "context_hash",
         "kind": "fn",
-        "doc": "Compute the paraconsistent isolation context hash (OCS §7.1).\n\ncontext_Nk = context_N(k-1) ⊕ q_hash(realm_usi_Nk) ⊕ q_hash(\"q42:nested:level\" || k)\n\nThis prevents nested contradictions from escaping into parent realities.",
+        "doc": "Compute the paraconsistent isolation context hash (OCS §7.1).\n\nUses non-commutative FNV-1a folding over `(parent_context.to_le_bytes(),\nrealm_usri.as_bytes(), depth.to_le_bytes())` so ordered paths `[A, B]`\nand `[B, A]` produce distinct context hashes.",
         "file": "nested.rs",
-        "line": 52,
+        "line": 42,
         "signature": "pub fn context_hash(&self) -> u64 {"
       },
       {
@@ -4377,19 +4731,51 @@
         "file": "nested.rs",
         "line": 127,
         "signature": "pub fn base_to_current_time(&self, base_tau_secs: f64) -> f64 {"
+      },
+      {
+        "name": "FloatingOriginFrame",
+        "kind": "struct",
+        "doc": "",
+        "file": "nested.rs",
+        "line": 141,
+        "signature": "pub struct FloatingOriginFrame"
+      },
+      {
+        "name": "new",
+        "kind": "fn",
+        "doc": "Create a new floating-origin frame at a given sector cell and sub-millimeter residual.",
+        "file": "nested.rs",
+        "line": 158,
+        "signature": "pub fn new(octree_cell: [i64; 3], residual_m: [f64; 3]) -> Self {"
+      },
+      {
+        "name": "compute_healpix_index",
+        "kind": "fn",
+        "doc": "Compute a deterministic HEALPix pixel index (`12 * nside^2`) from a 3D sector vector.",
+        "file": "nested.rs",
+        "line": 173,
+        "signature": "pub fn compute_healpix_index(octree_cell: [i64; 3], nside: u64) -> u64 {"
+      },
+      {
+        "name": "reanchor_origin",
+        "kind": "fn",
+        "doc": "Advance a [`FloatingOriginFrame`] by `step_delta_m` within a sector of radius `sector_radius_m`.\n\nAutomatically transitions the entity to the adjacent `healpix_index` / `octree_cell`\nand resets `local_origin_m` to `(0.0, 0.0, 0.0)` when crossing a sector boundary.",
+        "file": "nested.rs",
+        "line": 209,
+        "signature": "pub fn reanchor_origin("
       }
     ]
   },
   {
     "name": "cosmic::observer",
-    "doc": "Observer fiber, affective status, and epistemic divergence (OCS §8).\n\nReference: OCS Specification v2.2.0 §8.",
+    "doc": "Observer fiber, affective status, correlated atlas uncertainty, presheaf gluing,\nand epistemic divergence (OCS §8, Packet OCS-13 & §6.2.5.1).\n\nReference: OCS Specification v2.2.0 §8 & Playbook v4 §6.2.5.1.",
     "items": [
       {
         "name": "AffectiveStatus",
         "kind": "struct",
         "doc": "",
         "file": "observer.rs",
-        "line": 10,
+        "line": 11,
         "signature": "pub struct AffectiveStatus"
       },
       {
@@ -4397,15 +4783,15 @@
         "kind": "fn",
         "doc": "Clamp all values to their valid ranges.",
         "file": "observer.rs",
-        "line": 37,
+        "line": 38,
         "signature": "pub fn clamped(&self) -> Self {"
       },
       {
         "name": "is_hyper_vigilant",
         "kind": "fn",
-        "doc": "Whether this observer is in a hyper-vigilant state (OCS-T11).",
+        "doc": "Whether this observer is in a hyper-vigilant state (OCS-T11, Packet OCS-13).\n\nNote: `safety_threat_index` is in `[-1.0: Severe Threat/Panic, +1.0: Deep Safety/Trust]`,\nso severe threat is `< -0.8` (not `> 0.8`), or high arousal `> 0.9` (or `>= 0.9` with active\ntrauma reactivity).",
         "file": "observer.rs",
-        "line": 48,
+        "line": 53,
         "signature": "pub fn is_hyper_vigilant(&self) -> bool {"
       },
       {
@@ -4413,7 +4799,7 @@
         "kind": "fn",
         "doc": "Converts to value.",
         "file": "observer.rs",
-        "line": 53,
+        "line": 60,
         "signature": "pub fn to_value(&self) -> Value {"
       },
       {
@@ -4421,15 +4807,23 @@
         "kind": "struct",
         "doc": "",
         "file": "observer.rs",
-        "line": 81,
+        "line": 88,
         "signature": "pub struct DoxasticBelief"
+      },
+      {
+        "name": "to_value",
+        "kind": "fn",
+        "doc": "Converts to `Value::Record`.",
+        "file": "observer.rs",
+        "line": 98,
+        "signature": "pub fn to_value(&self) -> Value {"
       },
       {
         "name": "CognitiveLens",
         "kind": "struct",
         "doc": "",
         "file": "observer.rs",
-        "line": 91,
+        "line": 112,
         "signature": "pub struct CognitiveLens"
       },
       {
@@ -4437,7 +4831,7 @@
         "kind": "struct",
         "doc": "",
         "file": "observer.rs",
-        "line": 112,
+        "line": 137,
         "signature": "pub struct ObserverFiber"
       },
       {
@@ -4445,15 +4839,71 @@
         "kind": "fn",
         "doc": "Creates a new `ObserverFiber`.",
         "file": "observer.rs",
-        "line": 123,
+        "line": 154,
         "signature": "pub fn new(observer_did: &str, perceived_frame: &str) -> Self {"
+      },
+      {
+        "name": "with_correlated_uncertainty",
+        "kind": "fn",
+        "doc": "Configure correlated anchor variance vs local chart variance (§6.2.5.1).",
+        "file": "observer.rs",
+        "line": 169,
+        "signature": "pub fn with_correlated_uncertainty("
+      },
+      {
+        "name": "is_hyper_vigilant",
+        "kind": "fn",
+        "doc": "Whether this observer fiber is in a hyper-vigilant state (Packet OCS-13).",
+        "file": "observer.rs",
+        "line": 182,
+        "signature": "pub fn is_hyper_vigilant(&self) -> bool {"
+      },
+      {
+        "name": "total_positional_variance",
+        "kind": "fn",
+        "doc": "Total absolute positional variance ($\\text{m}^2$) relative to the cosmic root frame.",
+        "file": "observer.rs",
+        "line": 189,
+        "signature": "pub fn total_positional_variance(&self) -> f64 {"
+      },
+      {
+        "name": "relative_displacement_variance",
+        "kind": "fn",
+        "doc": "Relative displacement variance ($\\text{m}^2$) between `self` and `other` (§6.2.5.1).\n\nWhen both observers share the same `shared_anchor_id`, the common-mode coarse anchor\nvariance cancels in $\\Delta\\mathbf{x} = \\mathbf{x}_A - \\mathbf{x}_B$, leaving only\n`self.local_chart_var + other.local_chart_var`.",
+        "file": "observer.rs",
+        "line": 198,
+        "signature": "pub fn relative_displacement_variance(&self, other: &Self) -> f64 {"
+      },
+      {
+        "name": "relative_displacement_std",
+        "kind": "fn",
+        "doc": "Standard deviation ($\\text{m}$) of the relative displacement between `self` and `other`.",
+        "file": "observer.rs",
+        "line": 207,
+        "signature": "pub fn relative_displacement_std(&self, other: &Self) -> f64 {"
+      },
+      {
+        "name": "check_presheaf_overlap",
+        "kind": "fn",
+        "doc": "Check presheaf overlap compatibility on $U_i \\cap U_j$ before gluing/merging two\nobserver fibers (§6.2.5.1).\n\nTwo fibers are compatible on their overlap if:\n1. For every shared `proposition_iri`, $|\\mu_A - \\mu_B| \\le \\text{max\\_belief\\_divergence}$\n   and $|\\lambda_A - \\lambda_B| \\le \\text{max\\_belief\\_divergence}$.\n2. If both fibers reference the same `shared_anchor_id`, their `shared_anchor_var`\n   estimates agree within relative tolerance.",
+        "file": "observer.rs",
+        "line": 219,
+        "signature": "pub fn check_presheaf_overlap("
+      },
+      {
+        "name": "merge_presheaf_compatible",
+        "kind": "fn",
+        "doc": "Glue two compatible observer fibers over their overlap $U_i \\cap U_j$ (§6.2.5.1).\n\nFails closed if `check_presheaf_overlap` detects a contradiction on shared propositions\nor anchor metadata.",
+        "file": "observer.rs",
+        "line": 264,
+        "signature": "pub fn merge_presheaf_compatible("
       },
       {
         "name": "epistemic_divergence",
         "kind": "fn",
         "doc": "Clinical epistemic divergence tensor Δ_epistemic (OCS §8.3).\n\nSimple scalar version: the L2 norm of the difference between\nthe perceived frame and the empirical frame, weighted by\ndissociation and trauma reactivity.",
         "file": "observer.rs",
-        "line": 139,
+        "line": 311,
         "signature": "pub fn epistemic_divergence("
       },
       {
@@ -4461,22 +4911,30 @@
         "kind": "fn",
         "doc": "Whether this observer needs grounding intervention (OCS-T11).",
         "file": "observer.rs",
-        "line": 164,
+        "line": 336,
         "signature": "pub fn needs_grounding(&self) -> bool {"
+      },
+      {
+        "name": "to_epistemic_claim_record",
+        "kind": "fn",
+        "doc": "Project the observer's phenomenological and doxastic state onto an explicit\n**Claim/Opinion** record (`plane = \"ClaimOpinion\"`) without mutating physical\ncoordinates or `NaturalAgent` identity (Packet OCS-13).",
+        "file": "observer.rs",
+        "line": 343,
+        "signature": "pub fn to_epistemic_claim_record(&self) -> Value {"
       },
       {
         "name": "to_value",
         "kind": "fn",
         "doc": "Converts to value.",
         "file": "observer.rs",
-        "line": 169,
+        "line": 381,
         "signature": "pub fn to_value(&self) -> Value {"
       }
     ]
   },
   {
     "name": "cosmic::opcode",
-    "doc": "NQuin cosmic opcodes and 48-byte metadata layout (OCS §14.2).\n\nThe OCS defines five opcodes in the `0x50–0x55` range, packed into\nbits `[0..7]` of the `predicate` field of an `NQuin`:\n\n| Opcode              | Value | Meaning                                    |\n|---------------------|-------|--------------------------------------------|\n| `OP_COSMIC_POSE`    | 0x50  | Entity has a spacetime pose in a realm     |\n| `OP_REALM_TRANSIT`  | 0x51  | Entity transits between realms/frames      |\n| `OP_OBSERVER_FIBER` | 0x53  | Observer fiber attachment to an entity     |\n| `OP_MICRO_POSE`     | 0x54  | Microscopic-scale pose (sub-atomic)        |\n| `OP_ELEMENT_COLLAPSE` | 0x55 | Granular element collapse onto physical    |\n\nThese are in the `0x50+` range, above the LTL range (`0x40–0x44`)\nand do not conflict with any existing modality.\n\n## 48-byte NQuin Layout for Cosmic Operations (OCS §14.2)\n\n```text\nField      Bits      Content\n─────────────────────────────────────────────────────────────────\nsubject    [63]      MSB flag (1 = did:q42 entity/observer pointer)\n           [0..62]   q_hash(entity_or_observer_did)\n\npredicate  [63]      0\n           [8..62]   q_hash(\"cosmic:hasSpacetimePose\") << 8\n           [0..7]    Opcode (0x50–0x55)\n\nobject     [63]      MSB=1 (did:q42 topological pointer to Pose/Anchor)\n           [0..62]   q_hash(pose_or_record_iri)\n\ncontext    [56..63]  Sensitivity Class (PUBLIC=0, RESTRICTED=1, CLASSIFIED=2)\n           [0..55]   q_hash(realm_usri) (56-bit scoped realm hash)\n\nmetadata   [61..62]  PermissiveRoutingLane (01=Commons, 10=Bilateral Isolated)\n           [32..60]  Lamport Logical Clock / Epoch Timestamp (29 bits)\n           [0..31]   Realm Class & Scale Level Index\n                      bits [0..7]:  realm class index\n                      bits [8..15]: hierarchy level (L_-2..L_12)\n                      bits [16..31]: nesting depth + reserved\n\nparity     [0..63]   XOR fold: subject ^ predicate ^ object ^ context\n```\n\nReference: OCS Specification v2.2.0 §14.2.",
+    "doc": "NQuin cosmic opcodes and 48-byte metadata layout (OCS §14.2).\n\nThe OCS defines five opcodes in the `0x50–0x55` range, packed into\nbits `[0..7]` of the `predicate` field of an `NQuin`:\n\n| Opcode              | Value | Meaning                                    |\n|---------------------|-------|--------------------------------------------|\n| `OP_COSMIC_POSE`    | 0x50  | Entity has a spacetime pose in a realm     |\n| `OP_REALM_TRANSIT`  | 0x51  | Entity transits between realms/frames      |\n| `OP_OBSERVER_FIBER` | 0x53  | Observer fiber attachment to an entity     |\n| `OP_MICRO_POSE`     | 0x54  | Microscopic-scale pose (sub-atomic)        |\n| `OP_ELEMENT_COLLAPSE` | 0x55 | Granular element collapse onto physical    |\n\nThese are in the `0x50+` range, above the LTL range (`0x40–0x44`)\nand do not conflict with any existing modality.\n\n## 48-byte NQuin Layout for Cosmic Operations (OCS §14.2)\n\n```text\nField      Bits      Content\n─────────────────────────────────────────────────────────────────\nsubject    [63]      MSB flag (1 = did:q42 entity/observer pointer)\n           [0..62]   q_hash(entity_or_observer_did)\n\npredicate  [63]      0\n           [8..62]   q_hash(\"cosmic:hasSpacetimePose\") << 8\n           [0..7]    Opcode (0x50–0x55)\n\nobject     [63]      MSB=1 (did:q42 topological pointer to Pose/Anchor)\n           [0..62]   q_hash(pose_or_record_iri)\n\ncontext    [56..63]  Sensitivity Class (PUBLIC=0, RESTRICTED=1, CLASSIFIED=2)\n           [0..55]   q_hash(realm_usri) (56-bit scoped realm hash)\n\nmetadata   [61..62]  PermissiveRoutingLane (01=Commons, 10=Bilateral Isolated)\n           [32..60]  Lamport Logical Clock / Epoch Timestamp (29 bits)\n           [0..31]   Realm Class & Scale Level Index\n                      bits [0..7]:  realm class index\n                      bits [8..15]: hierarchy level (L_-2..L_12)\n                      bits [16..31]: nesting depth + reserved\n\nparity     [0..63]   XOR fold: subject ^ predicate ^ object ^ context ^ metadata\n```\n\nReference: OCS Specification v2.2.0 §14.2.",
     "items": [
       {
         "name": "OP_COSMIC_POSE",
@@ -5229,11 +5687,19 @@
         "signature": "pub enum RealmClass"
       },
       {
+        "name": "ALL",
+        "kind": "const",
+        "doc": "All 10 OCS v2.2.0 `RealmClass` variants.",
+        "file": "usri.rs",
+        "line": 30,
+        "signature": "pub const ALL: [Self; 10] = ["
+      },
+      {
         "name": "as_str",
         "kind": "fn",
         "doc": "`str` form.",
         "file": "usri.rs",
-        "line": 30,
+        "line": 44,
         "signature": "pub fn as_str(&self) -> &'static str {"
       },
       {
@@ -5241,15 +5707,39 @@
         "kind": "fn",
         "doc": "8-bit realm class index for CB-USRI (OCS §13.2).",
         "file": "usri.rs",
-        "line": 46,
+        "line": 60,
         "signature": "pub fn as_u8(&self) -> u8 {"
+      },
+      {
+        "name": "from_u8",
+        "kind": "fn",
+        "doc": "Decode from an 8-bit realm class index (OCS §13.2).",
+        "file": "usri.rs",
+        "line": 76,
+        "signature": "pub fn from_u8(v: u8) -> Option<Self> {"
+      },
+      {
+        "name": "from_g_coord_realm",
+        "kind": "fn",
+        "doc": "Map a `G-COORD` realm token (`earth`, `cosmos`, `fictional`, `speculative`, `viewpoint`)\nor canonical USRI realm string into a [`RealmClass`].",
+        "file": "usri.rs",
+        "line": 94,
+        "signature": "pub fn from_g_coord_realm(s: &str) -> Option<Self> {"
+      },
+      {
+        "name": "to_g_coord_realm",
+        "kind": "fn",
+        "doc": "Map this [`RealmClass`] to its default `G-COORD` realm token\n(`cosmos`, `fictional`, `speculative`, `viewpoint`).\nFor Earth-grounded physical USRIs, [`Usri::g_coord_realm`] refines `\"cosmos\"` to `\"earth\"`.",
+        "file": "usri.rs",
+        "line": 107,
+        "signature": "pub fn to_g_coord_realm(&self) -> &'static str {"
       },
       {
         "name": "from_str",
         "kind": "fn",
         "doc": "Constructs from str.",
         "file": "usri.rs",
-        "line": 62,
+        "line": 117,
         "signature": "pub fn from_str(s: &str) -> Option<Self> {"
       },
       {
@@ -5257,7 +5747,7 @@
         "kind": "struct",
         "doc": "",
         "file": "usri.rs",
-        "line": 81,
+        "line": 136,
         "signature": "pub struct Usri"
       },
       {
@@ -5265,7 +5755,7 @@
         "kind": "fn",
         "doc": "Parse a USRI string into its components.",
         "file": "usri.rs",
-        "line": 94,
+        "line": 149,
         "signature": "pub fn parse(s: &str) -> Result<Self, String> {"
       },
       {
@@ -5273,16 +5763,40 @@
         "kind": "fn",
         "doc": "Render a USRI back to its canonical string form.",
         "file": "usri.rs",
-        "line": 153,
+        "line": 208,
         "signature": "pub fn to_string(&self) -> String {"
+      },
+      {
+        "name": "g_coord_realm",
+        "kind": "fn",
+        "doc": "Return the `G-COORD` realm string (`earth`, `cosmos`, `fictional`, `speculative`, `viewpoint`)\ncorresponding to this parsed USRI.",
+        "file": "usri.rs",
+        "line": 231,
+        "signature": "pub fn g_coord_realm(&self) -> &'static str {"
       },
       {
         "name": "to_value",
         "kind": "fn",
         "doc": "Convert to a Value::Record for inspection and graph storage.",
         "file": "usri.rs",
-        "line": 175,
+        "line": 245,
         "signature": "pub fn to_value(&self) -> Value {"
+      },
+      {
+        "name": "g_coord_realm_to_realm_class",
+        "kind": "fn",
+        "doc": "Map a `G-COORD` realm string (`earth`, `cosmos`, `fictional`, `speculative`, `viewpoint`)\nto an OCS [`RealmClass`].",
+        "file": "usri.rs",
+        "line": 295,
+        "signature": "pub fn g_coord_realm_to_realm_class(g_coord: &str) -> Option<RealmClass> {"
+      },
+      {
+        "name": "realm_class_to_g_coord_realm",
+        "kind": "fn",
+        "doc": "Map an OCS [`RealmClass`] to its `G-COORD` realm category string.",
+        "file": "usri.rs",
+        "line": 300,
+        "signature": "pub fn realm_class_to_g_coord_realm(rc: RealmClass) -> &'static str {"
       }
     ]
   },
@@ -5398,11 +5912,27 @@
         "signature": "pub fn from_hex(hex: &str) -> Option<Vec<u8>> {"
       },
       {
+        "name": "sha256_bytes",
+        "kind": "fn",
+        "doc": "Compute an exact FIPS 180-4 256-bit SHA-256 digest over `data`.",
+        "file": "crypto.rs",
+        "line": 173,
+        "signature": "pub fn sha256_bytes(data: &[u8]) -> [u8; 32] {"
+      },
+      {
+        "name": "sha256_hex",
+        "kind": "fn",
+        "doc": "Compute lowercase 64-character hex string of the FIPS 180-4 SHA-256 digest of `data`.",
+        "file": "crypto.rs",
+        "line": 233,
+        "signature": "pub fn sha256_hex(data: &[u8]) -> String {"
+      },
+      {
         "name": "CRYPTO_CAPABILITIES",
         "kind": "const",
         "doc": "The list of crypto namespace capability IDs.",
         "file": "crypto.rs",
-        "line": 162,
+        "line": 238,
         "signature": "pub const CRYPTO_CAPABILITIES: &[&str] = &["
       },
       {
@@ -5410,7 +5940,7 @@
         "kind": "const",
         "doc": "Supported AEAD algorithms.",
         "file": "crypto.rs",
-        "line": 175,
+        "line": 251,
         "signature": "pub const AEAD_ALGORITHMS: &[&str] = &[\"AES-256-GCM\", \"ChaCha20-Poly1305\", \"XChaCha20-Poly1305\"]"
       },
       {
@@ -5418,7 +5948,7 @@
         "kind": "const",
         "doc": "Supported hash algorithms.",
         "file": "crypto.rs",
-        "line": 178,
+        "line": 254,
         "signature": "pub const HASH_ALGORITHMS: &[&str] = &[\"SHA-256\", \"SHA-512\", \"BLAKE3\"]"
       },
       {
@@ -5426,7 +5956,7 @@
         "kind": "const",
         "doc": "Supported signing algorithms.",
         "file": "crypto.rs",
-        "line": 181,
+        "line": 257,
         "signature": "pub const SIGNING_ALGORITHMS: &[&str] = &[\"Ed25519\", \"ML-DSA-65\"]"
       },
       {
@@ -5434,7 +5964,7 @@
         "kind": "const",
         "doc": "The list of ZK namespace capability IDs.",
         "file": "crypto.rs",
-        "line": 186,
+        "line": 262,
         "signature": "pub const ZK_CAPABILITIES: &[&str] = &["
       },
       {
@@ -5442,7 +5972,7 @@
         "kind": "fn",
         "doc": "Build a ZK proof Record value.\n`{ proof_hex: String, vk_hex: String, proof_id: String, circuit_id: String }`",
         "file": "crypto.rs",
-        "line": 198,
+        "line": 274,
         "signature": "pub fn zk_proof_value(proof_hex: &str, vk_hex: &str, proof_id: &str, circuit_id: &str) -> Value {"
       },
       {
@@ -5450,7 +5980,7 @@
         "kind": "fn",
         "doc": "Build a ZK verification result Record value.\n`{ valid: Bool, proof_id: String, verification_time_ms: U64 }`",
         "file": "crypto.rs",
-        "line": 209,
+        "line": 285,
         "signature": "pub fn zk_verification_value(valid: bool, proof_id: &str, verification_time_ms: u64) -> Value {"
       },
       {
@@ -5458,7 +5988,7 @@
         "kind": "fn",
         "doc": "Build a ZK matmul proof Record value.\n`{ valid: Bool, result: List<I64> }`",
         "file": "crypto.rs",
-        "line": 222,
+        "line": 298,
         "signature": "pub fn zk_matmul_result_value(valid: bool, result: &[i128]) -> Value {"
       }
     ]
@@ -5472,7 +6002,7 @@
         "kind": "const",
         "doc": "Maximum nodes per DAG.",
         "file": "dag.rs",
-        "line": 31,
+        "line": 29,
         "signature": "pub const MAX_DAG_NODES: usize = 256"
       },
       {
@@ -5480,7 +6010,7 @@
         "kind": "const",
         "doc": "Maximum edges per DAG.",
         "file": "dag.rs",
-        "line": 33,
+        "line": 31,
         "signature": "pub const MAX_DAG_EDGES: usize = 1024"
       },
       {
@@ -5488,7 +6018,7 @@
         "kind": "const",
         "doc": "Maximum inputs/outputs per node.",
         "file": "dag.rs",
-        "line": 35,
+        "line": 33,
         "signature": "pub const MAX_NODE_IO: usize = 16"
       },
       {
@@ -5496,7 +6026,7 @@
         "kind": "enum",
         "doc": "",
         "file": "dag.rs",
-        "line": 39,
+        "line": 37,
         "signature": "pub enum NodeEffect"
       },
       {
@@ -5504,7 +6034,7 @@
         "kind": "struct",
         "doc": "",
         "file": "dag.rs",
-        "line": 49,
+        "line": 47,
         "signature": "pub struct DagNode"
       },
       {
@@ -5512,7 +6042,7 @@
         "kind": "fn",
         "doc": "Creates a new `DagNode`.",
         "file": "dag.rs",
-        "line": 70,
+        "line": 68,
         "signature": "pub fn new(id: u32, name: &str, effect: NodeEffect) -> Self {"
       },
       {
@@ -5520,7 +6050,7 @@
         "kind": "fn",
         "doc": "Builder — sets capability.",
         "file": "dag.rs",
-        "line": 84,
+        "line": 82,
         "signature": "pub fn with_capability(mut self, cap: &str) -> Self {"
       },
       {
@@ -5528,7 +6058,7 @@
         "kind": "fn",
         "doc": "Builder — sets input.",
         "file": "dag.rs",
-        "line": 90,
+        "line": 88,
         "signature": "pub fn with_input(mut self, channel: &str) -> Self {"
       },
       {
@@ -5536,7 +6066,7 @@
         "kind": "fn",
         "doc": "Builder — sets output.",
         "file": "dag.rs",
-        "line": 96,
+        "line": 94,
         "signature": "pub fn with_output(mut self, channel: &str) -> Self {"
       },
       {
@@ -5544,7 +6074,7 @@
         "kind": "fn",
         "doc": "Builder — sets budget.",
         "file": "dag.rs",
-        "line": 102,
+        "line": 100,
         "signature": "pub fn with_budget(mut self, budget: u32) -> Self {"
       },
       {
@@ -5552,7 +6082,7 @@
         "kind": "fn",
         "doc": "`control-unit` form.",
         "file": "dag.rs",
-        "line": 108,
+        "line": 106,
         "signature": "pub fn as_control_unit(mut self) -> Self {"
       },
       {
@@ -5560,7 +6090,7 @@
         "kind": "struct",
         "doc": "",
         "file": "dag.rs",
-        "line": 118,
+        "line": 116,
         "signature": "pub struct DagEdge"
       },
       {
@@ -5568,7 +6098,7 @@
         "kind": "fn",
         "doc": "Creates a new `DagEdge`.",
         "file": "dag.rs",
-        "line": 125,
+        "line": 123,
         "signature": "pub fn new(from: u32, to: u32) -> Self {"
       },
       {
@@ -5576,7 +6106,7 @@
         "kind": "enum",
         "doc": "",
         "file": "dag.rs",
-        "line": 135,
+        "line": 132,
         "signature": "pub enum DagError"
       },
       {
@@ -5584,7 +6114,7 @@
         "kind": "enum",
         "doc": "",
         "file": "dag.rs",
-        "line": 154,
+        "line": 151,
         "signature": "pub enum NodeStatus"
       },
       {
@@ -5592,7 +6122,7 @@
         "kind": "struct",
         "doc": "The DAG pipeline definition.",
         "file": "dag.rs",
-        "line": 163,
+        "line": 160,
         "signature": "pub struct DagPipeline"
       },
       {
@@ -5600,7 +6130,7 @@
         "kind": "fn",
         "doc": "Creates a new `DagPipeline`.",
         "file": "dag.rs",
-        "line": 174,
+        "line": 172,
         "signature": "pub fn new() -> Self {"
       },
       {
@@ -5608,7 +6138,7 @@
         "kind": "fn",
         "doc": "Add a node to the DAG.",
         "file": "dag.rs",
-        "line": 184,
+        "line": 189,
         "signature": "pub fn add_node(&mut self, node: DagNode) -> Result<(), DagError> {"
       },
       {
@@ -5616,7 +6146,7 @@
         "kind": "fn",
         "doc": "Add an edge to the DAG.",
         "file": "dag.rs",
-        "line": 199,
+        "line": 206,
         "signature": "pub fn add_edge(&mut self, edge: DagEdge) -> Result<(), DagError> {"
       },
       {
@@ -5624,7 +6154,7 @@
         "kind": "fn",
         "doc": "Get a node by ID.",
         "file": "dag.rs",
-        "line": 216,
+        "line": 223,
         "signature": "pub fn get_node(&self, id: u32) -> Option<&DagNode> {"
       },
       {
@@ -5632,15 +6162,23 @@
         "kind": "fn",
         "doc": "Get all nodes.",
         "file": "dag.rs",
-        "line": 221,
-        "signature": "pub fn nodes(&self) -> &HashMap<u32, DagNode> {"
+        "line": 228,
+        "signature": "pub fn nodes(&self) -> &[DagNode] {"
+      },
+      {
+        "name": "node_ids",
+        "kind": "fn",
+        "doc": "Iterate present node IDs in deterministic ascending ID order.",
+        "file": "dag.rs",
+        "line": 233,
+        "signature": "pub fn node_ids(&self) -> impl Iterator<Item = u32> + '_ {"
       },
       {
         "name": "edges",
         "kind": "fn",
         "doc": "Get all edges.",
         "file": "dag.rs",
-        "line": 226,
+        "line": 241,
         "signature": "pub fn edges(&self) -> &[DagEdge] {"
       },
       {
@@ -5648,7 +6186,7 @@
         "kind": "fn",
         "doc": "Get the downstream nodes of a given node.",
         "file": "dag.rs",
-        "line": 231,
+        "line": 246,
         "signature": "pub fn downstream(&self, id: u32) -> &[u32] {"
       },
       {
@@ -5656,7 +6194,7 @@
         "kind": "fn",
         "doc": "Get the upstream nodes of a given node.",
         "file": "dag.rs",
-        "line": 236,
+        "line": 254,
         "signature": "pub fn upstream(&self, id: u32) -> &[u32] {"
       },
       {
@@ -5664,7 +6202,7 @@
         "kind": "fn",
         "doc": "Detect cycles using DFS. Returns true if a cycle is found.",
         "file": "dag.rs",
-        "line": 244,
+        "line": 262,
         "signature": "pub fn has_cycle(&self) -> bool {"
       },
       {
@@ -5672,7 +6210,7 @@
         "kind": "fn",
         "doc": "Topological sort. Returns node IDs in dependency order.\nReturns Err if a cycle is detected.",
         "file": "dag.rs",
-        "line": 278,
+        "line": 290,
         "signature": "pub fn topological_sort(&self) -> Result<Vec<u32>, DagError> {"
       },
       {
@@ -5680,7 +6218,7 @@
         "kind": "fn",
         "doc": "Get the entry nodes (nodes with no upstream dependencies).",
         "file": "dag.rs",
-        "line": 316,
+        "line": 325,
         "signature": "pub fn entry_nodes(&self) -> Vec<u32> {"
       },
       {
@@ -5688,7 +6226,7 @@
         "kind": "fn",
         "doc": "Get the exit nodes (nodes with no downstream dependencies).",
         "file": "dag.rs",
-        "line": 325,
+        "line": 332,
         "signature": "pub fn exit_nodes(&self) -> Vec<u32> {"
       },
       {
@@ -5696,7 +6234,7 @@
         "kind": "fn",
         "doc": "Validate the DAG: check for cycles, missing budgets on hot nodes,\nand missing capabilities.",
         "file": "dag.rs",
-        "line": 335,
+        "line": 340,
         "signature": "pub fn validate(&self, available_caps: &[String]) -> Result<(), DagError> {"
       },
       {
@@ -5704,7 +6242,7 @@
         "kind": "fn",
         "doc": "Number of nodes.",
         "file": "dag.rs",
-        "line": 357,
+        "line": 362,
         "signature": "pub fn node_count(&self) -> usize {"
       },
       {
@@ -5712,7 +6250,7 @@
         "kind": "fn",
         "doc": "Number of edges.",
         "file": "dag.rs",
-        "line": 362,
+        "line": 367,
         "signature": "pub fn edge_count(&self) -> usize {"
       },
       {
@@ -5720,7 +6258,7 @@
         "kind": "struct",
         "doc": "A Control Unit selects the next node(s) to execute based on the current\nexecution state and policy constraints.",
         "file": "dag.rs",
-        "line": 377,
+        "line": 382,
         "signature": "pub struct ControlUnit"
       },
       {
@@ -5728,7 +6266,7 @@
         "kind": "enum",
         "doc": "",
         "file": "dag.rs",
-        "line": 386,
+        "line": 391,
         "signature": "pub enum RouterStrategy"
       },
       {
@@ -5736,7 +6274,7 @@
         "kind": "fn",
         "doc": "Creates a new `ControlUnit`.",
         "file": "dag.rs",
-        "line": 405,
+        "line": 410,
         "signature": "pub fn new(node_id: u32, strategy: RouterStrategy) -> Self {"
       },
       {
@@ -5744,15 +6282,15 @@
         "kind": "fn",
         "doc": "Select the next node(s) to execute given the current pipeline state\nand channel data.",
         "file": "dag.rs",
-        "line": 411,
+        "line": 416,
         "signature": "pub fn select_next("
       },
       {
         "name": "ExecutionState",
         "kind": "struct",
-        "doc": "Tracks the execution state of all nodes in the DAG.",
+        "doc": "Tracks the execution state of all nodes in the DAG using zero-heap inline storage.",
         "file": "dag.rs",
-        "line": 453,
+        "line": 458,
         "signature": "pub struct ExecutionState"
       },
       {
@@ -5760,7 +6298,7 @@
         "kind": "fn",
         "doc": "Creates a new `ExecutionState`.",
         "file": "dag.rs",
-        "line": 461,
+        "line": 467,
         "signature": "pub fn new(pipeline: &DagPipeline) -> Self {"
       },
       {
@@ -5768,7 +6306,7 @@
         "kind": "fn",
         "doc": "Get the status of a node.",
         "file": "dag.rs",
-        "line": 474,
+        "line": 480,
         "signature": "pub fn status(&self, id: u32) -> NodeStatus {"
       },
       {
@@ -5776,7 +6314,7 @@
         "kind": "fn",
         "doc": "Set the status of a node.",
         "file": "dag.rs",
-        "line": 482,
+        "line": 488,
         "signature": "pub fn set_status(&mut self, id: u32, status: NodeStatus) {"
       },
       {
@@ -5784,7 +6322,7 @@
         "kind": "fn",
         "doc": "Get all nodes that are ready to execute (all upstream completed).",
         "file": "dag.rs",
-        "line": 490,
+        "line": 501,
         "signature": "pub fn ready_nodes(&self, pipeline: &DagPipeline) -> Vec<u32> {"
       },
       {
@@ -5792,7 +6330,7 @@
         "kind": "fn",
         "doc": "Are all nodes completed?",
         "file": "dag.rs",
-        "line": 506,
+        "line": 515,
         "signature": "pub fn all_completed(&self) -> bool {"
       },
       {
@@ -5800,7 +6338,7 @@
         "kind": "fn",
         "doc": "Get the completion order.",
         "file": "dag.rs",
-        "line": 511,
+        "line": 523,
         "signature": "pub fn completed_order(&self) -> &[u32] {"
       },
       {
@@ -5808,7 +6346,7 @@
         "kind": "fn",
         "doc": "Count nodes by status.",
         "file": "dag.rs",
-        "line": 516,
+        "line": 528,
         "signature": "pub fn count_by_status(&self, status: NodeStatus) -> usize {"
       },
       {
@@ -5816,7 +6354,7 @@
         "kind": "const",
         "doc": "Maximum claims per judge frame.",
         "file": "dag.rs",
-        "line": 524,
+        "line": 540,
         "signature": "pub const MAX_JUDGE_CLAIMS: usize = 64"
       },
       {
@@ -5824,7 +6362,7 @@
         "kind": "struct",
         "doc": "",
         "file": "dag.rs",
-        "line": 528,
+        "line": 544,
         "signature": "pub struct JudgeClaim"
       },
       {
@@ -5832,7 +6370,7 @@
         "kind": "struct",
         "doc": "A judge frame verifies agent outputs before committing them.\nUses a bounded array (zero-heap on hot paths).",
         "file": "dag.rs",
-        "line": 541,
+        "line": 557,
         "signature": "pub struct JudgeFrame"
       },
       {
@@ -5840,7 +6378,7 @@
         "kind": "fn",
         "doc": "Creates a new `JudgeFrame`.",
         "file": "dag.rs",
-        "line": 548,
+        "line": 564,
         "signature": "pub fn new() -> Self {"
       },
       {
@@ -5848,7 +6386,7 @@
         "kind": "fn",
         "doc": "Submit a claim for verification.",
         "file": "dag.rs",
-        "line": 556,
+        "line": 572,
         "signature": "pub fn submit(&mut self, claim: JudgeClaim) -> Result<(), DagError> {"
       },
       {
@@ -5856,7 +6394,7 @@
         "kind": "fn",
         "doc": "Evaluate all submitted claims. A claim passes if:\n- The node claims success and has no error, OR\n- The node claims failure with an error message (honest failure).\nA claim fails if:\n- The node claims success but has an error, OR\n- The node claims failure but has no error message.",
         "file": "dag.rs",
-        "line": 570,
+        "line": 586,
         "signature": "pub fn evaluate(&mut self) {"
       },
       {
@@ -5864,7 +6402,7 @@
         "kind": "fn",
         "doc": "Get the verdicts.",
         "file": "dag.rs",
-        "line": 583,
+        "line": 599,
         "signature": "pub fn verdicts(&self) -> &[bool] {"
       },
       {
@@ -5872,7 +6410,7 @@
         "kind": "fn",
         "doc": "Did all claims pass?",
         "file": "dag.rs",
-        "line": 588,
+        "line": 604,
         "signature": "pub fn all_passed(&self) -> bool {"
       },
       {
@@ -5880,7 +6418,7 @@
         "kind": "fn",
         "doc": "Get the number of submitted claims.",
         "file": "dag.rs",
-        "line": 593,
+        "line": 609,
         "signature": "pub fn claim_count(&self) -> usize {"
       },
       {
@@ -5888,7 +6426,7 @@
         "kind": "fn",
         "doc": "Reset the judge frame for reuse.",
         "file": "dag.rs",
-        "line": 598,
+        "line": 614,
         "signature": "pub fn reset(&mut self) {"
       }
     ]
@@ -6014,11 +6552,19 @@
         "signature": "pub const MAX_CAPS_PER_PHASE: usize = 64"
       },
       {
+        "name": "MAX_INTERRUPT_HISTORY",
+        "kind": "const",
+        "doc": "Bounded interrupt history reserved during cold leaser construction.",
+        "file": "deontic_interrupt.rs",
+        "line": 35,
+        "signature": "pub const MAX_INTERRUPT_HISTORY: usize = 64"
+      },
+      {
         "name": "Phase",
         "kind": "struct",
         "doc": "",
         "file": "deontic_interrupt.rs",
-        "line": 37,
+        "line": 39,
         "signature": "pub struct Phase"
       },
       {
@@ -6026,7 +6572,7 @@
         "kind": "fn",
         "doc": "Creates a new `Phase`.",
         "file": "deontic_interrupt.rs",
-        "line": 50,
+        "line": 52,
         "signature": "pub fn new(name: &str) -> Self {"
       },
       {
@@ -6034,7 +6580,7 @@
         "kind": "fn",
         "doc": "Allows the action in this interrupt scope.",
         "file": "deontic_interrupt.rs",
-        "line": 60,
+        "line": 62,
         "signature": "pub fn allow(mut self, cap: &str) -> Self {"
       },
       {
@@ -6042,7 +6588,7 @@
         "kind": "fn",
         "doc": "Forbids the action in this interrupt scope.",
         "file": "deontic_interrupt.rs",
-        "line": 66,
+        "line": 68,
         "signature": "pub fn forbid(mut self, cap: &str) -> Self {"
       },
       {
@@ -6050,7 +6596,7 @@
         "kind": "fn",
         "doc": "Marks the scope non-interruptible.",
         "file": "deontic_interrupt.rs",
-        "line": 72,
+        "line": 74,
         "signature": "pub fn non_interruptible(mut self) -> Self {"
       },
       {
@@ -6058,7 +6604,7 @@
         "kind": "fn",
         "doc": "Check if a capability is allowed in this phase.",
         "file": "deontic_interrupt.rs",
-        "line": 78,
+        "line": 80,
         "signature": "pub fn is_allowed(&self, cap: &str) -> bool {"
       },
       {
@@ -6066,7 +6612,7 @@
         "kind": "fn",
         "doc": "Check if a capability is forbidden in this phase.",
         "file": "deontic_interrupt.rs",
-        "line": 83,
+        "line": 85,
         "signature": "pub fn is_forbidden(&self, cap: &str) -> bool {"
       },
       {
@@ -6074,7 +6620,7 @@
         "kind": "enum",
         "doc": "",
         "file": "deontic_interrupt.rs",
-        "line": 92,
+        "line": 94,
         "signature": "pub enum InterruptType"
       },
       {
@@ -6082,7 +6628,7 @@
         "kind": "struct",
         "doc": "",
         "file": "deontic_interrupt.rs",
-        "line": 105,
+        "line": 107,
         "signature": "pub struct DeonticInterrupt"
       },
       {
@@ -6090,7 +6636,7 @@
         "kind": "fn",
         "doc": "Records a prohibition breach.",
         "file": "deontic_interrupt.rs",
-        "line": 120,
+        "line": 122,
         "signature": "pub fn prohibition_breach(cap: &str, phase: &str, node_id: Option<u32>) -> Self {"
       },
       {
@@ -6098,7 +6644,7 @@
         "kind": "fn",
         "doc": "Records a phase violation.",
         "file": "deontic_interrupt.rs",
-        "line": 134,
+        "line": 136,
         "signature": "pub fn phase_violation(cap: &str, phase: &str, node_id: Option<u32>) -> Self {"
       },
       {
@@ -6106,7 +6652,7 @@
         "kind": "enum",
         "doc": "",
         "file": "deontic_interrupt.rs",
-        "line": 153,
+        "line": 155,
         "signature": "pub enum LeaseError"
       },
       {
@@ -6114,7 +6660,7 @@
         "kind": "struct",
         "doc": "The phase leaser manages phase transitions and capability grants.\nCapabilities are leased for the duration of a phase and automatically\nrevoked when the phase ends or an interrupt occurs.",
         "file": "deontic_interrupt.rs",
-        "line": 171,
+        "line": 173,
         "signature": "pub struct PhaseLeaser"
       },
       {
@@ -6122,7 +6668,7 @@
         "kind": "fn",
         "doc": "Creates a new `PhaseLeaser`.",
         "file": "deontic_interrupt.rs",
-        "line": 186,
+        "line": 206,
         "signature": "pub fn new() -> Self {"
       },
       {
@@ -6130,7 +6676,7 @@
         "kind": "fn",
         "doc": "Register a phase.",
         "file": "deontic_interrupt.rs",
-        "line": 197,
+        "line": 218,
         "signature": "pub fn register_phase(&mut self, phase: Phase) -> Result<(), LeaseError> {"
       },
       {
@@ -6138,7 +6684,7 @@
         "kind": "fn",
         "doc": "Enter a phase. This revokes all previously leased capabilities and\ngrants the capabilities allowed in the new phase.",
         "file": "deontic_interrupt.rs",
-        "line": 207,
+        "line": 228,
         "signature": "pub fn enter_phase(&mut self, phase_name: &str) -> Result<(), LeaseError> {"
       },
       {
@@ -6146,7 +6692,7 @@
         "kind": "fn",
         "doc": "Exit the current phase. Revokes all leased capabilities.",
         "file": "deontic_interrupt.rs",
-        "line": 226,
+        "line": 247,
         "signature": "pub fn exit_phase(&mut self) {"
       },
       {
@@ -6154,7 +6700,7 @@
         "kind": "fn",
         "doc": "Check if a capability is currently leased (allowed).",
         "file": "deontic_interrupt.rs",
-        "line": 232,
+        "line": 253,
         "signature": "pub fn is_leased(&self, cap: &str) -> bool {"
       },
       {
@@ -6162,7 +6708,7 @@
         "kind": "fn",
         "doc": "Verify that a capability use is allowed. If not, trigger an interrupt.\nReturns Ok(()) if allowed, Err(LeaseError) if not.",
         "file": "deontic_interrupt.rs",
-        "line": 241,
+        "line": 262,
         "signature": "pub fn verify_capability(&mut self, cap: &str, node_id: Option<u32>) -> Result<(), LeaseError> {"
       },
       {
@@ -6170,7 +6716,7 @@
         "kind": "fn",
         "doc": "Trigger a deontic interrupt. Immediately revokes all capabilities\nand marks the leaser as interrupted.",
         "file": "deontic_interrupt.rs",
-        "line": 274,
+        "line": 295,
         "signature": "pub fn trigger_interrupt(&mut self, interrupt: DeonticInterrupt) {"
       },
       {
@@ -6178,7 +6724,7 @@
         "kind": "fn",
         "doc": "Manually trigger an interrupt (e.g., from governance).",
         "file": "deontic_interrupt.rs",
-        "line": 281,
+        "line": 310,
         "signature": "pub fn manual_interrupt(&mut self, description: &str) {"
       },
       {
@@ -6186,7 +6732,7 @@
         "kind": "fn",
         "doc": "Clear the interrupted state and resume (if allowed).\nThis re-grants capabilities for the current phase.",
         "file": "deontic_interrupt.rs",
-        "line": 294,
+        "line": 323,
         "signature": "pub fn resume(&mut self) -> Result<(), LeaseError> {"
       },
       {
@@ -6194,7 +6740,7 @@
         "kind": "fn",
         "doc": "Get the currently active phase name.",
         "file": "deontic_interrupt.rs",
-        "line": 307,
+        "line": 336,
         "signature": "pub fn active_phase(&self) -> Option<&str> {"
       },
       {
@@ -6202,15 +6748,23 @@
         "kind": "fn",
         "doc": "Get the interrupt history.",
         "file": "deontic_interrupt.rs",
-        "line": 312,
+        "line": 341,
         "signature": "pub fn interrupts(&self) -> &[DeonticInterrupt] {"
+      },
+      {
+        "name": "interrupts_overflowed",
+        "kind": "fn",
+        "doc": "Number of interrupt events omitted after the bounded history filled.",
+        "file": "deontic_interrupt.rs",
+        "line": 346,
+        "signature": "pub fn interrupts_overflowed(&self) -> u64 {"
       },
       {
         "name": "is_interrupted",
         "kind": "fn",
         "doc": "Is the leaser in an interrupted state?",
         "file": "deontic_interrupt.rs",
-        "line": 317,
+        "line": 351,
         "signature": "pub fn is_interrupted(&self) -> bool {"
       },
       {
@@ -6218,7 +6772,7 @@
         "kind": "fn",
         "doc": "Get the number of registered phases.",
         "file": "deontic_interrupt.rs",
-        "line": 322,
+        "line": 356,
         "signature": "pub fn phase_count(&self) -> usize {"
       },
       {
@@ -6226,7 +6780,7 @@
         "kind": "fn",
         "doc": "Get the number of currently leased capabilities.",
         "file": "deontic_interrupt.rs",
-        "line": 327,
+        "line": 361,
         "signature": "pub fn leased_count(&self) -> usize {"
       },
       {
@@ -6234,7 +6788,7 @@
         "kind": "const",
         "doc": "Maximum agents in the sandbox.",
         "file": "deontic_interrupt.rs",
-        "line": 341,
+        "line": 379,
         "signature": "pub const MAX_SANDBOX_AGENTS: usize = 64"
       },
       {
@@ -6242,7 +6796,7 @@
         "kind": "struct",
         "doc": "An agent sandbox provides isolated execution with deontic interrupt\ncapability. Each agent gets its own phase leaser.",
         "file": "deontic_interrupt.rs",
-        "line": 345,
+        "line": 383,
         "signature": "pub struct AgentSandbox"
       },
       {
@@ -6250,7 +6804,7 @@
         "kind": "fn",
         "doc": "Creates a new `AgentSandbox`.",
         "file": "deontic_interrupt.rs",
-        "line": 353,
+        "line": 391,
         "signature": "pub fn new() -> Self {"
       },
       {
@@ -6258,7 +6812,7 @@
         "kind": "fn",
         "doc": "Register an agent with its phase leaser.",
         "file": "deontic_interrupt.rs",
-        "line": 361,
+        "line": 399,
         "signature": "pub fn register_agent(&mut self, agent_id: u32, leaser: PhaseLeaser) -> Result<(), LeaseError> {"
       },
       {
@@ -6266,7 +6820,7 @@
         "kind": "fn",
         "doc": "Verify a capability for a specific agent.",
         "file": "deontic_interrupt.rs",
-        "line": 370,
+        "line": 408,
         "signature": "pub fn verify_capability("
       },
       {
@@ -6274,7 +6828,7 @@
         "kind": "fn",
         "doc": "Trigger a global interrupt — halts all agents.",
         "file": "deontic_interrupt.rs",
-        "line": 393,
+        "line": 431,
         "signature": "pub fn global_halt(&mut self, description: &str) {"
       },
       {
@@ -6282,7 +6836,7 @@
         "kind": "fn",
         "doc": "Is the sandbox globally interrupted?",
         "file": "deontic_interrupt.rs",
-        "line": 401,
+        "line": 439,
         "signature": "pub fn is_halted(&self) -> bool {"
       },
       {
@@ -6290,7 +6844,7 @@
         "kind": "fn",
         "doc": "Get the leaser for a specific agent.",
         "file": "deontic_interrupt.rs",
-        "line": 406,
+        "line": 444,
         "signature": "pub fn get_leaser(&self, agent_id: u32) -> Option<&PhaseLeaser> {"
       },
       {
@@ -6298,7 +6852,7 @@
         "kind": "fn",
         "doc": "Get the number of registered agents.",
         "file": "deontic_interrupt.rs",
-        "line": 411,
+        "line": 449,
         "signature": "pub fn agent_count(&self) -> usize {"
       }
     ]
@@ -6308,11 +6862,19 @@
     "doc": "Agent diagnostic loop — parse + check, JSON out. No disk. No execute.",
     "items": [
       {
+        "name": "FabricSuggestedFix",
+        "kind": "use",
+        "doc": "",
+        "file": "diagnose.rs",
+        "line": 5,
+        "signature": "pub use crate::check::fabric_guard::FabricSuggestedFix;"
+      },
+      {
         "name": "DiagnoseReport",
         "kind": "struct",
         "doc": "",
         "file": "diagnose.rs",
-        "line": 9,
+        "line": 11,
         "signature": "pub struct DiagnoseReport"
       },
       {
@@ -6320,7 +6882,7 @@
         "kind": "fn",
         "doc": "Converts to json.",
         "file": "diagnose.rs",
-        "line": 20,
+        "line": 22,
         "signature": "pub fn to_json(&self) -> String {"
       },
       {
@@ -6328,7 +6890,7 @@
         "kind": "fn",
         "doc": "Helper to detect if a diagnostic represents a contradiction or semantic conflict\n(e.g. conflicting types, conflicting graph assertions, forbidden effect in pure cell).",
         "file": "diagnose.rs",
-        "line": 53,
+        "line": 55,
         "signature": "pub fn is_contradiction(diag: &Diagnostic) -> bool {"
       },
       {
@@ -6336,7 +6898,7 @@
         "kind": "fn",
         "doc": "Parse and type/effect-check. Cells start with `=`. Does not evaluate.\nWhen a contradiction/conflict is detected, attaches evidential annotations (μ = 1.0, λ = 0.0).",
         "file": "diagnose.rs",
-        "line": 67,
+        "line": 69,
         "signature": "pub fn diagnose(src: &str) -> DiagnoseReport {"
       }
     ]
@@ -6382,7 +6944,7 @@
         "kind": "fn",
         "doc": "Capability required for the effect.",
         "file": "effects.rs",
-        "line": 62,
+        "line": 126,
         "signature": "pub fn capability_for(path: &str) -> Option<&'static str> {"
       }
     ]
@@ -6474,7 +7036,7 @@
         "kind": "struct",
         "doc": "",
         "file": "mod.rs",
-        "line": 20,
+        "line": 31,
         "signature": "pub struct Env"
       },
       {
@@ -6482,15 +7044,15 @@
         "kind": "const",
         "doc": "The valid 0.1 namespace import paths. `vibe:0.1/{ns}`.",
         "file": "mod.rs",
-        "line": 52,
+        "line": 74,
         "signature": "pub const VIBE_0_1_NAMESPACES: &[&str] = &["
       },
       {
         "name": "populate_import_aliases",
         "kind": "fn",
-        "doc": "Populate `env.aliases` from a program's import declarations.\nEach `import \"vibe:0.1/graph\" as g;` maps `g` â†’ `graph`.\nIf no alias is given, the namespace basename is used (e.g. `graph`).\nReturns an error if the import path is not a valid 0.1 namespace.",
+        "doc": "Populate `env.aliases` from a program's import declarations.\nEach `import \"vibe:0.1/graph\" as g;` maps `g` -> `graph`.\nAlso supports Vibe 0.03 extension namespace IRIs and short aliases (`mech`, `gpu`, `infer`, `qgraph`, `modality`).",
         "file": "mod.rs",
-        "line": 118,
+        "line": 139,
         "signature": "pub fn populate_import_aliases(env: &mut Env, imports: &[ImportDecl]) -> Result<(), Diagnostic> {"
       },
       {
@@ -6498,7 +7060,7 @@
         "kind": "struct",
         "doc": "",
         "file": "mod.rs",
-        "line": 149,
+        "line": 181,
         "signature": "pub struct Engine<'a, H: Host>"
       },
       {
@@ -6506,15 +7068,15 @@
         "kind": "fn",
         "doc": "Workspace remaining.",
         "file": "mod.rs",
-        "line": 191,
+        "line": 222,
         "signature": "pub fn workspace_left(&self) -> u64 {"
       },
       {
         "name": "new",
         "kind": "fn",
-        "doc": "Creates a new `Engine`.",
+        "doc": "Creates a new `Engine` with all built-in `vibe-0.03` extension providers registered.",
         "file": "mod.rs",
-        "line": 196,
+        "line": 227,
         "signature": "pub fn new(host: &'a mut H, budget: Budget) -> Self {"
       },
       {
@@ -6522,16 +7084,64 @@
         "kind": "fn",
         "doc": "Attach a program so `eval_call` can resolve user-defined functions.",
         "file": "mod.rs",
-        "line": 212,
+        "line": 249,
         "signature": "pub fn with_program(host: &'a mut H, budget: Budget, program: &Program) -> Self {"
       },
       {
         "name": "with_phase_leaser",
         "kind": "fn",
-        "doc": "Attach a deontic phase leaser (R2). When set, every host dispatch\nis checked against the active phase's capability allow-list.",
+        "doc": "Attach a deontic phase leaser (R2).",
         "file": "mod.rs",
-        "line": 229,
+        "line": 257,
         "signature": "pub fn with_phase_leaser("
+      },
+      {
+        "name": "with_extension_governance",
+        "kind": "fn",
+        "doc": "Attach an explicit `ExtensionRegistry`, `CallExecutionContext`, and optional `SentinelPolicyGate` (`Stage S6`).",
+        "file": "mod.rs",
+        "line": 268,
+        "signature": "pub fn with_extension_governance("
+      },
+      {
+        "name": "extension_registry",
+        "kind": "fn",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 284,
+        "signature": "pub fn extension_registry(&self) -> &ExtensionRegistry<'a> {"
+      },
+      {
+        "name": "extension_registry_mut",
+        "kind": "fn",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 290,
+        "signature": "pub fn extension_registry_mut(&mut self) -> &mut ExtensionRegistry<'a> {"
+      },
+      {
+        "name": "set_extension_governance",
+        "kind": "fn",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 296,
+        "signature": "pub fn set_extension_governance("
+      },
+      {
+        "name": "last_extension_outcome",
+        "kind": "fn",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 307,
+        "signature": "pub fn last_extension_outcome(&self) -> Option<&DispatchOutcome> {"
+      },
+      {
+        "name": "active_policy_generation",
+        "kind": "fn",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 313,
+        "signature": "pub fn active_policy_generation(&self) -> Result<u64, vibescript_abi::VibeTrap> {"
       }
     ]
   },
@@ -6551,6 +7161,11 @@
     "items": []
   },
   {
+    "name": "eval::ops",
+    "doc": "Literal evaluation, binary arithmetic/comparison, and pattern matching helpers for `eval`.",
+    "items": []
+  },
+  {
     "name": "eval::program",
     "doc": "",
     "items": [
@@ -6567,7 +7182,7 @@
         "kind": "fn",
         "doc": "Calls a function.",
         "file": "program.rs",
-        "line": 180,
+        "line": 181,
         "signature": "pub fn call_function("
       },
       {
@@ -6575,7 +7190,7 @@
         "kind": "fn",
         "doc": "Dispatch a hook by event path (e.g. `[\"pulse\", \"message\"]` or `[\"tick\"]`).\n\nFinds the first `on <path>(â€¦)` hook in the program whose path matches,\nbinds the supplied argument values to its parameters, and evaluates its\nbody. Returns `Ok(Value::Null)` if no matching hook exists (the host\nmay choose to ignore unhandled events silently).",
         "file": "program.rs",
-        "line": 226,
+        "line": 232,
         "signature": "pub fn call_hook("
       }
     ]
@@ -6598,6 +7213,598 @@
     "name": "eval::stmt",
     "doc": "",
     "items": []
+  },
+  {
+    "name": "eval::task_runtime",
+    "doc": "Admitted task-program context. Scheduler execution never creates a Host or budget.",
+    "items": []
+  },
+  {
+    "name": "eval::tests",
+    "doc": "",
+    "items": []
+  },
+  {
+    "name": "extension_registry",
+    "doc": "VibeScript 0.03 Extension Registry, Cold Preparation, Zero-Heap Hot Dispatch,\nand Deterministic Domain Provider Adapters (`VS03-06`, `VS03-07`, `VS03-08`).",
+    "items": [
+      {
+        "name": "dispatch_adapter",
+        "kind": "module",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 4,
+        "signature": "pub mod dispatch_adapter;"
+      },
+      {
+        "name": "domain_providers",
+        "kind": "module",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 5,
+        "signature": "pub mod domain_providers;"
+      },
+      {
+        "name": "eval_router",
+        "kind": "module",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 6,
+        "signature": "pub mod eval_router;"
+      },
+      {
+        "name": "gpu_inference_providers",
+        "kind": "module",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 7,
+        "signature": "pub mod gpu_inference_providers;"
+      },
+      {
+        "name": "graph_logic_providers",
+        "kind": "module",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 8,
+        "signature": "pub mod graph_logic_providers;"
+      },
+      {
+        "name": "prepare",
+        "kind": "module",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 9,
+        "signature": "pub mod prepare;"
+      },
+      {
+        "name": "registry",
+        "kind": "module",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 10,
+        "signature": "pub mod registry;"
+      },
+      {
+        "name": "scalar_compat",
+        "kind": "module",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 11,
+        "signature": "pub mod scalar_compat;"
+      },
+      {
+        "name": "{",
+        "kind": "use",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 13,
+        "signature": "pub use dispatch_adapter::{"
+      },
+      {
+        "name": "{",
+        "kind": "use",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 16,
+        "signature": "pub use domain_providers::{"
+      },
+      {
+        "name": "{",
+        "kind": "use",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 20,
+        "signature": "pub use etalon_vibe::{"
+      },
+      {
+        "name": "{",
+        "kind": "use",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 24,
+        "signature": "pub use eval_router::{"
+      },
+      {
+        "name": "{",
+        "kind": "use",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 29,
+        "signature": "pub use gpu_inference_providers::{"
+      },
+      {
+        "name": "{",
+        "kind": "use",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 34,
+        "signature": "pub use graph_logic_providers::{"
+      },
+      {
+        "name": "prepare_extension_call",
+        "kind": "use",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 38,
+        "signature": "pub use prepare::prepare_extension_call;"
+      },
+      {
+        "name": "MAX_EXTENSION_PROVIDERS}",
+        "kind": "use",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 39,
+        "signature": "pub use registry::{ExtensionRegistry, MAX_EXTENSION_PROVIDERS};"
+      }
+    ]
+  },
+  {
+    "name": "extension_registry::dispatch_adapter",
+    "doc": "Zero-heap hot dispatch (`dispatch_prepared_call`) enforcing the 6-stage lifecycle\n(`Admit -> Execute -> Validate -> Commit/Abort`) across all 4 `ExecutionMode`s.",
+    "items": [
+      {
+        "name": "CallExecutionContext",
+        "kind": "struct",
+        "doc": "",
+        "file": "dispatch_adapter.rs",
+        "line": 14,
+        "signature": "pub struct CallExecutionContext"
+      },
+      {
+        "name": "DispatchOutcome",
+        "kind": "struct",
+        "doc": "",
+        "file": "dispatch_adapter.rs",
+        "line": 23,
+        "signature": "pub struct DispatchOutcome"
+      },
+      {
+        "name": "dispatch_prepared_call",
+        "kind": "fn",
+        "doc": "Executes a `PreparedCallHandle` in zero heap allocations (`Tier-1 HotZeroHeap`).\n\nEnforces:\n1. `RegistryGeneration` freshness (`StaleRegistryGeneration` on mismatch).\n2. `contract_digest` integrity (`ContractDigestMismatch`).\n3. Parameter arity, type, and element count bounds (`ArityMismatch`, `TypeMismatch`, `SliceLengthMismatch`).\n4. Pre-dispatch output buffer capacity (`OutputBufferTooSmall`) before any admission or side effects.\n5. Mode-specific Sentinel admission (`GovernedApplication`, `StandaloneDeveloper`, `SimulatedGovernanceTest`, `IntegratedGovernanceTest`).\n6. Post-execution validation and fail-closed receipt persistence (`ReceiptPersistenceFailed`).",
+        "file": "dispatch_adapter.rs",
+        "line": 40,
+        "signature": "pub fn dispatch_prepared_call<'g>("
+      },
+      {
+        "name": "SimulatedPolicyGate",
+        "kind": "struct",
+        "doc": "Deterministic in-memory policy gate for `ExecutionMode::SimulatedGovernanceTest`.",
+        "file": "dispatch_adapter.rs",
+        "line": 275,
+        "signature": "pub struct SimulatedPolicyGate"
+      },
+      {
+        "name": "fn",
+        "kind": "const",
+        "doc": "Creates a permissive test policy gate for `allowed_actor_hash`.",
+        "file": "dispatch_adapter.rs",
+        "line": 290,
+        "signature": "pub const fn new_for_actor(allowed_actor_hash: u64) -> Self {"
+      }
+    ]
+  },
+  {
+    "name": "extension_registry::domain_providers",
+    "doc": "Reference deterministic domain provider (`DeterministicMechanicsProvider`, `VS03-08`)\nre-exported from `etalon-vibe` with compile-time sealed `NQuin48` ontology records\nand direct-call oracle helpers.",
+    "items": [
+      {
+        "name": "{",
+        "kind": "use",
+        "doc": "",
+        "file": "domain_providers.rs",
+        "line": 5,
+        "signature": "pub use etalon_vibe::{"
+      }
+    ]
+  },
+  {
+    "name": "extension_registry::eval_router",
+    "doc": "Evaluator, Bytecode VM, and Task Scheduler Call-Site Cutover Router (`Stage S6`).\n\nReplaces direct string-based `crate::bind::dispatch` calls across\n`crates/vibe/src/{eval, bytecode, task_scheduler}` with unified\n`ExtensionRegistry` resolution, $O(1)$ `PreparedCallCache` lookup,\nzero-heap slice marshaling, `SentinelPolicyGate` enforcement, and budget charging.",
+    "items": [
+      {
+        "name": "BUILTIN_EXTENSION_ALIASES",
+        "kind": "const",
+        "doc": "Short aliases of all built-in extension providers registered by default.",
+        "file": "eval_router.rs",
+        "line": 45,
+        "signature": "pub const BUILTIN_EXTENSION_ALIASES: &[&str] = &["
+      },
+      {
+        "name": "BUILTIN_EXTENSION_IRIS",
+        "kind": "const",
+        "doc": "Canonical namespace IRIs of all built-in extension providers registered by default.",
+        "file": "eval_router.rs",
+        "line": 51,
+        "signature": "pub const BUILTIN_EXTENSION_IRIS: &[&str] = &["
+      },
+      {
+        "name": "with_builtin_providers",
+        "kind": "fn",
+        "doc": "Constructs an `ExtensionRegistry` pre-populated with all 11 built-in Etalon and Qualia providers:\n- `mech` (`DeterministicMechanicsProvider`)\n- `gpu` (`EtalonGpuComputeProvider`)\n- `forge` (`EtalonForgeProvider`)\n- `render` (`EtalonRenderProvider`)\n- `signal` (`EtalonSignalProvider`)\n- `sense` (`EtalonSenseProvider`)\n- `p64` (`EtalonModelProvider`)\n- `nquin` (`EtalonNQuinProvider`)\n- `infer` (`GovernedInferenceProvider`)\n- `qgraph` (`StagedGraphMutationProvider`)\n- `modality` (`DeonticTemporalProvider`)",
+        "file": "eval_router.rs",
+        "line": 78,
+        "signature": "pub fn with_builtin_providers() -> Self {"
+      },
+      {
+        "name": "is_extension_namespace",
+        "kind": "fn",
+        "doc": "",
+        "file": "eval_router.rs",
+        "line": 108,
+        "signature": "pub fn is_extension_namespace(ns: &str) -> bool {"
+      },
+      {
+        "name": "is_extension_call_path",
+        "kind": "fn",
+        "doc": "",
+        "file": "eval_router.rs",
+        "line": 115,
+        "signature": "pub fn is_extension_call_path(path: &str) -> bool {"
+      },
+      {
+        "name": "PreparedCallCache",
+        "kind": "struct",
+        "doc": "",
+        "file": "eval_router.rs",
+        "line": 128,
+        "signature": "pub struct PreparedCallCache"
+      },
+      {
+        "name": "fn",
+        "kind": "const",
+        "doc": "",
+        "file": "eval_router.rs",
+        "line": 142,
+        "signature": "pub const fn new() -> Self {"
+      },
+      {
+        "name": "get",
+        "kind": "fn",
+        "doc": "",
+        "file": "eval_router.rs",
+        "line": 151,
+        "signature": "pub fn get("
+      },
+      {
+        "name": "insert",
+        "kind": "fn",
+        "doc": "",
+        "file": "eval_router.rs",
+        "line": 170,
+        "signature": "pub fn insert(&mut self, path_hash: u64, handle: PreparedCallHandle) {"
+      },
+      {
+        "name": "trap_to_diagnostic",
+        "kind": "fn",
+        "doc": "Maps a deterministic `VibeTrap` to a VibeScript `Diagnostic`.",
+        "file": "eval_router.rs",
+        "line": 177,
+        "signature": "pub fn trap_to_diagnostic(trap: VibeTrap, path: &str, span: Span) -> Diagnostic {"
+      },
+      {
+        "name": "try_prepare_path",
+        "kind": "fn",
+        "doc": "Resolves a dotted or canonical IRI call path against `registry` into a `PreparedCallHandle`.\n\nSupports:\n- 3-part dotted path: `\"mech.kinematics.verlet_step\"`, `\"https://.../mechanics.kinematics.verlet_step\"`\n- 2-part dotted path: `\"mech.verlet_step\"` (searches sub-namespaces of provider `\"mech\"`)\n- Full canonical function IRI: `\"https://qualiadb.org/ext/etalon/mechanics/kinematics/verlet_step\"`",
+        "file": "eval_router.rs",
+        "line": 209,
+        "signature": "pub fn try_prepare_path("
+      },
+      {
+        "name": "execute_prepared_value_call",
+        "kind": "fn",
+        "doc": "Executes a resolved `PreparedCallHandle` by marshaling `pos_args` into stack-allocated\n`BorrowedSliceView`s (with descriptor-driven overflow sizing when needed), invoking\n`dispatch_prepared_call`, charging `budget`, and decoding `CallerOutputSlice` back to a `Value`.",
+        "file": "eval_router.rs",
+        "line": 372,
+        "signature": "pub fn execute_prepared_value_call<'g>("
+      },
+      {
+        "name": "route_call",
+        "kind": "fn",
+        "doc": "Unified host and extension call router used by `eval`, `bytecode`, and `task_scheduler`.",
+        "file": "eval_router.rs",
+        "line": 567,
+        "signature": "pub fn route_call<'g, H: Host>("
+      }
+    ]
+  },
+  {
+    "name": "extension_registry::gpu_inference_providers",
+    "doc": "Stage S6 (`VS03-12`) GPU compute (`EtalonGpuComputeProvider`, re-exported from `etalon-vibe`)\nand governed inference (`GovernedInferenceProvider`) extension providers with canonical\ncontract digests and direct-call reference oracles.",
+    "items": [
+      {
+        "name": "{",
+        "kind": "use",
+        "doc": "",
+        "file": "gpu_inference_providers.rs",
+        "line": 5,
+        "signature": "pub use etalon_vibe::{"
+      },
+      {
+        "name": "oracle_gpu_affine_f32",
+        "kind": "fn",
+        "doc": "",
+        "file": "gpu_inference_providers.rs",
+        "line": 12,
+        "signature": "pub fn oracle_gpu_affine_f32(x: [f32; 4], scale: f32, bias: f32) -> [f32; 4] {"
+      },
+      {
+        "name": "oracle_gpu_gemv4_f32",
+        "kind": "fn",
+        "doc": "",
+        "file": "gpu_inference_providers.rs",
+        "line": 23,
+        "signature": "pub fn oracle_gpu_gemv4_f32(mat: [f32; 16], vec4: [f32; 4]) -> [f32; 4] {"
+      },
+      {
+        "name": "oracle_gpu_topk2_f32",
+        "kind": "fn",
+        "doc": "",
+        "file": "gpu_inference_providers.rs",
+        "line": 29,
+        "signature": "pub fn oracle_gpu_topk2_f32(scores: &[f32]) -> [f32; 2] {"
+      },
+      {
+        "name": "GovernedInferenceProvider",
+        "kind": "struct",
+        "doc": "",
+        "file": "gpu_inference_providers.rs",
+        "line": 226,
+        "signature": "pub struct GovernedInferenceProvider;"
+      },
+      {
+        "name": "oracle_rms_norm_f64",
+        "kind": "fn",
+        "doc": "",
+        "file": "gpu_inference_providers.rs",
+        "line": 307,
+        "signature": "pub fn oracle_rms_norm_f64(x: [f64; 4], weight: [f64; 4], eps: f64) -> [f64; 4] {"
+      },
+      {
+        "name": "oracle_softmax_f64",
+        "kind": "fn",
+        "doc": "",
+        "file": "gpu_inference_providers.rs",
+        "line": 320,
+        "signature": "pub fn oracle_softmax_f64(logits: [f64; 4]) -> [f64; 4] {"
+      },
+      {
+        "name": "oracle_governed_token_step",
+        "kind": "fn",
+        "doc": "",
+        "file": "gpu_inference_providers.rs",
+        "line": 332,
+        "signature": "pub fn oracle_governed_token_step("
+      }
+    ]
+  },
+  {
+    "name": "extension_registry::graph_logic_providers",
+    "doc": "Stage S6 (`VS03-13`) Named provider migration: `StagedGraphMutationProvider` (`qgraph`)\nand `DeonticTemporalProvider` (`modality`) with direct-call reference oracles.",
+    "items": [
+      {
+        "name": "StagedGraphMutationProvider",
+        "kind": "struct",
+        "doc": "",
+        "file": "graph_logic_providers.rs",
+        "line": 139,
+        "signature": "pub struct StagedGraphMutationProvider;"
+      },
+      {
+        "name": "fn",
+        "kind": "const",
+        "doc": "",
+        "file": "graph_logic_providers.rs",
+        "line": 186,
+        "signature": "pub const fn oracle_seal_quin(spocm: [u64; 5]) -> NQuin48 {"
+      },
+      {
+        "name": "fn",
+        "kind": "const",
+        "doc": "",
+        "file": "graph_logic_providers.rs",
+        "line": 192,
+        "signature": "pub const fn oracle_verify_quin_parity(words: [u64; 6]) -> bool {"
+      },
+      {
+        "name": "DeonticTemporalProvider",
+        "kind": "struct",
+        "doc": "",
+        "file": "graph_logic_providers.rs",
+        "line": 331,
+        "signature": "pub struct DeonticTemporalProvider;"
+      },
+      {
+        "name": "fn",
+        "kind": "const",
+        "doc": "",
+        "file": "graph_logic_providers.rs",
+        "line": 378,
+        "signature": "pub const fn oracle_allen_interval_relation("
+      },
+      {
+        "name": "fn",
+        "kind": "const",
+        "doc": "",
+        "file": "graph_logic_providers.rs",
+        "line": 407,
+        "signature": "pub const fn oracle_pack_deontic_predicate("
+      }
+    ]
+  },
+  {
+    "name": "extension_registry::prepare",
+    "doc": "Cold call preparation (`prepare_extension_call`) resolving canonical IRIs,\nshort aliases, `SemVerReq` constraints, and target profiles into `PreparedCallHandle`s.",
+    "items": [
+      {
+        "name": "prepare_extension_call",
+        "kind": "fn",
+        "doc": "Cold-stage resolver (`Stage 2: Prepare`) that binds `(namespace_or_alias, sub_namespace, func_name)`\nagainst `version_req` and `target_profile` into a generational `PreparedCallHandle`.",
+        "file": "prepare.rs",
+        "line": 11,
+        "signature": "pub fn prepare_extension_call("
+      }
+    ]
+  },
+  {
+    "name": "extension_registry::registry",
+    "doc": "Atomic, bounded extension provider registry (`ExtensionRegistry`) for `crates/vibe`.",
+    "items": [
+      {
+        "name": "MAX_EXTENSION_PROVIDERS",
+        "kind": "const",
+        "doc": "Maximum number of concurrently registered extension providers in a fixed-size registry.",
+        "file": "registry.rs",
+        "line": 9,
+        "signature": "pub const MAX_EXTENSION_PROVIDERS: usize = 32"
+      },
+      {
+        "name": "ExtensionRegistry",
+        "kind": "struct",
+        "doc": "Fixed-capacity, generational registry of `VibeNamespaceProvider` implementations.\n\nRegistration is cold and atomic: if any validation check fails (hash mismatch,\nduplicate IRI/alias/ID, `q_hash` collision, or invalid ontology parity/budget),\nthe registry remains completely unchanged.",
+        "file": "registry.rs",
+        "line": 16,
+        "signature": "pub struct ExtensionRegistry<'p>"
+      },
+      {
+        "name": "fn",
+        "kind": "const",
+        "doc": "",
+        "file": "registry.rs",
+        "line": 31,
+        "signature": "pub const fn new() -> Self {"
+      },
+      {
+        "name": "fn",
+        "kind": "const",
+        "doc": "",
+        "file": "registry.rs",
+        "line": 41,
+        "signature": "pub const fn generation(&self) -> RegistryGeneration {"
+      },
+      {
+        "name": "fn",
+        "kind": "const",
+        "doc": "",
+        "file": "registry.rs",
+        "line": 47,
+        "signature": "pub const fn active_count(&self) -> usize {"
+      },
+      {
+        "name": "register",
+        "kind": "fn",
+        "doc": "Atomically validates and registers `provider`, returning its assigned `ns_slot`\nand advancing `self.generation`.",
+        "file": "registry.rs",
+        "line": 53,
+        "signature": "pub fn register(&mut self, provider: &'p dyn VibeNamespaceProvider) -> Result<u32, VibeTrap> {"
+      },
+      {
+        "name": "unregister",
+        "kind": "fn",
+        "doc": "Unregisters the provider at `slot` and advances `self.generation` so all\npreviously prepared handles fail closed with `VibeTrap::StaleRegistryGeneration`.",
+        "file": "registry.rs",
+        "line": 154,
+        "signature": "pub fn unregister(&mut self, slot: u32) -> Result<(), VibeTrap> {"
+      },
+      {
+        "name": "provider_at",
+        "kind": "fn",
+        "doc": "",
+        "file": "registry.rs",
+        "line": 167,
+        "signature": "pub fn provider_at(&self, slot: u32) -> Option<&'p dyn VibeNamespaceProvider> {"
+      },
+      {
+        "name": "iter_providers",
+        "kind": "fn",
+        "doc": "",
+        "file": "registry.rs",
+        "line": 173,
+        "signature": "pub fn iter_providers(&self) -> impl Iterator<Item = &'p dyn VibeNamespaceProvider> + '_ {"
+      },
+      {
+        "name": "resolve_opcode",
+        "kind": "fn",
+        "doc": "",
+        "file": "registry.rs",
+        "line": 179,
+        "signature": "pub fn resolve_opcode("
+      },
+      {
+        "name": "find_by_namespace_or_alias",
+        "kind": "fn",
+        "doc": "Finds a registered provider by canonical IRI or short alias.",
+        "file": "registry.rs",
+        "line": 209,
+        "signature": "pub fn find_by_namespace_or_alias("
+      },
+      {
+        "name": "find_sub_namespace",
+        "kind": "fn",
+        "doc": "Iterates over all active provider descriptors.",
+        "file": "registry.rs",
+        "line": 227,
+        "signature": "pub fn find_sub_namespace<'a>("
+      },
+      {
+        "name": "validate_unique_stable_ids",
+        "kind": "fn",
+        "doc": "Checks whether a `StableFuncId` is duplicated within the same provider.",
+        "file": "registry.rs",
+        "line": 265,
+        "signature": "pub fn validate_unique_stable_ids(desc: &ProviderDescriptor) -> Result<(), VibeTrap> {"
+      }
+    ]
+  },
+  {
+    "name": "extension_registry::scalar_compat",
+    "doc": "Flat-scalar argument marshaling and convenience kernel evaluation for interactive\nVibeScript 0.03 programs (`VS03-08`).\n\nKeeps hot-path marshaling zero-heap using caller-owned stack scratch buffers while\nallowing interactive scripts to pass either slice lists (`[a, b, c]`) or flat scalar\narguments (`a, b, c`) to extension functions.",
+    "items": [
+      {
+        "name": "marshal_args_into_scratch",
+        "kind": "fn",
+        "doc": "Marshals `effective_args` into `input_scratch` and records `(start, end, kind, elems)`\nin `param_offsets` for each parameter in `func.params`.",
+        "file": "scalar_compat.rs",
+        "line": 20,
+        "signature": "pub fn marshal_args_into_scratch("
+      },
+      {
+        "name": "write_value_into_scratch",
+        "kind": "fn",
+        "doc": "",
+        "file": "scalar_compat.rs",
+        "line": 102,
+        "signature": "pub fn write_value_into_scratch("
+      },
+      {
+        "name": "write_scalar_into_scratch",
+        "kind": "fn",
+        "doc": "",
+        "file": "scalar_compat.rs",
+        "line": 162,
+        "signature": "pub fn write_scalar_into_scratch("
+      }
+    ]
   },
   {
     "name": "frame_morphism",
@@ -7386,22 +8593,6 @@
         "file": "lex.rs",
         "line": 104,
         "signature": "pub fn next_token(&mut self) -> Result<Token, Diagnostic> {"
-      },
-      {
-        "name": "is_keyword",
-        "kind": "fn",
-        "doc": "`true` when keyword.",
-        "file": "lex.rs",
-        "line": 700,
-        "signature": "pub fn is_keyword(text: &str) -> bool {"
-      },
-      {
-        "name": "tokenize",
-        "kind": "fn",
-        "doc": "Tokenizes source.",
-        "file": "lex.rs",
-        "line": 724,
-        "signature": "pub fn tokenize(src: &str) -> Result<Vec<Token>, Diagnostic> {"
       }
     ]
   },
@@ -8756,19 +9947,11 @@
         "signature": "pub fn new(src: &'a str) -> Result<Self, Diagnostic> {"
       },
       {
-        "name": "source",
-        "kind": "fn",
-        "doc": "Source text.",
-        "file": "mod.rs",
-        "line": 35,
-        "signature": "pub fn source(&self) -> &'a str {"
-      },
-      {
         "name": "parse_program",
         "kind": "fn",
         "doc": "Parses program.",
         "file": "mod.rs",
-        "line": 40,
+        "line": 34,
         "signature": "pub fn parse_program(&mut self) -> Result<Program, Diagnostic> {"
       },
       {
@@ -8776,7 +9959,7 @@
         "kind": "fn",
         "doc": "Parses cell-body.",
         "file": "mod.rs",
-        "line": 91,
+        "line": 85,
         "signature": "pub fn parse_cell_body(&mut self) -> Result<Expr, Diagnostic> {"
       },
       {
@@ -8784,7 +9967,7 @@
         "kind": "fn",
         "doc": "Parses program.",
         "file": "mod.rs",
-        "line": 514,
+        "line": 508,
         "signature": "pub fn parse_program(src: &str) -> Result<Program, Diagnostic> {"
       },
       {
@@ -8792,7 +9975,7 @@
         "kind": "fn",
         "doc": "Parses cell.",
         "file": "mod.rs",
-        "line": 519,
+        "line": 513,
         "signature": "pub fn parse_cell(src: &str) -> Result<Expr, Diagnostic> {"
       }
     ]
@@ -8836,11 +10019,19 @@
     "doc": "Physics & Creator Physics module (Fields, Materials, Interaction Laws, Continuant WorldLines, and Frame Morphisms).\n\nProvides first-class physical domain primitives for VibeScript without consuming\nor reallocating the ten manifold axes (XYZD+T Option A).",
     "items": [
       {
-        "name": "fields",
+        "name": "domain_facets",
         "kind": "module",
         "doc": "",
         "file": "mod.rs",
         "line": 6,
+        "signature": "pub mod domain_facets;"
+      },
+      {
+        "name": "fields",
+        "kind": "module",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 7,
         "signature": "pub mod fields;"
       },
       {
@@ -8848,7 +10039,7 @@
         "kind": "module",
         "doc": "",
         "file": "mod.rs",
-        "line": 7,
+        "line": 8,
         "signature": "pub mod laws;"
       },
       {
@@ -8856,7 +10047,7 @@
         "kind": "module",
         "doc": "",
         "file": "mod.rs",
-        "line": 8,
+        "line": 9,
         "signature": "pub mod materials;"
       },
       {
@@ -8864,23 +10055,47 @@
         "kind": "module",
         "doc": "",
         "file": "mod.rs",
-        "line": 9,
+        "line": 10,
         "signature": "pub mod morphism;"
+      },
+      {
+        "name": "nbody_3d",
+        "kind": "module",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 11,
+        "signature": "pub mod nbody_3d;"
+      },
+      {
+        "name": "quantum_3d",
+        "kind": "module",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 12,
+        "signature": "pub mod quantum_3d;"
       },
       {
         "name": "trajectory",
         "kind": "module",
         "doc": "",
         "file": "mod.rs",
-        "line": 10,
+        "line": 13,
         "signature": "pub mod trajectory;"
+      },
+      {
+        "name": "{",
+        "kind": "use",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 15,
+        "signature": "pub use domain_facets::{"
       },
       {
         "name": "FieldUnit}",
         "kind": "use",
         "doc": "",
         "file": "mod.rs",
-        "line": 12,
+        "line": 18,
         "signature": "pub use fields::{AnalyticFieldProfile, FieldDeclaration, FieldQuantity, FieldUnit};"
       },
       {
@@ -8888,7 +10103,7 @@
         "kind": "use",
         "doc": "",
         "file": "mod.rs",
-        "line": 13,
+        "line": 19,
         "signature": "pub use laws::{"
       },
       {
@@ -8896,7 +10111,7 @@
         "kind": "use",
         "doc": "",
         "file": "mod.rs",
-        "line": 16,
+        "line": 22,
         "signature": "pub use materials::{"
       },
       {
@@ -8904,16 +10119,206 @@
         "kind": "use",
         "doc": "",
         "file": "mod.rs",
-        "line": 21,
+        "line": 27,
         "signature": "pub use morphism::{transform_frame, GalileanMorphism, LorentzMorphism};"
+      },
+      {
+        "name": "{",
+        "kind": "use",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 28,
+        "signature": "pub use nbody_3d::{"
+      },
+      {
+        "name": "{",
+        "kind": "use",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 32,
+        "signature": "pub use quantum_3d::{"
       },
       {
         "name": "WorldLineTrajectory}",
         "kind": "use",
         "doc": "",
         "file": "mod.rs",
-        "line": 22,
+        "line": 36,
         "signature": "pub use trajectory::{Waypoint, WorldLineTrajectory};"
+      }
+    ]
+  },
+  {
+    "name": "physics::domain_facets",
+    "doc": "Cross-Domain Constitutive Facets and Bond-Graph Ports.\n\nProvides biomechanical (Hill muscle), botanical/hydraulic (Allometric branch),\nmechanical structural (Fatigue & corrosion), and port-Hamiltonian energy\nconservation primitives for VibeScript physics.\n\nReference: `AGENTS.md` Workstream W5 (§6.1–§6.2).",
+    "items": [
+      {
+        "name": "HillMuscleFacet",
+        "kind": "struct",
+        "doc": "",
+        "file": "domain_facets.rs",
+        "line": 15,
+        "signature": "pub struct HillMuscleFacet"
+      },
+      {
+        "name": "fn",
+        "kind": "const",
+        "doc": "Constructs a new Hill muscle facet.",
+        "file": "domain_facets.rs",
+        "line": 30,
+        "signature": "pub const fn new("
+      },
+      {
+        "name": "active_force_length",
+        "kind": "fn",
+        "doc": "",
+        "file": "domain_facets.rs",
+        "line": 50,
+        "signature": "pub fn active_force_length(l_norm: f64) -> f64 {"
+      },
+      {
+        "name": "force_velocity",
+        "kind": "fn",
+        "doc": "",
+        "file": "domain_facets.rs",
+        "line": 60,
+        "signature": "pub fn force_velocity(v_norm: f64) -> f64 {"
+      },
+      {
+        "name": "passive_force_length",
+        "kind": "fn",
+        "doc": "",
+        "file": "domain_facets.rs",
+        "line": 76,
+        "signature": "pub fn passive_force_length(l_norm: f64) -> f64 {"
+      },
+      {
+        "name": "compute_tendon_force",
+        "kind": "fn",
+        "doc": "Computes total muscle force transmitted to the tendon (N).",
+        "file": "domain_facets.rs",
+        "line": 86,
+        "signature": "pub fn compute_tendon_force("
+      },
+      {
+        "name": "AllometricBranchLaw",
+        "kind": "struct",
+        "doc": "",
+        "file": "domain_facets.rs",
+        "line": 110,
+        "signature": "pub struct AllometricBranchLaw"
+      },
+      {
+        "name": "child_radii_from_split",
+        "kind": "fn",
+        "doc": "Computes child branch radii given a parent radius and split ratio $\\eta \\in [0.0, 1.0]$.\n\n$$r_{\\text{parent}}^\\gamma = r_{\\text{child},1}^\\gamma + r_{\\text{child},2}^\\gamma$$",
+        "file": "domain_facets.rs",
+        "line": 133,
+        "signature": "pub fn child_radii_from_split(&self, parent_radius: f64, split_ratio: f64) -> (f64, f64) {"
+      },
+      {
+        "name": "verify_da_vinci_conservation",
+        "kind": "fn",
+        "doc": "Verifies Da Vinci / Murray conservation residual: $|r_{\\text{parent}}^\\gamma - \\sum r_{\\text{child}}^\\gamma|$.",
+        "file": "domain_facets.rs",
+        "line": 143,
+        "signature": "pub fn verify_da_vinci_conservation(&self, parent_radius: f64, child_radii: &[f64]) -> f64 {"
+      },
+      {
+        "name": "phyllotaxis_direction",
+        "kind": "fn",
+        "doc": "Evaluates golden-angle phyllotaxis direction vector for primordium / leaf node $n$.\n\n$$\\theta_n = n \\cdot 137.50776405^\\circ, \\quad r_n = c \\sqrt{n}$$",
+        "file": "domain_facets.rs",
+        "line": 152,
+        "signature": "pub fn phyllotaxis_direction(index: u32, scale_c: f64) -> [f64; 3] {"
+      },
+      {
+        "name": "darcy_transpiration_flux",
+        "kind": "fn",
+        "doc": "Evaluates Darcy-Hagen-Poiseuille xylem transpiration flux density ($m \\cdot s^{-1}$).\n\n$$J_w = -K_h \\left(\\frac{\\Delta\\Psi}{\\Delta z} + \\rho g\\right)$$",
+        "file": "domain_facets.rs",
+        "line": 163,
+        "signature": "pub fn darcy_transpiration_flux("
+      },
+      {
+        "name": "FatigueCorrosionLaw",
+        "kind": "struct",
+        "doc": "",
+        "file": "domain_facets.rs",
+        "line": 179,
+        "signature": "pub struct FatigueCorrosionLaw"
+      },
+      {
+        "name": "fn",
+        "kind": "const",
+        "doc": "Constructs a new fatigue and corrosion law instance.",
+        "file": "domain_facets.rs",
+        "line": 192,
+        "signature": "pub const fn new("
+      },
+      {
+        "name": "cycles_to_failure_basquin",
+        "kind": "fn",
+        "doc": "Evaluates Basquin S-N high-cycle fatigue cycles to failure $N_f$.\n\n$$\\sigma_a = \\sigma_f' (2 N_f)^b \\implies N_f = \\frac{1}{2}\\left(\\frac{\\sigma_a}{\\sigma_f'}\\right)^{1/b}$$",
+        "file": "domain_facets.rs",
+        "line": 209,
+        "signature": "pub fn cycles_to_failure_basquin(&self, stress_amplitude_mpa: f64) -> f64 {"
+      },
+      {
+        "name": "crack_growth_per_cycle",
+        "kind": "fn",
+        "doc": "Evaluates Paris-Erdogan subcritical crack growth per cycle $\\frac{da}{dN}$ (m/cycle).\n\n$$\\frac{da}{dN} = C (\\Delta K)^m$$",
+        "file": "domain_facets.rs",
+        "line": 221,
+        "signature": "pub fn crack_growth_per_cycle(&self, delta_k_mpa_sqrt_m: f64) -> f64 {"
+      },
+      {
+        "name": "corrosion_mass_loss_rate_kg_s",
+        "kind": "fn",
+        "doc": "Evaluates Faraday-Arrhenius galvanic corrosion mass loss rate (kg/s).\n\n$$\\frac{dm}{dt} = \\frac{j \\cdot A \\cdot M}{z F} \\cdot \\exp\\left(-\\frac{E_a}{R}\\left(\\frac{1}{T} - \\frac{1}{T_0}\\right)\\right)$$",
+        "file": "domain_facets.rs",
+        "line": 232,
+        "signature": "pub fn corrosion_mass_loss_rate_kg_s("
+      },
+      {
+        "name": "PortDomain",
+        "kind": "enum",
+        "doc": "",
+        "file": "domain_facets.rs",
+        "line": 258,
+        "signature": "pub enum PortDomain"
+      },
+      {
+        "name": "BondGraphPort",
+        "kind": "struct",
+        "doc": "",
+        "file": "domain_facets.rs",
+        "line": 269,
+        "signature": "pub struct BondGraphPort"
+      },
+      {
+        "name": "fn",
+        "kind": "const",
+        "doc": "Constructs a new bond-graph energy port.",
+        "file": "domain_facets.rs",
+        "line": 277,
+        "signature": "pub const fn new(domain: PortDomain, effort: f64, flow: f64) -> Self {"
+      },
+      {
+        "name": "instantaneous_power",
+        "kind": "fn",
+        "doc": "",
+        "file": "domain_facets.rs",
+        "line": 287,
+        "signature": "pub fn instantaneous_power(&self) -> f64 {"
+      },
+      {
+        "name": "verify_dirac_junction_power_balance",
+        "kind": "fn",
+        "doc": "Verifies Dirac structure junction power conservation: $\\sum_k e_k f_k = 0$.",
+        "file": "domain_facets.rs",
+        "line": 292,
+        "signature": "pub fn verify_dirac_junction_power_balance("
       }
     ]
   },
@@ -9422,6 +10827,122 @@
     ]
   },
   {
+    "name": "physics::nbody_3d",
+    "doc": "3D N-Body Symplectic Gravitational and Relativistic Orbital Solver.\n\nProvides a zero-heap Velocity-Verlet / symplectic leapfrog integrator with\nNewtonian pairwise gravitational acceleration and optional 1st Post-Newtonian (1PN)\nEinstein-Infeld-Hoffmann perihelion precession corrections.\n\nReference: `AGENTS.md` Workstream W5 (§5.4).",
+    "items": [
+      {
+        "name": "GRAVITATIONAL_CONSTANT",
+        "kind": "const",
+        "doc": "Gravitational constant $G$ in $\\text{m}^3 \\cdot \\text{kg}^{-1} \\cdot \\text{s}^{-2}$.",
+        "file": "nbody_3d.rs",
+        "line": 10,
+        "signature": "pub const GRAVITATIONAL_CONSTANT: f64 = 6.67430e-11"
+      },
+      {
+        "name": "SPEED_OF_LIGHT",
+        "kind": "const",
+        "doc": "Speed of light in vacuum $c$ in $\\text{m} \\cdot \\text{s}^{-1}$.",
+        "file": "nbody_3d.rs",
+        "line": 13,
+        "signature": "pub const SPEED_OF_LIGHT: f64 = 299_792_458.0"
+      },
+      {
+        "name": "MAX_STACK_BODIES",
+        "kind": "const",
+        "doc": "Maximum number of bodies supported in zero-heap stack buffer allocations.",
+        "file": "nbody_3d.rs",
+        "line": 16,
+        "signature": "pub const MAX_STACK_BODIES: usize = 128"
+      },
+      {
+        "name": "CelestialBody3D",
+        "kind": "struct",
+        "doc": "",
+        "file": "nbody_3d.rs",
+        "line": 21,
+        "signature": "pub struct CelestialBody3D"
+      },
+      {
+        "name": "fn",
+        "kind": "const",
+        "doc": "Constructs a new 3D celestial body.",
+        "file": "nbody_3d.rs",
+        "line": 34,
+        "signature": "pub const fn new("
+      },
+      {
+        "name": "step_nbody_3d_verlet",
+        "kind": "fn",
+        "doc": "Advances an N-body system by `dt_s` seconds using a symplectic Velocity-Verlet step.\n\nCompletely zero-heap; requires `bodies.len() <= MAX_STACK_BODIES`.",
+        "file": "nbody_3d.rs",
+        "line": 125,
+        "signature": "pub fn step_nbody_3d_verlet("
+      },
+      {
+        "name": "total_mechanical_energy",
+        "kind": "fn",
+        "doc": "Evaluates total mechanical energy (kinetic + gravitational potential) of the system in Joules.",
+        "file": "nbody_3d.rs",
+        "line": 174,
+        "signature": "pub fn total_mechanical_energy(bodies: &[CelestialBody3D], softening_m: f64) -> f64 {"
+      },
+      {
+        "name": "total_angular_momentum",
+        "kind": "fn",
+        "doc": "Evaluates total 3D angular momentum vector $[L_x, L_y, L_z]$ of the system ($\\text{kg} \\cdot \\text{m}^2 \\cdot \\text{s}^{-1}$).",
+        "file": "nbody_3d.rs",
+        "line": 201,
+        "signature": "pub fn total_angular_momentum(bodies: &[CelestialBody3D]) -> [f64; 3] {"
+      }
+    ]
+  },
+  {
+    "name": "physics::quantum_3d",
+    "doc": "3D Hydrogenic Quantum Orbitals and Real Spherical Harmonics.\n\nProvides zero-heap analytical evaluators for Hydrogenic wavefunctions $\\psi_{nlm}(r, \\theta, \\phi)$,\ngeneralized Laguerre polynomials $L_{n-l-1}^{2l+1}(\\rho)$, associated Legendre polynomials\n$P_l^m(\\cos\\theta)$, and real spherical harmonics $Y_l^m(\\theta, \\phi)$.\n\nReference: `AGENTS.md` Workstream W5 (§5.5).",
+    "items": [
+      {
+        "name": "associated_laguerre",
+        "kind": "fn",
+        "doc": "Evaluates generalized Laguerre polynomial $L_p^k(x)$ using an iterative three-term recurrence.\n\n$$(i + 1) L_{i+1}^k(x) = (2i + 1 + k - x) L_i^k(x) - (i + k) L_{i-1}^k(x)$$\n\nCompletely zero-heap and non-recursive.",
+        "file": "quantum_3d.rs",
+        "line": 16,
+        "signature": "pub fn associated_laguerre(p: u32, k: u32, x: f64) -> f64 {"
+      },
+      {
+        "name": "associated_legendre",
+        "kind": "fn",
+        "doc": "Evaluates associated Legendre polynomial $P_l^m(\\cos\\theta)$ for $0 \\le m \\le l$.\n\nIncludes the standard Condon-Shortley phase $(-1)^m$. Non-recursive and zero-heap.",
+        "file": "quantum_3d.rs",
+        "line": 40,
+        "signature": "pub fn associated_legendre(l: u32, m_abs: u32, cos_theta: f64) -> f64 {"
+      },
+      {
+        "name": "real_spherical_harmonic",
+        "kind": "fn",
+        "doc": "Evaluates real spherical harmonic $Y_l^m(\\theta, \\phi)$ for $l \\ge 0, -l \\le m \\le l$.\n\nNormalized such that $\\int_{0}^{2\\pi}\\int_{0}^{\\pi} |Y_l^m|^2 \\sin\\theta \\, d\\theta d\\phi = 1.0$.",
+        "file": "quantum_3d.rs",
+        "line": 81,
+        "signature": "pub fn real_spherical_harmonic(l: u32, m: i32, theta: f64, phi: f64) -> f64 {"
+      },
+      {
+        "name": "hydrogenic_radial_wavefunction",
+        "kind": "fn",
+        "doc": "Evaluates radial hydrogenic wavefunction $R_{nl}(r)$ in atomic units ($a_0 = 1$).\n\n$$R_{nl}(r) = \\sqrt{ \\left(\\frac{2Z}{n}\\right)^3 \\frac{(n - l - 1)!}{2n (n + l)!} } \\cdot e^{-\\rho / 2} \\cdot \\rho^l \\cdot L_{n-l-1}^{2l+1}(\\rho)$$\nwhere $\\rho = \\frac{2 Z r}{n}$.",
+        "file": "quantum_3d.rs",
+        "line": 118,
+        "signature": "pub fn hydrogenic_radial_wavefunction(n: u32, l: u32, z_atomic: f64, r_bohr: f64) -> f64 {"
+      },
+      {
+        "name": "evaluate_hydrogenic_orbital_3d",
+        "kind": "fn",
+        "doc": "Evaluates exact 3D Hydrogenic quantum orbital amplitude, probability density, and phase sign.\n\nReturns `(psi, probability_density_psi_sq, phase_sign)`.\n- `psi`: Amplitude $\\psi_{nlm}(r, \\theta, \\phi) = R_{nl}(r) \\cdot Y_l^m(\\theta, \\phi)$.\n- `probability_density_psi_sq`: Probability density $|\\psi|^2$.\n- `phase_sign`: `+1` (positive lobe), `-1` (negative lobe), or `0` (nodal surface).",
+        "file": "quantum_3d.rs",
+        "line": 149,
+        "signature": "pub fn evaluate_hydrogenic_orbital_3d("
+      }
+    ]
+  },
+  {
     "name": "physics::trajectory",
     "doc": "WorldLine trajectory & temporal persistence (W2).",
     "items": [
@@ -9868,11 +11389,19 @@
         "signature": "pub fn apply_edit(prog: &Program, edit: &Edit) -> Program {"
       },
       {
+        "name": "try_apply_edit",
+        "kind": "fn",
+        "doc": "Apply a structural edit with bounds and target-kind validation.\nReturns `Err` if the target index is out of range or has an incompatible item kind.",
+        "file": "projectional.rs",
+        "line": 1126,
+        "signature": "pub fn try_apply_edit(prog: &Program, edit: &Edit) -> Result<Program, String> {"
+      },
+      {
         "name": "apply_edits",
         "kind": "fn",
         "doc": "Apply a sequence of edits, producing the final program.",
         "file": "projectional.rs",
-        "line": 1125,
+        "line": 1214,
         "signature": "pub fn apply_edits(prog: &Program, edits: &[Edit]) -> Program {"
       },
       {
@@ -9880,7 +11409,7 @@
         "kind": "fn",
         "doc": "Project a program with trivia preservation.\n\nGiven a CST (program with trivia), the projector interleaves\ncomments and whitespace from the original source into the\nprojected text. This is a best-effort process — structural edits\nmay invalidate original trivia positions.",
         "file": "projectional.rs",
-        "line": 1153,
+        "line": 1242,
         "signature": "pub fn project_with_trivia("
       },
       {
@@ -9888,7 +11417,7 @@
         "kind": "fn",
         "doc": "Helper: build a simple field declaration.",
         "file": "projectional.rs",
-        "line": 1235,
+        "line": 1324,
         "signature": "pub fn make_field("
       },
       {
@@ -9896,7 +11425,7 @@
         "kind": "fn",
         "doc": "Helper: build a simple material declaration.",
         "file": "projectional.rs",
-        "line": 1257,
+        "line": 1346,
         "signature": "pub fn make_material(name: &str, properties: Vec<(&str, Expr)>) -> Item {"
       },
       {
@@ -9904,7 +11433,7 @@
         "kind": "fn",
         "doc": "Helper: build a simple law declaration.",
         "file": "projectional.rs",
-        "line": 1273,
+        "line": 1362,
         "signature": "pub fn make_law(name: &str, condition: Expr, consequence: Expr) -> Item {"
       },
       {
@@ -9912,7 +11441,7 @@
         "kind": "fn",
         "doc": "Helper: build an integer literal expression.",
         "file": "projectional.rs",
-        "line": 1283,
+        "line": 1372,
         "signature": "pub fn make_int(n: i64) -> Expr {"
       },
       {
@@ -9920,7 +11449,7 @@
         "kind": "fn",
         "doc": "Helper: build a float literal expression.",
         "file": "projectional.rs",
-        "line": 1291,
+        "line": 1380,
         "signature": "pub fn make_float(f: f64) -> Expr {"
       },
       {
@@ -9928,7 +11457,7 @@
         "kind": "fn",
         "doc": "Helper: build a string literal expression.",
         "file": "projectional.rs",
-        "line": 1299,
+        "line": 1388,
         "signature": "pub fn make_string(s: &str) -> Expr {"
       },
       {
@@ -9936,7 +11465,7 @@
         "kind": "fn",
         "doc": "Helper: build an identifier expression.",
         "file": "projectional.rs",
-        "line": 1307,
+        "line": 1396,
         "signature": "pub fn make_ident(s: &str) -> Expr {"
       },
       {
@@ -9944,7 +11473,7 @@
         "kind": "fn",
         "doc": "Helper: build a binary expression.",
         "file": "projectional.rs",
-        "line": 1315,
+        "line": 1404,
         "signature": "pub fn make_binary(op: BinOp, left: Expr, right: Expr) -> Expr {"
       },
       {
@@ -9952,7 +11481,7 @@
         "kind": "fn",
         "doc": "Helper: build a call expression.",
         "file": "projectional.rs",
-        "line": 1327,
+        "line": 1416,
         "signature": "pub fn make_call(callee: &str, args: Vec<Expr>) -> Expr {"
       },
       {
@@ -9960,7 +11489,7 @@
         "kind": "fn",
         "doc": "Helper: build a member access expression.",
         "file": "projectional.rs",
-        "line": 1338,
+        "line": 1427,
         "signature": "pub fn make_member(recv: &str, name: &str) -> Expr {"
       }
     ]
@@ -10192,11 +11721,43 @@
     "doc": "",
     "items": [
       {
+        "name": "FlatNameIndex",
+        "kind": "struct",
+        "doc": "",
+        "file": "reactive_cell.rs",
+        "line": 9,
+        "signature": "pub struct FlatNameIndex"
+      },
+      {
+        "name": "new",
+        "kind": "fn",
+        "doc": "",
+        "file": "reactive_cell.rs",
+        "line": 14,
+        "signature": "pub fn new() -> Self {"
+      },
+      {
+        "name": "insert",
+        "kind": "fn",
+        "doc": "",
+        "file": "reactive_cell.rs",
+        "line": 20,
+        "signature": "pub fn insert(&mut self, name: String, idx: usize) {"
+      },
+      {
+        "name": "get",
+        "kind": "fn",
+        "doc": "",
+        "file": "reactive_cell.rs",
+        "line": 27,
+        "signature": "pub fn get(&self, name: &str) -> Option<&usize> {"
+      },
+      {
         "name": "ReactiveCellError",
         "kind": "enum",
         "doc": "",
         "file": "reactive_cell.rs",
-        "line": 11,
+        "line": 45,
         "signature": "pub enum ReactiveCellError"
       },
       {
@@ -10204,7 +11765,7 @@
         "kind": "struct",
         "doc": "",
         "file": "reactive_cell.rs",
-        "line": 46,
+        "line": 80,
         "signature": "pub struct ReactiveCell"
       },
       {
@@ -10212,7 +11773,7 @@
         "kind": "struct",
         "doc": "",
         "file": "reactive_cell.rs",
-        "line": 67,
+        "line": 101,
         "signature": "pub struct ReactiveCellGraph"
       },
       {
@@ -10220,7 +11781,7 @@
         "kind": "fn",
         "doc": "Construct a new empty reactive cell graph.",
         "file": "reactive_cell.rs",
-        "line": 82,
+        "line": 116,
         "signature": "pub fn new() -> Self {"
       },
       {
@@ -10228,7 +11789,7 @@
         "kind": "fn",
         "doc": "Build a reactive cell graph from an AST Program.",
         "file": "reactive_cell.rs",
-        "line": 93,
+        "line": 127,
         "signature": "pub fn from_program(program: &Program) -> Result<Self, ReactiveCellError> {"
       },
       {
@@ -10236,7 +11797,7 @@
         "kind": "fn",
         "doc": "Add a cell declaration to the graph.",
         "file": "reactive_cell.rs",
-        "line": 105,
+        "line": 139,
         "signature": "pub fn add_cell(&mut self, decl: CellDecl) -> usize {"
       },
       {
@@ -10244,7 +11805,7 @@
         "kind": "fn",
         "doc": "True if cell `idx` is marked dirty. Works past 64 cells.",
         "file": "reactive_cell.rs",
-        "line": 154,
+        "line": 188,
         "signature": "pub fn is_dirty_bit(&self, idx: usize) -> bool {"
       },
       {
@@ -10252,7 +11813,7 @@
         "kind": "fn",
         "doc": "First 64 dirty bits (debug / HUD). Prefer [`Self::is_dirty_bit`].",
         "file": "reactive_cell.rs",
-        "line": 163,
+        "line": 197,
         "signature": "pub fn dirty_mask(&self) -> u64 {"
       },
       {
@@ -10260,7 +11821,7 @@
         "kind": "fn",
         "doc": "Compile dependencies, wire dependents, check cycles, and compute topological order.",
         "file": "reactive_cell.rs",
-        "line": 168,
+        "line": 202,
         "signature": "pub fn compile(&mut self) -> Result<(), ReactiveCellError> {"
       },
       {
@@ -10268,7 +11829,7 @@
         "kind": "fn",
         "doc": "Mark a single cell and all its transitive downstream dependents as dirty.",
         "file": "reactive_cell.rs",
-        "line": 222,
+        "line": 256,
         "signature": "pub fn mark_dirty(&mut self, name: &str) {"
       },
       {
@@ -10276,7 +11837,7 @@
         "kind": "fn",
         "doc": "Mark all cells in the graph as dirty.",
         "file": "reactive_cell.rs",
-        "line": 237,
+        "line": 271,
         "signature": "pub fn mark_all_dirty(&mut self) {"
       },
       {
@@ -10284,7 +11845,7 @@
         "kind": "fn",
         "doc": "Set an external input signal / variable and mark downstream cells dirty.",
         "file": "reactive_cell.rs",
-        "line": 253,
+        "line": 287,
         "signature": "pub fn set_input(&mut self, name: &str, value: Value, env: &mut Env) {"
       },
       {
@@ -10292,7 +11853,7 @@
         "kind": "fn",
         "doc": "Advance time and evaluate dirty cells on a **local** in-process host.\n\nPrefer [`Self::step_with`] when a live `Host` (Poet, tests with\nquery rows, GPU) must dispatch capability.invoke.",
         "file": "reactive_cell.rs",
-        "line": 271,
+        "line": 305,
         "signature": "pub fn step("
       },
       {
@@ -10300,7 +11861,7 @@
         "kind": "const",
         "doc": "Homogeneous ready-cluster size for P16.2. Scalar path still\nevaluates one cell at a time; the batch is the set of dirty cells\nwhose dependencies are already clean, capped at 512.",
         "file": "reactive_cell.rs",
-        "line": 284,
+        "line": 318,
         "signature": "pub const CELL_BATCH_512: usize = 512"
       },
       {
@@ -10308,7 +11869,7 @@
         "kind": "fn",
         "doc": "One ready cluster of up to 512 dirty cells, then stop.\nCallers loop until the dirty set is empty.",
         "file": "reactive_cell.rs",
-        "line": 288,
+        "line": 322,
         "signature": "pub fn evaluate_cell_batch_512<H: Host>("
       },
       {
@@ -10316,7 +11877,7 @@
         "kind": "fn",
         "doc": "Advance time and evaluate dirty cells through the caller's engine/host.",
         "file": "reactive_cell.rs",
-        "line": 362,
+        "line": 396,
         "signature": "pub fn step_with<H: Host>("
       },
       {
@@ -10324,7 +11885,7 @@
         "kind": "fn",
         "doc": "Retrieve the current cached value of a cell by name.",
         "file": "reactive_cell.rs",
-        "line": 424,
+        "line": 458,
         "signature": "pub fn get_value(&self, name: &str) -> Option<&Value> {"
       }
     ]
@@ -10690,11 +12251,19 @@
         "signature": "pub mod deontic_interrupt;"
       },
       {
-        "name": "frame_morphism",
+        "name": "extension_registry",
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
         "line": 48,
+        "signature": "pub mod extension_registry;"
+      },
+      {
+        "name": "frame_morphism",
+        "kind": "module",
+        "doc": "",
+        "file": "lib.rs",
+        "line": 49,
         "signature": "pub mod frame_morphism;"
       },
       {
@@ -10702,7 +12271,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 49,
+        "line": 50,
         "signature": "pub mod hid;"
       },
       {
@@ -10710,7 +12279,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 50,
+        "line": 51,
         "signature": "pub mod law_package;"
       },
       {
@@ -10718,7 +12287,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 51,
+        "line": 52,
         "signature": "pub mod locale;"
       },
       {
@@ -10726,7 +12295,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 52,
+        "line": 53,
         "signature": "pub mod metamodel;"
       },
       {
@@ -10734,7 +12303,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 53,
+        "line": 54,
         "signature": "pub mod module_system;"
       },
       {
@@ -10742,7 +12311,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 54,
+        "line": 55,
         "signature": "pub mod observer;"
       },
       {
@@ -10750,7 +12319,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 55,
+        "line": 56,
         "signature": "pub mod physics;"
       },
       {
@@ -10758,7 +12327,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 56,
+        "line": 57,
         "signature": "pub mod presentation;"
       },
       {
@@ -10766,7 +12335,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 57,
+        "line": 58,
         "signature": "pub mod pretty;"
       },
       {
@@ -10774,7 +12343,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 58,
+        "line": 59,
         "signature": "pub mod projectional;"
       },
       {
@@ -10782,7 +12351,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 59,
+        "line": 60,
         "signature": "pub mod quantity;"
       },
       {
@@ -10790,7 +12359,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 60,
+        "line": 61,
         "signature": "pub mod reactive_cell;"
       },
       {
@@ -10798,7 +12367,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 61,
+        "line": 62,
         "signature": "pub mod reflection;"
       },
       {
@@ -10806,7 +12375,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 62,
+        "line": 63,
         "signature": "pub mod replay_clock;"
       },
       {
@@ -10814,7 +12383,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 63,
+        "line": 64,
         "signature": "pub mod sheaf;"
       },
       {
@@ -10822,23 +12391,39 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 64,
+        "line": 65,
         "signature": "pub mod stdlib_v2;"
+      },
+      {
+        "name": "task_scheduler",
+        "kind": "module",
+        "doc": "",
+        "file": "lib.rs",
+        "line": 66,
+        "signature": "pub mod task_scheduler;"
       },
       {
         "name": "tick_policy",
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 65,
+        "line": 67,
         "signature": "pub mod tick_policy;"
+      },
+      {
+        "name": "topology_decl",
+        "kind": "module",
+        "doc": "",
+        "file": "lib.rs",
+        "line": 68,
+        "signature": "pub mod topology_decl;"
       },
       {
         "name": "translate",
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 66,
+        "line": 69,
         "signature": "pub mod translate;"
       },
       {
@@ -10846,7 +12431,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 67,
+        "line": 70,
         "signature": "pub mod trivia;"
       },
       {
@@ -10854,7 +12439,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 68,
+        "line": 71,
         "signature": "pub mod vocab;"
       },
       {
@@ -10862,7 +12447,7 @@
         "kind": "module",
         "doc": "",
         "file": "lib.rs",
-        "line": 69,
+        "line": 72,
         "signature": "pub mod web_runtime;"
       },
       {
@@ -10870,7 +12455,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 71,
+        "line": 74,
         "signature": "pub use accel::{"
       },
       {
@@ -10878,7 +12463,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 74,
+        "line": 77,
         "signature": "pub use ast::{"
       },
       {
@@ -10886,7 +12471,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 81,
+        "line": 84,
         "signature": "pub use ast_query::{"
       },
       {
@@ -10894,7 +12479,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 85,
+        "line": 88,
         "signature": "pub use bind::{AccelerationTier, Host, HostEnvironment, LocalHost};"
       },
       {
@@ -10902,7 +12487,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 86,
+        "line": 89,
         "signature": "pub use budget::{Budget, SENTINEL_BYTES};"
       },
       {
@@ -10910,7 +12495,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 87,
+        "line": 90,
         "signature": "pub use cbor_ast::{"
       },
       {
@@ -10918,7 +12503,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 94,
+        "line": 97,
         "signature": "pub use check::{"
       },
       {
@@ -10926,7 +12511,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 98,
+        "line": 101,
         "signature": "pub use dag::{"
       },
       {
@@ -10934,7 +12519,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 103,
+        "line": 106,
         "signature": "pub use degrade::{gpu_missing, llm_missing};"
       },
       {
@@ -10942,7 +12527,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 104,
+        "line": 107,
         "signature": "pub use deontic_interrupt::{"
       },
       {
@@ -10950,7 +12535,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 108,
+        "line": 111,
         "signature": "pub use diagnose::{diagnose, DiagnoseReport};"
       },
       {
@@ -10958,7 +12543,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 109,
+        "line": 112,
         "signature": "pub use error::{DiagCode, Diagnostic};"
       },
       {
@@ -10966,7 +12551,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 110,
+        "line": 113,
         "signature": "pub use eval::{populate_import_aliases, Engine, Env};"
       },
       {
@@ -10974,7 +12559,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 111,
+        "line": 114,
         "signature": "pub use grammar::{DIAGNOSTIC_SCHEMA_JSON, EBNF, GBNF, SOURCE_SCHEMA_JSON};"
       },
       {
@@ -10982,7 +12567,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 112,
+        "line": 115,
         "signature": "pub use lexicon_pin::{"
       },
       {
@@ -10990,7 +12575,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 118,
+        "line": 121,
         "signature": "pub use parse::{parse_cell, parse_program};"
       },
       {
@@ -10998,7 +12583,15 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 119,
+        "line": 122,
+        "signature": "pub use topology_decl::{"
+      },
+      {
+        "name": "{",
+        "kind": "use",
+        "doc": "",
+        "file": "lib.rs",
+        "line": 126,
         "signature": "pub use projectional::{"
       },
       {
@@ -11006,7 +12599,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 123,
+        "line": 130,
         "signature": "pub use reactive_cell::{ReactiveCell, ReactiveCellError, ReactiveCellGraph};"
       },
       {
@@ -11014,7 +12607,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 124,
+        "line": 131,
         "signature": "pub use reflection::{"
       },
       {
@@ -11022,7 +12615,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 127,
+        "line": 134,
         "signature": "pub use span::Span;"
       },
       {
@@ -11030,7 +12623,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 128,
+        "line": 135,
         "signature": "pub use unicode_ident::{"
       },
       {
@@ -11038,7 +12631,7 @@
         "kind": "use",
         "doc": "",
         "file": "lib.rs",
-        "line": 132,
+        "line": 139,
         "signature": "pub use value::{"
       },
       {
@@ -11046,7 +12639,7 @@
         "kind": "fn",
         "doc": "Parse, check, and evaluate a Pure cell (`= expr`).",
         "file": "lib.rs",
-        "line": 139,
+        "line": 146,
         "signature": "pub fn eval_cell<H: Host>(src: &str, host: &mut H, env: &mut Env) -> Result<Value, Diagnostic> {"
       },
       {
@@ -11054,7 +12647,7 @@
         "kind": "fn",
         "doc": "Parse and check a module. Does not run hooks.",
         "file": "lib.rs",
-        "line": 147,
+        "line": 154,
         "signature": "pub fn load_program(src: &str) -> Result<Program, Diagnostic> {"
       },
       {
@@ -11062,7 +12655,7 @@
         "kind": "fn",
         "doc": "Evaluate a named function from a checked program.\nImport aliases from the program are populated into `env` before evaluation.",
         "file": "lib.rs",
-        "line": 155,
+        "line": 162,
         "signature": "pub fn eval_function<H: Host>("
       },
       {
@@ -11070,7 +12663,7 @@
         "kind": "fn",
         "doc": "Dispatch a hook event on a checked program.\n\n`path` is the event path (e.g. `[\"pulse\", \"message\"]` for `on pulse:message(…)`\nor `[\"tick\"]` for `on tick(…)`). `args` are bound to the hook's parameters\nin declaration order. Returns `Ok(Value::Null)` if no matching hook exists.",
         "file": "lib.rs",
-        "line": 172,
+        "line": 179,
         "signature": "pub fn dispatch_hook<H: Host>("
       }
     ]
@@ -11084,7 +12677,7 @@
         "kind": "struct",
         "doc": "",
         "file": "mod.rs",
-        "line": 19,
+        "line": 21,
         "signature": "pub struct SessionLimits"
       },
       {
@@ -11092,7 +12685,7 @@
         "kind": "struct",
         "doc": "",
         "file": "mod.rs",
-        "line": 52,
+        "line": 54,
         "signature": "pub struct SubmissionError"
       },
       {
@@ -11100,7 +12693,7 @@
         "kind": "struct",
         "doc": "",
         "file": "mod.rs",
-        "line": 60,
+        "line": 62,
         "signature": "pub struct SubmissionResult"
       },
       {
@@ -11108,15 +12701,31 @@
         "kind": "struct",
         "doc": "Checked candidates cannot be constructed or edited by the caller. They are\nbound to their originating session and active revision, consumed once.",
         "file": "mod.rs",
-        "line": 72,
+        "line": 74,
         "signature": "pub struct CheckedSubmission"
+      },
+      {
+        "name": "SessionBindings",
+        "kind": "struct",
+        "doc": "Read-only view of evaluated bindings before source-session promotion.\nHost effects remain governed by the actual host; rejection does not undo them.",
+        "file": "mod.rs",
+        "line": 87,
+        "signature": "pub struct SessionBindings<'a>"
+      },
+      {
+        "name": "value",
+        "kind": "fn",
+        "doc": "",
+        "file": "mod.rs",
+        "line": 91,
+        "signature": "pub fn value(&self, name: &str) -> Option<&Value> {"
       },
       {
         "name": "SourceSession",
         "kind": "struct",
         "doc": "",
         "file": "mod.rs",
-        "line": 82,
+        "line": 95,
         "signature": "pub struct SourceSession"
       },
       {
@@ -11124,7 +12733,7 @@
         "kind": "fn",
         "doc": "",
         "file": "mod.rs",
-        "line": 103,
+        "line": 116,
         "signature": "pub fn new(grants: Vec<String>, limits: SessionLimits) -> Self {"
       },
       {
@@ -11132,15 +12741,23 @@
         "kind": "fn",
         "doc": "",
         "file": "mod.rs",
-        "line": 125,
+        "line": 138,
         "signature": "pub fn revision(&self) -> u64 {"
+      },
+      {
+        "name": "bindings",
+        "kind": "fn",
+        "doc": "Read-only accepted bindings, using the same view as tentative validation.",
+        "file": "mod.rs",
+        "line": 142,
+        "signature": "pub fn bindings(&self) -> SessionBindings<'_> {"
       },
       {
         "name": "value",
         "kind": "fn",
         "doc": "",
         "file": "mod.rs",
-        "line": 128,
+        "line": 145,
         "signature": "pub fn value(&self, name: &str) -> Option<&Value> {"
       },
       {
@@ -11148,7 +12765,7 @@
         "kind": "fn",
         "doc": "",
         "file": "mod.rs",
-        "line": 131,
+        "line": 148,
         "signature": "pub fn is_mutable(&self, name: &str) -> bool {"
       },
       {
@@ -11156,7 +12773,7 @@
         "kind": "fn",
         "doc": "",
         "file": "mod.rs",
-        "line": 134,
+        "line": 151,
         "signature": "pub fn sources(&self) -> &[String] {"
       },
       {
@@ -11164,7 +12781,7 @@
         "kind": "fn",
         "doc": "",
         "file": "mod.rs",
-        "line": 137,
+        "line": 154,
         "signature": "pub fn binding_type(&self, name: &str) -> Option<String> {"
       },
       {
@@ -11172,7 +12789,7 @@
         "kind": "fn",
         "doc": "",
         "file": "mod.rs",
-        "line": 150,
+        "line": 167,
         "signature": "pub fn submit<H: Host>("
       },
       {
@@ -11180,26 +12797,63 @@
         "kind": "fn",
         "doc": "Validate evaluated output before promoting any tentative local values,\ndefinitions or source. Host effects already attempted are not rolled back.",
         "file": "mod.rs",
-        "line": 160,
+        "line": 177,
         "signature": "pub fn submit_validated<H: Host, F: FnOnce(&Value) -> Result<(), Diagnostic>>("
+      },
+      {
+        "name": "submit_validated_bindings",
+        "kind": "fn",
+        "doc": "Validate tentative bindings and result using the same host before local\npromotion. Dispatched host effects are not automatically rolled back.",
+        "file": "mod.rs",
+        "line": 189,
+        "signature": "pub fn submit_validated_bindings<H: Host, F>("
       },
       {
         "name": "execute",
         "kind": "fn",
         "doc": "",
         "file": "mod.rs",
-        "line": 170,
+        "line": 202,
         "signature": "pub fn execute<H: Host>("
+      },
+      {
+        "name": "apply_edit",
+        "kind": "fn",
+        "doc": "Apply a structural `projectional::Edit` and re-evaluate the session.\nAny parse, check, or evaluation failure rolls back all session state.",
+        "file": "mod.rs",
+        "line": 213,
+        "signature": "pub fn apply_edit<H: Host>("
+      },
+      {
+        "name": "replace",
+        "kind": "fn",
+        "doc": "Submit source with explicit replacement of matching top-level declarations.\nAny check or evaluation failure rolls back all session state.",
+        "file": "mod.rs",
+        "line": 225,
+        "signature": "pub fn replace<H: Host>("
       },
       {
         "name": "execute_validated",
         "kind": "fn",
         "doc": "The validator receives actual evaluated output once, after interpreter\nchecks and before promotion. It may recheck native authority while its\nowner transaction is held; no JSON receipt is treated as authority.",
         "file": "mod.rs",
-        "line": 181,
+        "line": 237,
         "signature": "pub fn execute_validated<H: Host, F: FnOnce(&Value) -> Result<(), Diagnostic>>("
+      },
+      {
+        "name": "execute_validated_bindings",
+        "kind": "fn",
+        "doc": "Inspect tentative bindings and debit the actual host before promotion.\nA rejected callback preserves local source/session state. Any already\ndispatched external host effects still require reconciliation.",
+        "file": "mod.rs",
+        "line": 250,
+        "signature": "pub fn execute_validated_bindings<H: Host, F>("
       }
     ]
+  },
+  {
+    "name": "session::binding_validation_tests",
+    "doc": "",
+    "items": []
   },
   {
     "name": "session::prepare",
@@ -11212,6 +12866,22 @@
         "file": "prepare.rs",
         "line": 4,
         "signature": "pub fn prepare(&self, source: &str) -> Result<CheckedSubmission, Diagnostic> {"
+      },
+      {
+        "name": "prepare_replace",
+        "kind": "fn",
+        "doc": "Prepare a submission that explicitly replaces matching top-level declarations\nusing `projectional::Edit::ReplaceItem` with full rollback on failure.",
+        "file": "prepare.rs",
+        "line": 10,
+        "signature": "pub fn prepare_replace(&self, source: &str) -> Result<CheckedSubmission, Diagnostic> {"
+      },
+      {
+        "name": "prepare_edit",
+        "kind": "fn",
+        "doc": "Prepare an incremental `projectional::Edit` against the retained session program.\nReturns an error without mutating session state if bounds, limits, or checks fail.",
+        "file": "prepare.rs",
+        "line": 16,
+        "signature": "pub fn prepare_edit("
       }
     ]
   },
@@ -11847,7 +13517,7 @@
   },
   {
     "name": "stdlib_v2::tests",
-    "doc": "End-to-end integration tests for VibeScript v0.02 (`vibe-0.2`) Standard Library\n(`docs/planning/Vibe vs (2).md` §§1–22).",
+    "doc": "Selected standard-library and scoped runtime integration regressions.\nHistorical 0.02 library planning is not a released-dialect or full-conformance claim.",
     "items": []
   },
   {
@@ -11969,7 +13639,7 @@
         "kind": "fn",
         "doc": "Dispatch a Track 4 `topology_and_manifold` call. Returns `Ok(None)` if `path` is not owned here.",
         "file": "mod.rs",
-        "line": 66,
+        "line": 71,
         "signature": "pub fn call_topology_and_manifold("
       }
     ]
@@ -12013,6 +13683,68 @@
         "file": "simplex_and_sheaf.rs",
         "line": 10,
         "signature": "pub fn call_simplex_and_sheaf("
+      }
+    ]
+  },
+  {
+    "name": "task_scheduler",
+    "doc": "Bounded local deferred tasks. Execution is synchronous on the admitted AST engine.\n\nNo remote execution, continuation suspension or human delegation is implied.\nTaskScope is runtime state; record fields never confer ownership. Env clones share\nthe scope (including committed effects); independently defaulted environments do not.",
+    "items": [
+      {
+        "name": "await_scheduled_value",
+        "kind": "use",
+        "doc": "",
+        "file": "task_scheduler.rs",
+        "line": 19,
+        "signature": "pub use execution::await_scheduled_value;"
+      },
+      {
+        "name": "{",
+        "kind": "use",
+        "doc": "",
+        "file": "task_scheduler.rs",
+        "line": 22,
+        "signature": "pub use registry::{"
+      },
+      {
+        "name": "spawn_scheduled_task",
+        "kind": "fn",
+        "doc": "Legacy facade: callers without an admitted runtime scope fail before execution.",
+        "file": "task_scheduler.rs",
+        "line": 40,
+        "signature": "pub fn spawn_scheduled_task("
+      },
+      {
+        "name": "cancel_scheduled_task",
+        "kind": "fn",
+        "doc": "",
+        "file": "task_scheduler.rs",
+        "line": 49,
+        "signature": "pub fn cancel_scheduled_task(_: &BTreeMap<String, Value>, span: Span) -> Result<Value, Diagnostic> {"
+      },
+      {
+        "name": "apply_task_timeout",
+        "kind": "fn",
+        "doc": "",
+        "file": "task_scheduler.rs",
+        "line": 52,
+        "signature": "pub fn apply_task_timeout("
+      },
+      {
+        "name": "query_task_status",
+        "kind": "fn",
+        "doc": "",
+        "file": "task_scheduler.rs",
+        "line": 59,
+        "signature": "pub fn query_task_status(_: &Value, span: Span) -> Result<Value, Diagnostic> {"
+      },
+      {
+        "name": "await_value_standalone",
+        "kind": "fn",
+        "doc": "",
+        "file": "task_scheduler.rs",
+        "line": 62,
+        "signature": "pub fn await_value_standalone(value: Value, span: Span) -> Result<Value, Diagnostic> {"
       }
     ]
   },
@@ -12147,6 +13879,76 @@
         "file": "tick_policy.rs",
         "line": 239,
         "signature": "pub fn to_value(&self) -> Value {"
+      }
+    ]
+  },
+  {
+    "name": "topology_decl",
+    "doc": "Declarative VibeScript `geometry` and `topology` complex parser and capability lowerer.\n\nImplements §6 of the POET Geometry-Topology Complex architecture (\"Geometries Harbour Many Graphs\"):\n- `geometry <Name> : <ComplexKind> { ... graph <G> : <Morphology> { ... } }`\n- Standalone `topology <Name> : <Morphology> { ... }` syntactic sugar (desugars into a host\n  `GeometryDecl` of kind `MetricPointCloud10D` harbouring a single primary `HarbouredGraphDecl` at `slot = 0`).\n- Deterministic lowering to `Topology.define_geometry`, `Topology.harbour_graph`, and `Poet.topology_bind`.",
+    "items": [
+      {
+        "name": "BoundaryDecl",
+        "kind": "struct",
+        "doc": "",
+        "file": "topology_decl.rs",
+        "line": 20,
+        "signature": "pub struct BoundaryDecl"
+      },
+      {
+        "name": "HarbouredGraphDecl",
+        "kind": "struct",
+        "doc": "",
+        "file": "topology_decl.rs",
+        "line": 27,
+        "signature": "pub struct HarbouredGraphDecl"
+      },
+      {
+        "name": "GeometryDecl",
+        "kind": "struct",
+        "doc": "",
+        "file": "topology_decl.rs",
+        "line": 42,
+        "signature": "pub struct GeometryDecl"
+      },
+      {
+        "name": "TopologyInvokeDescriptor",
+        "kind": "struct",
+        "doc": "",
+        "file": "topology_decl.rs",
+        "line": 60,
+        "signature": "pub struct TopologyInvokeDescriptor"
+      },
+      {
+        "name": "lower_to_invokes",
+        "kind": "fn",
+        "doc": "Lowers this `GeometryDecl` and its harboured graphs into deterministic\n`Topology.define_geometry`, `Topology.harbour_graph`, and `Poet.topology_bind` descriptors.",
+        "file": "topology_decl.rs",
+        "line": 68,
+        "signature": "pub fn lower_to_invokes(&self) -> Vec<TopologyInvokeDescriptor> {"
+      },
+      {
+        "name": "lower_to_block",
+        "kind": "fn",
+        "doc": "Lowers this declaration to an AST `Block` of capability invoke statements.",
+        "file": "topology_decl.rs",
+        "line": 119,
+        "signature": "pub fn lower_to_block(&self) -> Block {"
+      },
+      {
+        "name": "parse_geometry_or_topology",
+        "kind": "fn",
+        "doc": "Parses a single `geometry <Name> : <ComplexKind> { ... }` or standalone `topology <Name> : <Morphology> { ... }`.",
+        "file": "topology_decl.rs",
+        "line": 155,
+        "signature": "pub fn parse_geometry_or_topology(src: &str) -> Result<GeometryDecl, Diagnostic> {"
+      },
+      {
+        "name": "parse_geometry_blocks",
+        "kind": "fn",
+        "doc": "Parses all `geometry` and `topology` declarations in a VibeScript source snippet, skipping `construct` or other items.",
+        "file": "topology_decl.rs",
+        "line": 161,
+        "signature": "pub fn parse_geometry_blocks(src: &str) -> Result<Vec<GeometryDecl>, Diagnostic> {"
       }
     ]
   },
@@ -12523,7 +14325,7 @@
         "kind": "fn",
         "doc": "Constructs from ast.",
         "file": "types.rs",
-        "line": 60,
+        "line": 59,
         "signature": "pub fn from_ast(t: &TypeExpr) -> Type {"
       },
       {
@@ -12531,8 +14333,16 @@
         "kind": "fn",
         "doc": "`true` when numeric.",
         "file": "types.rs",
-        "line": 120,
+        "line": 115,
         "signature": "pub fn is_numeric(&self) -> bool {"
+      },
+      {
+        "name": "is_compatible",
+        "kind": "fn",
+        "doc": "Returns `true` when `other` can be assigned/passed where `self` is expected.",
+        "file": "types.rs",
+        "line": 120,
+        "signature": "pub fn is_compatible(&self, other: &Type) -> bool {"
       }
     ]
   },

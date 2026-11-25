@@ -4,6 +4,7 @@ use serde_json::{json, Value};
 use vibe::catalog::{
     canonical_id, describe, families, family_of, methods_for_family, ALL_INVOKE_IDS,
 };
+use vibe::extension_registry::ExtensionRegistry;
 use vibe::vocab::{parse_chunk, VocabChunk};
 
 const KEYWORDS: &[(&str, &str)] = &[
@@ -237,6 +238,10 @@ pub fn completions_at(src: &str, line: usize, character: usize) -> Vec<Value> {
         if !stdlib_matches.is_empty() {
             return stdlib_matches;
         }
+        let ext_matches = extension_provider_completions(family);
+        if !ext_matches.is_empty() {
+            return ext_matches;
+        }
     }
     let mut out = Vec::new();
     for (label, detail) in KEYWORDS {
@@ -252,6 +257,16 @@ pub fn completions_at(src: &str, line: usize, character: usize) -> Vec<Value> {
             "kind": 9,
             "detail": format!("Catalog family — `using {fam};` then `{fam}.method(...)`"),
             "insertText": fam,
+        }));
+    }
+    let reg = ExtensionRegistry::with_builtin_providers();
+    for p in reg.iter_providers() {
+        let d = p.descriptor();
+        out.push(json!({
+            "label": d.short_alias,
+            "kind": 9,
+            "detail": format!("ABI extension provider `{}` (`{}`)", d.short_alias, d.canonical_iri.iri),
+            "insertText": d.short_alias,
         }));
     }
     for id in ALL_INVOKE_IDS.iter().copied().take(32) {
@@ -286,6 +301,9 @@ pub fn hover_at(src: &str, line: usize, character: usize) -> String {
         return format!(
             "**`{token}`**\n\nVibeScript v0.02 built-in standard library / CBOR-LD / web-runtime binding (pure, deterministic, zero-heap hot-path safe)."
         );
+    }
+    if let Some(ext_hover) = extension_provider_hover(&token) {
+        return ext_hover;
     }
     for (kw, detail) in KEYWORDS {
         if *kw == token {
@@ -375,7 +393,7 @@ fn family_before_dot(prefix: &str) -> Option<&str> {
     let trimmed = prefix.trim_end();
     let trimmed = trimmed.strip_suffix('.')?;
     let start = trimmed
-        .rfind(|c: char| !(c.is_ascii_alphanumeric() || c == '_'))
+        .rfind(|c: char| !(c.is_ascii_alphanumeric() || c == '_' || c == '.'))
         .map(|i| i + 1)
         .unwrap_or(0);
     let fam = &trimmed[start..];
@@ -383,6 +401,110 @@ fn family_before_dot(prefix: &str) -> Option<&str> {
         return None;
     }
     Some(fam)
+}
+
+fn extension_provider_completions(prefix_before_dot: &str) -> Vec<Value> {
+    let reg = ExtensionRegistry::with_builtin_providers();
+    let mut out = Vec::new();
+    for p in reg.iter_providers() {
+        let d = p.descriptor();
+        if d.short_alias == prefix_before_dot {
+            for sub in d.sub_namespaces {
+                out.push(json!({
+                    "label": sub.name,
+                    "kind": 9,
+                    "detail": format!("ABI sub-namespace `{}.{}` (`{}`)", d.short_alias, sub.name, d.canonical_iri.iri),
+                    "insertText": sub.name,
+                }));
+                for f in sub.functions {
+                    let qualified = format!("{}.{}", sub.name, f.name);
+                    out.push(json!({
+                        "label": qualified,
+                        "kind": 3,
+                        "detail": format!("ABI function `{}.{}.{}` (`{}`)", d.short_alias, sub.name, f.name, f.canonical_iri.iri),
+                        "insertText": format!("{}.{}", sub.name, f.name),
+                        "documentation": format!(
+                            "Canonical IRI: `{}`\nStable ID: `({}, {})` · Effects: `0x{:x}` · Max ticks: `{}`",
+                            f.canonical_iri.iri,
+                            f.stable_id.sub_namespace_id,
+                            f.stable_id.func_id,
+                            f.effects.0,
+                            f.envelope.max_ticks
+                        ),
+                    }));
+                }
+            }
+        } else if let Some((alias, sub_name)) = prefix_before_dot.split_once('.') {
+            if d.short_alias == alias {
+                for sub in d.sub_namespaces {
+                    if sub.name == sub_name {
+                        for f in sub.functions {
+                            out.push(json!({
+                                "label": f.name,
+                                "kind": 3,
+                                "detail": format!("ABI function `{}.{}.{}` (`{}`)", d.short_alias, sub.name, f.name, f.canonical_iri.iri),
+                                "insertText": f.name,
+                                "documentation": format!(
+                                    "Canonical IRI: `{}`\nStable ID: `({}, {})` · Effects: `0x{:x}` · Max ticks: `{}`",
+                                    f.canonical_iri.iri,
+                                    f.stable_id.sub_namespace_id,
+                                    f.stable_id.func_id,
+                                    f.effects.0,
+                                    f.envelope.max_ticks
+                                ),
+                            }));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    out
+}
+
+fn extension_provider_hover(token: &str) -> Option<String> {
+    let reg = ExtensionRegistry::with_builtin_providers();
+    for p in reg.iter_providers() {
+        let d = p.descriptor();
+        if token == d.short_alias || token == d.canonical_iri.iri {
+            return Some(format!(
+                "**`{}`** (`{}`)\n\nBuilt-in `vibescript-abi` zero-heap extension provider ({} sub-namespace(s), max `{}` ontology `NQuin48` records).",
+                d.short_alias,
+                d.canonical_iri.iri,
+                d.sub_namespaces.len(),
+                d.max_ontology_quins
+            ));
+        }
+        for sub in d.sub_namespaces {
+            let sub_path = format!("{}.{}", d.short_alias, sub.name);
+            if token == sub_path {
+                return Some(format!(
+                    "**`{sub_path}`**\n\nSub-namespace `{}` (`sub_id = {}`) of ABI provider `{}` (`{}`).",
+                    sub.name, sub.sub_id, d.short_alias, d.canonical_iri.iri
+                ));
+            }
+            for f in sub.functions {
+                let fn_path = format!("{}.{}.{}", d.short_alias, sub.name, f.name);
+                if token == fn_path || token == f.canonical_iri.iri {
+                    return Some(format!(
+                        "**`{fn_path}`**\n\nCanonical IRI: `{}`\nStable ID: `({}, {})` · Output kind: `{:?}` (`{}` elems)\nEffects: `0x{:x}` · Max ticks: `{}` · Contract SHA-256 prefix: `{:02x}{:02x}{:02x}{:02x}…`",
+                        f.canonical_iri.iri,
+                        f.stable_id.sub_namespace_id,
+                        f.stable_id.func_id,
+                        f.output_kind,
+                        f.required_output_elems,
+                        f.effects.0,
+                        f.envelope.max_ticks,
+                        f.contract.contract_digest[0],
+                        f.contract.contract_digest[1],
+                        f.contract.contract_digest[2],
+                        f.contract.contract_digest[3],
+                    ));
+                }
+            }
+        }
+    }
+    None
 }
 
 fn ident_path_at(src: &str, offset: usize) -> String {
@@ -515,5 +637,23 @@ mod tests {
 
         let hover = hover_at("cbor_ld.ingest_json(raw, origin)", 0, 10);
         assert!(hover.contains("cbor_ld.ingest_json") && hover.contains("v0.02"), "{hover}");
+
+        let ext_items = completions_at("mech.kinematics.", 0, 16);
+        let ext_labels: Vec<String> = ext_items
+            .iter()
+            .filter_map(|v| v.get("label").and_then(|l| l.as_str()).map(str::to_string))
+            .collect();
+        assert!(
+            ext_labels.iter().any(|l| l == "verlet_step")
+                && ext_labels.iter().any(|l| l == "kinetic_energy"),
+            "expected mech.kinematics.* ABI functions, got {ext_labels:?}"
+        );
+
+        let ext_hover = hover_at("mech.kinematics.verlet_step(pos, vel, acc, dt)", 0, 20);
+        assert!(
+            ext_hover.contains("https://qualiadb.org/ext/etalon/mechanics")
+                && ext_hover.contains("Contract SHA-256"),
+            "{ext_hover}"
+        );
     }
 }
